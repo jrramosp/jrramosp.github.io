@@ -1,0 +1,13 @@
+html {
+	background: #ccc;
+	font-family: sans-serif;
+}
+body{
+	width: 80%;
+	background: #FBE1AB;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+code, pre{
+	background-color: #eee;
+}

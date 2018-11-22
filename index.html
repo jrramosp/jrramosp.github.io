@@ -1,11 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Apuntes de HTML</title>
+	<meta name="author" content="Nani" >
+	<meta name="description" content="Es una página de apuntes sobre HTML"> 
+	<link rel="shorcut icon" href="favicon.ico" type="image/x-icon" />
+	<link href="css/style.css" rel="stylesheet">
+	
 </head>
 <body>
 	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
 	<h2> Apuntes tomados de la web de MDN</h2>
+	<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Elementos en línea</a></p>
+	<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Elementos en bloque</a></p>
+	<p>Estructura básica de una página web</p>	
+	<pre><code>
+	&lt;!DOCTYPE html&gt;
+	&lt;html lang="es"&gt;
+	  &lt;head&gt;
+	    &lt;meta charset=&quot;utf-8&quot;&gt;
+	    &lt;title&gt;My test page&lt;/title&gt;
+	  &lt;/head&gt;
+	  &lt;body&gt;
+	    &lt;p&gt;This is my page&lt;/p&gt;
+	  &lt;/body&gt;
+	&lt;/html&gt;
+	</code></pre>
+	<table>
+	<th>Referencias a entidades</th>
+	<tr>
+		<td>&lt;</td>
+		<td>&amp;lt;</td>
+	</tr>
+	<tr>
+		<td>&gt;</td>
+		<td>&amp;gt;</td>
+	</tr>
+	<tr>
+		<td>&quot;</td>
+		<td>&amp;quot;</td>
+	</tr>
+	<tr>
+		<td>&apos;</td>
+		<td>&amp;apos</td>
+	</tr>
+	<tr>
+		<td>&amp;</td>
+		<td>&amp;amp;</td>
+	</tr>
+	</table>
+	<p>Comentarios en Html. <code>&lt;!--As&iacute; se escriben los comentarios--&gt;</code></p>
+	<p>Estructura de la cabecera</p>
+	<pre><code>
+	  &lt;head lang="es"&gt;
+	    &lt;meta charset=&quot;utf-8&quot;&gt;
+	    &lt;title&gt;My test page&lt;/title&gt;
+	  &lt;/head&gt;
+	</code></pre>
+	<p>Añadiendo autor y descripción</p>
+	<pre><code>
+	&lt;meta name=&quot;author&quot; content=&quot;Juan Ram&oacute;n&quot;&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Aqu&iacute; se pone la descripci&oacute;n de la p&aacute;gina web para que aparezca en los buscadores&quot;&gt;
+	</code></pre>
+	<p>Añadiendo un icono a la página(favicon), un enlace a un estilo CSS y un enlace a un script</p>
+	<pre><code>
+	&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+	</code></pre>
+	<p>Para estructurar los documentos debeos utilizar los elemento HEADING: <code>h1,h2,h3,h4,h5,h6</code></p>
+	<p>Usar listas, tanto numerales como listas abstractas </p>
+	<pre><code>
+	&lt;ul&gt;
+		&lt;li&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;ol&gt;
+		&lt;li&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+	</code></pre>
+	<p>Tambien definimos <em>énfasis</em> con <code>&lt;em&gt;&lt;/em&gt;</code> e <strong>importacia</strong> con <code>&lt;strong&gt;&lt;/strong&gt;</code></p>
+	<ul>	
+	    <li><code>&lt;i&gt;</code> Se usa principalmente como <i>itálica</i> para: Palabras extranjeras, definiciones taxonomicas, terminos técnicos...</i>
+	    <li><code>&lt;b&gt;</code> Se usa principalmente como <b>negrita</b> para: palabras clave, nombre de productos...</li>
+	    <li><code>&lt;u&gt;</code> Se usa principalmente como <u>subrayado</u> para: nombre propio, error de escritura...</li>
+	</ul>
+	<p>También podemos definir listas con definiciones, con la descripción primero y luego la definición</p>
+	<pre><code>
+	&lt;dl&gt;
+		&lt;dt&gt;Definición&lt;/dt&gt;
+		&lt;dd&gt;Descripción&lt;/dd&gt;
+	&lt;/dl&gt;
+	</code></pre>
+	<p>Los enlaces deben contener descripciones lógicas (no un "Haz click aquí"), y son:</p>
+	<pre><code>&lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;the Mozilla homepage&lt;/a&gt;.</code></pre>
+	<p>Se puede añadir el atributo download para enlaces de ficheros o recursos</p>
+	<pre><code>
+	&lt;a href=&quot;https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US&quot; download=&quot;firefox-latest-64bit-installer.exe&quot;&gt;
+	Download Latest Firefox for Windows (64-bit) (English, US)&lt;/a&gt;	
+	</code></pre>
+	<p>También podemos enlazar a un envío de correo</p>
+	<pre><code>
+	&lt;a href=&quot;mailto:nobody@mozilla.org?subject=Correo&quot;&gt;&lt;/a&gt;
+	</code></pre>
+	<p>Si citamos en nuestro texto en un elemento bloque lo haremos con</p>
+	<pre><code>
+	&lt;blockquote cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;
+  	&lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;HTML Block Quotation Element&lt;/em&gt;) indicates that the enclosed
+  	text is an extended quotation.&lt;/p&gt;
+	&lt;/blockquote&gt;	
+	</code></pre>
+	<p>Si citamos en un elemento lineal lo haremos</p>
+	<pre><code>
+	&lt;p&gt;The quote element — &lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt; — is &lt;q cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q&quot;&gt;
+	intended for short quotations that don&apos;t require paragraph breaks.&lt;/q&gt;&lt;/p&gt;
+	</code></pre>
+	<p>Además tenemos el elemento <code>cite</code> para remarcar la cita</p>
+	<pre><code>
+	&lt;p&gt;According to the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;
+	&lt;cite&gt;MDN blockquote page&lt;/cite&gt;&lt;/a&gt;:
+	&lt;/p&gt;
+	</code></pre>
 </body>
 </html>
