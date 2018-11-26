@@ -10,4 +10,12 @@ body{
 }
 code, pre{
 	background-color: #eee;
+	font-size: 14px;
+
+}
+td{
+	border: 1px solid #000;
+	background-color: #CBE6F1;
+	table-layout: auto;
+	width: auto;
 }

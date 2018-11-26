@@ -12,8 +12,8 @@
 <body>
 	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
 	<h2> Apuntes tomados de la web de MDN</h2>
-	<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Elementos en línea</a></p>
-	<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Elementos en bloque</a></p>
+	<p>Ir a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Elementos en línea</a> en MDN</p>
+	<p>Ir a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Elementos en bloque</a> en MDN</p>
 	<p>Estructura básica de una página web</p>	
 	<pre><code>
 	&lt;!DOCTYPE html&gt;
@@ -28,7 +28,10 @@
 	&lt;/html&gt;
 	</code></pre>
 	<table>
-	<th>Referencias a entidades</th>
+	<tr>
+		<th colspan="2">Referencias a entidades</th>
+		
+	</tr>
 	<tr>
 		<td>&lt;</td>
 		<td>&amp;lt;</td>
@@ -81,7 +84,7 @@
 	</code></pre>
 	<p>Tambien definimos <em>énfasis</em> con <code>&lt;em&gt;&lt;/em&gt;</code> e <strong>importacia</strong> con <code>&lt;strong&gt;&lt;/strong&gt;</code></p>
 	<ul>	
-	    <li><code>&lt;i&gt;</code> Se usa principalmente como <i>itálica</i> para: Palabras extranjeras, definiciones taxonomicas, terminos técnicos...</i>
+	    <li><code>&lt;i&gt;</code> Se usa principalmente como <i>itálica</i> para: Palabras extranjeras, definiciones taxonomicas, terminos técnicos...</li>
 	    <li><code>&lt;b&gt;</code> Se usa principalmente como <b>negrita</b> para: palabras clave, nombre de productos...</li>
 	    <li><code>&lt;u&gt;</code> Se usa principalmente como <u>subrayado</u> para: nombre propio, error de escritura...</li>
 	</ul>
@@ -96,18 +99,31 @@
 	<pre><code>&lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;the Mozilla homepage&lt;/a&gt;.</code></pre>
 	<p>Se puede añadir el atributo download para enlaces de ficheros o recursos</p>
 	<pre><code>
-	&lt;a href=&quot;https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US&quot; download=&quot;firefox-latest-64bit-installer.exe&quot;&gt;
+	&lt;a href=&quot;https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US&quot;
+		download=&quot;firefox-latest-64bit-installer.exe&quot;&gt;
 	Download Latest Firefox for Windows (64-bit) (English, US)&lt;/a&gt;	
 	</code></pre>
 	<p>También podemos enlazar a un envío de correo</p>
 	<pre><code>
 	&lt;a href=&quot;mailto:nobody@mozilla.org?subject=Correo&quot;&gt;&lt;/a&gt;
 	</code></pre>
+	<p>Si queremos hacer enlaces a determinadas partes del documento primero se define la parte a enlazar con el atributo <code>&lt;id&gt;</code></p>
+	<pre><code>
+	&lt;h2 id=&quot;Mailing_address&quot;&gt;Mailing address&lt;/h2&gt;
+	</code></pre>
+	<p>Depués el enlace en cuestión se hara a la descripción del anterior <code>&lt;id&gt;</code></p>
+	<pre><code>
+	&lt;p&gt;The &lt;a href=&quot;#Mailing_address&quot;&gt;company mailing address&lt;/a&gt; can be found at the bottom of this page.&lt;/p&gt;
+	</code></pre>
+	<p>O bien a un documento específico al que haremos referencia en el enlace</p>
+	<pre><code>
+	&lt;p&gt;Want to write us a letter? Use our &lt;a href=&quot;contacts.html#Mailing_address&quot;&gt;mailing address&lt;/a&gt;.&lt;/p&gt;
+	</code></pre>	
 	<p>Si citamos en nuestro texto en un elemento bloque lo haremos con</p>
 	<pre><code>
 	&lt;blockquote cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;
-  	&lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;HTML Block Quotation Element&lt;/em&gt;) indicates that the enclosed
-  	text is an extended quotation.&lt;/p&gt;
+  	&lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;HTML Block Quotation Element&lt;/em&gt;) 
+  	indicates that the enclosed text is an extended quotation.&lt;/p&gt;
 	&lt;/blockquote&gt;	
 	</code></pre>
 	<p>Si citamos en un elemento lineal lo haremos</p>
@@ -121,5 +137,61 @@
 	&lt;cite&gt;MDN blockquote page&lt;/cite&gt;&lt;/a&gt;:
 	&lt;/p&gt;
 	</code></pre>
+	<p>Para las abreviaturas utilizamos <code>abbr</code></p>
+	<pre><code>
+	&lt;p&gt;We use &lt;abbr title=&quot;Hypertext Markup Language&quot;&gt;HTML&lt;/abbr&gt; to structure our web documents.&lt;/p&gt;
+	&lt;p&gt;I think &lt;abbr title=&quot;Reverend&quot;&gt;Rev.&lt;/abbr&gt; Green did it in the kitchen with the chainsaw.&lt;/p&gt;	
+	</code></pre>
+	<p>Para los detalles sobre quien escribió la página web <code>address</code> es el elemento</p>
+	<pre><code>
+	&lt;address&gt;
+ 	 &lt;p&gt;Page written by &lt;a href=&quot;../authors/chris-mills/&quot;&gt;Chris Mills&lt;/a&gt;.&lt;/p&gt;
+	&lt;/address&gt;
+	</code></pre>
+	<p>Para represntar Subscript y Superscript nada como <code>sup</code> y<code>sub</code>.</p>
+	<p>Si queremos mostar códigos de ordenador utlizaremos</p>
+	<ul>
+	    <li><code>&lt;code&gt;</code>: For marking up generic pieces of computer code.</li>
+	    <li><code>&lt;pre&gt;</code>: For retaining whitespace (generally code blocks) — if you use indentation or excess whitespace inside your text, browsers will ignore it and you will not see it on your rendered page. If you wrap the text in <code>&lt;pre&gt;&lt;/pre&gt;</code> tags however, your whitespace will be rendered identically to how you see it in your text editor.</li>
+	    <li><code>&lt;var&gt;</code>: For specifically marking up variable names.</li>
+	    <li><code>&lt;kbd&gt;</code>: For marking up keyboard (and other types of) input entered into the computer.</li>
+	    <li><code>&lt;samp&gt;</code>: For marking up the output of a computer program.</li>
+    </ul>
+	<p>Cuando añadimos una fecha conviene formatearla con la etiqueta <code>&lt;time&gt;</code></p>
+	<pre><code>
+	&lt;time datetime=&quot;2016-01-20T19:30&quot;&gt;20 January 2016, 7:30pm&lt;/time&gt;
+	</code></pre>
+	<p>Secciones básicas en un documento HTML5</p>
+	<ul>	
+    <li>Cabecera: <code>&lt;header&gt;</code>.</li>
+    <li>Barra de navegación: <code>&lt;nav&gt;</code>.</li>
+    <li>Contenido principal: <code>&lt;main&gt;</code>, Con varias subsecciones representadas por <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, y elementos <code>&lt;div&gt;</code>.</li>
+    <li>Barra lateral: <code>&lt;aside&gt;</code>; a menudo colocada en el <code>&lt;main&gt;</code>.</li>
+    <li>Pié: <code>&lt;footer&gt;</code>.</li>
+	</ul>
+	<p>El documento iría estructurado de la siguiente forma:</p>
+	<pre><code>
+	&lt;html&gt;
+	&lt;head&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;header&gt;
+		&lt;/header&gt;
+		&lt;nav&gt;
+		&lt;/nav&gt;
+		&lt;main&gt;
+			&lt;article&gt;&lt;/article&gt;
+			&lt;aside&gt;&lt;/aside&gt;
+		&lt;/main&gt;
+		&lt;footer&gt;
+		&lt;/footer&gt;
+	&lt;/body&gt;	
+	&lt;/html&gt;	
+	</code></pre>
+	<p>Para secciones específicas donde no está claro que poner, usaremos <code>&lt;div&gt; y &lt;span&gt;</code> 
+	</p>
+	<p>Crearemos saltos de página con la etiqueta <code>&lt;br&gt;</code> y líneas de división que denotan un cambio de temática con <code>&lt;hr&gt;</code></p>
+	<hr>
+	
 </body>
 </html>
