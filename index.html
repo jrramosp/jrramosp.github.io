@@ -12,7 +12,7 @@
 <body>
 	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
 	<h2> Apuntes tomados de la web de MDN. 1ª Parte</h2>
-	<p><a href="segunda.html">Parte 2 >></a></p>
+	<p><a href="segunda.html">Parte 2 &gt;&gt;</a></p>
 	<p>Ir a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Elementos en línea</a> en MDN</p>
 	<p>Ir a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Elementos en bloque</a> en MDN</p>
 	<p>Estructura básica de una página web</p>	
@@ -20,7 +20,7 @@
 	&lt;!DOCTYPE html&gt;
 	&lt;html lang="es"&gt;
 	  &lt;head&gt;
-	    &lt;meta charset=&quot;utf-8&quot;&gt;
+	    &lt;meta charset="utf-8"&gt;
 	    &lt;title&gt;My test page&lt;/title&gt;
 	  &lt;/head&gt;
 	  &lt;body&gt;
@@ -42,7 +42,7 @@
 		<td>&amp;gt;</td>
 	</tr>
 	<tr>
-		<td>&quot;</td>
+		<td>"</td>
 		<td>&amp;quot;</td>
 	</tr>
 	<tr>
@@ -58,20 +58,20 @@
 	<p>Estructura de la cabecera</p>
 	<pre><code>
 	  &lt;head lang="es"&gt;
-	    &lt;meta charset=&quot;utf-8&quot;&gt;
+	    &lt;meta charset="utf-8"&gt;
 	    &lt;title&gt;My test page&lt;/title&gt;
 	  &lt;/head&gt;
 	</code></pre>
 	<p>Añadiendo autor y descripción</p>
 	<pre><code>
-	&lt;meta name=&quot;author&quot; content=&quot;Juan Ram&oacute;n&quot;&gt;
-	&lt;meta name=&quot;description&quot; content=&quot;Aqu&iacute; se pone la descripci&oacute;n de la p&aacute;gina web para que aparezca en los buscadores&quot;&gt;
+	&lt;meta name="author" content="Juan Ram&oacute;n"&gt;
+	&lt;meta name="description" content="Aqu&iacute; se pone la descripci&oacute;n de la p&aacute;gina web para que aparezca en los buscadores"&gt;
 	</code></pre>
 	<p>Añadiendo un icono a la página(favicon), un enlace a un estilo CSS y un enlace a un script</p>
 	<pre><code>
-	&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
-	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+	&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;
+	&lt;link rel="stylesheet" href="css/style.css"&gt;
+	&lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
 	</code></pre>
 	<p>Para estructurar los documentos debeos utilizar los elemento HEADING: <code>h1,h2,h3,h4,h5,h6</code></p>
 	<p>Usar listas, tanto numerales como listas abstractas </p>
@@ -97,56 +97,56 @@
 	&lt;/dl&gt;
 	</code></pre>
 	<p>Los enlaces deben contener descripciones lógicas (no un "Haz click aquí"), y son:</p>
-	<pre><code>&lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;the Mozilla homepage&lt;/a&gt;.</code></pre>
+	<pre><code>&lt;a href="https://www.mozilla.org/en-US/"&gt;the Mozilla homepage&lt;/a&gt;.</code></pre>
 	<p>Se puede añadir el atributo download para enlaces de ficheros o recursos</p>
 	<pre><code>
-	&lt;a href=&quot;https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US&quot;
-		download=&quot;firefox-latest-64bit-installer.exe&quot;&gt;
+	&lt;a href="https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US"
+		download="firefox-latest-64bit-installer.exe"&gt;
 	Download Latest Firefox for Windows (64-bit) (English, US)&lt;/a&gt;	
 	</code></pre>
 	<p>También podemos enlazar a un envío de correo</p>
 	<pre><code>
-	&lt;a href=&quot;mailto:nobody@mozilla.org?subject=Correo&quot;&gt;&lt;/a&gt;
+	&lt;a href="mailto:nobody@mozilla.org?subject=Correo"&gt;&lt;/a&gt;
 	</code></pre>
 	<p>Si queremos hacer enlaces a determinadas partes del documento primero se define la parte a enlazar con el atributo <code>&lt;id&gt;</code></p>
 	<pre><code>
-	&lt;h2 id=&quot;Mailing_address&quot;&gt;Mailing address&lt;/h2&gt;
+	&lt;h2 id="Mailing_address"&gt;Mailing address&lt;/h2&gt;
 	</code></pre>
 	<p>Depués el enlace en cuestión se hara a la descripción del anterior <code>&lt;id&gt;</code></p>
 	<pre><code>
-	&lt;p&gt;The &lt;a href=&quot;#Mailing_address&quot;&gt;company mailing address&lt;/a&gt; can be found at the bottom of this page.&lt;/p&gt;
+	&lt;p&gt;The &lt;a href="#Mailing_address"&gt;company mailing address&lt;/a&gt; can be found at the bottom of this page.&lt;/p&gt;
 	</code></pre>
 	<p>O bien a un documento específico al que haremos referencia en el enlace</p>
 	<pre><code>
-	&lt;p&gt;Want to write us a letter? Use our &lt;a href=&quot;contacts.html#Mailing_address&quot;&gt;mailing address&lt;/a&gt;.&lt;/p&gt;
+	&lt;p&gt;Want to write us a letter? Use our &lt;a href="contacts.html#Mailing_address"&gt;mailing address&lt;/a&gt;.&lt;/p&gt;
 	</code></pre>	
 	<p>Si citamos en nuestro texto en un elemento bloque lo haremos con</p>
 	<pre><code>
-	&lt;blockquote cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;
+	&lt;blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote"&gt;
   	&lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;HTML Block Quotation Element&lt;/em&gt;) 
   	indicates that the enclosed text is an extended quotation.&lt;/p&gt;
 	&lt;/blockquote&gt;	
 	</code></pre>
 	<p>Si citamos en un elemento lineal lo haremos</p>
 	<pre><code>
-	&lt;p&gt;The quote element — &lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt; — is &lt;q cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q&quot;&gt;
+	&lt;p&gt;The quote element — &lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt; — is &lt;q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"&gt;
 	intended for short quotations that don&apos;t require paragraph breaks.&lt;/q&gt;&lt;/p&gt;
 	</code></pre>
 	<p>Además tenemos el elemento <code>cite</code> para remarcar la cita</p>
 	<pre><code>
-	&lt;p&gt;According to the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;
+	&lt;p&gt;According to the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote"&gt;
 	&lt;cite&gt;MDN blockquote page&lt;/cite&gt;&lt;/a&gt;:
 	&lt;/p&gt;
 	</code></pre>
 	<p>Para las abreviaturas utilizamos <code>abbr</code></p>
 	<pre><code>
-	&lt;p&gt;We use &lt;abbr title=&quot;Hypertext Markup Language&quot;&gt;HTML&lt;/abbr&gt; to structure our web documents.&lt;/p&gt;
-	&lt;p&gt;I think &lt;abbr title=&quot;Reverend&quot;&gt;Rev.&lt;/abbr&gt; Green did it in the kitchen with the chainsaw.&lt;/p&gt;	
+	&lt;p&gt;We use &lt;abbr title="Hypertext Markup Language"&gt;HTML&lt;/abbr&gt; to structure our web documents.&lt;/p&gt;
+	&lt;p&gt;I think &lt;abbr title="Reverend"&gt;Rev.&lt;/abbr&gt; Green did it in the kitchen with the chainsaw.&lt;/p&gt;	
 	</code></pre>
 	<p>Para los detalles sobre quien escribió la página web <code>address</code> es el elemento</p>
 	<pre><code>
 	&lt;address&gt;
- 	 &lt;p&gt;Page written by &lt;a href=&quot;../authors/chris-mills/&quot;&gt;Chris Mills&lt;/a&gt;.&lt;/p&gt;
+ 	 &lt;p&gt;Page written by &lt;a href="../authors/chris-mills/"&gt;Chris Mills&lt;/a&gt;.&lt;/p&gt;
 	&lt;/address&gt;
 	</code></pre>
 	<p>Para represntar Subscript y Superscript nada como <code>sup</code> y<code>sub</code>.</p>
@@ -160,7 +160,7 @@
     </ul>
 	<p>Cuando añadimos una fecha conviene formatearla con la etiqueta <code>&lt;time&gt;</code></p>
 	<pre><code>
-	&lt;time datetime=&quot;2016-01-20T19:30&quot;&gt;20 January 2016, 7:30pm&lt;/time&gt;
+	&lt;time datetime="2016-01-20T19:30"&gt;20 January 2016, 7:30pm&lt;/time&gt;
 	</code></pre>
 	<p>Secciones básicas en un documento HTML5</p>
 	<ul>	

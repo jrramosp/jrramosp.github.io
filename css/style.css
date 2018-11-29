@@ -19,3 +19,7 @@ td{
 	table-layout: auto;
 	width: auto;
 }
+h1{
+	font-style: italic;
+	color: #248;
+}

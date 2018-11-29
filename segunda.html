@@ -12,7 +12,8 @@
 <body>
 	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
 	<h2> Apuntes tomados de la web de MDN. 2ª Parte</h2>
-	<p>Para poner imágenes en la web usaremos <code>img</code>. Es bueno usar los atributos de altura y anchura para que en la carga de la página se coloque cada cosa en su sitio. Además podemos añadir el atributo de título para que se visualice al pasar el ratón por encima</p>
+	<p><a href="index.html">&lt;&lt; Parte 1 </a></p>
+	<p>Para poner imágenes en la web usaremos <code>img</code>. Es bueno usar los atributos de altura y anchura para que en la carga de la página se coloque cada cosa en su sitio. Además podemos añadir el atributo de <code>title</code> para que se visualice al pasar el ratón por encima</p>
 	<pre><code>&lt;img src="images/dinosaur.jpg" alt="Texto alternativo" width="200" height="200" title="Dinosaurio"&gt;</code></pre>
 	<p>Pero en lugar de título, lo más correcto es usar la etiqueta <code>figure</code> y <code>figcaption</code></p>
 	<pre><code>
@@ -64,10 +65,10 @@
 	<p>Podemos añadir imagenes SVG con la etiqueta <code>img</code></p>
 	<pre><code>
 	&lt;img 
-    src="equilateral.svg" 
-    alt="triangle with all three sides equal"
-    height="87px"
-    width="100px" /&gt;
+	    src="equilateral.svg" 
+	    alt="triangle with all three sides equal"
+	    height="87px"
+	    width="100px" /&gt;
 	</code></pre>
 	<p>A nivel compatibilidad podemos añadir el atributo <code>srcset</code></p>
 	<pre><code>
@@ -75,22 +76,22 @@
 	</code></pre>
 	<p>Para enlazar imagenes que respondan a los tipos de tamaño de navegadores. Usaremos dos atributos para ello <code>srcset</code> y <code>sizes</code></p>
 	<pre><code>
-	 &lt;img srcset=&quot;elva-fairy-320w.jpg 320w,
+	 &lt;img srcset="elva-fairy-320w.jpg 320w,
              elva-fairy-480w.jpg 480w,
-             elva-fairy-800w.jpg 800w&quot;
-     sizes=&quot;(max-width: 320px) 280px,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
-            800px&quot;
-     src=&quot;elva-fairy-800w.jpg&quot; alt=&quot;Elva dressed as a fairy&quot;&gt;
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy"&gt;
 	</code></pre>
-	<p>Otra forma es atender a los diferentes tamaños por resolución escogiendo la relacción</p>
+	<p>Otra forma es atender a los diferentes tamaños por resolución escogiendo la relacción que tiene la pantalla</p>
 	<pre><code>
-	&lt;img srcset=&quot;elva-fairy-320w.jpg,
+	&lt;img srcset="elva-fairy-320w.jpg,
              elva-fairy-480w.jpg 1.5x,
-             elva-fairy-640w.jpg 2x&quot;
-     src=&quot;elva-fairy-640w.jpg&quot; alt=&quot;Elva dressed as a fairy&quot;&gt;
+             elva-fairy-640w.jpg 2x"
+     src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy"&gt;
 	</code></pre>
-	<p>Otro acercamiento que podemos tener a esta opción es con la etiqueta <code>picture</code></p>
+	<p>Otro acercamiento que podemos tener a esta opción es con la etiqueta <code>picture</code> y en su interior la etiqueta <code>source</code></p>
 	<pre><code>
 	&lt;picture&gt;
 	 &lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg"&gt;
