@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Apuntes de HTML</title>
+	<meta name="author" content="Nani" >
+	<meta name="description" content="Es una 3ª página de apuntes sobre HTML"> 
+	<link rel="shorcut icon" href="favicon.ico" type="image/x-icon" />
+	<link href="css/style.css" rel="stylesheet">
+	
+</head>
+<body>
+	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
+	<h2> Apuntes tomados de la web de MDN. 3ª Parte</h2>
+	<p><a href="segunda.html">&lt;&lt; Parte 2 </a></p>
+	<p>Las tablas en HTML deben ser usadas de forma muy específica para mostrar datos ordenados. Así para introducir una tabla en nuestra página usaremos la siguiente estructura; <code>table</code> abre la tabla.<code>tr</code> indica la primera fila y <code>td</code> donde se añaden los datos de las celdas. Si los datos son cabecera de fila o columna podemos indicarlo con <code>th</code>.</p>
+	<pre><code>
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;/th&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+	</code></pre>
+	<p>Si queremos que nuestras celdas ocupen varias celdas usaremos <code>colspan</code> o <code>rowspan</code>.</p>
+	<p>La etiqueta <code>colgroup</code> y <code>col</code> especifican un grupo o más de columnas en una tabla para darle estilos.</p>
+	<pre><code>
+	&lt;table&gt;
+	  &lt;colgroup&gt;
+	    &lt;col&gt;
+	    &lt;col style="background-color: yellow" span="2"&gt;
+	  &lt;/colgroup&gt;
+	  &lt;tr&gt;...
+	</code></pre>
+	<p>Si queremos especificar más de una columna usaremos el atributo <code>span</code></p>
+	<p>También podemos añadir un título a la tabla con la etiqueta<code>caption</code>.</p>
+	<pre><code>
+	&lt;table&gt;
+	  &lt;caption&gt;Dinosaurs in the Jurassic period&lt;/caption&gt;
+	
+	  ...
+	&lt;/table&gt;
+	</code></pre>
+	<p>Otra parte importante de la tabla es estructurar los datos con las etiquetas <code>thead</code>, <code>tbody</code> y <code>tfoot</code>. Las etiquetas son por si mismas muy explicativas de las partes a las que corresponden en la tablas.</p>
+	<pre><code>
+	&lt;table&gt;
+		&lt;thead&gt;
+			&lt;th&gt;Cabecera&lt;/th&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;td&gt;Valor 1&lt;/td&gt;
+			&lt;td&gt;Valor 2&lt;/td&gt;
+		&lt;/tbody&gt;
+		&lt;tfoot&gt;
+			&lt;td&gt;Pi&eacute; de tabla&lt;/td&gt;
+		&lt;/tfoot&gt;
+	&lt;/table&gt;
+	</code></pre>
+	<p>Con el fin de ayudar a los usuarios que utilizan lectores de pantallas se deben añadir una serie de etiquetas que hagan indicaciones de los datos a los que se está accediendo. Para ello añadiremos el atributo <code>scope</code> a las etiquetas <code>th</code> indicando así la funcion que cumple en la tabla.</p>
+	<p><code>scope = "row"</code> para indicar que es cabecera de una fila o <code>scope = "col"</code> si es para indicar una cabecera de columna. Además tiene otros dos valores si indican cabeceras sobre grupos de filas o columnas. Estos valores son <code>scope = "colgroup"</code> y <code>scope = "rowgroup"</code>.</p>
+	<p>Hay una forma alternativa para identificar las celdas con el atributo <code>id</code> y el atributo <code>headers</code>. Primero identificaremos cada <code>th</code> con un único <code>id</code>. Depués pondremos en cada <code>td</code> el atributo <code>headers</code> con los valores de cada <code>th</code> que coincidan con esa celda.</p>
+	<pre><code>
+	&lt;thead&gt;
+	  &lt;tr&gt;
+	    &lt;th id="purchase"&gt;Purchase&lt;/th&gt;
+	    &lt;th id="location"&gt;Location&lt;/th&gt;
+	    &lt;th id="date"&gt;Date&lt;/th&gt;
+	    &lt;th id="evaluation"&gt;Evaluation&lt;/th&gt;
+	    &lt;th id="cost"&gt;Cost (€)&lt;/th&gt;
+	  &lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+	  &lt;th id="haircut"&gt;Haircut&lt;/th&gt;
+	  &lt;td headers="location haircut"&gt;Hairdresser&lt;/td&gt;
+	  &lt;td headers="date haircut"&gt;12/09&lt;/td&gt;
+	  &lt;td headers="evaluation haircut"&gt;Great idea&lt;/td&gt;
+	  &lt;td headers="cost haircut"&gt;30&lt;/td&gt;
+	&lt;/tr&gt;
+	
+	  ...
+	
+	&lt;/tbody&gt;
+	</code></pre>
+</body>
+</html>
