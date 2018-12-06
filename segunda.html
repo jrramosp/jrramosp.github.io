@@ -1,111 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Apuntes de HTML</title>
-	<meta name="author" content="Nani" >
-	<meta name="description" content="Es una 2ª página de apuntes sobre HTML"> 
-	<link rel="shorcut icon" href="favicon.ico" type="image/x-icon" />
-	<link href="css/style.css" rel="stylesheet">
-	
+  <meta name="generator" content="Bluefish 2.2.10" >
+  <meta charset="utf-8">
+  <title>Apuntes de HTML</title>
+  <meta name="author" content="Nani" >
+  <meta name="description" content="Es una 2ª página de apuntes sobre HTML">
+  <link rel="shorcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
-	<h2> Apuntes tomados de la web de MDN. 2ª Parte</h2>
-	<p><a href="index.html">&lt;&lt; Parte 1 </a>-<a href="tercera.html"> Parte 3 &gt;&gt; </a></p>
-	<p>Para poner imágenes en la web usaremos <code>img</code>. Es bueno usar los atributos de altura y anchura para que en la carga de la página se coloque cada cosa en su sitio. Además podemos añadir el atributo de <code>title</code> para que se visualice al pasar el ratón por encima</p>
-	<pre><code>&lt;img src="images/dinosaur.jpg" alt="Texto alternativo" width="200" height="200" title="Dinosaurio"&gt;</code></pre>
-	<p>Pero en lugar de título, lo más correcto es usar la etiqueta <code>figure</code> y <code>figcaption</code></p>
-	<pre><code>
-	&lt;figure&gt;
-	  &lt;img src="images/dinosaur.jpg"
-	       alt="The head and torso of a dinosaur skeleton;
-	            it has a large head with long sharp teeth"
-	       width="400"
-	       height="341"&gt;
-	
-	  &lt;figcaption&gt;A T-Rex on display in the Manchester University Museum.&lt;/figcaption&gt;
-	&lt;/figure&gt;
-	</code></pre>
-	<p>Si queremos añadir video o audio usaremos sus respectivas etiquetas. Además daremos diferentes formatos para conseguir mayor compatibilidad.</p>
-	<pre><code>
-	&lt;video controls width="400" height="400" autoplay loop muted poster="poster.png"&gt;
-	  &lt;source src="rabbit320.mp4" type="video/mp4"&gt;
-	  &lt;source src="rabbit320.webm" type="video/webm"&gt;
-	  &lt;track kind="subtitles" src="subtitles_en.vtt" srclang="en"&gt;
-	  &lt;p&gt;Your browser doesn&apos;t support HTML5 video. Here is a &lt;a href="rabbit320.mp4"&gt;link to the video&lt;/a&gt; instead.&lt;/p&gt;
-	&lt;/video&gt;
-	</code></pre>
-	<p>El caso del audio es similar</p>
-	<pre><code>
-	&lt;audio controls&gt;
-	  &lt;source src="viper.mp3" type="audio/mp3"&gt;
-	  &lt;source src="viper.ogg" type="audio/ogg"&gt;
-	  &lt;p&gt;Your browser doesn&apos;t support HTML5 audio. Here is a &lt;a href="viper.mp3"&gt;link to the audio&lt;/a&gt; instead.&lt;/p&gt;
-	&lt;/audio&gt;
-	</code></pre>
-	<p>Podemos incrustar páginas en nuestra web con la etiqueta<code>iframe</code></p>
-	<pre><code>
-	&lt;iframe src="https://developer.mozilla.org/en-US/docs/Glossary"
+  <h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
+  <h2>Apuntes tomados de la web de MDN. 2ª Parte</h2>
+  <p><a href="index.html">&lt;&lt; Parte 1ª</a> -<a href="tercera.html">Parte 3ª &gt;&gt;</a></p>
+  <p>Para poner imágenes en la web usaremos <code>img</code>. Es bueno usar los atributos de altura y anchura para que
+  en la carga de la página se coloque cada cosa en su sitio. Además podemos añadir el atributo de <code>title</code>
+  para que se visualice al pasar el ratón por encima</p>
+  <pre>
+  <code>&lt;img src="images/dinosaur.jpg" alt="Texto alternativo" width="200" height="200" title="Dinosaurio"&gt;</code></pre>
+  <p>Pero en lugar de título, lo más correcto es usar la etiqueta <code>figure</code> y <code>figcaption</code></p>
+  <pre><code>
+        &lt;figure&gt;
+          &lt;img src="images/dinosaur.jpg"
+               alt="The head and torso of a dinosaur skeleton;
+                    it has a large head with long sharp teeth"
+               width="400"
+               height="341"&gt;
+        
+          &lt;figcaption&gt;A T-Rex on display in the Manchester University Museum.&lt;/figcaption&gt;
+        &lt;/figure&gt;
+        </code></pre>
+  <p>Si queremos añadir video o audio usaremos sus respectivas etiquetas. Además daremos diferentes formatos para
+  conseguir mayor compatibilidad.</p>
+  <pre><code>
+        &lt;video controls width="400" height="400" autoplay loop muted poster="poster.png"&gt;
+          &lt;source src="rabbit320.mp4" type="video/mp4"&gt;
+          &lt;source src="rabbit320.webm" type="video/webm"&gt;
+          &lt;track kind="subtitles" src="subtitles_en.vtt" srclang="en"&gt;
+          &lt;p&gt;Your browser doesn't support HTML5 video. Here is a &lt;a href="rabbit320.mp4"&gt;link to the video&lt;/a&gt; instead.&lt;/p&gt;
+        &lt;/video&gt;
+        </code></pre>
+  <p>El caso del audio es similar</p>
+  <pre><code>
+        &lt;audio controls&gt;
+          &lt;source src="viper.mp3" type="audio/mp3"&gt;
+          &lt;source src="viper.ogg" type="audio/ogg"&gt;
+          &lt;p&gt;Your browser doesn't support HTML5 audio. Here is a &lt;a href="viper.mp3"&gt;link to the audio&lt;/a&gt; instead.&lt;/p&gt;
+        &lt;/audio&gt;
+        </code></pre>
+  <p>Podemos incrustar páginas en nuestra web con la etiqueta<code>iframe</code></p>
+  <pre><code>
+        &lt;iframe src="https://developer.mozilla.org/en-US/docs/Glossary"
         width="100%" height="500" frameborder="0" allowfullscreen sandbox&gt;
-	  &lt;p&gt; &lt;a href="https://developer.mozilla.org/en-US/docs/Glossary"&gt;
-	    Fallback link for browsers that don&apos;t support iframes
-	  &lt;/a&gt; &lt;/p&gt;
-	&lt;/iframe&gt;
-	</code></pre>
-	<p>Además podemos incrustar otros elementos con <code>embed</code> y con <code>object</code></p>
-	<pre><code>
-	&lt;object data="mypdf.pdf" type="application/pdf" width="800" height="1200" typemustmatch&gt;
-	  &lt;p&gt;You don&apos;t have a PDF plugin, but you can &lt;a href="mypdf.pdf"&gt;download the PDF file.&lt;/a&gt;&lt;/p&gt;
-	&lt;/object&gt;
-	</code></pre>
-	<pre><code>
-	&lt;embed src="helloworld.swf"&gt; 
-	</code></pre>
-	<p>Podemos añadir imagenes SVG con la etiqueta <code>img</code></p>
-	<pre><code>
-	&lt;img 
-	    src="equilateral.svg" 
-	    alt="triangle with all three sides equal"
-	    height="87px"
-	    width="100px" /&gt;
-	</code></pre>
-	<p>A nivel compatibilidad podemos añadir el atributo <code>srcset</code></p>
-	<pre><code>
-	&lt;img src="equilateral.png" alt="triangle with equal sides" srcset="equilateral.svg"&gt;
-	</code></pre>
-	<p>Para enlazar imagenes que respondan a los tipos de tamaño de navegadores. Usaremos dos atributos para ello <code>srcset</code> y <code>sizes</code></p>
-	<pre><code>
-	 &lt;img srcset="elva-fairy-320w.jpg 320w,
+          &lt;p&gt; &lt;a href="https://developer.mozilla.org/en-US/docs/Glossary"&gt;
+            Fallback link for browsers that don't support iframes
+          &lt;/a&gt; &lt;/p&gt;
+        &lt;/iframe&gt;
+        </code></pre>
+  <p>Además podemos incrustar otros elementos con <code>embed</code> y con <code>object</code></p>
+  <pre><code>
+        &lt;object data="mypdf.pdf" type="application/pdf" width="800" height="1200" typemustmatch&gt;
+          &lt;p&gt;You don't have a PDF plugin, but you can &lt;a href="mypdf.pdf"&gt;download the PDF file.&lt;/a&gt;&lt;/p&gt;
+        &lt;/object&gt;
+        </code></pre>
+  <pre><code>
+        &lt;embed src="helloworld.swf"&gt; 
+        </code></pre>
+  <p>Podemos añadir imagenes SVG con la etiqueta <code>img</code></p>
+  <pre><code>
+        &lt;img 
+            src="equilateral.svg" 
+            alt="triangle with all three sides equal"
+            height="87px"
+            width="100px" /&gt;
+        </code></pre>
+  <p>A nivel compatibilidad podemos añadir el atributo <code>srcset</code></p>
+  <pre><code>
+        &lt;img src="equilateral.png" alt="triangle with equal sides" srcset="equilateral.svg"&gt;
+        </code></pre>
+  <p>Para enlazar imagenes que respondan a los tipos de tamaño de navegadores. Usaremos dos atributos para ello
+  <code>srcset</code> y <code>sizes</code></p>
+  <pre><code>
+         &lt;img srcset="elva-fairy-320w.jpg 320w,
              elva-fairy-480w.jpg 480w,
              elva-fairy-800w.jpg 800w"
      sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
             800px"
      src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy"&gt;
-	</code></pre>
-	<p>Otra forma es atender a los diferentes tamaños por resolución escogiendo la relacción que tiene la pantalla</p>
-	<pre><code>
-	&lt;img srcset="elva-fairy-320w.jpg,
+        </code></pre>
+  <p>Otra forma es atender a los diferentes tamaños por resolución escogiendo la relacción que tiene la pantalla</p>
+  <pre><code>
+        &lt;img srcset="elva-fairy-320w.jpg,
              elva-fairy-480w.jpg 1.5x,
              elva-fairy-640w.jpg 2x"
      src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy"&gt;
-	</code></pre>
-	<p>Otro acercamiento que podemos tener a esta opción es con la etiqueta <code>picture</code> y en su interior la etiqueta <code>source</code></p>
-	<pre><code>
-	&lt;picture&gt;
-	 &lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg"&gt;
- 	 &lt;source media="(min-width: 800px)" srcset="elva-800w.jpg"&gt;
- 	 &lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;
-	&lt;/picture&gt;
-	</code></pre>
-	<p>Esto además nos permite poner una imagen en diferentes formatos y mostrar el que mejor se adecue.</p>
-	<pre><code>
-	&lt;picture&gt;
-	  &lt;source type="image/svg+xml" srcset="pyramid.svg"&gt;
-	  &lt;source type="image/webp" srcset="pyramid.webp"&gt; 
-	  &lt;img src="pyramid.png" alt="regular pyramid built from four equilateral triangles"&gt;
-	&lt;/picture&gt;
-	</code></pre>
+        </code></pre>
+  <p>Otro acercamiento que podemos tener a esta opción es con la etiqueta <code>picture</code> y en su interior la
+  etiqueta <code>source</code></p>
+  <pre><code>
+        &lt;picture&gt;
+         &lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg"&gt;
+         &lt;source media="(min-width: 800px)" srcset="elva-800w.jpg"&gt;
+         &lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva"&gt;
+        &lt;/picture&gt;
+        </code></pre>
+  <p>Esto además nos permite poner una imagen en diferentes formatos y mostrar el que mejor se adecue.</p>
+  <pre><code>
+        &lt;picture&gt;
+          &lt;source type="image/svg+xml" srcset="pyramid.svg"&gt;
+          &lt;source type="image/webp" srcset="pyramid.webp"&gt; 
+          &lt;img src="pyramid.png" alt="regular pyramid built from four equilateral triangles"&gt;
+        &lt;/picture&gt;
+        </code></pre>
 </body>
 </html>

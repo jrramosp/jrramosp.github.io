@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="generator" content="Bluefish 2.2.10" >
+  <meta charset="utf-8">
+  <title>Apuntes de HTML</title>
+  <meta name="author" content="Nani" >
+  <meta name="description" content="Es una 4ª página de apuntes sobre HTML">
+  <link rel="shorcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Apuntes de &lt;HTML&gt; en GITHUB</h1>
+  <h2>Apuntes tomados de la web de MDN. 4ª Parte</h2>
+  <p><a href="tercera.html">&lt;&lt; Parte 3ª</a></p>
+  <p>Aquí nos ocupamos de los formularios. Para definir un formulario lo etiquetamos con <code>form</code>. Esta
+  etiqueta tiene dos atributos principales; <code>action</code> que indica donde enviamos los resultados, y
+  <code>method</code> que indica como los enviaremos.</p>
+  <pre><code>
+        &lt;form action="/my-handling-form-page" method="post"&gt;
+          &lt;div&gt;
+            &lt;label for="name"&gt;Name:&lt;/label&gt;
+            &lt;input type="text" id="name" name="user_name"&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label for="mail"&gt;E-mail:&lt;/label&gt;
+            &lt;input type="email" id="mail" name="user_mail"&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label for="msg"&gt;Message:&lt;/label&gt;
+            &lt;textarea id="msg" name="user_message"&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+        </code></pre>
+  <p>Para la tarea de organizar y estructurar los elementos del formulario usaremos dos etiquetas;
+  <code>fieldset</code> entre las que pondremos los elementos del formulario, y <code>label</code> que nos permite
+  etiquetar estos elementos. Para añadir un título al grupo creado por <code>fieldset</code> utilizamos
+  <code>legend</code>.</p>
+  <p>Un dato importante en <code>label</code> es su atributo <code>for</code> que nos permite asociarlo al atributo
+  <code>id</code> del elemento del formulario, y así hacer selecionable el texto de dicho elemento.</p>
+  <pre><code>
+        &lt;form&gt;
+          &lt;fieldset&gt;
+            &lt;legend&gt;Fruit juice size&lt;/legend&gt;
+            &lt;p&gt;
+              &lt;input type="radio" name="size" id="size_1" value="small"&gt;
+              &lt;label for="size_1"&gt;Small&lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+              &lt;input type="radio" name="size" id="size_2" value="medium"&gt;
+              &lt;label for="size_2"&gt;Medium&lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+              &lt;input type="radio" name="size" id="size_3" value="large"&gt;
+              &lt;label for="size_3"&gt;Large&lt;/label&gt;
+            &lt;/p&gt;
+          &lt;/fieldset&gt;
+        &lt;/form&gt;
+        </code></pre>
+</body>
+</html>
