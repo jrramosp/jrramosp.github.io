@@ -37,7 +37,7 @@
   etiquetar estos elementos. Para añadir un título al grupo creado por <code>fieldset</code> utilizamos
   <code>legend</code>.</p>
   <p>Un dato importante en <code>label</code> es su atributo <code>for</code> que nos permite asociarlo al atributo
-  <code>id</code> del elemento del formulario, y así hacer selecionable el texto de dicho elemento.</p>
+  <code>id</code> del elemento del formulario, y así hacer seleccionable el texto de dicho elemento.</p>
   <pre><code>
         &lt;form&gt;
           &lt;fieldset&gt;
@@ -56,6 +56,106 @@
             &lt;/p&gt;
           &lt;/fieldset&gt;
         &lt;/form&gt;
+        </code></pre>
+  <p>Los elementos de entrada en un formulario en su mayoría son incluidos con la etiqueta <code>input</code>. Estos a
+  su vez tiene una serie de atributos imprescindibles. Estos son;</p>
+  <ul>
+    <li><code>autofocus</code> que le da el foco al elemento que lo incluye.</li>
+    <li><code>disabled</code> que deshabilita el elemento.</li>
+    <li><code>name</code> que se manda con la información del formulario.</li>
+    <li><code>value</code> que le da el valor inicial al elemento.</li>
+  </ul>
+  <p>Entre los diferentes tipos de elementos de un formulario encontramos los de tipos texto. Todos con la etiqueta
+  <code>input</code> pueden llegar a tener diferentes cometidos. Hay varios atributos que determinan el comnportamiento
+  de las etiquetas;</p>
+  <ul>
+    <li><code>readonly</code> o <code>disabled</code> hace que sea de solo lectura o estar desactivado.</li>
+    <li><code>placeholder</code> que da un valor de ejemplo.</li>
+    <li><code>size</code> que le da el tamaño del elemento y <code>lenght</code> que da la cantidad de caracteres a
+    introducir.</li>
+  </ul>
+  <p>Para la entrada de texto usaremos <code>input type="text"</code></p><code>&lt;input type="text" id="comment"
+  name="comment" value="I'm a text field"&gt;</code>
+  <p>Para una entrada de correo electrónico usamos <code>input type="email"</code>. El atributo <code>multiple</code>
+  nos permite enviar varias direcciones separadas por comas.</p><code>&lt;input type="email" id="email" name="email"
+  multiple&gt;</code>
+  <p>Para un campo de contraseña utlizamos <code>input type="password"</code>. Oculta los datos que tecleamos pero solo
+  en la pantalla.</p><code>&lt;input type="password" id="pwd" name="pwd"&gt;</code>
+  <p>Si queremos poner un campo de busqueda los hacemos con <code>input type="search"</code>.</p><code>&lt;input
+  type="search" id="search" name="search"&gt;</code>
+  <p>Un campo de teléfono lo pondremos con <code>input type="tel"</code>.</p><code>&lt;input type="tel" id="tel"
+  name="tel"&gt;</code>
+  <p>Un campo para introducir una dirección URL lo hacemos con <code>input type="url"</code>.</p><code>&lt;input
+  type="url" id="url" name="url"&gt;</code>
+  <p>Los campos de texto con multiples lineas utilizan una etiqueta específica <code>textarea</code> que tiene su
+  propia etiqueta de cierre. Para poner el texto por defecto en este caso se hace entre las dos
+  etiquetas.</p><code>&lt;textarea cols="30" rows="10"&gt;Texto por defecto&lt;/textarea&gt;</code>
+  <p>Ahora veremos las listas desplegables para seleccionar uno o varios valores. La caja de selección de un solo valor
+  se etiqueta con <code>select</code> y entre la etiqueta inicial y la de cierre la etiqueta <code>option</code>. En
+  esta última podemos añadir el atributo <code>selected</code> para la opción por defecto. Además podemos agrupar
+  varias opciones con la etiqueta <code>optgroup</code>, que visualiza el atributo <code>label</code> al abrir la
+  lista. Si al elemento <code>option</code> le añadimos un atributo <code>value</code>, este contiene el valor que se
+  envía en el formulario. Si no se envía el valor contenido en la etiqueta.</p>
+  <pre><code>
+        &lt;select id="groups" name="groups"&gt;
+          &lt;optgroup label="fruits"&gt;
+            &lt;option&gt;Banana&lt;/option&gt;
+            &lt;option selected&gt;Cherry&lt;/option&gt;
+            &lt;option&gt;Lemon&lt;/option&gt;
+          &lt;/optgroup&gt;
+          &lt;optgroup label="vegetables"&gt;
+            &lt;option&gt;Carrot&lt;/option&gt;
+            &lt;option&gt;Eggplant&lt;/option&gt;
+            &lt;option&gt;Potato&lt;/option&gt;
+          &lt;/optgroup&gt;
+        &lt;/select&gt;
+        </code></pre>
+  <p>Para una lista con la opción de seleccionar varias opciones tan solo añadiremos el atributo <code>multiple</code>.
+  Estos no se muestran como un despegable, si no como una lista.</p>
+  <pre><code>
+        &lt;select multiple id="multi" name="multi"&gt;
+          &lt;option&gt;Banana&lt;/option&gt;
+          &lt;option&gt;Cherry&lt;/option&gt;
+          &lt;option&gt;Lemon&lt;/option&gt;
+        &lt;/select&gt;
+        </code></pre>
+  <p>Para crear una caja de texto que autocomplete el texto que escribimos, creamos una lista de valores con la
+  etiqueta <code>datalist</code> con un listado creada entre etiquetas <code>option</code>. Esto lo asociamos a la
+  etiqueta <code>input</code> con el atributo <code>list</code>.</p>
+  <pre><code>
+        &lt;label for="myFruit"&gt;What's your favorite fruit?&lt;/label&gt;
+        &lt;input type="text" name="myFruit" id="myFruit" list="mySuggestion"&gt;
+        &lt;datalist id="mySuggestion"&gt;
+          &lt;option&gt;Apple&lt;/option&gt;
+          &lt;option&gt;Banana&lt;/option&gt;
+          &lt;option&gt;Blackberry&lt;/option&gt;
+          &lt;option&gt;Blueberry&lt;/option&gt;
+          &lt;option&gt;Lemon&lt;/option&gt;
+          &lt;option&gt;Lychee&lt;/option&gt;
+          &lt;option&gt;Peach&lt;/option&gt;
+          &lt;option&gt;Pear&lt;/option&gt;
+        &lt;/datalist&gt;
+        </code></pre>
+  <p>Una forma de hacer que esta forma de introducir texto sea retro-compatible sería añadir la etiqueta
+  <code>select</code> dentro la la lista de valores, de forma que se muestre como desplegable en los navegadores que no
+  soportan el autocompletado.</p>
+  <pre><code>
+        &lt;label for="myFruit"&gt;What is your favorite fruit? (With fallback)&lt;/label&gt;
+        &lt;input type="text" id="myFruit" name="fruit" list="fruitList"&gt;
+            
+        &lt;datalist id="fruitList"&gt;
+          &lt;label for="suggestion"&gt;or pick a fruit&lt;/label&gt;
+          &lt;select id="suggestion" name="altFruit"&gt;
+            &lt;option&gt;Apple&lt;/option&gt;
+            &lt;option&gt;Banana&lt;/option&gt;
+            &lt;option&gt;Blackberry&lt;/option&gt;
+            &lt;option&gt;Blueberry&lt;/option&gt;
+            &lt;option&gt;Lemon&lt;/option&gt;
+            &lt;option&gt;Lychee&lt;/option&gt;
+            &lt;option&gt;Peach&lt;/option&gt;
+            &lt;option&gt;Pear&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/datalist&gt;
         </code></pre>
 </body>
 </html>
