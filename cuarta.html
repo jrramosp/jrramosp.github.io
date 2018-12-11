@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta name="generator" content="Bluefish 2.2.10" >
+  <meta name="generator" content="Bluefish 2.2.10" >
   <meta charset="utf-8">
   <title>Apuntes de HTML</title>
   <meta name="author" content="Nani" >
@@ -157,5 +158,54 @@
           &lt;/select&gt;
         &lt;/datalist&gt;
         </code></pre>
+  <p>En cuanto a elementos de tipo selección tenemos dos tipos que deben ser encuadrados en listados con las etiquetas
+  <code>fieldset</code> incluyendo además <code>legend</code> para proveer una descripción. De estos elementos tenemos
+  <code>input type="checkbox"</code> que permite seleccionar varios elementos</p>
+  <pre><code>
+          &lt;label for="carrots"&gt;Carrots&lt;/label&gt;
+          &lt;input type="checkbox" checked id="carrots" name="carrots" value="carrots"&gt;
+    </code></pre>
+  <p>Después tenemos los que permiten una única selección, que son los <code>input type="radio"</code>. Para ser
+  considerados el mismo grupo de elementos deben tener el mismo atributo <code>name</code>.</p>
+  <pre><code>
+    &lt;label for="soup"&gt;Soup&lt;/label&gt;
+    &lt;input type="radio" checked id="soup" name="meal" value="soup"&gt;
+    </code></pre>
+  <p>Tenemos además los botones que tienen diferentes funciones según sean los tipos de los mismos. Que serán
+  <code>reset</code>, <code>submit</code> y <code>button</code>. Los podremos añadir de dos modos diferentes. Con la
+  etiqueta <code>button</code> y con la etiqueta <code>input type="submit"</code>. La primera opción nos permite
+  asociarlos a código HTML, y en la segunda solo podemos poner su texto en la etiqueta <code>value</code>.</p>
+  <pre><code>
+        &lt;button type="submit"&gt;
+            This a &lt;br&gt;&lt;strong&gt;submit button&lt;/strong&gt;
+        &lt;/button&gt;
+        
+        &lt;input type="submit" value="This is a submit button"&gt;
+    </code></pre>
+  <p>Otros elementos avanzados de selectores de datos son los de número <code>input type="number"</code>, que con sus
+  atributos <code>max</code>,<code>min</code> y <code>step</code>, nos permiten definir rangos de
+  entrada.</p><code>&lt;input type="number" name="age" id="age" min="1" max="10" step="2"&gt;</code>
+  <p>Tenemos los de tipo selector deslizable <code>input type="range"</code> que no muestran su valor si no se añade
+  código Javascript.</p><code>&lt;input type="range" name="beans" id="beans" min="0" max="500" step="10"&gt;</code>
+  <p>Para selectores de fecha y hora hay cuatro tipos:</p>
+  <ul>
+    <li><code>input type="datetime-local"</code> fecha con hora</li>
+    <li><code>input type="month"</code> mes</li>
+    <li><code>input type="time"</code> hora</li>
+    <li><code>input type="week"</code> semana y año.</li>
+  </ul>
+  <p>Para seleccionar un color <code>input type="color"</code></p>
+  <p>Para seleccionar ficheros <code>input type="file"</code>. Los tipos de ficheros admitidos los especificamos con el
+  atributo <code>accept</code>, y si son más de un fichero con <code>multiple</code>.</p>
+  <p>A veces es necesario tener campos ocultos al usuario que añadimos con <code>input type="hidden"</code>.</p>
+  <p>También tenemos los botones imágenes que permiten enviar un formulario o las coordenadas de la imagen sobre la que
+  se pulso. Tienen los atributos de una imagen pues se comportan como tal.</p><code>&lt;input type="image" alt="Click
+  me!" src="my-img.png" width="80" height="30" /&gt;</code>
+  <p>Podemos añadir barras de progreso con la etiqueta;</p><code>&lt;progress max="100"
+  value="75"&gt;75/100&lt;/progress&gt;</code>
+  <p>Contamos con otro indicador de progeso que en sus atributos <code>low</code> y <code>high</code> determina los
+  rangos de el valor. Combinados con el atributo <code>optimum</code> se define si el valor a mostrar es el mejor o
+  peor.(Si el valor óptimo es bajo: mejor es menos, y si es alto: mejor es más)</p><code>&lt;meter min="0" max="100"
+  value="75" low="33" high="66" optimum="50"&gt;75&lt;/meter&gt;</code>
 </body>
 </html>
