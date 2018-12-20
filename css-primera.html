@@ -165,7 +165,7 @@
     </ul>
     <li>Pseudo-clases: Seleccionan los elementos por el estado en que se encuentran, cómo haber aparecido al pasar el
     ratón, o el tic deshabilitado o seleccionado, o por ser el primer hijo de su padre en el árbol DOM.</li>
-    <p>Una pseudo-clase CSS consta de una clave precedida de dos puntos (:) que añadiremos al final del selector para indicar que daremos estilo a los elementos seleccionados solo cuando estos se encuentren en un estado determinado.</p>
+    <p>Una pseudo-clase CSS consta de una clave precedida de dos puntos (<code>:</code>) que añadiremos al final del selector para indicar que daremos estilo a los elementos seleccionados solo cuando estos se encuentren en un estado determinado.</p>
     <pre><code>
       /* Resaltar el enlace cuando el ratón está
        sobre el enlace (ratón), cuando está activo
@@ -180,7 +180,7 @@
     </code></pre>
     <li>Pseudo-elementos: Selecciona los elementos por su situación en relación a otro elemento, por ejemplo: la
     primera palabra de cada párrafo, o el contenido que se encuentra justo después de un elemento.</li>
-    <p>Los pseudo-elementos son parecidos a las pseudo-clases, con alguna diferencia. Estos son claves — ahora precedidas por (::) — que se añaden al final del selector para elegir cierta parte de un elemento.</p>
+    <p>Los pseudo-elementos son parecidos a las pseudo-clases, con alguna diferencia. Estos son claves — ahora precedidas por (<code>::</code>) — que se añaden al final del selector para elegir cierta parte de un elemento.</p>
     <pre><code>
       /* Todos los elementos con el atributo "href", cuyos valores
       empiezan por "http", se añadirá una flecha después de su contenido
@@ -193,11 +193,89 @@
     <li>Combinaciones: No son en sí mismos selectores, sino formas de combinar dos o más selectores de forma práctica
     para una selección especial. Por ejemplo, se pueden seleccionar párrafos que sean descendientes de divs, o párrafos
     situados justo después de títulos.</li>
-
+    <br>
+    <ul>
+      <li><code>A, B</code>  Cualquier elemento seleccionado por A y/o B (ver Varios selectores en una regla, más adelante).</li>
+      <li><code>A B</code>   Cualquier elemento seleccionado por B descendiente de un elemento seleccionado por A (o sea, un hijo, un hijo de otro hijo, etc.).</li>
+      <li><code>A > B</code>   Cualquier elemento seleccionado por B y es hijo directo de un elemento seleccionado por A.</li>
+      <li><code>A + B</code>   Cualquier elemento seleccionado por B y es el siguiente hermano de un elemento seleccionado por A (o sea, el siguiente hijo del mismo padre).</li>
+      <li><code>A ~ B</code>   Cualquier elemento seleccionado por B y es uno de los siguientes hermanos del elemento seleccionado por A (uno de los siguientes hermanos del mismo padre).</li>
+    </ul>
+    <br>
     <li>Selectores múltiples: Tampoco son selectores en sí mismos; podemos agrupar múltiples selectores en la misma
     regla CSS separados por comas, para aplicarlos a una de las declaraciones o a todos los elementos seleccionados por
     estos selectores.</li>
-
+    <pre><code>
+      h1, h2, h3, h4{
+      color:blue
+    }
+    </code></pre>
   </ul>
+  <p>En cuanto a la unidades de medida y los valores de ciertas propiedades tenemos:</p>
+  <ul>
+    <li>Valores numéricos: Valores de longitud para expresar el ancho de elementos, de bordes, o tamaño de fuentes; también enteros sin unidades para expresar anchos de línea o veces que se repite una animación.</li>
+    <p>Como unidades absolutas:</p>
+    <ul>
+    <li>píxeles (px) como unidades absolutas pues siempre tienen el mismo tamaño independientemente de cualquier otra medida.</li>
+    <li>mm, cm, in: Milímetros, centímetros, o pulgadas.</li>
+    <li>pt, pc: Puntos (1/72 de una pulgada) or picas (12 puntos.)</li>
+    </ul>
+    <p>Como unidades relativas:</p>
+    <ul>
+    <li>em: 1em es el tamaño de fuente del elemento actual (es el ancho de la letra M mayúscula). El tamaño de fuente por defecto que los navegadores usan antes de aplicar CSS es de 16 píxeles, lo que significa que este es el valor asignado por defecto a un elemento (1em). Ojo — los tamaños de fuente de los elementos se heredan de los padres, por lo que si a los padres se les aplica otros tamaños de fuente, la equivalencia en pixel de un em puede complicarse.</li>
+    <li>ex, ch: Son respectivamente la altura de la x minúscula, y el ancho del número 0. Aunque no son tan soportadas por los navegadores como los ems.</li>
+    <li>rem: (em raiz) funciona igual que em, excepto que esta siempre igualará el tamaño del tamaño de fuente por defecto; los tamaños de fuente heredados no afectan, por lo que parece mejor solución que ems, rem no funciona en versiones antiguas de Internet Explorer (ver navegadores soportados en Depurando CSS.)</li>
+    <li>vw, vh: Estas son respectivamente 1/100 del ancho de la ventana, y 1/100 de la altura de la ventana. Tampoco son tan soportadas como los rems.</li>
+    </ul>
+    <li>Porcentajes: Se usan para expresar tamaño o longitud — relativos por ejemplo al ancho y alto del contenedor previo o al tamaño de fuente predeterminado.</li>
+    <li>Colores: Para expresar colores de fondo, de texto, etc.</li>
+    <ul>
+        <li>Palabras clave: red, blue, aqua ...</li>
+        <li>Valores Hexadecimales: Cada valor hex está compuesto por una almohadilla (#) seguida por seis números hexadecimales, cada uno de los cuales puede estar comprendido entre el 0 y la f (que representa el 15) — 0123456789abcdef (16 símbolos). Cada par de valores representa uno de los canales primarios — rojo, verde y azul — y nos permite referenciar cualquiera de los 256 valores disponibles para cada uno (16 x 16 = 256). </li>
+        <li>Valores RGB: Un valor RGB es una función — rgb() — a la que pasamos tres parámetros que representas los colores primarios rojo, verde y azul, parecido al sistema hex. La diferencia radica en que, en lugar de representar cada canal por un par de números, ahora lo hacemos simplemente por un número decimal entre el 0 y el 255.</li>
+        <li>Valores HSL:  en vez de valores rojo, verde y azul, la función hsl() admite los valores tono(hue), saturación y brillo (lightness), para referenciar 16,7 millones de colores, pero de forma diferente:</li>
+        <ul>
+          <li>hue (tono): Es el color básico. Toma un valor entre 0-360, como los ángulos de una rueda de color.</li>
+          <li>saturación: ¿Cómo está el color de saturado? Con valores entre 0 y 100%, en 0 no hay color (aparece como una sombra gris), y 100% es la saturación total del color.</li>
+          <li>lightness (brillo): Representa la claridad del color. Toma valores entre 0 y 100%, donde 0 es la ausencia de luz (completamente negro) y 100% es el brillo total (completamente blanco).</li>
+        </ul>
+        <li>Valores RGBA y HSLA: RGB y HSL tienen sus correspondientes modos — RGBA and HSLA — que nos permiten representar, no solo el color, sino también la transparencia a representar. Sus funciones correspondientes toman los mismos parámetros, más un cuarto valor entre 0–1 — que establece la transparencia, o el llamado canal alfa. 0 es totalmente transparente y 1 completamente opaco.</li>
+        <li> Propiedad <code>opacity</code>: Existe otra forma de especificar la transparencia vía CSS — la propiedad <code>opacity</code>. En lugar de fijar la transparencia de un determinado color, aquí fijamos la transparencia de todos los elementos seleccionados y sus hijos. </li>
+      </ul>
+    <li>Coordenadas: Para expresar la posición relativa de un elemento desde, por ejemplo, el margen superior izquierdo de la pantalla.</li>
+    <li>Funciones: Para expresar imágenes de fondo o el degradado de la imagen de fondo.</li>
+    <pre><code>
+      /* calcular la nueva posición de un elemento después de que ha sido rotado 45 grados */
+      transform: rotate(45deg);
+      /* calcular la nueva posición de un elemento después de que han sido movidos horizontalmente 50px y
+      hacia bajo 60px */
+      transform: translate(50px, 60px);
+      /* calcular el valor del 90% de la anchura actual menos 15px */
+      width: calc(90%-15px);
+      /* obtener una imagen de la red para utilizarla como imagen de fondo */
+      background-image: url('myimage.png');
+    </code></pre>
+  </ul>
+  <p>CSS (Cascading Style Sheets) ya nos indica que cascada es un concepto importante. A su nivel más básico indica que el orden de las reglas CSS importa, pero es algo más que eso. Que prevalezcan unos selectores sobre otros en la cascada depende de tres factores (en orden de importancia — los primeros prevalecen sobre los últimos):</p>  
+  <ol>
+    <li><strong>Importancia.</strong> En CSS, hay un trozo de sintaxis que podemos usar para asegurarnos que una determinada regla siempre "gane" sobre todas las demás: <code>!important</code>.</li>
+    <li><strong>Especificidad.</strong>La especificidad que tiene un selector se mide mediante 4 valores (o componentes) diferentes, podemos pensar en ellos como en 4 columnas de unidades de millar, centenas, decenas y unidades:
+    <ol>
+    <li>Unidades de millar: Puntúa 1 en esta columna si la declaración está dentro de un atributo style (como las declaraciones que no tienen selectores, que su especificidad es siempre 1000). Sino puntúa 0.</li>
+    <li>Centenas: Puntúa 1 en esta columna por cada selector ID contenido en el selector.</li>
+    <li>Decenas: Puntúa 1 en esta columna para cada selector de clase, selector de atributo o de pseudo-clase contenidos en el selector.</li>
+    <li>Unidades: Puntúa 1 en esta columna por cada selector de elemento o pseudo-elemento contenidos en el selector.</li>
+  </ol>
+</li>
+    <li><strong>Orden del código.</strong>Las últimas reglas prevalecen sobre las primeras. </li>
+  </ol>
+  <p>CSS dispone de tres valores especiales para manejar las herencias:</p>
+  <ul>
+    <li><code>inherit</code> : Este valor establece el valor de la propiedad de un elemento seleccionado en el mismo que su elemento padre.</li>
+    <li><code>initial</code> : Este valor establece el valor de la propiedad de un elemento seleccionado en el valor por defecto que establece la hoja de estilos del navegador, si este no existe, la propiedad se hereda naturalmente, adoptando el valor de inherit.</li>
+    <li><code>unset</code> : Este valor reestablece la propiedad a su valor natural, esto es: si la propiedad se hereda de forma natural entonces actuará como inherit, sino, actuará como initial.</li>
+  </ul>
+
+
 </body>
 </html>

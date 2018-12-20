@@ -31,13 +31,6 @@ h1{
 	color: #248;
 	text-shadow: 2px 2px 3px #aaa;
 }
-@media (max-width: 720px) {
-  /* Let's special case the global font size. On large screen or window,
-     we increase the font size for better readability */
-  body {
-  	font-size: 130%;
-  }
-}
 p::first-letter{
 	font-weight: bold;
 	font-size: 105%;
@@ -45,4 +38,14 @@ p::first-letter{
 	float: left;
 	padding: 2px;
 	margin-right: -2px;
+}
+@media (max-width: 720px) {
+  /* Let's special case the global font size. On large screen or window,
+     we increase the font size for better readability */
+  body {
+  	font-size: 130%;
+  }
+  p::first-letter{
+  	font-size: 135%;
+  }
 }
