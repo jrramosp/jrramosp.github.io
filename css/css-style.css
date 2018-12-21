@@ -1,3 +1,13 @@
+@media screen and (max-width: 720px) {
+
+  body {
+  	font-size: 130%;
+  }
+  p::first-letter{
+  font-size: 135%;
+  color: red;
+  }
+}
 html {
 	background: #214C75;
 	font-family: sans-serif;
@@ -34,18 +44,8 @@ h1{
 p::first-letter{
 	font-weight: bold;
 	font-size: 105%;
-	display: block;
+/*	display: block;
 	float: left;
 	padding: 2px;
-	margin-right: -2px;
-}
-@media (max-width: 720px) {
-  /* Let's special case the global font size. On large screen or window,
-     we increase the font size for better readability */
-  body {
-  	font-size: 130%;
-  }
-  p::first-letter{
-  	font-size: 135%;
-  }
+	margin-right: -2px;*/
 }
