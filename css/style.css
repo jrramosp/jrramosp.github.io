@@ -22,6 +22,7 @@ body{
 code, pre{
 	background-color: #eee;
 	font-size: 115%;
+	overflow: auto;
 
 }
 tr:nth-of-type(even){
