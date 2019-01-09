@@ -25,6 +25,12 @@ code, pre{
 	overflow: auto;
 
 }
+pre{
+	box-shadow: 3px 3px 3px #aaa;
+}
+th{
+	background-color: #FBE1AB;
+}
 tr:nth-of-type(even){
 	background-color: #FCE94F;
 }

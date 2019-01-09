@@ -277,7 +277,35 @@
     <li><code>initial</code> : Este valor establece el valor de la propiedad de un elemento seleccionado en el valor por defecto que establece la hoja de estilos del navegador, si este no existe, la propiedad se hereda naturalmente, adoptando el valor de inherit.</li>
     <li><code>unset</code> : Este valor reestablece la propiedad a su valor natural, esto es: si la propiedad se hereda de forma natural entonces actuará como inherit, sino, actuará como initial.</li>
   </ul>
+  <p>Modelos de caja: Cualquier elemento contenido en un documento tiene la estructura de una caja rectangular dentro del formato del documento.</p>
+  <img src="images/box-model.png" alt="Esquema de cajas">
 
+  <p>Las propiedades importantes son:</p>
+  <ul>
+    <li><strong>width y height</strong>
 
+    Las propiedades <code>width</code> y <code>height</code> establecen el ancho y alto de la caja de contenido, que es el área donde se muestra el contenido de la caja — este contenido comprende tanto el texto incluido en la caja como otras cajas representadas por elementos anidados.<br>
+
+    Nota: Hay otras propiedades que permiten el manejo refinado del tamaño de la caja de contenido — para limitar los tamaños. Para ello se usan las propiedades <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, y <code>max-height</code>.
+    </li><br>
+
+    <li><strong>padding</strong>
+
+    Padding hace referencia al margen interior de la caja CSS — entre el límite exterior de la caja del contenido y el límite interior del borde. El tamaño de esta capa puede configurarse en sus cuatro lados a la vez con la propiedad abreviada <code>padding</code>, o cada lado por separado con las propiedades: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom </code>y <code>padding-left</code>.
+    </li><br>
+    
+    <li><strong>border</strong>
+    El borde de una caja CSS descansa entre el límite exterior del padding y el límite interior del margen. Por defecto tiene un tamaño de 0 — invisible — pero podemos cambiar su grosor, estilo y color para hacerlo visible. La propiedad abreviada de border permite establecer los cuatro lados a la vez, por ejemplo: <code>border: 1px solid black</code>. Pero también se puede dividir en varias propiedades extendidas para su uso en necesidades concretas de estilo:
+	<ul>
+        <li><code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code>: Establecen el grosor, estilo y color de cada lado del borde.</li>
+        <li><code>border-width</code>, <code>border-style</code>, <code>border-color</code>: Establecen únicamente el grosor, el estilo y el color por separado, pero para los cuatro lados del borde al mismo tiempo.</li>
+       Podemos también establecer cada propiedad por separado para cada lado individualmente, usando <code>border-top-width</code>, <code>border-top-style</code>, <code>border-top-color</code>, etc.
+    </ul> 
+    </li><br>
+    <li><strong>margin</strong>
+
+    El margen envuelve la caja CSS, y sostiene a otras cajas del diseño. Se comporta como padding; la propiedad abreviada es margin y las propiedades individuales son <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, y <code>margin-left</code>.
+    </li>
+  </ul>
 </body>
 </html>

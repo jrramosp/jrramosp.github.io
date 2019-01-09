@@ -25,6 +25,12 @@ code, pre{
 	overflow: auto;
 
 }
+pre{
+	box-shadow: 3px 3px 3px #aaa;
+}
+th{
+	background-color: #CEFBAB;
+}
 tr:nth-of-type(even){
 	background-color: #FCE94F;
 }
@@ -49,4 +55,8 @@ p::first-letter{
 	float: left;
 	padding: 2px;
 	margin-right: -2px;*/
+}
+img{
+	margin: auto;
+	display: block;
 }
