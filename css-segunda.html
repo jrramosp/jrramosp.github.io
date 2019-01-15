@@ -12,6 +12,83 @@
 <body>
 	<h1>Apuntes de CSS en GITHUB</h1>
 	<h2>Apuntes tomados de la web de MDN. 2ª Parte</h2>
-	<p><a href="css-primera.html">&lt;&lt; CSS</a></p>
+	<p><a href="css-primera.html">&lt;&lt; CSS 1ª parte</a></p>
+	<ul>	
+    <li><strong>Estilos de la fuente tipográfica</strong>: Propiedades que afectan a la fuente que está siendo aplicada al texto (qué fuente se aplica, como de grande es, si es negrita, itálica, etc).</li>
+    <li><strong>Estilos de disposición del texto</strong>: Propiedades que afectan el espaciado y otras característica de la disposición del texto, permitiendo la manipulación de, por ejemplo, el espacio entre líneas y letras, y como el texto se alinea dentro de la caja contenedora.</li>
+	</ul>
+	<p><strong>Estilos de la fuente tipográfica</strong>: propiedades</p>
+	<p><code>color</code>: Valores de color de CSS</p>
+		<pre><code>
+	p {
+	  color: red;
+	}
+		</code></pre>
+	<p><code>font-family</code>:</p>
+	<ul>
+	<li>Fuentes seguras para la web:</li>
+	Arial, Courier New, Georgia, Times New Roman, Trebuchet MS y Verdana.
+	<li>Fuentes predeterminadas:</li>
+	serif, sans-serif, monospace, cursive y fantasy.	
+	</ul>
+	<p>Listas de fuentes: Ya que no puede garantizar la disponibilidad de las fuentes que desea utilizar, puede proporcionar un lista de fuentes para que el navegador tenga múltiples fuentes entre las que elegir. Esto simplemente involucra al valor de <code>font-family</code> que debera consistir de una lista de varios nombres de fuentes separados por comas.</p>
+		<pre><code>
+	p {
+	  font-family: Helvetica, Arial, sans-serif;
+	}
+		</code></pre>
+	<p><code>font-size</code> Tamaño de fuentes:</p>
+	<p>px, em, rem y %</p>
+	
+	<p>CSS proporciona cuatro propiedades comunes para alterar el peso visual/énfasis del texto:</p>
+
+    <ul>
+    <li><code>font-style</code>: Usado para activar y desactivar el texto en cursiva.</li>
+		<ul>        
+        <li><code>normal</code>: Establece el texto de la fuente normal (desactiva la cursiva existente).</li>
+        <li><code>italic</code>: Establece el texto para usar la versión en cursiva de la fuente si está disponible; si no está disponible, simulará cursiva con oblicuo en su lugar.</li>
+        <li><code>oblique</code>: Establece el texto para usar una versión simulada de cursiva en la fuente, creada inclinando la versión normal.</li>
+        </ul>
+    <li><code>font-weight</code>: Establece como negrita el texto. Este tiene muchos valores disponibles en caso de que tenga muchas variantes de fuente disponibles (tales como <code>-light, -normal, -bold, -extrabold, -black,</code> etc.):</li>
+   		<ul>
+        <li><code>normal</code>, <code>bold</code>: Peso de la fuente Normal y negrita</li>
+        <li><code>lighter</code>, <code>bolder</code>: Establece la negrita del elemento actual para que sea un paso más claro o más pesado que la negrita de su elemento padre.</li>
+        <li>100–900: Valores numéricos de negrita que proporcionan un control más detallado que las palabras claves anteriores, si es necesario.</li>
+        </ul> 
+    <li><code>text-transform</code>: Le permite configurar su fuente para ser transformada. Los valores incluyen:</li>
+		<ul>        
+        <li><code>none</code>: Evita cualquier transformación.</li>
+        <li><code>uppercase</code>: Transofrma TODO EL TEXTO A MAYÚSCULAS.</li>
+        <li><code>lowercase</code>: Transforma todo el texto en minúsculas.</li>
+        <li><code>capitalize</code>: Transforma todas las palabras para Tener La Primera Letra En Mayúscula.</li>
+        <li><code>full-width</code>: Transforma todos los glifos que se escribirán dentro de un cuadrado de ancho fijo, similar a una fuente monoespaciada, lo que permite la alineación de por ejemplo, caracteres latinos junto con glifos del lenguaje asiático (como Chino, Japonés, Koreano.)</li>
+        </ul>
+    <li><code>text-decoration</code>: Activa/desactiva las decoraciones de texto en las fuentes (principalmente usará esto para desactivar el subrayado por defecto en los enlaces al diseñarlos.) Los valores disponibles son:</li>
+    	<ul>
+        <li><code>none</code>: Desactiva cualquier decoración de texto que ya esté presente.</li>
+        <li><code>underline</code>: Subraya el texto.</li>
+        <li><code>overline</code>: Proporciona al texto una línea superpuesta.</li>
+        <li><code>line-through</code>: Coloca un tachado sobre el texto.</li>
+        </ul>
+    </ul>
+    <p>Debe tener en cuenta que <code>text-decoration</code> puede aceptar múltiples valores a la vez, si desea agregar múltiples decoraciones simultaneamente, por ejemplo <code>text-decoration: underline overline</code>. También tenga en cuenta que <code>text-decoration</code> es una propiedad abreviada de <code>text-decoration-line</code>, <code>text-decoration-style</code>, y <code>text-decoration-color</code>. Puede utilizar combinaciones de estos valores de propiedad para crear efectos interesantes, por ejemplo <code>text-decoration: line-through red wavy</code>.</p>
+	<p><code>text-shadow</code>:</p>
+	<pre><code>
+	p {
+		text-shadow: 4px 4px 5px red;
+	}
+	</code></pre>
+	<p>Puedes aplicar múltiples sombras al mismo texto incluyendo multiples valores de sombra separados por comas.</p>
+	<p><strong>Estilos de disposición del texto:</strong> propiedades.</p>
+	<p>La propiedad <code>text-align</code>: <code>left</code>, <code>right</code>, <code>center</code> y <code>justify</code>.</p>
+	<p>La propiedad <code>line-height</code> establece la altura de cada línea de texto — esto puede tomar la mayoría de las unidades y magnitudes, pero tabién puede tomar un valor sin unidades, que actúa como un multiplicador y generalmente se considera la mejor opción — la propiedad <code>font-size</code> es multiplicada para obtener la altura de la línea (<code>line-height</code>).</p>
+	<p>Las propiedades <code>letter-spacing</code> y <code>word-spacing</code> le permiten establecer el espaciado entre letras y palabras en el texto. </p>
+	<p><strong>Forma abreviada de Font</strong>: Muchas propiedades de fuente también pueden ser establecidas de forma breve a través de la propiedad <code>font</code>. Estas son escritas en el siguiente orden:  <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-stretch</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>.
+De entre todas estas propiedades, solo son requeridas <code>font-size</code> y <code>font-family</code> cuando se usa la propiedad <code>font</code> de forma abreviada. Se debe colocar una barra inclinada (slash) entre las propiedades <code>font-size</code> y <code>line-height</code>.
+Un ejemplo completo se vería así:
+	<pre><code>
+	font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+	</code></pre>
+	</p>
 </body>
 </html>
