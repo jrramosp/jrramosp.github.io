@@ -12,7 +12,7 @@
 <body>
   <h1>Apuntes de CSS en GITHUB</h1>
   <h2>Apuntes tomados de la web de MDN. 1ª Parte</h2>
-  <p><a href="index.html">HTML</a></p>
+  <p><a href="index.html">HTML</a>-<a href="css-segunda.html">CSS Segunda parte &gt;&gt; </a></p>
   <p>Hay tres formas de aplicar estilos CSS en una página web:</p>
   <ul>
     <li>Como un enlace externo añadido en la cabecera del documento con <code>link rel="stylesheet"
@@ -31,9 +31,9 @@
   línea.</p>
   <p>Podemos dividir los selectores en las siguientes categorías:</p>
   <ul>
-    <li>Selectores simples: Seleccionan los elementos por el nombre del tipo de elemento, class, o su id.
+    <li><strong>Selectores simples</strong>: Seleccionan los elementos por el nombre del tipo de elemento, class, o su id.
     <ul> 
-     <li> <p>Selectores de elementos son aquellos que hacen referencia a una etiqueta HTML</p>
+     <li> <p><strong>Selectores de elementos</strong> son aquellos que hacen referencia a una etiqueta HTML</p>
       <pre><code>
         p {
           color: red;
@@ -41,7 +41,7 @@
         </code></pre>
     </li>
     <li>
-      <p>El selector de clase se forma con un punto, '<code>.</code>', seguido de un nombre de clase. Un nombre de
+      <p>El <strong>selector de clase</strong> se forma con un punto, '<code>.</code>', seguido de un nombre de clase. Un nombre de
       clase puede ser cualquier valor sin espacios usado dentro de un atributo HTML <code>class</code>.</p>
       <pre><code>
         .first {
@@ -50,7 +50,7 @@
         </code></pre>
     </li>
     <li>
-      <p>El selector ID está formado por una almohadilla (<code>#</code>), seguida del nombre ID de determinado
+      <p><strong>El selector ID</strong> está formado por una almohadilla (<code>#</code>), seguida del nombre ID de determinado
       elemento. Cualquier elemento solo puede tener un único nombre ID fijado con el atributo <code>id</code>.</p>
       <pre><code>
         #polite {
@@ -59,33 +59,33 @@
         </code></pre>
     </li>
     <li>
-      <p>El selector universal (<code>*</code>) es el comodín. Nos permite seleccionar todos los elementos de una
+      <p>El <strong>selector universal</strong> (<code>*</code>) es el comodín. Nos permite seleccionar todos los elementos de una
       página.</p></li>
     </ul>
       <p>En CSS, podemos combinar varios selectores juntos y con ello seleccionar elementos contenidos en otros
       elementos, o elementos adyacentes a otros. Disponemos de cuatro tipos:</p>
       <ul>
-        <li>El selector descendiente — (espacio) — permite seleccionar un elemento anidado en alguna parte dentro de
+        <li>El <strong>selector descendiente</strong> — (espacio) — permite seleccionar un elemento anidado en alguna parte dentro de
         otro elemento (no tiene por qué ser un hijo; puede ser un nieto, por ejemplo).</li>
           <pre><code>
     section p {
           color: blue;
         }
     </code></pre>
-        <li>El selector hijo — &gt; — permite seleccionar un elemento que es hijo directo de otro elemento.</li>
+        <li>El <strong>selector hijo</strong> — &gt; — permite seleccionar un elemento que es hijo directo de otro elemento.</li>
           <pre><code>
     section &gt; p {
           background-color: yellow;
         }
     </code></pre>
-        <li>El selector hermano — + — permite seleccionar un elemento que es hermano directo de otro elemento (a la
+        <li>El <strong>selector hermano</strong> — + — permite seleccionar un elemento que es hermano directo de otro elemento (a la
         derecha por ejemplo, en el mismo nivel jerárquico).</li>
           <pre><code>
     h2 + p {
           text-transform: uppercase;
         }
     </code></pre>
-        <li>El selector hermano en general — ~ — permite seleccionar cualquier elemento hermano de otro (por ejemplo en
+        <li>El <strong>selector hermano</strong> en general — ~ — permite seleccionar cualquier elemento hermano de otro (por ejemplo en
         el mismo nivel jerárquico, pero no necesariamente adyacente a él).</li>
     <pre><code>
     h2 ~ p {
@@ -94,7 +94,7 @@
     </code></pre>
       </ul>
     </li>
-    <li>Selectores de atributos: Seleccionan los elementos por los valores de sus atributos.</li>
+    <li><strong>Selectores de atributos</strong>: Seleccionan los elementos por los valores de sus atributos.</li>
 
       <p>Estos selectores de atributos afectarán a los elementos cuyo valor coincida exactamente con el valor del
       atributo especificado:</p>
@@ -130,7 +130,7 @@
 	}
         </code></pre>
       </ul>
-      <p>Selector de atributos por valor textual, parecidos a las regexp</p>
+      <p><strong>Selector de atributos por valor textual</strong>, parecidos a las regexp</p>
     <ul>
       <li><code>[attr|=val]</code> : Este selector elegirá todos los elementos con el atributo <code>attr</code> cuyo valor sea exactamente <code>val</code> o empieza por <code>val-</code> (nota: el guion no es un error, se usa para manejar códigos de lenguaje de programación).</li>
       <pre><code>
@@ -164,7 +164,7 @@
       }  
       </code></pre>
     </ul>
-    <li>Pseudo-clases: Seleccionan los elementos por el estado en que se encuentran, cómo haber aparecido al pasar el
+    <li><strong>Pseudo-clases</strong>: Seleccionan los elementos por el estado en que se encuentran, cómo haber aparecido al pasar el
     ratón, o el tic deshabilitado o seleccionado, o por ser el primer hijo de su padre en el árbol DOM.</li>
     <p>Una pseudo-clase CSS consta de una clave precedida de dos puntos (<code>:</code>) que añadiremos al final del selector para indicar que daremos estilo a los elementos seleccionados solo cuando estos se encuentren en un estado determinado.</p>
     <pre><code>
@@ -179,7 +179,7 @@
       text-decoration: none;
     } 
     </code></pre>
-    <li>Pseudo-elementos: Selecciona los elementos por su situación en relación a otro elemento, por ejemplo: la
+    <li><strong>Pseudo-elementos</strong>: Selecciona los elementos por su situación en relación a otro elemento, por ejemplo: la
     primera palabra de cada párrafo, o el contenido que se encuentra justo después de un elemento.</li>
     <p>Los pseudo-elementos son parecidos a las pseudo-clases, con alguna diferencia. Estos son claves — ahora precedidas por (<code>::</code>) — que se añaden al final del selector para elegir cierta parte de un elemento.</p>
     <pre><code>
@@ -191,7 +191,7 @@
       content: '⤴';
     }
     </code></pre>
-    <li>Combinaciones: No son en sí mismos selectores, sino formas de combinar dos o más selectores de forma práctica
+    <li><strong>Combinaciones</strong>: No son en sí mismos selectores, sino formas de combinar dos o más selectores de forma práctica
     para una selección especial. Por ejemplo, se pueden seleccionar párrafos que sean descendientes de divs, o párrafos
     situados justo después de títulos.</li>
     <br>
@@ -203,7 +203,7 @@
       <li><code>A ~ B</code>   Cualquier elemento seleccionado por B y es uno de los siguientes hermanos del elemento seleccionado por A (uno de los siguientes hermanos del mismo padre).</li>
     </ul>
     <br>
-    <li>Selectores múltiples: Tampoco son selectores en sí mismos; podemos agrupar múltiples selectores en la misma
+    <li><strong>Selectores múltiples</strong>: Tampoco son selectores en sí mismos; podemos agrupar múltiples selectores en la misma
     regla CSS separados por comas, para aplicarlos a una de las declaraciones o a todos los elementos seleccionados por
     estos selectores.</li>
     <pre><code>
@@ -212,39 +212,39 @@
     }
     </code></pre>
   </ul>
-  <p>En cuanto a la unidades de medida y los valores de ciertas propiedades tenemos:</p>
+  <p>En cuanto a la <strong>unidades de medida</strong> y los valores de ciertas propiedades tenemos:</p>
   <ul>
-    <li>Valores numéricos: Valores de longitud para expresar el ancho de elementos, de bordes, o tamaño de fuentes; también enteros sin unidades para expresar anchos de línea o veces que se repite una animación.</li>
-    <p>Como unidades absolutas:</p>
+    <li><strong>Valores numéricos</strong>: Valores de longitud para expresar el ancho de elementos, de bordes, o tamaño de fuentes; también enteros sin unidades para expresar anchos de línea o veces que se repite una animación.</li>
+    <p>Como <strong>unidades absolutas</strong>:</p>
     <ul>
     <li>píxeles (px) como unidades absolutas pues siempre tienen el mismo tamaño independientemente de cualquier otra medida.</li>
     <li>mm, cm, in: Milímetros, centímetros, o pulgadas.</li>
     <li>pt, pc: Puntos (1/72 de una pulgada) or picas (12 puntos.)</li>
     </ul>
-    <p>Como unidades relativas:</p>
+    <p>Como <strong>unidades relativas</strong>:</p>
     <ul>
     <li>em: 1em es el tamaño de fuente del elemento actual (es el ancho de la letra M mayúscula). El tamaño de fuente por defecto que los navegadores usan antes de aplicar CSS es de 16 píxeles, lo que significa que este es el valor asignado por defecto a un elemento (1em). Ojo — los tamaños de fuente de los elementos se heredan de los padres, por lo que si a los padres se les aplica otros tamaños de fuente, la equivalencia en pixel de un em puede complicarse.</li>
     <li>ex, ch: Son respectivamente la altura de la x minúscula, y el ancho del número 0. Aunque no son tan soportadas por los navegadores como los ems.</li>
     <li>rem: (em raiz) funciona igual que em, excepto que esta siempre igualará el tamaño del tamaño de fuente por defecto; los tamaños de fuente heredados no afectan, por lo que parece mejor solución que ems, rem no funciona en versiones antiguas de Internet Explorer (ver navegadores soportados en Depurando CSS.)</li>
     <li>vw, vh: Estas son respectivamente 1/100 del ancho de la ventana, y 1/100 de la altura de la ventana. Tampoco son tan soportadas como los rems.</li>
     </ul>
-    <li>Porcentajes: Se usan para expresar tamaño o longitud — relativos por ejemplo al ancho y alto del contenedor previo o al tamaño de fuente predeterminado.</li>
-    <li>Colores: Para expresar colores de fondo, de texto, etc.</li>
+    <li><strong>Porcentajes</strong>: Se usan para expresar tamaño o longitud — relativos por ejemplo al ancho y alto del contenedor previo o al tamaño de fuente predeterminado.</li>
+    <li><strong>Colores</strong>: Para expresar colores de fondo, de texto, etc.</li>
     <ul>
-        <li>Palabras clave: red, blue, aqua ...</li>
-        <li>Valores Hexadecimales: Cada valor hex está compuesto por una almohadilla (#) seguida por seis números hexadecimales, cada uno de los cuales puede estar comprendido entre el 0 y la f (que representa el 15) — 0123456789abcdef (16 símbolos). Cada par de valores representa uno de los canales primarios — rojo, verde y azul — y nos permite referenciar cualquiera de los 256 valores disponibles para cada uno (16 x 16 = 256). </li>
-        <li>Valores RGB: Un valor RGB es una función — rgb() — a la que pasamos tres parámetros que representas los colores primarios rojo, verde y azul, parecido al sistema hex. La diferencia radica en que, en lugar de representar cada canal por un par de números, ahora lo hacemos simplemente por un número decimal entre el 0 y el 255.</li>
-        <li>Valores HSL:  en vez de valores rojo, verde y azul, la función hsl() admite los valores tono(hue), saturación y brillo (lightness), para referenciar 16,7 millones de colores, pero de forma diferente:</li>
+        <li><strong>Palabras clave</strong>: red, blue, aqua ...</li>
+        <li><strong>Valores Hexadecimales</strong>: Cada valor hex está compuesto por una almohadilla (#) seguida por seis números hexadecimales, cada uno de los cuales puede estar comprendido entre el 0 y la f (que representa el 15) — 0123456789abcdef (16 símbolos). Cada par de valores representa uno de los canales primarios — rojo, verde y azul — y nos permite referenciar cualquiera de los 256 valores disponibles para cada uno (16 x 16 = 256). </li>
+        <li><strong>Valores RGB</strong>: Un valor RGB es una función — rgb() — a la que pasamos tres parámetros que representas los colores primarios rojo, verde y azul, parecido al sistema hex. La diferencia radica en que, en lugar de representar cada canal por un par de números, ahora lo hacemos simplemente por un número decimal entre el 0 y el 255.</li>
+        <li><strong>Valores HSL</strong>:  en vez de valores rojo, verde y azul, la función hsl() admite los valores tono(hue), saturación y brillo (lightness), para referenciar 16,7 millones de colores, pero de forma diferente:</li>
         <ul>
           <li>hue (tono): Es el color básico. Toma un valor entre 0-360, como los ángulos de una rueda de color.</li>
           <li>saturación: ¿Cómo está el color de saturado? Con valores entre 0 y 100%, en 0 no hay color (aparece como una sombra gris), y 100% es la saturación total del color.</li>
           <li>lightness (brillo): Representa la claridad del color. Toma valores entre 0 y 100%, donde 0 es la ausencia de luz (completamente negro) y 100% es el brillo total (completamente blanco).</li>
         </ul>
-        <li>Valores RGBA y HSLA: RGB y HSL tienen sus correspondientes modos — RGBA and HSLA — que nos permiten representar, no solo el color, sino también la transparencia a representar. Sus funciones correspondientes toman los mismos parámetros, más un cuarto valor entre 0–1 — que establece la transparencia, o el llamado canal alfa. 0 es totalmente transparente y 1 completamente opaco.</li>
+        <li><strong>Valores RGBA y HSLA</strong>: RGB y HSL tienen sus correspondientes modos — RGBA and HSLA — que nos permiten representar, no solo el color, sino también la transparencia a representar. Sus funciones correspondientes toman los mismos parámetros, más un cuarto valor entre 0–1 — que establece la transparencia, o el llamado canal alfa. 0 es totalmente transparente y 1 completamente opaco.</li>
         <li> Propiedad <code>opacity</code>: Existe otra forma de especificar la transparencia vía CSS — la propiedad <code>opacity</code>. En lugar de fijar la transparencia de un determinado color, aquí fijamos la transparencia de todos los elementos seleccionados y sus hijos. </li>
       </ul>
-    <li>Coordenadas: Para expresar la posición relativa de un elemento desde, por ejemplo, el margen superior izquierdo de la pantalla.</li>
-    <li>Funciones: Para expresar imágenes de fondo o el degradado de la imagen de fondo.</li>
+    <li><strong>Coordenadas</strong>: Para expresar la posición relativa de un elemento desde, por ejemplo, el margen superior izquierdo de la pantalla.</li>
+    <li><strong>Funciones</strong>: Para expresar imágenes de fondo o el degradado de la imagen de fondo.</li>
     <pre><code>
       /* calcular la nueva posición de un elemento después de que ha sido rotado 45 grados */
       transform: rotate(45deg);
@@ -257,7 +257,7 @@
       background-image: url('myimage.png');
     </code></pre>
   </ul>
-  <p>CSS (Cascading Style Sheets) ya nos indica que cascada es un concepto importante. A su nivel más básico indica que el orden de las reglas CSS importa, pero es algo más que eso. Que prevalezcan unos selectores sobre otros en la cascada depende de tres factores (en orden de importancia — los primeros prevalecen sobre los últimos):</p>  
+  <p><strong>CSS (Cascading Style Sheets)</strong> ya nos indica que cascada es un concepto importante. A su nivel más básico indica que el orden de las reglas CSS importa, pero es algo más que eso. Que prevalezcan unos selectores sobre otros en la cascada depende de tres factores (en orden de importancia — los primeros prevalecen sobre los últimos):</p>  
   <ol>
     <li><strong>Importancia.</strong> En CSS, hay un trozo de sintaxis que podemos usar para asegurarnos que una determinada regla siempre "gane" sobre todas las demás: <code>!important</code>.</li>
     <li><strong>Especificidad.</strong>La especificidad que tiene un selector se mide mediante 4 valores (o componentes) diferentes, podemos pensar en ellos como en 4 columnas de unidades de millar, centenas, decenas y unidades:
@@ -276,7 +276,7 @@
     <li><code>initial</code> : Este valor establece el valor de la propiedad de un elemento seleccionado en el valor por defecto que establece la hoja de estilos del navegador, si este no existe, la propiedad se hereda naturalmente, adoptando el valor de inherit.</li>
     <li><code>unset</code> : Este valor reestablece la propiedad a su valor natural, esto es: si la propiedad se hereda de forma natural entonces actuará como inherit, sino, actuará como initial.</li>
   </ul>
-  <p>Modelos de caja: Cualquier elemento contenido en un documento tiene la estructura de una caja rectangular dentro del formato del documento.</p>
+  <p><strong>Modelos de caja</strong>: Cualquier elemento contenido en un documento tiene la estructura de una caja rectangular dentro del formato del documento.</p>
   <img src="images/box-model.png" alt="Esquema de cajas">
 
   <p>Las propiedades importantes son:</p>
@@ -306,5 +306,26 @@
     El margen envuelve la caja CSS, y sostiene a otras cajas del diseño. Se comporta como padding; la propiedad abreviada es margin y las propiedades individuales son <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, y <code>margin-left</code>.
     </li>
   </ul>
+  <p>El ancho total de una caja se corresponde con la suma de sus propiedades <code>width</code>, <code>padding-right</code>, <code>padding-left</code>, <code>border-right</code>, y <code>border-left</code>.En algunos casos esto es molesto (supongamos que queremos una caja con un ancho total del 50% y el borde y el padding están expresados en pixels). Para evitar estos inconvenientes, podemos modificar el modelo de cajas con la propiedad <code>box-sizing</code>. Con el valor <code>border-box</code>, se cambia el modelo de cajas por este otro:</p>
+  <img src="images/box-model-alt.png" alt="Modelo alternativo de caja">
+  <p>Otras propiedades para cambiar el comportamiento en el modelo de caja.</p>
+  <ul>
+  <li><p><strong>Desbordamiento</strong>: Al establecer el ancho de una caja con valores absolutos (p.ej. ancho/alto en pixels), el contenido puede no encajar con el tamaño permitido, en cuyo caso el contenido desborda la caja. Para controlar lo que ocurre en estos casos, podemos usar la propiedad <code>overflow</code>. Puede tomar varios valores, pero los más usuales son:</p></li>
+	<ul>
+    <li><code>auto</code>: Si hay demasiado contenido, el desbordamiento del contenido es ocultado apareciendo las barras de desplazamiento para permitir al usuario desplazarse para ver todo el contenido</li>
+    <li><code>hidden</code>: Si hay demasiado contenido, el desbordamiento es escondido.</li>
+    <li><code>visible</code>: Si hay demasiado contendido, el desbordamiento se muestra fuera de la caja (este es normalmente el comportamiento por defecto).</li>
+	</ul>
+	<li><p><strong>Límite del fondo</strong>: Los fondos de las cajas están hechos de colores e imágenes, apiladas unas sobre otras (<code>background-color</code>, <code>background-image</code>.) Se aplican al fondo de la misma. Por defecto los fondos se extienden hasta el límite exterior del borde. Suele ser suficiente, pero en ocasiones puede molestar (¿Qué pasa si tenemos una imagen de fondo que queremos que solo llegue hasta el límite del contenido?) Este comportamiento puede ajustarse mediante la propiedad <code>background-clip</code> de la caja. Con los valores <code>border-box</code>, <code>padding-box</code> y <code>content-box</code>.</p></li>
+	<li><p><strong>Contorno</strong>: Por último, el <code>outline</code> (contorno) de una caja es algo que se parece al borde pero que no forma parte de la caja. Se comporta como el borde pero se dibuja por encima de caja sin cambiar su tamaño (concretando, el contorno se dibuja por fuera de la caja del borde, dentro del área del margen).</p></li>
+	</ul>
+	<p>El tipo de caja aplicada a un elemento se controla por la propiedad <code>display</code>. Hay muchos valores diferentes para <code>display</code>, pero ahora nos centraremos en los tres más comunes: <code>block</code>, <code>inline</code>, y <code>inline-block</code>.</p>	
+	<ul>    
+    <li>Una caja <code>block</code> se caracteriza por ser una caja apilada sobre otras cajas (p.ej. el contenido anterior y posterior a la caja aparece en líneas separadas), y puede tener asignada un ancho y un alto. Todo el modelo de cajas descrito anteriormente se refiere a las cajas bloque.</li>
+    <li>Una caja <code>inline</code> (de línea) es lo contrario de la caja bloque: Se aplica a los documentos de texto (p.ej. aparecerá en la misma línea rodeando al texto y a otros elementos en la línea, y su contenido avanzará con el texto, como la separación entre las líneas de un párrafo). El ancho y alto definidos no afectan a este tipo de cajas <code>inline</code>; cualquier padding, margen y borde aplicado a las cajas <code>inline</code> modificará la ubicación del texto alrededor, pero no la posición de las cajas (de bloque) circundantes.</li>
+    <li>Una caja <code>inline-block</code> es algo intermedio entre las dos primeras: fluye con el texto sin crear líneas de ruptura delante y detrás como las cajas inline, pero puede limitarse estableciendo alto y ancho manteniendo así la integridad de bloque como las cajas block — no se partirá entre las líneas del párrafo (en el anterior ejemplo la caja inline va encima de la 2da línea de texto, al no haber suficiente espacio para ella en la primera línea, y esta no parte las dos líneas).</li>
+    </ul>
+	<p>Por defecto, los elementos de bloque tiene definido <code>display: block</code>; y los elementos de línea: <code>display: inline</code>.</p>
+	<p>Para validar un código CSS tenemos <a href="http://jigsaw.w3.org/css-validator/">el enlace de la W3C</a></p>
 </body>
 </html>
