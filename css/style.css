@@ -52,12 +52,11 @@ img{
 	display: block;
 	box-shadow: 5px 5px 3px #555;
 }
+li {
+	line-height: 1.5;
+}
 @media screen and (max-width: 720px) {
   html {
   	font-size: 18px;
-  }
-  p::first-letter{
-  color: red;
-  font-size: 1.5rem;
   }
 }

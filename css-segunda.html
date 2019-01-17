@@ -90,5 +90,35 @@ Un ejemplo completo se vería así:
 	font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
 	</code></pre>
 	</p>
+	<p><strong>Estilos específicos de las listas</strong>:</p>
+	<ul>
+    <li><code>list-style-type</code>: Establece el tipo de viñetas para la lista, por ejemplo, <code>disc</code>, <code>circle</code>, <code>square</code>, viñetas cuadradas o circulares para una lista desordenada; <code>decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha</code>, números, letras, o números romanos para una lista ordenada.</li>
+    <li><code>list-style-position</code>: Establece si las viñetas aparecen dentro de los elementos de la lista, <code>inside</code>, o fuera de ellos antes del inicio de cada elemento, <code>outside</code>, comportamiento por defecto.</li>
+    <li><code>list-style-image</code>: Le permite usar una imagen personalizada para la viñeta, en lugar de un simple cuadrado o círculo.</li>
+    </ul>
+    <p>La propiedad <code>list-style-image</code> le permite usar una imagen personalizada para su viñeta. Sin embargo, esta propiedad es un poco limitada para controlar la posición, tamaño, etc. de las viñetas. Es más conveniente usar la familia de propiedades <code>background</code>.</p>
+    <pre><code>
+    ul li {
+	  padding-left: 2rem;
+	  background-image: url(star.svg);
+	  background-position: 0 0;
+	  background-size: 1.6rem 1.6rem;
+	  background-repeat: no-repeat;
+	}
+    </code></pre>
+    <p>Las tres propiedades mencionadas pueden ser declaradas en una sola propiedad, <code>list-style</code>. Por ejemplo:</p>
+    <pre><code>
+    ul {
+	  list-style-type: square;
+	  list-style-image: url(example.png);
+	  list-style-position: inside;
+	}
+    </code></pre>
+    <p>Se convierte en:</p>
+    <pre><code>
+    ul {
+	  list-style: square url(example.png) inside;
+	}
+    </code></pre>
 </body>
 </html>
