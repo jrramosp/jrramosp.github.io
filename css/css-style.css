@@ -14,6 +14,7 @@ body{
 code, pre{
 	background-color: #eee;
 	overflow: auto;
+	font-size: 1rem;
 
 }
 pre{
@@ -38,6 +39,12 @@ h1{
 	font-style: italic;
 	color: #248;
 	text-shadow: 2px 2px 3px #aaa;
+	font-family: 'Staatliches', cursive;
+	font-size: 2.5rem
+}
+p{
+	font-family: 'Sarabun', sans-serif;
+	font-size: 1.1rem;
 }
 p::first-letter{
 	font-weight: bold;
@@ -53,7 +60,7 @@ img{
 	box-shadow: 5px 5px 3px #555;
 }
 li {
-	line-height: 1.5;
+	line-height: 1.3;
 }
 @media screen and (max-width: 720px) {
   html {

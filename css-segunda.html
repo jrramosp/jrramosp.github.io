@@ -8,6 +8,7 @@
   <link rel="shorcut icon" href="favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="css/css-style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun|Staatliches" rel="stylesheet">
 </head>
 <body>
 	<h1>Apuntes de CSS en GITHUB</h1>
@@ -120,5 +121,94 @@ Un ejemplo completo se vería así:
 	  list-style: square url(example.png) inside;
 	}
     </code></pre>
+    <p>Lo primero para entender el concepto de el estado de enlace - diferentes estados que los enlaces pueden tener, que pueden ser establecidos usando diferentes pseudo-clases:</p>
+	<ul>
+    <li><strong>Link</strong> (no visitado): El estado por defecto en que se encuentra un enlace, cuando no está en ningún otro estado. Este puede ser especificamente diseñado usando la pseudo-clase <code>:link</code>.</li>
+    <li><strong>Visited</strong>: Un enlace ha sido visitado (existe en el historial del navegador), se establece usando la pseudo-clase <code>:visited</code>.</li>
+    <li><strong>Hover</strong>: Cuando se pasa el puntero del ratón sobre un enlace, se establece usando la pseudo-clase <code>:hover</code>.</li>
+    <li><strong>Focus</strong>: Un enlace cuando ha sido focalizado (por ejemplo, al desplazarse un usuario con el teclado usando la tecla Tab o similar, o programáticamente centrado usando HTMLElement.focus()) - se establece usando la pseudoclase <code>:focus</code>.</li>
+    <li><strong>Active</strong>: Un enlace cuando se está pulsando (por ejemplo, al hacer clic sobre él), se establece el diseño con la pseudoclase <code>:active</code>.</li>
+    </ul>
+	<p>Los estilos por defecto pueden ser desactivados/modificados usando las siguientes propiedades CSS:</p>
+	<ul>
+    <li><code>color</code> para el color del texto.</li>
+    <li><code>cursor</code> para el estilo del puntero del ratón - no debería desactivarlo a menos que tenga una buena razón.</li>
+    <li><code>outline</code> para el contorno de texto (un contorno es similar a un borde, la única diferencia es que el borde ocupa espacio en el cuadro y un contorno no lo hace; sólo se coloca sobre la parte superior del fondo). La opción <code>outline</code> es una ayuda útil para la accesibilidad, así que piénsalo bien antes de desactivarlo; deberías al menos duplicar los estilos dados al estado del enlace <code>hover</code> y en el estado de <code>focus</code> también.</li>
+	</ul>
+	<p>Orden de las pseudo-clases de los enlaces:</p>
+	<pre><code>
+	a {
+	}
+	
+	a:link {	
+	}
+	
+	a:visited {
+	}
+	
+	a:focus {
+	}
+	
+	a:hover {
+	}
+	
+	a:active {
+	}
+	</code></pre>
+	<p>El orden es importante porque los estilos de enlace se construyen uno sobre el otro, por ejemplo, los estilos de la primera regla se aplicarán a todos los siguientes, y cuando un enlace se activa, también se pasa el puntero del ratón sobre él. Si los pones en el orden equivocado, las cosas no funcionarán correctamente. Para recordar el orden, puedes intentar usar una mnemotécnica como:<br> <strong>L</strong>o<strong>V</strong>e <strong>F</strong>ears <strong>HA</strong>te.</p>
+	<p>Para crear un menú a partir de una lista con enlaces nos debemos fijar en dos parametros principales, la opción <code>display</code> de los <code>li</code> y de los enlaces <code>a</code>:</p>
+	<pre><code>
+	li {
+	  display: inline; /* Para conseguir que se comporten como una linea. */
+	}
+	
+	a {
+	  display: inline-block; /* Esto permite manejar los enlaces como cajas */
+	  line-height: 3;
+	}	
+	</code></pre>
+	<p><strong>Fuentes para la WEB.</strong></p>
+	<p>Las fuentes web son una función CSS que le permite especificar los archivos de fuentes que se descargarán junto con su sitio web a medida que se accede a él, lo que significa que cualquier navegador que admita fuentes web puede tener exactamente las fuentes que usted especifique a su disposición.:</p>
+	<p>Lo primero de todo, tenemos un bloque <code>@font-face</code> al comienzo del archivo CSS, que especifica que fichero(s) se descargaran:</p>
+	<pre><code>
+	@font-face {
+	  font-family: "myFont";
+	  src: url("myFont.ttf");
+	}
+	</code></pre>
+	<p>Debajo de esto puedes usar el nombre de la familia de fuentes especificada dentro de <code>@font-face</code> para aplicar tu fuente personalizada a lo que quieras, como siempre:</p>
+	<pre><code>
+	html {
+	  font-family: "myFont", "Bitstream Vera Serif", serif;
+	}
+	</code></pre>
+	<p>Para añadir el código de fuentes que necesitamos, y los tipos de fuentes, podemos acceder a <a href="https://www.fontsquirrel.com/tools/webfont-generator">FontSquirrel</a>. Con el fichero(s) de la fuente nos genera tanto los ficheros de tipos de fuentes compatibles y los archivos CSS que tendremos que añadir a nuestro sitio web. El código CSS será algo como:</p>
+	<pre><code>
+	@font-face {
+	  font-family: 'ciclefina';
+	  src: url('fonts/cicle_fina-webfont.eot');
+	  src: url('fonts/cicle_fina-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('fonts/cicle_fina-webfont.woff2') format('woff2'),
+	         url('fonts/cicle_fina-webfont.woff') format('woff'),
+	         url('fonts/cicle_fina-webfont.ttf') format('truetype'),
+	         url('fonts/cicle_fina-webfont.svg#ciclefina') format('svg');
+	  font-weight: normal;
+	  font-style: normal;
+	}
+	</code></pre>
+	<p>Tras incluir este código podemos hacer referencia a la fuente en el CSS con:</p>
+	<pre><code>
+	html {
+	  font-family: "ciclefina", serif;
+	}
+	</code></pre>
+	<p><strong>Uso de un servicio de fuentes en línea:</strong></p>
+	<p>Los servicios de fuentes en línea generalmente almacenan y sirven fuentes para ti, así que no tienes que preocuparte por escribir el código <code>@font-face</code>, y generalmente sólo necesitas insertar una simple línea o dos de código en tu sitio para que todo funcione.</p>
+	<p>Lo primero es ir a GoogleFonts y allí seleccionar las fuentes que queremos utilizar. En la web nos darán un código que debemos añadir en la cabecera de nuestro código HTML que vaya a usarla.</p>
+	<code>&lt;link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet"&gt;
+	</code>
+	<p>En la misma página de Google nos proporcionan el código que usaremos en nuestro CSS:</p>
+	<code>font-family: 'Sarabun', sans-serif;</code>
+	
 </body>
 </html>

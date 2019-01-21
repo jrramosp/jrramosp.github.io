@@ -38,6 +38,12 @@ h1{
 	font-style: italic;
 	color: #248;
 	text-shadow: 2px 2px 3px #aaa;
+	font-family: 'Staatliches', cursive;
+	font-size: 2.5rem
+}
+p{
+	font-family: 'Sarabun', sans-serif;
+	font-size: 1.1rem;
 }
 p::first-letter{
 	font-weight: bold;
