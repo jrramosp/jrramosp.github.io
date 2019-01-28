@@ -209,6 +209,53 @@ Un ejemplo completo se vería así:
 	</code>
 	<p>En la misma página de Google nos proporcionan el código que usaremos en nuestro CSS:</p>
 	<code>font-family: 'Sarabun', sans-serif;</code>
+	<p><strong>Fondos de elementos</strong>: El fondo de un elemento es el área que se encuentra debajo del contenido, relleno y borde de un elemento.Hay cuatro propiedades básicas:</p>
+	<p><code>background-color</code> que determina un color para el fondo. El color por defecto es <code>transparent</code>.</p>
+	<p><code>background-image</code> para determinar una imagen de fondo con la función <code>url()</code>. Por defecto las imágenes se repiten horizontal y verticalmente.Hay que aclarar que solo se utilizan como imágenes decorativas.</p>
+	<p><code>background-repeat</code> determina como se repite el fondo en nuestro elemento. Puede tomar los valores:</p>
+	<ul>	
+    <li><code>no-repeat</code>: La imagen no se repetirá en absoluto: sólo se mostrará una vez.</li>
+    <li><code>repeat-x</code>: La imagen se repetirá horizontalmente hasta el fondo.</li>
+    <li><code>repeat-y</code>: La imagen se repetirá verticalmente hasta el fondo.</li>
+    <li><code>repeat</code>: La imagen se repetirá tanto vertical como horizontalmente.</li>
+    </ul>
+    <p><code>background-position</code> permite posicionar su imagen de fondo donde quiera dentro del fondo. Generalmente la propiedad tomará dos valores separados por un espacio, que especifican las coordenadas horizontales (x) y verticales (y) de la imagen. La propiedad puede aceptar muchos tipos de valor diferentes que se pueden combinar. Los más comunes que usará son:</p>
+    <ul>
+    <li>Absolutos (como pixels)</li>
+    <li>Relativos (como rem, em)</li>
+    <li>Porcentuales</li>
+    <li>Palabras clave: Estos dos valores son intuitivos, y pueden tomar valores de <code>left</code>, <code>center</code>, <code>right</code>, y <code>top</code>, <code>center</code>, <code>bottom</code>, respectivamente.</li>
+    </ul>
+	<p><strong>Gradientes en los fondos</strong>.Hay dos tipos de gradientes disponibles en este momento: gradientes lineales (que van de una línea recta a otra) y gradientes radiales (que irradian desde un solo punto).</p>
+	<p>Un gradiente lineal se crea pasando en una función <code>linear-gradient()</code> como el valor de una propiedad de <code>background-image</code>. Como mínimo, la función necesita tomar tres parámetros separados por comas - la dirección en la que el degradado debe ir a través del fondo, el color al principio y el color al final. </p>
+	<code>background-image: linear-gradient(to bottom, orange, yellow);</code>
+	<p>Puede utilizar palabras clave para especificar la dirección (<code>to bottom</code>, <code>to right</code>, <code>to bottom right</code>, etc.), o los valores de grado (<code>0deg</code> es equivalente a <code>to top</code>, <code>90deg</code> es equivalente a <code>to right</code>, hasta <code>360deg</code>, lo que equivaldría a <code>to top</code> de nuevo). También puede especificar otros puntos a lo largo del degradado donde se define el color - estos se llaman topes de color, y el navegador calculará los topes de color entre cada conjunto de topes de color.</p>
+	<code>background-image: linear-gradient(to bottom, yellow, orange 40%, yellow);</code>
+	<p>Tenga en cuenta que también puede establecer un gradiente lineal de repetición utilizando la función <code>repeating-linear-gradient()</code>. Esto funciona exactamente de la misma manera, excepto que el patrón que usted establece se repite una y otra vez hasta el borde del fondo.</p>
+	<code>background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px);</code>
+	<p>Otra opción que tenemos disponible para los fondos es especificar cómo se desplazan cuando el contenido se desplaza. Esto se controla usando la propiedad <code>background-attachment</code>, que puede tomar los siguientes valores:</p>
+	<ul>
+    <li><code>scroll</code>: Hace que el fondo del elemento se desplace cuando se desplaza la página. Si el contenido del elemento se desplaza, el fondo no se mueve. En efecto, el fondo se fija en la misma posición de la página, por lo que se desplaza como se desplaza la página.</li>
+    <li><code>fixed</code>: Hace que el fondo de un elemento se fije en la ventana de visualización, de modo que no se desplace cuando se desplaza el contenido de la página o del elemento. Siempre permanecerá en la misma posición en la pantalla.</li>
+    <li><code>local</code>: Este valor se añadió más tarde (sólo se admite en Internet Explorer 9+, mientras que los demás se admiten en IE4+) porque el valor de desplazamiento es bastante confuso y no hace realmente lo que se desea en muchos casos. El valor local fija el fondo al elemento en el que está fijado, de modo que cuando se desplaza el elemento, el fondo se desplaza con él.</li>
+    </ul>
+    <p>Es posible declarar todos los valores de propiedad discutidos anteriormente (y algunos otros, en navegadores más nuevos) en una sola línea, usando la propiedad <code>background</code>. Para ello, se utilizan los mismos valores que en las propiedades individuales, pero se colocan todos en una línea separada por espacios, así:</p>
+	<code>background: yellow linear-gradient(to bottom, orange, yellow) no-repeat left center scroll;</code>
+	<p><strong>Múltiples fondos</strong>: Recientemente (desde Internet Explorer 9) hemos tenido la capacidad de adjuntar múltiples fondos a un solo elemento. Esto es bueno, ya que múltiples fondos son muy útiles. Se separan las diferentes definiciones de fondo con comas:</p>
+	<pre><code>
+	background: url(image.png) no-repeat 99% center,
+	            url(background-tile.png),
+	            linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+	background-color: yellow;	
+	</code></pre>
+	<p>También hay que tener en cuenta que hemos puesto el color de fondo de reserva en una declaración de propiedad separada, porque tratar de incluirlo en los múltiples fondos parece romper las cosas.</p>
+	<p>También se puede poner múltiples valores en las propiedades de <code>background-*</code>, por ejemplo:</p>
+	<pre><code>
+	background-image: url(image.png), url(background-tile.png);
+	background-repeat: no-repeat, repeat;	
+	</code></pre>
+	<p>Como mencionamos anteriormente, hay una propiedad disponible - <code>background-size</code> - que le permite alterar dinámicamente el tamaño de una imagen de fondo para que se ajuste mejor a su diseño. Esto es muy útil en muchos sentidos, por ejemplo, para corregir automáticamente el tamaño de los iconos que no se cargan correctamente. Para cada imagen de fondo, necesita incluir dos valores de tamaño de fondo - uno para la dimensión horizontal y otro para la vertical:</p>
+	<code>background-size: 16px 16px;</code>
 	<p><a href="css-primera.html">&lt;&lt; CSS 1ª parte</a></p>
 </body>
 </html>
