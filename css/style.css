@@ -19,20 +19,22 @@ code, pre{
 pre{
 	box-shadow: 3px 3px 3px #aaa;
 }
-th{
-	background-color: #FBE1AB;
-}
-tr:nth-of-type(even){
+
+tbody tr:nth-of-type(even){
 	background-color: #FCE94F;
 }
-tr:nth-of-type(odd){
+tbody tr:nth-of-type(odd){
 	background-color: #CBE6F1;
 }
 td{
 	border: 1px solid #000;
 /*	background-color: #CBE6F1;*/
-	table-layout: auto;
-	width: auto;
+
+}
+table{
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: auto;	
 }
 h1{
 	font-style: italic;

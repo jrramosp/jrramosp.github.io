@@ -256,6 +256,26 @@ Un ejemplo completo se vería así:
 	</code></pre>
 	<p>Como mencionamos anteriormente, hay una propiedad disponible - <code>background-size</code> - que le permite alterar dinámicamente el tamaño de una imagen de fondo para que se ajuste mejor a su diseño. Esto es muy útil en muchos sentidos, por ejemplo, para corregir automáticamente el tamaño de los iconos que no se cargan correctamente. Para cada imagen de fondo, necesita incluir dos valores de tamaño de fondo - uno para la dimensión horizontal y otro para la vertical:</p>
 	<code>background-size: 16px 16px;</code>
+	<p><code>border</code>: La propiedad abreviada <code>border</code> le permite establecer los cuatro lados a la vez. Pero <code>border</code> se puede dividir en numerosas etiquetas diferentes para necesidades de estilo más específicas:</p>
+	<ul>	
+    <li><code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code>: Establece grosor, estilo y color para cada lado de un elemento.</li>
+    <li><code>border-width</code>, <code>border-style</code>, <code>border-color</code>: Ajustar sólo el grosor, estilo o color individualmente, pero para los cuatro lados del borde.</li>
+    <li>También puede establecer una de las tres propiedades de un solo lado del borde individualmente, usando <code>border-top-width</code>, <code>border-top-style</code>, <code>border-top-color</code>, etc.</li> 
+	</ul>
+	<p><code>border-radius</code>: Para poner un tamaño diferente de <code>border-radius</code> en diferentes esquinas, puede especificar dos, tres o cuatro valores, de la misma manera que puede hacerlo con el <code>padding</code> y el <code>margin</code>:</p>
+	<p>También puede crear esquinas elípticas (donde el radio x es diferente al radio y.) Los dos radios diferentes se especifican separados por una barra oblicua (/), y puede combinarlos con cualquier combinación de valores, como se ha indicado anteriormente. </p>
+	<code>border-radius: 10px / 20px;</code>
+	<p>Las propiedades largas también están disponibles, para establecer el radio del borde de cada esquina de la caja individualmente: <code>border-top-left-radius</code>, <code>border-top-right-radius</code>, <code>border-bottom-left-radius</code>, y <code>border-bottom-right-radius</code>.</p>
+	<p>También podemos establecer una imagen como borde. Para ello <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Borders#Border_images" target="_blank">visita este enlace de MDN</a>.</p>
+	<p>Consejos rápidos para el <strong>diseño de tablas</strong></p>
+	<ul>
+    <li>Haga que el marcado de su tabla sea lo más sencillo posible y mantenga la flexibilidad, por ejemplo, utilizando porcentajes, para que el diseño sea más receptivo.</li>
+    <li>Usar <code>table-layout: fixed</code> para crear un diseño de tabla más predecible que le permita establecer fácilmente los anchos de columna estableciendo el ancho en sus encabezados (<code>&lt;th&gt;</code>).</li>
+    <li>Usar <code>border-collapse: collapse</code> para hacer que los bordes de los elementos de la tabla colapsen entre sí, produciendo una apariencia más ordenada y fácil de controlar.</li>
+    <li>Utilice <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, y <code>&lt;tfoot&gt;</code> para dividir su tabla en trozos lógicos y proporcionar lugares adicionales para aplicar CSS, de modo que sea más fácil superponer estilos si es necesario.</li>
+    <li>Use rayas de cebra para hacer que las filas alternativas sean más fáciles de leer.</li>
+    <li>Use <code>text-align</code> para alinear su texto &lt;th&gt; y &lt;td&gt;, para hacer las cosas más ordenadas y fáciles de seguir.</li>
+
 	<p><a href="css-primera.html">&lt;&lt; CSS 1ª parte</a></p>
 </body>
 </html>
