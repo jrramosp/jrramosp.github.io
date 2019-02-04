@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Apuntes de CSS</title>
+  <meta name="author" content="Nani" >
+  <meta name="description" content="Es una página de apuntes sobre CSS">
+  <link rel="shorcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="css/css-style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun|Staatliches" rel="stylesheet">
+</head>
+<body>
+	<h1>Apuntes de CSS en GITHUB</h1>
+	<h2>Apuntes tomados de la web de MDN. 3ª Parte</h2>
+	<p><a href="css-segunda.html">&lt;&lt; CSS 2ª parte</a></p>
+	<p><strong>Fondos de elementos</strong>: El fondo de un elemento es el área que se encuentra debajo del contenido, relleno y borde de un elemento.Hay cuatro propiedades básicas:</p>
+	<p><code>background-color</code> que determina un color para el fondo. El color por defecto es <code>transparent</code>.</p>
+	<p><code>background-image</code> para determinar una imagen de fondo con la función <code>url()</code>. Por defecto las imágenes se repiten horizontal y verticalmente.Hay que aclarar que solo se utilizan como imágenes decorativas.</p>
+	<p><code>background-repeat</code> determina como se repite el fondo en nuestro elemento. Puede tomar los valores:</p>
+	<ul>	
+    <li><code>no-repeat</code>: La imagen no se repetirá en absoluto: sólo se mostrará una vez.</li>
+    <li><code>repeat-x</code>: La imagen se repetirá horizontalmente hasta el fondo.</li>
+    <li><code>repeat-y</code>: La imagen se repetirá verticalmente hasta el fondo.</li>
+    <li><code>repeat</code>: La imagen se repetirá tanto vertical como horizontalmente.</li>
+    </ul>
+    <p><code>background-position</code> permite posicionar su imagen de fondo donde quiera dentro del fondo. Generalmente la propiedad tomará dos valores separados por un espacio, que especifican las coordenadas horizontales (x) y verticales (y) de la imagen. La propiedad puede aceptar muchos tipos de valor diferentes que se pueden combinar. Los más comunes que usará son:</p>
+    <ul>
+    <li>Absolutos (como pixels)</li>
+    <li>Relativos (como rem, em)</li>
+    <li>Porcentuales</li>
+    <li>Palabras clave: Estos dos valores son intuitivos, y pueden tomar valores de <code>left</code>, <code>center</code>, <code>right</code>, y <code>top</code>, <code>center</code>, <code>bottom</code>, respectivamente.</li>
+    </ul>
+	<p><strong>Gradientes en los fondos</strong>.Hay dos tipos de gradientes disponibles en este momento: gradientes lineales (que van de una línea recta a otra) y gradientes radiales (que irradian desde un solo punto).</p>
+	<p>Un gradiente lineal se crea pasando en una función <code>linear-gradient()</code> como el valor de una propiedad de <code>background-image</code>. Como mínimo, la función necesita tomar tres parámetros separados por comas - la dirección en la que el degradado debe ir a través del fondo, el color al principio y el color al final. </p>
+	<code>background-image: linear-gradient(to bottom, orange, yellow);</code>
+	<p>Puede utilizar palabras clave para especificar la dirección (<code>to bottom</code>, <code>to right</code>, <code>to bottom right</code>, etc.), o los valores de grado (<code>0deg</code> es equivalente a <code>to top</code>, <code>90deg</code> es equivalente a <code>to right</code>, hasta <code>360deg</code>, lo que equivaldría a <code>to top</code> de nuevo). También puede especificar otros puntos a lo largo del degradado donde se define el color - estos se llaman topes de color, y el navegador calculará los topes de color entre cada conjunto de topes de color.</p>
+	<code>background-image: linear-gradient(to bottom, yellow, orange 40%, yellow);</code>
+	<p>Tenga en cuenta que también puede establecer un gradiente lineal de repetición utilizando la función <code>repeating-linear-gradient()</code>. Esto funciona exactamente de la misma manera, excepto que el patrón que usted establece se repite una y otra vez hasta el borde del fondo.</p>
+	<code>background-image: repeating-linear-gradient(to right, yellow, orange 25px, yellow 50px);</code>
+	<p>Otra opción que tenemos disponible para los fondos es especificar cómo se desplazan cuando el contenido se desplaza. Esto se controla usando la propiedad <code>background-attachment</code>, que puede tomar los siguientes valores:</p>
+	<ul>
+    <li><code>scroll</code>: Hace que el fondo del elemento se desplace cuando se desplaza la página. Si el contenido del elemento se desplaza, el fondo no se mueve. En efecto, el fondo se fija en la misma posición de la página, por lo que se desplaza como se desplaza la página.</li>
+    <li><code>fixed</code>: Hace que el fondo de un elemento se fije en la ventana de visualización, de modo que no se desplace cuando se desplaza el contenido de la página o del elemento. Siempre permanecerá en la misma posición en la pantalla.</li>
+    <li><code>local</code>: Este valor se añadió más tarde (sólo se admite en Internet Explorer 9+, mientras que los demás se admiten en IE4+) porque el valor de desplazamiento es bastante confuso y no hace realmente lo que se desea en muchos casos. El valor local fija el fondo al elemento en el que está fijado, de modo que cuando se desplaza el elemento, el fondo se desplaza con él.</li>
+    </ul>
+    <p>Es posible declarar todos los valores de propiedad discutidos anteriormente (y algunos otros, en navegadores más nuevos) en una sola línea, usando la propiedad <code>background</code>. Para ello, se utilizan los mismos valores que en las propiedades individuales, pero se colocan todos en una línea separada por espacios, así:</p>
+	<code>background: yellow linear-gradient(to bottom, orange, yellow) no-repeat left center scroll;</code>
+	<p><strong>Múltiples fondos</strong>: Recientemente (desde Internet Explorer 9) hemos tenido la capacidad de adjuntar múltiples fondos a un solo elemento. Esto es bueno, ya que múltiples fondos son muy útiles. Se separan las diferentes definiciones de fondo con comas:</p>
+	<pre><code>
+	background: url(image.png) no-repeat 99% center,
+	            url(background-tile.png),
+	            linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+	background-color: yellow;	
+	</code></pre>
+	<p>También hay que tener en cuenta que hemos puesto el color de fondo de reserva en una declaración de propiedad separada, porque tratar de incluirlo en los múltiples fondos parece romper las cosas.</p>
+	<p>También se puede poner múltiples valores en las propiedades de <code>background-*</code>, por ejemplo:</p>
+	<pre><code>
+	background-image: url(image.png), url(background-tile.png);
+	background-repeat: no-repeat, repeat;	
+	</code></pre>
+	<p>Como mencionamos anteriormente, hay una propiedad disponible - <code>background-size</code> - que le permite alterar dinámicamente el tamaño de una imagen de fondo para que se ajuste mejor a su diseño. Esto es muy útil en muchos sentidos, por ejemplo, para corregir automáticamente el tamaño de los iconos que no se cargan correctamente. Para cada imagen de fondo, necesita incluir dos valores de tamaño de fondo - uno para la dimensión horizontal y otro para la vertical:</p>
+	<code>background-size: 16px 16px;</code>
+	<p><code>border</code>: La propiedad abreviada <code>border</code> le permite establecer los cuatro lados a la vez. Pero <code>border</code> se puede dividir en numerosas etiquetas diferentes para necesidades de estilo más específicas:</p>
+	<ul>	
+    <li><code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code>: Establece grosor, estilo y color para cada lado de un elemento.</li>
+    <li><code>border-width</code>, <code>border-style</code>, <code>border-color</code>: Ajustar sólo el grosor, estilo o color individualmente, pero para los cuatro lados del borde.</li>
+    <li>También puede establecer una de las tres propiedades de un solo lado del borde individualmente, usando <code>border-top-width</code>, <code>border-top-style</code>, <code>border-top-color</code>, etc.</li> 
+	</ul>
+	<p><code>border-radius</code>: Para poner un tamaño diferente de <code>border-radius</code> en diferentes esquinas, puede especificar dos, tres o cuatro valores, de la misma manera que puede hacerlo con el <code>padding</code> y el <code>margin</code>:</p>
+	<p>También puede crear esquinas elípticas (donde el radio x es diferente al radio y.) Los dos radios diferentes se especifican separados por una barra oblicua (/), y puede combinarlos con cualquier combinación de valores, como se ha indicado anteriormente. </p>
+	<code>border-radius: 10px / 20px;</code>
+	<p>Las propiedades largas también están disponibles, para establecer el radio del borde de cada esquina de la caja individualmente: <code>border-top-left-radius</code>, <code>border-top-right-radius</code>, <code>border-bottom-left-radius</code>, y <code>border-bottom-right-radius</code>.</p>
+	<p>También podemos establecer una imagen como borde. Para ello <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Borders#Border_images" target="_blank">visita este enlace de MDN</a>.</p>
+	<p>Consejos rápidos para el <strong>diseño de tablas</strong></p>
+	<ul>
+    <li>Haga que el marcado de su tabla sea lo más sencillo posible y mantenga la flexibilidad, por ejemplo, utilizando porcentajes, para que el diseño sea más receptivo.</li>
+    <li>Usar <code>table-layout: fixed</code> para crear un diseño de tabla más predecible que le permita establecer fácilmente los anchos de columna estableciendo el ancho en sus encabezados (<code>&lt;th&gt;</code>).</li>
+    <li>Usar <code>border-collapse: collapse</code> para hacer que los bordes de los elementos de la tabla colapsen entre sí, produciendo una apariencia más ordenada y fácil de controlar.</li>
+    <li>Utilice <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, y <code>&lt;tfoot&gt;</code> para dividir su tabla en trozos lógicos y proporcionar lugares adicionales para aplicar CSS, de modo que sea más fácil superponer estilos si es necesario.</li>
+    <li>Use rayas de cebra para hacer que las filas alternativas sean más fáciles de leer.</li>
+    <li>Use <code>text-align</code> para alinear su texto &lt;th&gt; y &lt;td&gt;, para hacer las cosas más ordenadas y fáciles de seguir.</li>
+    <p><code>box-shadow</code> le permite aplicar una o más sombras a una caja de elementos real.</p>
+    <code>box-shadow: 5px 5px 5px rgba(0,0,0,0.7);</code>
+    <p>También puede especificar varias <code>box-shadow</code> en una sola declaración, separándolas con comas. <code>box-shadow</code> tiene disponible una palabra clave <code>inset</code>. Ponerla al principio de una declaración de sombra hace que se convierta en una sombra interior</p>
+    <code>box-shadow: inset 2px 2px 1px black;</code>
+    <p>Los <strong>filtros</strong> CSS proporcionan una forma de aplicar filtros a un elemento de la misma manera que se puede aplicar un filtro a una capa en un paquete gráfico como Photoshop.</p>
+    <pre>
+	.filter {
+	  -webkit-filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.7));
+	  filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.7));
+	}
+    </pre>
+    <p>Los <strong>modos de mezcla</strong> CSS nos permiten añadir modos de mezcla a los elementos que especifican un efecto de mezcla cuando dos elementos se superponen - el color final mostrado para cada píxel será el resultado de una combinación del color original del píxel, y el del píxel en la capa inferior.</p>
+    <p>Hay dos propiedades que utilizan modos de mezcla en CSS: <code>background-blend-mode</code>, que combina múltiples imágenes de fondo y colores en un solo elemento, y <code>mix-blend-mode</code>, que mezcla el elemento en el que está colocado con los elementos que se superponen - tanto el fondo como el contenido. Los valores que pueden tomar son muy amplios.</p>
+    
+    <p><a href="css-segunda.html">&lt;&lt; CSS 2ª parte</a></p>
+</body>
+</html>
