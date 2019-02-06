@@ -6,6 +6,10 @@
 
 ___
 
-This project it's for publish notes about [MDN](https://developer.mozilla.org/en-US/docs/Web/Tutorials "Mozilla Site") Tutorials.
+This project it's for publish notes about [MDN](https://developer.mozilla.org/en-US/docs/Web/Tutorials "Mozilla Site") Tutorials, about HTML and CSS.
 
-_Este proyecto es para publicar apuntes sobre los tutoriales de [MDN](https://developer.mozilla.org/en-US/docs/Web/Tutorials "Mozilla Site")_
+So far they're very rough and somewhat disorganized notes.
+
+_Este proyecto es para publicar apuntes sobre los tutoriales de [MDN](https://developer.mozilla.org/en-US/docs/Web/Tutorials "Mozilla Site") sobre HTML y CSS_
+
+_Hasta ahora son unos apuntes muy toscos y algo desorganizados._

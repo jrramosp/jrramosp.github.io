@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Apuntes de CSS</title>
+  <meta name="author" content="Nani" >
+  <meta name="description" content="Es una página de apuntes sobre CSS">
+  <link rel="shorcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="css/css-style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun|Staatliches" rel="stylesheet">
+</head>
+<body>
+	<h1>Apuntes de CSS en GITHUB</h1>
+	<h2>Apuntes tomados de la web de MDN. 3ª Parte</h2>
+	<p><a href="css-tercera.html">&lt;&lt; CSS 3ª parte</a></p>
+  <p>Las técnicas de diseño de página CSS nos permiten tomar los elementos contenidos en una página web y controlar dónde están posicionados en relación con su posición predeterminada en el flujo de diseño normal, los otros elementos a su alrededor, su contenedor principal o la ventana / ventana principal.</p>
+  <p>El flujo normal es la forma en que el navegador establece las páginas HTML de forma predeterminada cuando no hace nada para controlar el diseño de la página.</p>
+  <p>Los métodos que pueden cambiar cómo se organizan los elementos en CSS son los siguientes:</p>
+  <ul>
+    <li>La propiedad <code>display</code> — Valores estandar como <code>block</code>, <code>inline</code> o <code>inline-block</code> puede cambiar cómo se comportan los elementos en flujo normal (ver Types of CSS boxes para mas informacion). Luego tenemos métodos de diseño completos que se activan a través de un valor de <code>display</code>, por ejemplo, <code>grid</code> y <code>flex</code>.</li>
+    <li><strong>Floats</strong> — Aplicando un valor <code>float</code> como <code>left</code> puede hacer que los elementos de nivel de bloque se envuelvan a un lado de un elemento, como la forma en que las imágenes a veces tienen texto flotando a su alrededor en diseños de revistas.</li>
+    <li>La propiedad <code>position</code> — Le permite controlar con precisión la ubicación de las cajas dentro de otras cajas. El posicionamiento <code>static</code> es por defecto el de un flujo normal, pero puede hacer que los elementos se distribuyan de forma diferente utilizando otros valores, por ejemplo, siempre fijados en la parte superior izquierda de la ventana del navegador.</li>
+    <li><strong>Table layout</strong> — las características diseñadas para diseñar las partes de una tabla HTML se pueden usar en elementos que no son de tabla usando <code>display: table</code> y propiedades asociadas.</li>
+    <li><strong>Multi-column layout</strong> — La propiedad Multi-column layout puede hacer que el contenido de un bloque se distribuya en columnas, como puede ver en un periódico.</li>
+  </ul>
+  <p><strong>Flexbox</strong> es el nombre corto del Módulo de Disposición de Caja Flexible, diseñado para facilitarnos la disposición de las cosas en una dimensión - ya sea como una fila o como una columna. Para utilizar flexbox, se aplica <code>display: flex</code> al elemento padre de los elementos que se desea diseñar; todos sus hijos directos se convierten en elementos flexibles. </p>
+  <p>Como ejemplo simple de esto, podemos añadir la propiedad <code>flex</code> a todos los objetos de nuestro hijo, con un valor de 1. Esto hará que todos los objetos crezcan y llenen el contenedor, en lugar de dejar espacio al final.</p>
+  <p><strong>Grid Layout</strong> está diseñado para dos dimensiones - alineando las cosas en filas y columnas. Puede activar Grid Layout con un valor específico de <code>display: grid</code>. Además de usar <code>display: grid</code>, también estamos definiendo algunas líneas y columnas en el padre usando las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code> respectivamente.  No necesito poner ninguna regla sobre los elementos hijo; se colocan automáticamente en las celdas que nuestra red ha creado.</p> 
+  <p>Se puede establecer el inicio y el final de la línea de cada elemento utilizando las propiedades de <code>grid-column</code> y <code>grid-row</code>. Esto hace que los elementos abarquen varias filas o columnas.</p>
+  <p>La propiedad <code>float</code> de un elemento cambia el comportamiento de ese elemento y de los elementos de nivel de bloque que lo siguen en flujo normal. El elemento se mueve a la izquierda o a la derecha y se retira del flujo normal, y el contenido circundante flota alrededor de la posición flotante. La propiedad <code>float</code> tiene cuatro valores posibles:<code>left</code>, <code>right</code>, <code>none</code> e <code>inherit</code></p>
+  <p>El posicionamiento le permite mover un elemento desde donde se colocaría cuando está en flujo normal a otra ubicación. Hay cinco tipos de posicionamiento que debe conocer:</p>
+  <ul>
+    <li>El posicionamiento <strong>estático</strong> es el valor por defecto que recibe cada elemento - sólo significa "poner el elemento en su posición normal en el flujo de diseño del documento - nada especial que ver aquí".</li>
+    <li>El posicionamiento <strong>relativo</strong> le permite modificar la posición de un elemento en la página, moviéndolo en relación con su posición en flujo normal, incluso superponiéndolo a otros elementos de la página.</li>
+    <li>El posicionamiento <strong>absoluto</strong> mueve un elemento completamente fuera del flujo normal del diseño de la página, como si estuviera ubicado en su propia capa separada. Desde allí, puede fijarlo en una posición relativa a los bordes del elemento &lt;html&gt; de la página (o su elemento ancestral más cercano). Esto es útil para crear efectos de diseño complejos, como cuadros con pestañas en los que los distintos paneles de contenido se sientan uno encima del otro y se muestran y ocultan como se desee, o paneles de información que se colocan fuera de la pantalla de forma predeterminada, pero que se pueden hacer deslizar en la pantalla mediante un botón de control.</li>
+    <li>El posicionamiento <strong>fijo</strong> es muy similar al posicionamiento absoluto, excepto que fija un elemento relativo a la ventana del navegador, no otro elemento. Esto es útil para crear efectos como un menú de navegación persistente que siempre permanece en el mismo lugar en la pantalla que el resto de los pergaminos de contenido.</li>
+    <li>El posicionamiento <strong>sticky</strong> es un nuevo método de posicionamiento que hace que un elemento actúe como <code>position: static</code> hasta que alcanza una posición definida de la ventana de visualización, en cuyo punto actúa como <code>position: fixed</code>.</li>
+</ul>
+  <p>El posicionamiento <strong>relativo</strong>, <code>position: relative</code>, le permite desplazar un elemento de la posición en flujo normal que tendría por defecto. Esto significa que puede realizar una tarea como mover un icono un poco hacia abajo para que se alinee con una etiqueta de texto.</p>
+  <p>El posicionamiento <strong>absoluto</strong>, <code>position: absolute</code>, se utiliza para eliminar completamente un elemento del flujo normal y colocarlo utilizando desplazamientos desde los bordes de un bloque que lo contiene.</p>
+  <p>El posicionamiento <strong>fijo</strong>, <code>position: fixed</code>, elimina nuestro elemento del flujo de documentos de la misma manera que el posicionamiento absoluto. Sin embargo, en lugar de las compensaciones que se aplican desde el contenedor, se aplican desde el Viewport.</p>
+  <p>El posicionamiento <strong>sticky</strong>, <code>position: sticky</code>, mezcla el posicionamiento estático por defecto con el posicionamiento fijo. Cuando un objeto tiene <code>position: sticky</code> se desplazará en flujo normal hasta que se desplaza desde la ventana de visualización que hemos definido. En ese momento se "atasca" como si tuviera una <code>position: fixed</code> aplicada.</p>
+  <p>Para convertir un bloque en un contenedor <strong>multicolumna</strong> utilizamos la propiedad <code>column-count</code>, que le dice al navegador cuántas columnas nos gustaría tener, o la propiedad <code>column-width</code>, que le dice al navegador que llene el contenedor con tantas columnas de al menos ese ancho.</p>
+  <p>En Flexbox los siguientes requerimientos para un diseño, son difíciles o imposible  de conseguir con las herramientas mencionadas anteriormente de una manera flexible</p>
+  <ul>
+    <li>Centrar verticalmente un bloque dentro de su padre</li>
+    <li>Hacer que todos los elementos de un contenedor tengan la misma altura/anchura, independientemente de cuanta altura y anchura esta disponible</li>
+    <li>Hacer que todas las columnas tengan el mismo tamaño, incluso cuando tiene diferente cantidad de contenido.</li>
+  </ul>
+  <p>Para empezar, tenemos que seleccionar qué elementos van a ser colocados como cajas flexibles. Para hacer esto, establecemos un valor especial de display en el elemento padre de los elementos que desea afectar. En este caso queremos presentar los elementos <code>&lt;article&gt;</code>, así que lo establecemos en <code>&lt;section&gt;</code> (que se convierte en un contenedor flexible):</p>
+  <pre><code>
+  section {
+    display: flex;
+  }
+  </code></pre>
+  <p>Cuando los elementos se colocan como cajas flexibles, se colocan a lo largo de dos ejes:</p>
+  <img src="images/flex_terms.png" width="563" height="333" alt="Referencia de flexbox">
+  <ul>    
+    <li>El eje principal o main axis es el eje que corre en la dirección en la que se están colocando los elementos flexibles (por ejemplo, como filas a lo largo de la página, o columnas hacia abajo en la página.) El inicio y el final de este eje se denominan <strong>main start</strong> y <strong>main end</strong> (inicio principal y final principal).</li>
+    <li>El eje transversal o <strong>cross axis</strong> es el eje que corre perpendicular a la dirección en la que se están colocando las piezas flexibles. El inicio y el final de este eje se denominan <strong>cross start</strong> y <strong>cross end</strong>.</li>
+    <li>El elemento padre con el <code>display: flex</code> seleccionado (el elemento <code>&lt;section&gt;</code> en nuestro ejemplo) se llama <strong>flex container</strong>.</li>
+    <li>Los items que se presentan como cajas flexibles dentro del <strong>flex container</strong> se denominan <strong>flex items</strong> (los elementos <code>&lt;article&gt;</code> en nuestro ejemplo).</li>
+  </ul>
+  <p>Flexbox proporciona una propiedad llamada <code>flex-direction</code> que especifica en qué dirección corre el eje principal (en qué dirección están dispuestos los hijos de flexbox) - por defecto está configurada como <code>row</code>, lo que hace que estén dispuestos en una fila en la dirección en la que trabaja el idioma predeterminado de su navegador.</p>
+  <p>Un problema que surge cuando tiene una cantidad fija de ancho o alto en su diseño es que eventualmente sus hijos de la caja flexible desbordarán su contenedor, rompiendo el diseño. Una forma de solucionar esto es añadir la siguiente declaración a la regla de la sección:</p>
+  <code>flex-wrap: wrap</code>
+  <p>Ahora tenemos varias filas: se colocan tantos hijos flexbox en cada fila como sea necesario, y cualquier desbordamiento se mueve a la siguiente línea.</p>
+  <p>En este punto vale la pena señalar que existe una abreviatura de <code>flex-direction</code> y <code>flex-wrap</code> - <code>flex-flow</code>.</p>
+  <code>flex-flow: row wrap;</code>
+  <p>Cómo podemos controlar qué proporción de espacio ocupan los ítems de flex.</p>
+  <code>flex: 1;</code>
+  <p>Este es un valor de proporción sin unidades que dicta cuánto espacio disponible a lo largo del eje principal ocupará cada elemento flexible. En este caso, le damos a cada <code>&lt;article&gt;</code> elemento un valor de 1, lo que significa que todos ocuparán una cantidad igual del espacio libre que queda después de que se hayan establecido cosas como el padding y margin.</p>
+  <p>También puede especificar un valor de tamaño mínimo dentro del valor de flex. </p>
+  <code>flex: 1 200px;</code>
+  <p><code>flex</code> es una propiedad abreviada que puede especificar hasta tres valores diferentes:</p>
+  <ul>
+    <li>El valor de la proporción sin unidades que discutimos anteriormente. Esto se puede especificar individualmente utilizando la propiedad larga <code>flex-grow.</code></li>
+    <li>Un segundo valor de proporción sin unidades, el <code>flex-shrink</code>, que entra en juego cuando las piezas flexibles se desbordan de su contenedor. Esto especifica qué cantidad de la cantidad desbordante se retira del tamaño de cada artículo flex, para evitar que se desborde su contenedor.</li>
+   <li>El valor del tamaño mínimo que hemos discutido anteriormente. Esto se puede especificar individualmente utilizando el valor largo de la <code>flex-basis</code>.</li>
+   </ul>
+   <p>También puede utilizar las funciones de flexbox para alinear las posiciones flexibles a lo largo de los ejes principales o cruzados.</p>
+   <pre><code>
+   div {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-around;
+	}
+   </code></pre>
+   <p><code>align-items</code> controla donde los objetos flex se distribuyen a lo largo del eje transversal.</p>
+   <ul>
+   <li>De forma predeterminada, el valor es <code>stretch</code>, que estira todas las posiciones flexibles para rellenar el nivel superior en la dirección del eje transversal. Si el padre no tiene un ancho fijo en la dirección del eje transversal, entonces todas las posiciones flexibles serán tan largas como las posiciones flexibles más largas.</li>
+   <li>El valor <code>center</code> hace que los ítems mantengan sus dimensiones intrínsecas, pero que estén centrados a lo largo del eje transversal.</li> 
+   <li>También puede tener valores como <code>flex-start</code> y <code>flex-end</code>, que alinearán todas las posiciones al principio y al final del eje transversal respectivamente.</li>
+   </ul>
+   <p><code>justify-content</code> controla donde los elementos flexibles se encuentran en el eje principal.</p>
+   <ul>
+   <li>El valor por defecto es <code>flex-start</code>, que hace que todas las posiciones se sitúen al principio del eje principal.</li>
+   <li>Puedes usar el <code>flex-end</code> para hacer que se coloquen al final.</li>
+   <li><code>center</code> es también un valor para justificar el contenido, y hará que los elementos flexibles se sitúen en el centro del eje principal.</li>
+   <li>El valor <code>space-around</code>, es útil - distribuye todos los elementos uniformemente a lo largo del eje principal, con un poco de espacio en cada extremo.</li>
+   <li>Hay otro valor, <code>space-between</code>, que es muy similar a <code>space-around</code> excepto que no deja espacio en ninguno de los extremos.</li>
+   </ul>
+   <p>Flexbox también tiene una función para cambiar el orden de disposición de las posiciones flexibles, sin afectar al orden de origen. </p>
+   <code>order: 1;</code>
+   <ul>
+   <li>Por defecto, todas las posiciones flexibles tienen un valor de orden de 0.</li>
+   <li>Las posiciones de Flex con valores de orden superiores configurados aparecerán más tarde en el orden de visualización que las posiciones con valores de orden inferiores.</li>
+   <li>Los elementos flexibles con el mismo valor del orden aparecerán en su orden de origen. Por lo tanto, si tiene cuatro artículos con valores de orden de 2, 1, 1 y 0 establecidos respectivamente, su orden de visualización sería 4º, 2º, 3º, y luego 1er.</li>
+   <li>La tercera posición aparece después de la segunda porque tiene el mismo valor de orden y está detrás de ella en el orden de origen.</li>
+   <li>Se pueden fijar valores de orden negativos para que las posiciones aparezcan antes que las posiciones con valor de orden 0.</li>
+   </ul>
+   <p>Es posible crear algunos esquemas bastante complejos con flexbox. Está perfectamente bien configurar un artículo flexible para que también sea un contenedor flexible, de modo que sus hijos también estén dispuestos como cajas flexibles. </p>
+  
+  <p><a href="css-tercera.html">&lt;&lt; CSS 3ª parte</a></p>
+</body>
+</html>
