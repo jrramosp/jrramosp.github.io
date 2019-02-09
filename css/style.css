@@ -46,6 +46,16 @@ h1{
 	box-shadow: 3px 3px 3px #aaa;
 	background: linear-gradient(180deg, yellow , orange );
 	border: 1px solid black;
+	border-radius: 7px;
+}
+a{
+	text-decoration: none;
+	font-weight: bold;
+	font-family: arial, monospace;
+	letter-spacing: 0.2px;
+}
+a:hover{
+	border-bottom: 1px solid #0015d2;
 }
 p{
 	font-family: 'Sarabun', sans-serif;
