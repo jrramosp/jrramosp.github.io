@@ -42,7 +42,7 @@
   <p>El posicionamiento <strong>fijo</strong>, <code>position: fixed</code>, elimina nuestro elemento del flujo de documentos de la misma manera que el posicionamiento absoluto. Sin embargo, en lugar de las compensaciones que se aplican desde el contenedor, se aplican desde el Viewport.</p>
   <p>El posicionamiento <strong>sticky</strong>, <code>position: sticky</code>, mezcla el posicionamiento estático por defecto con el posicionamiento fijo. Cuando un objeto tiene <code>position: sticky</code> se desplazará en flujo normal hasta que se desplaza desde la ventana de visualización que hemos definido. En ese momento se "atasca" como si tuviera una <code>position: fixed</code> aplicada.</p>
   <p>Para convertir un bloque en un contenedor <strong>multicolumna</strong> utilizamos la propiedad <code>column-count</code>, que le dice al navegador cuántas columnas nos gustaría tener, o la propiedad <code>column-width</code>, que le dice al navegador que llene el contenedor con tantas columnas de al menos ese ancho.</p>
-  <p>En Flexbox los siguientes requerimientos para un diseño, son difíciles o imposible  de conseguir con las herramientas mencionadas anteriormente de una manera flexible</p>
+  <p>En <strong>Flexbox</strong> los siguientes requerimientos para un diseño, son difíciles o imposible  de conseguir con las herramientas mencionadas anteriormente de una manera flexible</p>
   <ul>
     <li>Centrar verticalmente un bloque dentro de su padre</li>
     <li>Hacer que todos los elementos de un contenedor tengan la misma altura/anchura, independientemente de cuanta altura y anchura esta disponible</li>
@@ -62,7 +62,7 @@
     <li>El elemento padre con el <code>display: flex</code> seleccionado (el elemento <code>&lt;section&gt;</code> en nuestro ejemplo) se llama <strong>flex container</strong>.</li>
     <li>Los items que se presentan como cajas flexibles dentro del <strong>flex container</strong> se denominan <strong>flex items</strong> (los elementos <code>&lt;article&gt;</code> en nuestro ejemplo).</li>
   </ul>
-  <p>Flexbox proporciona una propiedad llamada <code>flex-direction</code> que especifica en qué dirección corre el eje principal (en qué dirección están dispuestos los hijos de flexbox) - por defecto está configurada como <code>row</code>, lo que hace que estén dispuestos en una fila en la dirección en la que trabaja el idioma predeterminado de su navegador.</p>
+  <p>Flexbox proporciona una propiedad llamada <code>flex-direction</code> que especifica en qué dirección corre el eje principal (en qué dirección están dispuestos los hijos de flexbox) - por defecto está configurada como <code>row</code>, lo que hace que estén dispuestos en una fila en la dirección en la que trabaja el idioma predeterminado de su navegador. Puede ser también en <code>column</code>.</p>
   <p>Un problema que surge cuando tiene una cantidad fija de ancho o alto en su diseño es que eventualmente sus hijos de la caja flexible desbordarán su contenedor, rompiendo el diseño. Una forma de solucionar esto es añadir la siguiente declaración a la regla de la sección:</p>
   <code>flex-wrap: wrap</code>
   <p>Ahora tenemos varias filas: se colocan tantos hijos flexbox en cada fila como sea necesario, y cualquier desbordamiento se mueve a la siguiente línea.</p>
@@ -111,7 +111,37 @@
    <li>Se pueden fijar valores de orden negativos para que las posiciones aparezcan antes que las posiciones con valor de orden 0.</li>
    </ul>
    <p>Es posible crear algunos esquemas bastante complejos con flexbox. Está perfectamente bien configurar un artículo flexible para que también sea un contenedor flexible, de modo que sus hijos también estén dispuestos como cajas flexibles. </p>
-  
+   <p><code>align-content</code> Esta propiedad alinea las líneas de un contenedor flexible dentro cuando hay espacio extra en el eje transversal, de forma similar a como el <code>justify-content</code> alinea los elementos individuales dentro del eje principal. Es una propiedad que tiene efecto cuando hay más de una línea de artículos flexibles.</p>
+   <p><code>align-self</code> permite que la alineación predeterminada (o la especificada por los elementos de alineación) se sustituya para los elementos flexibles individuales.</p>
+   <p>CSS <strong>Grid Layout</strong> es un sistema de maquetación bidimensional para la web. Permite distribuir el contenido en filas y columnas, y tiene muchas características que hacen que la construcción de diseños complejos sea sencilla. Una cuadrícula típicamente tendrá columns, rows, y luego espacios entre cada fila y columna - comúnmente referidos como gutters.</p>
+   <p>Para definir una cuadrícula utilizamos el valor <code>grid</code> de la propiedad <code>display</code>. Al igual que en el caso de Flexbox, esta opción activa el diseño de la cuadrícula y todos los hijos directos del contenedor se convierten en elementos de la cuadrícula.</p>
+   <p>Para determinar las columnas en una cuadrícula utlizamos la propiedad <code>grid-template-columns</code>. Puede utilizar cualquier unidad de longitud o porcentaje para crear estas líneas de columna. podemos utilizar la unidad <code>fr</code> para dimensionar de forma flexible las filas y columnas de la rejilla. Esta unidad representa una fracción del espacio disponible en el contenedor de la rejilla.</p>
+   <p>Para crear huecos entre las pistas, usamos las propiedades <code>grid-column-gap</code> para los huecos entre columnas, <code>grid-row-gap</code> para los huecos entre filas, y <code>grid-gap</code> para establecer ambos a la vez. Estos espacios pueden ser cualquier unidad de longitud o un porcentaje, pero no una unidad <code>fr</code>.</p>
+   <pre><code>
+     .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+   </code></pre>
+   <p>Puede repetir todo o una parte de su listado de pistas utilizando la notación <code>repeat</code>.</p>
+   <code>grid-template-columns: repeat(3, 1fr);</code>
+   <p>Si desea dar a las pistas que el navegador crea un tamaño, puede utilizar las propiedades <code>grid-auto-rows</code> y <code>grid-auto-columns</code>.</p>
+   <p>La función <code>minmax</code> nos permite establecer un tamaño mínimo y máximo para una pista, por ejemplo <code>minmax(100px, auto)</code>. El tamaño mínimo es de 100 píxeles, pero el máximo es automático, que se ampliará para ajustarse al contenido.</p>
+   <code>grid-auto-rows: minmax(100px, auto);</code>
+   <p>A veces es útil poder pedir a la cuadrícula que cree tantas columnas como quepan en el contenedor. Hacemos esto estableciendo el valor <code>grid-template-columns</code> usando la notación <code>repeat()</code>, pero en lugar de pasar un número, pasamos la palabra clave <code>auto-fill</code>. Para el segundo parámetro de la función usamos <code>minmax()</code>, con un valor mínimo igual al tamaño mínimo de pista que nos gustaría tener, y un valor máximo.</p>
+   <code>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</code>
+   <p>Podemos colocar las cosas de acuerdo a estas líneas especificando el inicio y el final de la línea. Hacemos esto usando las siguientes propiedades: <code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code> y <code>grid-row-end</code>. Todas estas propiedades pueden tener un número de línea como valor. También puede utilizar las propiedades abreviadas: <code>grid-column</code> y <code>grid-row</code>. Estos le permiten especificar las líneas de inicio y final a la vez, separadas por un carácter / .</p>
+   <p>Una forma alternativa de colocar elementos en su cuadrícula es utilizar la propiedad <code>grid-template-areas</code> y darle un nombre a los distintos elementos de su diseño. Luego establecemos los nombres de los elementos con la propiedad <code>grid-area</code>.</p>
+   <p>Las reglas para <code>grid-template-areas</code> son las siguientes:</p>
+    <ul>
+    <li>Necesitas tener todas las celdas de la cuadrícula llenas.</li>
+    <li>Para abarcar dos celdas, repita el nombre.</li>
+    <li>Para dejar una celda vacía, utilice un... (punto).</li>
+    <li>Las áreas deben ser rectangulares - no se puede tener un área en forma de L, por ejemplo.</li>
+    <li>Las áreas no se pueden repetir en diferentes lugares.</li>
+    </ul>
+
   <p><a href="css-tercera.html">&lt;&lt; CSS 3ª parte</a></p>
 </body>
 </html>
