@@ -1,0 +1,61 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Hacer un check disk</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="Linux_Notes.html">Linux Notes</a></p>
+
+<ol>
+<li><a href="Linux_Notes--Acesso_a_Google_Drive(ocamlfuse).html">Acesso a Google Drive(ocamlfuse)</a></li>
+<li><a href="Linux_Notes--Actualizar_cache_de_fuentes.html">Actualizar cache de fuentes</a></li>
+<li><a href="Linux_Notes--Antiguo_scroll.html">Antiguo scroll</a></li>
+<li><a href="Linux_Notes--Añadiendo_iconos_en_los_menus.html">Añadiendo iconos en los menus</a></li>
+<li><a href="Linux_Notes--Añadir_disco_duro.html">Añadir disco duro</a></li>
+<li><a href="Linux_Notes--Asignar_nueva_carpeta_en_el_sistema.html">Asignar nueva carpeta en el sistema</a></li>
+<li><a href="Linux_Notes--Backup_con_rsync.html">Backup con rsync</a></li>
+<li><a href="Linux_Notes--Backup_con_tar.html">Backup con tar</a></li>
+<li><a href="Linux_Notes--Boot_USB_VirtualBox.html">Boot USB VirtualBox</a></li>
+<li><a href="Linux_Notes--Buscar_fichero.html">Buscar fichero</a></li>
+<li><a href="Linux_Notes--Busqueda_rapida_en_Synaptic.html">Busqueda rapida en Synaptic</a></li>
+<li><a href="Linux_Notes--Cambiar_resolucion_TTY.html">Cambiar resolucion TTY</a></li>
+<li><a href="Linux_Notes--Centrar_ventanas.html">Centrar ventanas</a></li>
+<li><a href="Linux_Notes--Convertir_rpm_en_deb.html">Convertir rpm en deb</a></li>
+<li><a href="Linux_Notes--Desactivar_Alt+click.html">Desactivar Alt+click</a></li>
+<li><a href="Linux_Notes--Desactivar_IPV6.html">Desactivar IPV6</a></li>
+<li><a href="Linux_Notes--Dominio_de_red.html">Dominio de red</a></li>
+<li><a href="Linux_Notes--Drivers_Nvidia.html">Drivers Nvidia</a></li>
+<li><a href="Linux_Notes--Editar_Sounfonts.html">Editar Sounfonts</a></li>
+<li><a href="Linux_Notes--Gnome_classic.html">Gnome classic</a></li>
+<li><a href="Linux_Notes--Hacer_un_check_disk.html">Hacer un check disk</a></li>
+<li><a href="Linux_Notes--Iconos_en_escritorio.html">Iconos en escritorio</a></li>
+<li><a href="Linux_Notes--Instalar_desde_cero.html">Instalar desde cero</a></li>
+<li><a href="Linux_Notes--Instalar_IE.html">Instalar IE</a></li>
+<li><a href="Linux_Notes--Instalar_Java.html">Instalar Java</a></li>
+<li><a href="Linux_Notes--JACK.html">JACK</a></li>
+<li><a href="Linux_Notes--libEGL.so.1_is_not_a_symbolic_link.html">libEGL.so.1 is not a symbolic link</a></li>
+<li><a href="Linux_Notes--lm-sensors.html">lm-sensors</a></li>
+<li><a href="Linux_Notes--Matar_procesos_zombies.html">Matar procesos zombies</a></li>
+<li><a href="Linux_Notes--Maximizar_ventanas.html">Maximizar ventanas</a></li>
+<li><a href="Linux_Notes--Menus_borrados.html">Menus borrados</a></li>
+<li><a href="Linux_Notes--Mint_Theme.html">Mint Theme</a></li>
+<li><a href="Linux_Notes--No_detectar_cascos.html">No detectar cascos</a></li>
+<li><a href="Linux_Notes--Numix_Icons.html">Numix Icons</a></li>
+<li><a href="Linux_Notes--Papelera_en_ntfs.html">Papelera en ntfs</a></li>
+<li><a href="Linux_Notes--Paquetes_instalados.html">Paquetes instalados</a></li>
+<li><a href="Linux_Notes--Plymouth_fijo.html">Plymouth fijo</a></li>
+<li><a href="Linux_Notes--Preferencias_Nautilus.html">Preferencias Nautilus</a></li>
+<li><a href="Linux_Notes--Radios_Linux.html">Radios Linux</a></li>
+<li><a href="Linux_Notes--Realizar_TRIM_al_SSD.html">Realizar TRIM al SSD</a></li>
+<li><a href="Linux_Notes--Resume_en_initramfs.html">Resume en initramfs</a></li>
+<li><a href="Linux_Notes--Seleccionar_ficheros_con_pulsar_tecla.html">Seleccionar ficheros con pulsar tecla</a></li>
+<li><a href="Linux_Notes--Servicios_en_arranque.html">Servicios en arranque</a></li>
+<li><a href="Linux_Notes--Touchpad_Lubuntu.html">Touchpad Lubuntu</a></li>
+<li><a href="Linux_Notes--Transmission_magnet_links.html">Transmission magnet links</a></li>
+<li><a href="Linux_Notes--Version_ubuntu.html">Version ubuntu</a></li>
+</ol></div>
+<div class="page"><h1><b><u>Hacer un check disk</u></b></h1><a name="h1-1"></a><h1>Hacer un check disk</h1><br />Created viernes 18 agosto 2017<br /><br />En la raíz del disco hacer:<br />	sudo touch <a href="file:///forcefsck">/forcefsck</a><br />	sudo reboot<br />Para hacer un chkdsk:<br />	umount <a href="file:///media...">/media...</a><br />	fsck -tcf <a href="file:///dev/sdc1">/dev/sdc1</a><br /><br /><br /></div></div>
+</body></html>
