@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Los fundamentos de los dispositivos de red</title>
+    <meta name="generator" content="CherryTree">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <h1><b><u>Los fundamentos de los dispositivos de red</u></b></h1>
+    <h2><strong>Los fundamentos de los dispositivos de red</strong></h2><br>
+    <br>
+    <h3><strong>Cables</strong></h3><br>
+    Los cables conectan los diferentes dispositivos entre sí, lo que permite que los datos se transmitan a través de
+    ellos. La mayoría de los cables de red que se usan hoy en día se pueden dividir en dos categorías: de
+    <strong>cobre</strong> y de <strong>fibra</strong>.<br>
+    <br>
+    Los cables de cobre son los cables de red más comunes. Están formados por múltiples pares de alambres de cobre
+    dentro de un aislante plástico.<br>
+    El dispositivo de envío comunica datos binarios a través de estos cables de cobre cambiando el voltaje entre dos
+    rangos. El sistema en el extremo receptor puede interpretar estos cambios de voltaje como unos y ceros binarios que
+    luego pueden traducirse a diferentes formas de datos.<br>
+    Las formas más comunes de cables de par trenzado de cobre utilizados en redes son los cables <strong>Cat5, Cat5e, y
+    Cat6</strong>. Estas categorías tienen diferentes características físicas, como el número de torsiones en el par de
+    alambres de cobre, que da como resultado diferentes longitudes y velocidades de transferencia utilizables. Cat5 es
+    más antiguo y fue reemplazado en su mayor parte por cables Cat5e y Cat6. Lo importante es saber que las diferencias
+    en la disposición de los pares trenzados dentro de estos cables pueden alterar radicalmente la rapidez con la que
+    se pueden enviar los datos a través de ellos y la resistencia de estas señales a las interferencias externas.<br>
+    <strong>Diafonía</strong> es cuando un pulso eléctrico que viaja por un cable se detecta accidentalmente en otro
+    cable. Así, el extremo receptor no puede comprender los datos, lo que provoca un error de red. Los protocolos de
+    nivel superior tienen métodos para detectar los datos faltantes y solicitan los datos por segunda vez.<br>
+    Las especificaciones de mayor calidad de un cable Cat5e reducen la probabilidad de retransmisión de datos. Eso
+    significa, en promedio, que puedes esperar mayor transferencia de datos en el mismo tiempo. Los cables Cat6 siguen
+    una especificación aún más estricta para evitar la diafonía, lo que los hace más costosos. Los cables Cat6 pueden
+    transferir datos de manera más rápida y confiable que los Cat5e, pero debido a su disposición interna, su distancia
+    máxima es más corta cuando se los usa a velocidades más altas.<br>
+    <br>
+    La segunda forma principal de cable de red se conoce como "fibra", una forma corta de decir cables de fibra óptica.
+    Los cables de fibra contienen fibras ópticas individuales, que son tubos diminutos de vidrio, del espesor de un
+    cabello humano. Estos tubos de vidrio pueden transportar rayos de luz. A diferencia del cobre, que usa voltajes
+    eléctricos, los cables de fibra usan <strong>pulsos de luz</strong> para representar los unos y los ceros de los
+    datos subyacentes. Los cables de fibra, en general, pueden transportar datos más rápido que los cables de cobre,
+    pero son mucho más costosos y frágiles. La fibra también puede transportar datos en distancias mucho mayores que el
+    cobre, sin sufrir pérdida potencial de datos.<br>
+    <br>
+    <h3><strong>Hubs y Switches</strong></h3><br>
+    Un <strong>concentrador</strong> (HUB) es un dispositivo de <strong>capa física</strong> que permite conexiones de
+    muchas computadoras a la vez. Todos los dispositivos conectados a un concentrador terminarán comunicándose con
+    todos los demás dispositivos al mismo tiempo. Depende de cada sistema conectado al concentrador determinar si los
+    datos entrantes son para ellos o si, en caso contrario, deben ignorarlos. Esto causa gran cantidad de ruido en la
+    red y crea lo que se llama un dominio de colisión. Un <strong>dominio de colisión</strong> es un segmento de red en
+    el que solo un dispositivo puede comunicarse a la vez. Si varios sistemas intentan enviar datos al mismo tiempo,
+    los pulsos eléctricos enviados a través del cable pueden interferir entre sí. Esto hace que estos sistemas deban
+    esperar un período tranquilo antes de intentar enviar sus datos de nuevo.<br>
+    Un <strong>conmutador</strong> (SWITCH) es muy similar a un concentrador, dado que le puedes conectar muchos
+    dispositivos para que puedan comunicarse. La diferencia reside en que un conmutador es un dispositivo de
+    <strong>enlace de datos</strong> o nivel 2. Esto significa que un conmutador puede inspeccionar realmente los
+    contenidos de los datos del protocolo Ethernet que se envían por la red, determinar para qué sistema son esos datos
+    y, solo entonces, enviar esos datos a ese sistema. Esto reduce o incluso elimina por completo el tamaño de los
+    dominios de colisión en una red. Esto dará lugar a menos retransmisiones y a un mayor rendimiento general.<br>
+    Los concentradores y los conmutadores son los dispositivos primarios para conectar computadoras en una red,
+    usualmente conocido como LAN o Local Area Network.<br>
+    <br>
+    <h3><strong>Enrutadores</strong></h3><br>
+    Un ruteador es un dispositivo que sabe como reenviar datos entre redes independientes. Un ruteador opera en la
+    tercera capa, la <strong>capa de red</strong>. Así como un conmutador puede inspeccionar los datos de Ethernet para
+    determinar adónde manda cosas, un ruteador puede inspeccionar los datos IP para determinar donde manda cosas. Los
+    ruteadores almacenan tablas internas que contienen información acerca de cómo rutear el tráfico entre las muchas
+    diferentes redes en todo el mundo.<br>
+    El tipo de ruteador más común que verás es el de nuestra red casera o de nuestra oficina. Estos dispositivos
+    generalmente no tienen tablas de ruta muy detalladas. El propósito de estos ruteadores es principalmente tomar el
+    tráfico que se origina desde nuestra LAN dentro de la casa u oficina y reenviarlo al ISP o Internet Service
+    Provider. Una vez que el tráfico está en el ISP, un tipo de router más sofisticado toma el control.<br>
+    Estos ruteadores principales son la parte central del Internet y son responsables directos de cómo enviamos y
+    recibimos datos a través de Internet cada día. Los <strong>Ruteadores del Núcleo</strong> (core router) del ISP no
+    solo gestionan mucho más tráfico que en casa o que el ruteador de la oficina, también tienen que manejar mayor
+    complejidad al tomar decisiones sobre donde mandar el tráfico. Un ruteador núcleo, usualmente tiene muchas
+    conexiones hacia otros ruteadores. Los ruteadores comparten datos entre sí vía un protocolo conocido como BGP o
+    Border Gateway Protocol Esto les permite aprender sobre los caminos más óptimos para redirigir el tráfico. Los
+    ruteadores son guías globales para ubicar el tráfico en el lugar correcto.<br>
+    <br>
+    <h3><strong>Servidores y Clientes</strong></h3><br>
+    Todos los dispositivos de red que conociste existen para que las computadoras puedan comunicarse entre sí, ya sea
+    que estén en la misma habitación o a miles de kilómetros de distancia. A estos dispositivos los venimos llamando
+    "<strong>nodos</strong>". La forma más sencilla de pensar en un <strong>servidor</strong> es como algo que
+    proporciona datos a algo que los solicita. Lo que recibe los datos se conoce como "<strong>cliente</strong>". Si
+    bien a menudo decimos que los nodos son servidores o clientes, es porque no solo los nodos pueden ser servidores o
+    clientes. Los programas informáticos individuales que se ejecutan en el mismo nodo también puede ser servidores y
+    clientes entre sí. Casi todos los nodos, en algún momento, son ambas cosas. Un servidor es cualquier cosa que puede
+    proporcionar datos a un cliente, pero también usamos este término para referirnos al propósito principal de varios
+    nodos en nuestra red.
+    <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
