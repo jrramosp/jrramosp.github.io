@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>La capa de red</title>
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="styles.css" type="text/css">
@@ -91,7 +92,6 @@
   Las direcciones de <strong>clase C</strong> son aquellas donde se utilizan los primeros tres octetos para la ID de
   red y solo se utiliza el octeto final para la ID de host.<br>
   Cada clase de dirección representa una red de tamaño muy diferente. Por ejemplo, dado que una red de clase A tiene un
-
   total de 24 bits de espacio de ID de host, esto da un total de 2 a la 24, o 16,777,216 direcciones individuales. Una
   red de clase C que solo tiene ocho bits de espacio de ID de host esto da como resultado 2 a la octava, o 256
   direcciones.<br>
@@ -220,7 +220,8 @@ tán reservadas, no son utilizables). Si no se divide
   mantener todo organizado. Con las subredes tradicionales y las clases de dirección, la ID de la red siempre es de 8
   bits para redes de clase A, 16 bits para redes de clase B, o 24 bits para redes de clase C. Esto significa que solo
   podría haber 254 redes de clase C, pero también significa que hay 2,970,152 redes de clase C potenciales.<br>
-  CIDR es un enfoque aún más flexible para describir bloques de direcciones IP. Expande el concepto de división en
+  CIDR es un enfoque aún más flexible para describir bloques de direcciones IP. Expande el concepto de divisió
+n en
   subredes: usa máscaras de subred para demarcar redes. <strong>Demarcar</strong> algo significa poner de relieve algo.
   Al hablar de redes de computadoras, a menudo oirás el término "punto de demarcación" para describir dónde termina una
   red o sistema y comienza otro.<br>
@@ -294,7 +295,7 @@ propia
   <strong>Interfaz</strong>: el router también tiene que saber a cuál de sus interfaces debe reenviar el tráfico que
   coincida con la red de destino.<br>
   <br>
-  <h3><strong>Protocolos de pasarela interior</strong></h3><br>
+  <h3><strong>Protocolos de puerta de enlace interior</strong></h3><br>
   Para conocer el mundo que los rodea, los routers usan lo que se conoce como protocolos de enrutamiento. Son
   protocolos especiales que los routers usan para comunicarse entre sí con el objeto de compartir cualquier información
   que puedan tener.<br>
@@ -309,8 +310,8 @@ propia
   Los <strong>protocolos de vector de distancia</strong> son una norma más antigua. Un router que usa un protocolo de
   vector de distancia básicamente solo toma su tabla de enrutamiento, que es una lista de cada red que conoce y la
   distancia de esas redes en términos de saltos. Entonces, el router envía esta lista a cada router vecino, que,
-  básicamente, es cada router al que está direct
-amente conectado. En informática, a una lista se la conoce como un
+  básicamente, es cada router al que est�
+� directamente conectado. En informática, a una lista se la conoce como un
   <strong>vector</strong>. Es por esto que a un protocolo que simplemente envía una lista de distancias a redes, se lo
   conoce como protocolo de vector de distancia. Con un protocolo de vector de distancia, los routers realmente no saben
   mucho acerca del estado total de un sistema autónomo. Solo tienen alguna información sobre sus vecinos
@@ -340,7 +341,7 @@ amente conectado. En informática, a una lista se la conoce como un
   "https://es.wikipedia.org/wiki/Open_Shortest_Path_First">https://es.wikipedia.org/wiki/Open_Shortest_Path_First</a><br>
 
   <br>
-  <h3><strong>Protocolos de pasarela exterior</strong></h3><br>
+  <h3><strong>Protocolos de puerta de enlace exterior</strong></h3><br>
   Los protocolos de puerta de enlace exterior se usan para comunicar datos entre routers que representan el perímetro
   de un sistema autónomo. Como los routers que comparten datos usando protocolos de puerta de enlace interior están
   todos bajo el control de la misma organización, los routers usan protocolos de puerta de enlace exterior cuando
@@ -354,8 +355,8 @@ amente conectado. En informática, a una lista se la conoce como un
   las direcciones IP, los ASN son números de 32 bits. Pero, a diferencia de las direcciones IP, en general se los
   menciona como un solo número decimal, en lugar de dividirlos en bits legibles. Un ASN nunca necesita cambiar para
   representar más redes o hosts, y los humanos vemos un ASN con mucha menos frecuencia que una dirección IP.<br>
-  En términos de protocolos
- de pasarela exterior, solo hay uno en uso hoy en día, este estándar se conoce como
+  En términ
+os de protocolos de pasarela exterior, solo hay uno en uso hoy en día, este estándar se conoce como
   <strong>BGP</strong> o <strong>Border Gateway Protocol</strong>. <a href=
   "https://es.wikipedia.org/wiki/Border_Gateway_Protocol">https://es.wikipedia.org/wiki/Border_Gateway_Protocol</a><br>
   <br>
