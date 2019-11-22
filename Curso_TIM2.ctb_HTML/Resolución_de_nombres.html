@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <h1><b><u>Resolución de nombres</u></b></h1>
+    <h2><strong>Resolución de nombres</strong></h2><br>
     <br>
     <h3><strong>¿Por qué necesitamos DNS?</strong></h3><br>
     DNS, o <strong>sistema de nombres de dominio</strong>. DNS es un servicio de red global y altamente distribuido que
@@ -33,7 +33,7 @@
     nombres</strong>.<br>
     Lo primero que es importante saber es que los servidores DNS son una de las cosas que deben configurarse
     específicamente en un nodo en una red. Para que una computadora funcione en una red moderna, tiene que tener cierta
-    cantidad de cosas configuradas. Recuerda que las direcciones MAC están hard-coded y vinculadas a piezas específicas
+    cantidad de cosas configuradas. Recuerda que las direcciones MAC están físicamente vinculadas a piezas específicas
     de hardware. Pero también vimos que la dirección IP, la máscara de subred, y la puerta de enlace para un host debe
     estar específicamente configuradas. Un servidor DNS es la cuarta y última parte de la configuración de la red
     moderna estándar. Estas son casi siempre las cuatro cosas que deben configurarse para que un host funcione en una
@@ -109,16 +109,123 @@
     casi siempre realiza una búsqueda de DNS porque necesita saber la IP del nombre de dominio para enviar datos
     adicionales.<br>
     Ahora, vamos a ver cómo sería esto con UDP, esto nos lleva a un total final de 8 paquetes.<br>
-    Es el ejemplo perfecto de por qué existen protocolos como UDP además de TCP, que es mucho más sólido. Quizás te
-    preguntes cómo entra en juego la recuperación de errores aquí, ya que UDP no tiene esa función. El agente de
-    resolución de DNS vuelve a preguntar si no recibe una respuesta. Básicamente, la misma funcionalidad que TCP
-    proporciona en la capa de transporte es proporcionada por DNS en la capa de aplicación de la manera más simple.<br>
-    Un servidor DNS nunca debe preocuparse por otra cosa que responder a las búsquedas entrantes, y un agente de
+    Es el ejemplo perfecto de por qué existen protocolos como UDP además de TCP, que es mucho más sólido.<br>
+    Quizás te preguntes cómo entra en juego la recuperación de errores aquí, ya que UDP no tiene esa función. El agente
+    de resolución de DNS vuelve a preguntar si no recibe una respuesta. Básicamente, la misma funcionalidad que TCP
+    proporciona en la capa de transporte es proporcionada por DNS en la capa de aplicación de la manera más simple. Un
+    servidor DNS nunca debe preocuparse por otra cosa que responder a las búsquedas entrantes, y un agente de
     resolución de DNS solo debe realizar búsquedas y repetirlas si no tiene éxito.<br>
     De hecho, DNS sobre TCP existe y también se usa en todas partes. Como la Web se ha vuelto más compleja, ya no todas
     las respuestas de búsqueda de DNS pueden caber en un solo datagrama UDP. En estas situaciones, un servidor de
     nombres DNS responderá con un paquete que explica que la respuesta es demasiado grande. El cliente DNS establecerá
-    una conexión TCP para realizar la búsqueda.
+    una conexión TCP para realizar la búsqueda.<br>
+    <br>
+    <h2><strong>Resolución de nombres en la práctica</strong></h2><br>
+    <h3><strong>Tipos de registro de recursos</strong></h3><br>
+    En la práctica, DNS trabaja con un conjunto de tipos de registro de recursos definidos. Esto permite que se
+    realicen diferentes tipos de resoluciones de DNS. Hay docenas de diferentes tipos de registros de recursos
+    definidos, pero muchos de ellos solo cumplen funciones muy especializadas.<br>
+    El registro de recursos más común se conoce como "<strong>registro A</strong>". Un registro A se utiliza para
+    apuntar un cierto nombre de dominio a una cierta dirección IPv4. En nuestros análisis anteriores sobre DNS,
+    supusimos que el agente de resolución de DNS solicitaba el registro A para un nombre de dominio. En su uso más
+    básico, se configura un solo registro A para un solo nombre de dominio. Pero, un solo nombre de dominio también
+    puede tener varios registros A.<br>
+    Esto da cuenta de una técnica conocida como <strong>Round Robin</strong> de DNS que se utiliza para equilibrar el
+    tráfico entre múltiples IP. Round robin es un concepto que consiste en iterar una lista de artículos uno por uno de
+    forma ordenada.<br>
+    Otro tipo de registro de recursos cada vez más y más popular es el registro <strong>Quad A</strong>. Un registro
+    Quad A es muy similar a un registro A, salvo por que devuelve una dirección IPv6 en lugar de una dirección
+    IPv4.<br>
+    Un registro <strong>CNAME</strong> se usa para redirigir el tráfico de un dominio a otro. Al configurar un registro
+    CNAME para microsoft.com que resuelve en www.microsoft.com, el cliente de resolución sabrá entonces realizar otro
+    intento de resolución, esta vez para www.microsoft.com, y luego usar la IP devuelta por ese segundo intento. Los
+    CNAME son realmente útiles porque te garantizan que apenas debes cambiar la dirección IP canónica de un servidor en
+    un solo lugar.<br>
+    <strong>MX</strong> significa intercambio de correo y este registro de recursos se usa para entregar el correo
+    electrónico al servidor correcto. Muchas compañías ejecutan sus servidores web y de correo en diferentes máquinas
+    con diferentes IP, por lo que el registro MX hace que sea fácil garantizar que el correo electrónico se entregue al
+    servidor de correo de una empresa mientras que otro tipo de tráfico como el tráfico web se entregará a su servidor
+    web.<br>
+    <strong>SRV</strong> significa registro de servicio, y se usa para definir la ubicación de varios servicios
+    específicos. Cumple la misma función que el tipo de registro de recursos MX, excepto por una cosa: mientras que MX
+    es solo para servicios de correo, un registro SRV se puede definir para que devuelva los detalles de muchos tipos
+    de servicios diferentes. Por ejemplo, los registros SRV se usan a menudo para devolver los registros de servicios
+    como CalDAV, que cuenta con un servicio de calendario y programación.<br>
+    <strong>TXT</strong> significa texto y originalmente su uso previsto era solamente para asociar algún texto
+    descriptivo con un nombre de dominio para consumo humano. La idea era que podrías dejar notas o mensajes que los
+    humanos pudieran detectar y leer para obtener más información sobre los detalles arbitrarios de tu red. Este
+    registro de texto se utiliza a menudo para comunicar preferencias de configuración sobre los servicios de red cuyo
+    manejo confías a otras organizaciones para tu dominio.<br>
+    Hay muchos otros tipos de registros de recursos DNS en uso común, como los registros NS o SOA que se usan para
+    definir la información de autoridad sobre las zonas DNS.<br>
+    <br>
+    <h3><strong>Anatomía de un nombre de dominio</strong></h3><br>
+    Un nombre de dominio dado tiene tres partes principales y todas ellas cumplen funciones específicas. Tomemos el
+    nombre de dominio www.google.com. Deberíamos poder detectar fácilmente las tres partes aquí ya que están separadas
+    entre sí por un punto. Son "www", "google" y "com".<br>
+    A la última parte de un nombre de dominio se la conoce como <strong>TLD</strong> o <strong>dominio de nivel
+    superior</strong>. En este caso es la parte ".com" del nombre de dominio. Sólo hay un cierto número restringido de
+    TLD definidos disponibles, aunque ese número creció mucho en los últimos años. Los TLD más comunes son aquellos con
+    los que probablemente ya estás familiarizado: .com, .net, .edu y así sucesivamente. Probablemente también has visto
+    algunos TLD específicos de países, como .de para Alemania o .cn para China. La administración y definición de los
+    TLD la maneja una organización sin fines de lucro conocida como ICANN, o Corporación de Internet para la Asignación
+    de Nombres y Números. La ICANN es una organización asociada de la IANA y juntas ayudan a definir y controlar los
+    espacios IP globales junto con el sistema DNS global.<br>
+    Un <strong>dominio</strong> es el nombre que se usa comúnmente para referirse a la segunda parte de un nombre de
+    dominio, lo que sería "google" en nuestro ejemplo. Los dominios se utilizan para demarcar dónde el control se mueve
+    desde un servidor de nombres TLD a un servidor de nombres autoritativo. Esto queda típicamente bajo el control de
+    una organización independiente o de alguien fuera de la ICANN. Los dominios pueden ser registrados y elegidos por
+    cualquier individuo o empresa, pero todos deben terminar en uno de los TLD predefinidos.<br>
+    La porción que contiene el "www" se conoce como <strong>subdominio</strong>, a veces llamada nombre de host si se
+    asignó a un solo host. Al combinar todas estas partes, tienes lo que se conoce como nombre de dominio completo o
+    FQDN (fully qualified domain name). Si bien cuesta dinero registrar oficialmente un dominio con un registrador, los
+    subdominios pueden ser elegidos y asignados libremente por cualquiera que controle dicho dominio registrado. Un
+    registrador es solo una empresa que tiene un acuerdo con la ICANN para vender nombres de dominio no
+    registrados.<br>
+    DNS puede admitir técnicamente hasta 127 niveles de dominio en total para un solo nombre de dominio completo. Cada
+    sección individual solo puede tener 63 caracteres de largo y un FQDN completo se limita a un total de 255
+    caracteres.<br>
+    <br>
+    <h3><strong>Zonas DNS</strong></h3><br>
+    Un servidor de nombres autoritativo es en verdad responsable de una zona DNS específica. Las zonas DNS son un
+    concepto jerárquico. Los servidores de nombres raíz que vimos anteriormente son responsables de la zona raíz. Cada
+    servidor de nombres TLD es responsable de la zona que cubre su TLD específico, y lo que llamamos servidores de
+    nombres autoritativos son responsables de algunas zonas subyacentes aún más detalladas. Los servidores de nombres
+    raíz y TLD también son en realidad servidores de nombres autoritativos. Es solo que las zonas para las que están
+    acreditados son casos especiales.<br>
+    Cabe señalar que las zonas no se superponen. Por ejemplo, la autoridad administrativa del servidor de nombres TLD
+    para el TLD ".com" no abarca el dominio google.com. En cambio, finaliza en el servidor autoritativo responsable de
+    google.com.<br>
+    El propósito de las zonas DNS es permitir un control más sencillo sobre múltiples niveles de un dominio. A medida
+    que aumenta el número de registros de recursos en un solo dominio, se vuelve un dolor de cabeza administrarlos a
+    todos. Los administradores de red pueden aliviar este dolor dividiendo sus configuraciones en múltiples zonas.<br>
+    Imaginemos una gran empresa propietaria del dominio largecompany.com. Esta empresa tiene oficinas en Los Ángeles,
+    París y Shanghái, muy cosmopolita. Digamos que cada oficina tiene alrededor de 200 personas con su propio equipo de
+    escritorio con un nombre único. Estos serían 600 registros A para rastrear si todo estuviera configurado como una
+    sola zona. Lo que la empresa podría hacer, en cambio, es dividir cada oficina en su propia zona. Ahora, podríamos
+    tener la.largecompany.com, pa.largecompany.com y sh.largecompany.com como subdominios, cada uno con sus propias
+    zonas DNS. Ahora se necesitaría un total de cuatro servidores de nombres autoritativos para la configuración, uno
+    para largecompany.com y uno para cada uno de los subdominios.<br>
+    Las zonas se configuran a través de lo que se conoce como archivos de zona, archivos de configuración simple que
+    declaran todos los registros de recursos para una zona en particular. Así que un archivo de zona tiene que contener
+    una SOA, o declaración de registro de recursos de inicio de autoridad. Este registro SOA declara la zona y el
+    nombre del servidor de nombres que tiene autoridad en ella. Junto con el registro SOA, por lo general encontrarás
+    registros NS que indican otros servidores de nombres que también pueden ser responsables de esta zona.<br>
+    Para simplificar, nos hemos referido a "servidor" en singular al analizar lo que es responsable de su zona, ya sea
+    a nivel de raíz, TLD o dominio, pero a menudo van a haber múltiples servidores físicos con sus propios FQDN y
+    direcciones IP involucradas. Tener varios servidores implementados para algo tan importante como DNS es bastante
+    común.<br>
+    Además de los registros SOA y NS, también encontrarás algunos o todos los demás tipos de registro de recursos que
+    ya hemos visto, como A, Quad A y CNAME, junto con configuraciones como valores TTL predeterminados para los
+    registros entregados por esta zona.<br>
+    Así como los subdominios pueden tener muchas, muchas capas de profundidad, las zonas también se pueden configurar
+    para hacer esto, pero al igual que con los subdominios, es raro ver zonas que vayan más allá de unos pocos
+    niveles.<br>
+    A veces, también verás lo que se conoce como archivos de zona de búsqueda inversa. Estos permiten a los agentes de
+    resolución de DNS solicitar una IP y obtener el FQDN asociado a ella. Estos archivos son los mismos que los
+    archivos de zona, salvo que en lugar de los registros A y Quad A, que resuelven nombres a direcciones IP,
+    encontrarás principalmente declaraciones de registro de recursos de puntero. Como supones, un PTR o registro de
+    puntero, resuelve una IP a un nombre.
     <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
