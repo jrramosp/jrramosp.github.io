@@ -1,14 +1,14 @@
-/* Met Office external website                                                                            
+/* Met Office external website
 
 Colours:
 - black/dark grey: #202A2C
-- dark grey: #666666      
+- dark grey: #666666
 - grey: #DDDDDD (thin lines)
 - light grey: #EEEEEE (background colour)
-- darkish green: #BCDB0C                 
-- green: #CCFF33                         
-- darkish blue: #4BA8BA                  
-- blue: #00ADD0                          
+- darkish green: #BCDB0C
+- green: #CCFF33
+- darkish blue: #4BA8BA
+- blue: #00ADD0
 
 */
 
@@ -24,9 +24,9 @@ body {
     padding: 20x;
     width: 85%;
     margin: 0 auto;
-    line-height:1.8em;
-    
-        
+    line-height:1.5em;
+
+
 }
 
 div.main {
@@ -181,4 +181,3 @@ em{
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }*/
-
