@@ -1,125 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Resolución de nombres</title>
-    <meta name="generator" content="CherryTree">
-    <link rel="stylesheet" href="styles.css" type="text/css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resolución de nombres</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <h2><strong>Resolución de nombres</strong></h2><br>
-    <br>
-    <h3><strong>¿Por qué necesitamos DNS?</strong></h3><br>
-    DNS, o <strong>sistema de nombres de dominio</strong>. DNS es un servicio de red global y altamente distribuido que
-    resuelve strings de letras en una dirección IP para ti. La dirección IP para un nombre de dominio también puede
-    cambiar todo el tiempo por muchas razones diferentes. Un nombre de dominio es solo el término que usamos para algo
-    que el DNS puede resolver. Mediante el uso de DNS, una organización puede cambiar a qué IP se resuelve un nombre de
-    dominio, y el usuario final nunca lo sabría. El DNS no solo hace más fácil que los humanos podamos recordar cómo
-    llegar a un sitio web, también permite que ocurran cambios administrativos detrás de escena sin que un usuario
-    final deba cambiar su comportamiento.<br>
-    Las direcciones IP pueden resolver diferentes cosas según en qué parte del mundo estés. En casi todas las
-    situaciones, va a ser más rápido transmitir una cierta cantidad de datos entre lugares que están geográficamente
-    cerca entre sí. Si eres una empresa web global, querrás que personas de todo el mundo tengan una gran experiencia
-    al acceder a tu sitio web. Así que en lugar de mantener todos tus servidores web en un solo lugar, podrías
-    distribuirlos por centros de datos en todo el mundo. Debido a su estructura global, DNS permite a las
-    organizaciones decidir, si estás en la región, resolver el nombre de dominio a esta IP. Si estás en esta otra
-    región, resolver este dominio a esta otra IP.<br>
-    <br>
-    <h3><strong>Los muchos pasos de la resolución de nombres</strong></h3><br>
-    En su forma más básica, DNS es un sistema que convierte nombres de dominio en direcciones IP. Este proceso de
-    utilizar DNS para convertir un nombre de dominio en una dirección IP se conoce como <strong>resolución de
-    nombres</strong>.<br>
-    Lo primero que es importante saber es que los servidores DNS son una de las cosas que deben configurarse
-    específicamente en un nodo en una red. Para que una computadora funcione en una red moderna, tiene que tener cierta
-    cantidad de cosas configuradas. Recuerda que las direcciones MAC están físicamente vinculadas a piezas específicas
-    de hardware. Pero también vimos que la dirección IP, la máscara de subred, y la puerta de enlace para un host debe
-    estar específicamente configuradas. Un servidor DNS es la cuarta y última parte de la configuración de la red
-    moderna estándar. Estas son casi siempre las cuatro cosas que deben configurarse para que un host funcione en una
-    red de la forma esperada. Una computadora puede funcionar bien sin DNS o sin un servidor DNS configurado, pero esto
-    dificulta las cosas para cualquier humano que pueda estar usando esa computadora.<br>
-    Hay cinco tipos principales de servidores DNS:<br>
-    • servidores de almacenamiento en caché de nombres<br>
-    • servidores de nombres recursivos<br>
-    • servidores de nombres raíz<br>
-    • servidores de nombres TLD<br>
-    • servidores de nombres autoritativos<br>
-    Un servidor DNS dado puede cumplir muchas de estas funciones a la vez.<br>
-    Los servidores de almacenamiento en caché y de nombres recursivos son proporcionados generalmente por un ISP o tu
-    red local. Su propósito es almacenar las búsquedas de nombres de dominio durante un cierto tiempo.<br>
-    Los servidores de nombres recursivos son los que realizan solicitudes de resolución de DNS completas. En la mayoría
-    de los casos, tu servidor de nombres local realizará las tareas de ambos, pero definitivamente es posible que un
-    servidor de nombres sea solo de almacenamiento en caché o solo recursivo.<br>
-    Todos los nombres de dominio en el sistema DNS global tienen un TTL o tiempo de vida. Este es un valor en segundos
-    que el propietario de un nombre de dominio puede configurar para indicar cuánto tiempo se permite que un servidor
-    de nombres almacene una entrada en la memoria caché antes de que deba descartarla y volver a realizar una
-    resolución completa. Podrías encontrar nombres de dominios con TTL muy largos, lo que significa que puede llevar la
-    duración completa de un TTL para que Internet en su totalidad conozca un cambio en el registro de DNS.<br>
-    <br>
-    Ahora, veamos que sucede cuando tu servidor recursivo local necesita realizar una resolución recursiva
-    completa:<br>
-    El primer paso es siempre <strong>contactar con un servidor llamado raíz</strong>; hay 13 servidores raíz de
-    nombres en total y son responsables de dirigir las consultas hacia el servidor de nombres TLD apropiado. En el
-    pasado, estos 13 servidores raíz se distribuían en regiones geográficas muy específicas, pero hoy en día, se
-    distribuyen principalmente en todo el mundo a través de la difusión por proximidad (Anycast).<br>
-    <strong>Anycast</strong> es una técnica que se utiliza para enrutar el tráfico a diferentes destinos dependiendo de
-    factores como la ubicación, la congestión o el estado del enlace. Con Anycast, una computadora puede enviar un
-    datagrama a una IP específica, pero podría verlo enrutado a uno de los muchos destinos reales diferentes
-    dependiendo de algunos factores. Esto también debería dejar claro que, en realidad, ya no hay solo 13 servidores de
-    nombres de rutas físicas. Es mejor pensar en ellos como 13 autoridades que ofrecen las búsquedas de nombre de ruta
-    como un servicio.<br>
-    Los servidores raíz responderán a una búsqueda de DNS con el servidor de nombres TLD que se debe consultar.
-    <strong>TLD</strong> significa <strong>dominio de nivel superior</strong> (Top Level Domain) y representa la parte
-    superior del sistema jerárquico de resolución de nombres DNS. Un TLD es la última parte de cualquier nombre de
-    dominio: tomando www.facebook.com como ejemplo, la porción ".com" debe considerarse el TLD.<br>
-    Para cada TLD en existencia, hay un <strong>servidor de nombres TLD</strong>, pero al igual que con los servidores
-    raíz, esto no significa que solo haya físicamente un servidor en cuestión. Es muy probable que sea una distribución
-    global de servidores Anycast accesibles, responsables de cada TLD.<br>
-    Los servidores de nombres TLD responderán de nuevo con un redireccionamiento, esta vez informando a la computadora
-    que realiza la búsqueda de nombres con qué servidor de nombres autoritativo debe contactarse. Los servidores de
-    nombres autoritativos son responsables de las dos últimas partes de cualquier nombre de dominio, que es la
-    resolución en la que una sola organización puede ser responsable de las búsquedas de DNS.<br>
-    Por último, la búsqueda de DNS podría redirigirse al <strong>servidor autoritativo</strong> que, en última
-    instancia, proporcionaría la IP real del servidor en cuestión.<br>
-    Esta jerarquía estricta es muy importante para la estabilidad de Internet, ya que garantiza que todas las
-    resoluciones completas de DNS pasan por una serie de búsquedas estrictamente reguladas y controladas para obtener
-    las respuestas correctas, y es la mejor manera de proteger contra actores maliciosos que redireccionan el
-    tráfico.<br>
-    Tu computadora enviará ciegamente el tráfico a cualquier IP que se le indique. Al usar un sistema jerárquico
-    controlado por entidades confiables en la forma en que lo hace el DNS, podemos garantizar mejor que las respuestas
-    a las búsquedas de DNS sean precisas.<br>
-    Ahora que ves cuántos pasos están involucrados, tiene sentido que confiemos en que nuestros servidores de nombres
-    locales almacenen las búsquedas de DNS en caché. Es para no tener que hacer una búsqueda de ruta completa para cada
-    conexión TCP. De hecho, tu computadora local, desde tu teléfono a un equipo de escritorio, generalmente también
-    tendrá su propia memoria caché DNS temporal. De esa manera, tampoco tiene que molestar a su servidor de nombres
-    local para cada conexión TCP.<br>
-    <br>
-    <h3><strong>DNS y UDP</strong></h3><br>
-    DNS es un gran ejemplo de un servicio de capa de aplicación que usa UDP para la capa de transporte en lugar de TCP.
-    Recuerda que la mayor diferencia entre TCP y UDP es que UDP no tiene conexión. Esto significa que no hay
-    configuración ni cierre de una conexión. En general, se necesita transmitir mucho menos tráfico. Una sola solicitud
-    de DNS y su respuesta pueden caber dentro de un solo datagrama UDP, por lo que es un candidato ideal para un
-    protocolo sin conexión.<br>
-    También vale la pena señalar que DNS puede generar mucho tráfico. Es cierto que las copias en caché de las entradas
-    DNS se guardan en máquinas locales y en servidores de nombres de caché, pero también es cierto que si se necesita
-    procesar una resolución completa, estamos hablando de mucho más tráfico.<br>
-    Esto nos lleva a un total de 44 paquetes como mínimo para que una solicitud de DNS completamente recursiva se
-    complete a través de TCP. Recuerda que el tráfico de DNS es solo un precursor del tráfico real. Una computadora
-    casi siempre realiza una búsqueda de DNS porque necesita saber la IP del nombre de dominio para enviar datos
-    adicionales.<br>
-    Ahora, vamos a ver cómo sería esto con UDP, esto nos lleva a un total final de 8 paquetes.<br>
-    Es el ejemplo perfecto de por qué existen protocolos como UDP además de TCP, que es mucho más sólido.<br>
-    Quizás te preguntes cómo entra en juego la recuperación de errores aquí, ya que UDP no tiene esa función. El agente
-    de resolución de DNS vuelve a preguntar si no recibe una respuesta. Básicamente, la misma funcionalidad que TCP
-    proporciona en la capa de transporte es proporcionada por DNS en la capa de aplicación de la manera más simple. Un
-    servidor DNS nunca debe preocuparse por otra cosa que responder a las búsquedas entrantes, y un agente de
-    resolución de DNS solo debe realizar búsquedas y repetirlas si no tiene éxito.<br>
-    De hecho, DNS sobre TCP existe y también se usa en todas partes. Como la Web se ha vuelto más compleja, ya no todas
-    las respuestas de búsqueda de DNS pueden caber en un solo datagrama UDP. En estas situaciones, un servidor de
-    nombres DNS responderá con un paquete que explica que la respuesta es demasiado grande. El cliente DNS establecerá
-    una conexión TCP para realizar la búsqueda.<br>
-    <br>
-    <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+  <h2><strong>Resolución de nombres</strong></h2><br>
+  <br>
+  <h3><strong>¿Por qué necesitamos DNS?</strong></h3><br>
+  DNS, o <strong>sistema de nombres de dominio</strong>. DNS es <em>un servicio de red global y altamente
+  distribuido que resuelve strings de letras en una dirección IP para ti</em>. La dirección IP para un nombre de
+  dominio también puede cambiar todo el tiempo por muchas razones diferentes. Un nombre de dominio es solo el
+  término que usamos para algo que el DNS puede resolver. Mediante el uso de DNS, una organización puede cambiar a
+  qué IP se resuelve un nombre de dominio, y el usuario final nunca lo sabría. El DNS no solo hace más fácil que
+  los humanos podamos recordar cómo llegar a un sitio web, también permite que ocurran cambios administrativos
+  detrás de escena sin que un usuario final deba cambiar su comportamiento.<br>
+  Las direcciones IP pueden resolver diferentes cosas según en qué parte del mundo estés. En casi todas las
+  situaciones, va a ser más rápido transmitir una cierta cantidad de datos entre lugares que están geográficamente
+  cerca entre sí. Si eres una empresa web global, querrás que personas de todo el mundo tengan una gran
+  experiencia al acceder a tu sitio web. Así que en lugar de mantener todos tus servidores web en un solo lugar,
+  podrías distribuirlos por centros de datos en todo el mundo. Debido a su estructura global, DNS permite a las
+  organizaciones decidir, si estás en la región, resolver el nombre de dominio a esta IP. Si estás en esta otra
+  región, resolver este dominio a esta otra IP.<br>
+  <br>
+  <h3><strong>Los muchos pasos de la resolución de nombres</strong></h3><br>
+  En su forma más básica, DNS es <em>un sistema que convierte nombres de dominio en direcciones IP</em>. Este
+  proceso de utilizar DNS para convertir un nombre de dominio en una dirección IP se conoce como
+  <strong>resolución de nombres</strong>.<br>
+  Lo primero que es importante saber es que los servidores DNS son una de las cosas que <em>deben configurarse
+  específicamente en un nodo en una red</em>. Para que una computadora funcione en una red moderna, tiene que
+  tener cierta cantidad de cosas configuradas. Recuerda que las direcciones MAC están físicamente vinculadas a
+  piezas específicas de hardware. Pero también vimos que la dirección IP, la máscara de subred, y la puerta de
+  enlace para un host debe estar específicamente configuradas. Un servidor DNS es la cuarta y última parte de la
+  configuración de la red moderna estándar. Estas son casi siempre las cuatro cosas que deben configurarse para
+  que un host funcione en una red de la forma esperada. Una computadora puede funcionar bien sin DNS o sin un
+  servidor DNS configurado, pero esto dificulta las cosas para cualquier humano que pueda estar usando esa
+  computadora.<br>
+  Hay cinco tipos principales de servidores DNS:<br>
+  • servidores de almacenamiento en caché de nombres<br>
+  • servidores de nombres recursivos<br>
+  • servidores de nombres raíz<br>
+  • servidores de nombres TLD<br>
+  • servidores de nombres autoritativos<br>
+  Un servidor DNS dado puede cumplir muchas de estas funciones a la vez.<br>
+  Los servidores de almacenamiento en caché y de nombres recursivos son proporcionados generalmente por un ISP o
+  tu red local. Su propósito es almacenar las búsquedas de nombres de dominio durante un cierto tiempo.<br>
+  Los servidores de nombres recursivos son los que realizan solicitudes de resolución de DNS completas. En la
+  mayoría de los casos, tu servidor de nombres local realizará las tareas de ambos, pero definitivamente es
+  posible que un servidor de nombres sea solo de almacenamiento en caché o solo recursivo.<br>
+  Todos los nombres de dominio en el sistema DNS global tienen un TTL o tiempo de vida. Este es un valor en
+  segundos que el propietario de un nombre de dominio puede configurar para indicar cuánto tiempo se permite que
+  un servidor de nombres almacene una entrada en la memoria caché antes de que deba descartarla y volver a
+  realizar una resolución completa. Podrías encontrar nombres de dominios con TTL muy largos, lo que significa que
+  puede llevar la duración completa de un TTL para que Internet en su totalidad conozca un cambio en el registro
+  de DNS.<br>
+  <br>
+  Ahora, veamos <em>que sucede cuando tu servidor recursivo local necesita realizar una resolución recursiva
+  completa</em>:<br>
+  El primer paso es siempre <strong>contactar con un servidor llamado raíz</strong>; hay 13 servidores raíz de
+  nombres en total y son responsables de dirigir las consultas hacia el servidor de nombres TLD apropiado. En el
+  pasado, estos 13 servidores raíz se distribuían en regiones geográficas muy específicas, pero hoy en día, se
+  distribuyen principalmente en todo el mundo a través de la difusión por proximidad (Anycast).<br>
+  <strong>Anycast</strong> es <em>una técnica que se utiliza para enrutar el tráfico a diferentes destinos
+  dependiendo de factores como la ubicación, la congestión o el estado del enlace</em>. Con Anycast, una
+  computadora puede enviar un datagrama a una IP específica, pero podría verlo enrutado a uno de los muchos
+  destinos reales diferentes dependiendo de algunos factores. Esto también debería dejar claro que, en realidad,
+  ya no hay solo 13 servidores de nombres de rutas físicas. Es mejor pensar en ellos como 13 autoridades que
+  ofrecen las búsquedas de nombre de ruta como un servicio.<br>
+  Los servidores raíz <em>responderán a una búsqueda de DNS con el servidor de nombres TLD que se debe
+  consultar</em>. <strong>TLD</strong> significa <strong>dominio de nivel superior</strong> (Top Level Domain) y
+  representa la parte superior del sistema jerárquico de resolución de nombres DNS. Un TLD es la última parte de
+  cualquier nombre de dominio: tomando www.facebook.com como ejemplo, la porción ".com" debe considerarse el
+  TLD.<br>
+  Para cada TLD en existencia, hay un <strong>servidor de nombres TLD</strong>, pero al igual que con los
+  servidores raíz, esto no significa que solo haya físicamente un servidor en cuestión. Es muy probable que sea
+  una distribución global de servidores Anycast accesibles, responsables de cada TLD.<br>
+  Los servidores de nombres TLD responderán de nuevo con un redireccionamiento, esta vez informando a la
+  computadora que realiza la búsqueda de nombres con <em>qué servidor de nombres autoritativo debe
+  contactarse</em>. Los servidores de nombres autoritativos son responsables de las dos últimas partes de
+  cualquier nombre de dominio, que es la resolución en la que una sola organización puede ser responsable de las
+  búsquedas de DNS.<br>
+  Por último, la búsqueda de DNS podría redirigirse al <strong>servidor autoritativo</strong> que, en última
+  instancia, <em>proporcionaría la IP real del servidor</em> en cuestión.<br>
+  Esta jerarquía estricta es muy importante para la estabilidad de Internet, ya que garantiza que todas las
+  resoluciones completas de DNS pasan por una serie de búsquedas estrictamente reguladas y controladas para
+  obtener las respuestas correctas, y es la mejor manera de proteger contra actores maliciosos que redireccionan
+  el tráfico.<br>
+  Tu computadora enviará ciegamente el tráfico a cualquier IP que se le indique. Al usar un sistema jerárquico
+  controlado por entidades confiables en la forma en que lo hace el DNS, podemos garantizar mejor que las
+  respuestas a las búsquedas de DNS sean precisas.<br>
+  Ahora que ves cuántos pasos están involucrados, tiene sentido que confiemos en que nuestros servidores de
+  nombres locales almacenen las búsquedas de DNS en caché. Es para no tener que hacer una búsqueda de ruta
+  completa para cada conexión TCP. De hecho, tu computadora local, desde tu teléfono a un equipo de escritorio,
+  generalmente también tendrá su propia memoria caché DNS temporal. De esa manera, tampoco tiene que molestar a su
+  servidor de nombres local para cada conexión TCP.<br>
+  <br>
+  <h3><strong>DNS y UDP</strong></h3><br>
+  DNS es un gran ejemplo de <em>un servicio de capa de aplicación que usa UDP para la capa de transporte en lugar
+  de TCP</em>. Recuerda que la mayor diferencia entre TCP y UDP es que UDP no tiene conexión. Esto significa que
+  no hay configuración ni cierre de una conexión. En general, se necesita transmitir mucho menos tráfico. Una sola
+  solicitud de DNS y su respuesta pueden caber dentro de un solo datagrama UDP, por lo que es un candidato ideal
+  para un protocolo sin conexión.<br>
+  También vale la pena señalar que DNS puede generar mucho tráfico. Es cierto que las copias en caché de las
+  entradas DNS se guardan en máquinas locales y en servidores de nombres de caché, pero también es cierto que si
+  se necesita procesar una resolución completa, estamos hablando de mucho más tráfico.<br>
+  Esto nos lleva a un total de 44 paquetes como mínimo para que una solicitud de DNS completamente recursiva se
+  complete a través de TCP. Recuerda que el tráfico de DNS es solo un precursor del tráfico real. Una computadora
+  casi siempre realiza una búsqueda de DNS porque necesita saber la IP del nombre de dominio para enviar datos
+  adicionales.<br>
+  Ahora, vamos a ver cómo sería esto con UDP, esto nos lleva a un total final de 8 paquetes.<br>
+  Es el ejemplo perfecto de por qué existen protocolos como UDP además de TCP, que es mucho más sólido.<br>
+  Quizás te preguntes cómo entra en juego la recuperación de errores aquí, ya que UDP no tiene esa función. El
+  agente de resolución de DNS vuelve a preguntar si no recibe una respuesta. Básicamente, la misma funcionalidad
+  que TCP proporciona en la capa de transporte es proporcionada por DNS en la capa de aplicación de la manera más
+  simple. <em>Un servidor DNS nunca debe preocuparse por otra cosa que responder a las búsquedas entrantes, y un
+  agente de resolución de DNS solo debe realizar búsquedas y repetirlas si no tiene éxito</em>.<br>
+  De hecho, DNS sobre TCP existe y también se usa en todas partes. Como la Web se ha vuelto más compleja, ya no
+  todas las respuestas de búsqueda de DNS pueden caber en un solo datagrama UDP. En estas situaciones, un servidor
+  de nombres DNS responderá con un paquete que explica que la respuesta es demasiado grande. El cliente DNS
+  establecerá una conexión TCP para realizar la búsqueda.
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
