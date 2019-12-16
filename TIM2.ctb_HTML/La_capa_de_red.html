@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
+  <a name="h2-1" id="h2-1"></a>
   <h2><strong>La capa de red</strong></h2><br>
   <br>
+  <a name="h3-1" id="h3-1"></a>
   <h3><strong>Direcciones IP</strong></h3><br>
   Las direcciones IP tienen <em>números de 32 bits compuestos por 4 octetos y cada octeto se describe normalmente
   en números decimales</em>. Ocho bits de datos, o un solo octeto, pueden representar todos los números decimales
@@ -26,6 +28,7 @@
   están reservadas para servidores y dispositivos de red, mientras que las IP dinámicas están reservadas para los
   clientes. Sin embargo, existen ciertas situaciones en las que esto no es del todo cierto.<br>
   <br>
+  <a name="h3-2" id="h3-2"></a>
   <h3><strong>Datagramas de IP y encapsulación</strong></h3><br>
   En virtud del protocolo IP, a un paquete se lo conoce, por lo general, como un datagrama IP. Las dos secciones
   principales de un datagrama IP son el encabezado y la carga útil.<br>
@@ -83,6 +86,7 @@
   contenido de esta carga útil es la totalidad de un paquete TCP o UDP.<br>
   <img src="images/2-3.png" alt="images/2-3.png"><br>
   <br>
+  <a name="h3-3" id="h3-3"></a>
   <h3><strong>Clases de direcciones IP</strong></h3><br>
   Las direcciones IP se pueden dividir en dos secciones, <strong>la ID de red y la ID de host</strong>. Hay tres
   tipos principales de clases de dirección. Clase A, clase B, y clase C.<br>
@@ -115,6 +119,7 @@
   Este sistema de clases fue reemplazado en su mayoría por un sistema conocido como <strong>CIDR</strong> o
   "enrutamiento entre dominios sin clases".<br>
   <br>
+  <a name="h3-4" id="h3-4"></a>
   <h3><strong>Protocolo de resolución de direcciones(ARP)</strong></h3><br>
   Ahora entiendes cómo se utilizan ambas direcciones MAC en el enlace de datos y cómo se utilizan las direcciones
   IP en la capa de red.<br>
@@ -136,6 +141,7 @@
   tabla ARP generalmente caducan después de un corto período de tiempo para garantizar que los cambios en la red
   se tengan en cuenta.<br>
   <br>
+  <a name="h3-5" id="h3-5"></a>
   <h3><strong>Subnetting</strong></h3><br>
   La <strong>subdivisión de redes</strong> es <em>el proceso de tomar una red grande y dividirla en redes
   individuales más pequeñas llamadas subredes</em>. Las clases de direcciones nos dan una manera de dividir el
@@ -146,6 +152,7 @@
   en muchas más pequeñas. Todas estas subredes individuales tendrán sus propios routers de puerta de enlace que
   sirven como puntos de entrada y salida para cada subred.<br>
   <br>
+  <a name="h3-6" id="h3-6"></a>
   <h3><strong>Máscaras de subred</strong></h3><br>
   Hasta ahora, aprendimos acerca de las ID de red, que se utilizan para identificar redes, y las ID de host, que
   se utilizan para identificar hosts individuales. Si queremos dividir un poco más las cosas, y así es, tendremos
@@ -200,6 +207,7 @@
   Y así sucesivamente; de cada subred a la siguiente, el último byte aumenta en 32. Dependiendo del tipo de
   máscara de subred utilizado.<br>
   <br>
+  <a name="h3-7" id="h3-7"></a>
   <h3><strong>Matemáticas Binarias Básicas</strong></h3><br>
   Debido a restricciones de funcionamiento de las puertas lógicas dentro de un procesador, es mucho más fácil para
   las computadoras pensar las cosas solo en términos de 0 y 1. Esto también se conoce como sistema binario o de
@@ -220,6 +228,7 @@
   computadora que acaba de realizar esta operación ahora puede comparar los resultados con su propia ID de red
   para determinar si la dirección está en la misma red o en otra diferente.<br>
   <br>
+  <a name="h3-8" id="h3-8"></a>
   <h3><strong>CIDR (Classless Inter-Domain Routing)</strong></h3><br>
   Las clases de direcciones fueron el primer intento de dividir el espacio IP global de Internet. La división en
   subredes se introdujo cuando fue evidente que las clases de direcciones en sí mismas no eran tan eficientes para
@@ -254,8 +263,10 @@
   "https://es.wikipedia.org/wiki/Classless_Inter-Domain_Routing">https://es.wikipedia.org/wiki/Classless_Inter-Domain_Routing</a><br>
 
   <br>
+  <a name="h2-2" id="h2-2"></a>
   <h2><strong>Enrutamiento</strong></h2><br>
   <br>
+  <a name="h3-9" id="h3-9"></a>
   <h3><strong>Conceptos básicos de enrutamiento</strong></h3><br>
   Un <em>router es un dispositivo de red que reenvía el tráfico según la dirección de destino de ese tráfico</em>.
   Un router es un dispositivo que tiene, al menos, dos interfaces de red, ya que tiene que estar conectado a dos
@@ -280,6 +291,7 @@
   inspeccionan la IP de destino, miran la tabla de enrutamiento para determinar el camino más rápido y reenvían el
   paquete por ese camino.<br>
   <br>
+  <a name="h3-10" id="h3-10"></a>
   <h3><strong>Tablas de enrutamiento</strong></h3><br>
   La tabla de enrutamiento más básica tendrá cuatro columnas.<br>
   • <strong>Red de destino</strong>: esta columna contendrá una fila para cada red que el router conoce, esto es
@@ -302,6 +314,7 @@
   • <strong>Interfaz</strong>: el router también tiene que saber a cuál de sus interfaces debe reenviar el tráfico
   que coincida con la red de destino.<br>
   <br>
+  <a name="h3-11" id="h3-11"></a>
   <h3><strong>Protocolos de puerta de enlace interior</strong></h3><br>
   Para conocer el mundo que los rodea, los routers usan lo que se conoce como <em>protocolos de enrutamiento</em>.
   Son protocolos especiales que los routers usan para comunicarse entre sí con el objeto de compartir cualquier
@@ -348,6 +361,7 @@
   "https://es.wikipedia.org/wiki/Open_Shortest_Path_First">https://es.wikipedia.org/wiki/Open_Shortest_Path_First</a><br>
 
   <br>
+  <a name="h3-12" id="h3-12"></a>
   <h3><strong>Protocolos de puerta de enlace exterior</strong></h3><br>
   Los protocolos de puerta de enlace exterior se usan para <em>comunicar datos entre routers que representan el
   perímetro de un sistema autónomo</em>. Como los routers que comparten datos usando protocolos de puerta de
@@ -368,6 +382,7 @@
   "https://es.wikipedia.org/wiki/Border_Gateway_Protocol">https://es.wikipedia.org/wiki/Border_Gateway_Protocol</a><br>
 
   <br>
+  <a name="h3-13" id="h3-13"></a>
   <h3><strong>Espacio de direcciones no enrutable</strong></h3><a name="direc_no_enrut" id=
   "direc_no_enrut"></a><br>
   Cuando el protocolo IP se definió por primera vez, definió una dirección IP como un solo número de 32 bits. En
