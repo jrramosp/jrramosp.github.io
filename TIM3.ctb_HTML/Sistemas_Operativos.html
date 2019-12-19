@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sistemas Operativos</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  Powershell <a href=
+  "https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-6">https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-6</a><br>
+
+  Bash <a href=
+  "https://www.gnu.org/software/bash/manual/bash.html">https://www.gnu.org/software/bash/manual/bash.html</a><br>
+  <br>
+  <h3><strong>Windows: Listar directorios en CLI</strong></h3><br>
+  Para acceder a la CLI de PowerShell, simplemente busca PowerShell en tu lista de aplicaciones. Vamos a utilizar
+  el comando <strong>ls</strong> o "listar directorios" y darle la ruta de acceso que queremos mirar. La ruta no
+  es realmente parte del comando, pero es un parámetro de comando. La carpeta raíz de la unidad C: es lo que
+  llamamos un directorio superior y los contenidos en el interior se consideran directorios secundarios.<br>
+  Veamos algunos de los directorios secundarios comunes en esta carpeta.<br>
+  • Program Files (x86) (Archivos de programa [x86]). Estos directorios contienen la mayor parte de las
+  aplicaciones y otros programas que se instalan en Windows.<br>
+  • Users (Usuarios). Esto contiene los directorios del perfil de usuario o directorios principales. Cada usuario
+  que accede a esta máquina Windows obtendrá su propio directorio aquí.<br>
+  • Windows. Aquí es donde está instalado el sistema operativo Windows.<br>
+  • ProgramData. Este directorio contiene muchas cosas diferentes. En general, se usa para almacenar datos de
+  programas que están instalados en Program Files (Archivos de programa).<br>
+  Si abrimos un PowerShell y ejecutamos <strong>Get-Help ls</strong>, veremos el texto que describe los parámetros
+  del comando ls. Esto nos dará un breve resumen de los parámetros de los comandos. Pero si quieres ver ayuda más
+  detallada, prueba <strong>Get-Help ls -Full</strong>. Ahora puedes ver una descripción de cada uno de los
+  parámetros y algunos ejemplos de cómo usar el comando.<br>
+  ¿Y si quisiéramos ver todos los archivos ocultos en este directorio? Bueno, podemos usar otro parámetro útil
+  para el comando <strong>ls -Force</strong>. El parámetro -Force mostrará archivos ocultos y del sistema que
+  normalmente no se listan solo con ls.<br>
+  <h3><strong>Linux: Listar directorios</strong></h3><br>
+  En Linux, el directorio principal del que todos los demás derivan se llama directorio raíz.<br>
+  • /bin: este directorio almacena nuestros binarios o programas esenciales.<br>
+  • /etc: esta carpeta almacena algunos importantes y hermosos archivos de configuración del sistema.<br>
+  • /home: este es el directorio personal para usuarios.<br>
+  • /proc: este directorio contiene información sobre los procesos actualmente en ejecución.<br>
+  • /user: el directorio de usuario no contiene, en realidad, nuestros archivos de usuario como nuestro directorio
+  principal. Está destinado para el software instalado por el usuario.<br>
+  • /var: aquí almacenamos nuestros registros del sistema y básicamente cualquier archivo que cambie
+  constantemente.<br>
+  Puedes ver qué opciones están disponibles para un comando añadiendo el indicador <strong>-- help</strong>. Otro
+  método que puedes usar para obtener información sobre comandos es el comando man, de "manual". Se usa para
+  mostrarnos páginas de manual. En Linux las llamamos "man pages". Para usar este comando, simplemente ejecuta
+  <strong>man</strong>, y a continuación, el comando que deseas buscar.<br>
+  Hagamos nuestra lista de directorios más legible con el indicador <strong>-l</strong>, <em>de "largo"</em>.
+  Muestra información detallada sobre archivos y carpetas en el formato de una larga lista. Vamos a desglosar esta
+  salida empezando desde la izquierda.<br>
+  • La primera columna aquí son permisos de archivo.<br>
+  • Lo siguiente es el número de vínculos que tiene un archivo.<br>
+  • A continuación, tenemos el propietario del archivo, luego el grupo al que pertenece el archivo. Los grupos son
+  otra manera en la que podemos especificar el acceso.<br>
+  • Luego tenemos el tamaño del archivo. La marca de tiempo de la última modificación.<br>
+  • Y por último, el nombre del archivo o directorio.<br>
+  El último indicador que analizaremos para el comando ls es <strong>-a</strong>, o <em>la opción "todo"</em>.
+  Esto nos muestra todos los archivos en el directorio, incluidos los archivos ocultos. Puedes ocultar un archivo
+  o directorio colocando un punto delante.<br>
+  <h3><strong>Cambiando directorios en la CLI y bash</strong></h3><br>
+  Tu símbolo de sistema te muestra en qué directorio estás actualmente, pero también hay un comando que te dirá
+  dónde estás. <strong>pwd</strong>, o "imprimir directorio de trabajo", te indica en qué directorio te encuentras
+  actualmente.<br>
+  Si queremos cambiar el directorio en el que estamos, podemos usar el comando <strong>cd</strong> o "cambiar
+  directorio". Para usar este comando, también necesitaremos especificar la ruta de acceso a la que queremos ir.
+  Recuerda, esta ruta puede ser absoluta, lo que significa que comienza a partir de esta letra de unidad y
+  describe la ruta completa. Por otro lado, puede ser relativa, es decir, que solo usamos parte de la ruta para
+  describir cómo llegar a donde queremos ir en relación con nuestra ubicación actual. El "<strong>..</strong>" se
+  considera una ruta relativa porque te hará subir un nivel respecto de tu ubicación.<br>
+  Otro atajo genial para cd que puedes usar es <strong>cd ~</strong>. La tilde es un <em>acceso directo a la ruta
+  de tu directorio principal</em>.<br>
+  Nuestra shell tiene una característica incorporada llamada "<em>Tab completion</em>". Tab completion nos permite
+  usar la tecla de tabulación para completar automáticamente los nombres de archivos y directorios.<br>
+  Los comandos que usamos antes en PowerShell son exactamente los mismos aquí en bash.<br>
+  <h3><strong>Crear directorios en la CLI y en bash</strong></h3><br>
+  El comando para crear un nuevo directorio se llama <strong>mkdir</strong> o "crear directorio". ¿Y si
+  quisiéramos usar espacios en el nombre de nuestra carpeta? Podemos rodear el nombre con comillas, como:
+  <em>mkdir 'my cool folder'</em>, o podemos marcar el espacio con un escape usando el acento grave: <em>mkdir my`
+  cool` folder</em>.<br>
+  En lugar de usar acentos graves como carácter de escape, como en Windows, en bash, puedes usar una barra
+  invertida. Al igual que en Windows, también puedes usar comillas para abarcar un nombre de archivo completo,
+  <em>mkdir my\ cool\ folder</em><br>
+  <h3><strong>Historial de comandos</strong></h3><br>
+  Podemos desplazarnos a través de estos comandos con las teclas arriba o abajo de nuestro teclado. Puedes buscar
+  a través la lista de comandos utilizados anteriormente con el atajo <strong>Ctrl-R</strong> de history. Desde
+  aquí puedes empezar a escribir fragmentos del comando que quieres buscar y te mostrará coincidencias.<br>
+  Si estas usando una versión anterior de PowerShell, tal vez no tenga la función Ctrl-R. En tal caso, puedes
+  escribir el símbolo <strong>#</strong> seguido por alguna parte de tu antiguo comando, y luego usar tab
+  completion para ir pasando los elementos del historial.<br>
+  <h3><strong>Copiando archivos y directorios</strong></h3><br>
+  En PowerShell, el comando utilizado para copiar algo es "<strong>cp</strong>". También necesitamos agregar un
+  archivo que queramos copiar y la ruta de donde queramos copiarlo también. Un comodín es un carácter que se usa
+  para seleccionar archivos según un determinado patrón. Supongamos que quieres tomar todos los archivos .jpg y
+  copiarlos en algún lugar. Por lo tanto, para copiar todos los archivos .jpg en la carpeta, puedo usar cp, *.jpg,
+  y la ruta a la que quiero copiarlos.<br>
+
+  Para copiar el contenido de un directorio, necesitas usar otro parámetro de comando, <strong>-Recurse</strong>.
+  Necesitamos usar el parámetro -Recurse con cp para copiar los contenidos del directorio junto con el directorio
+  en sí. Cuando usamos cp <strong>-verbose</strong>, se generará una línea para cada archivo del directorio que se
+  esté copiando.<br>
+  El indicador para la copia recursiva es -r, y -v para verbose en bash.<br>
+  <h3><strong>Mover y renombrar archivos, directorios</strong></h3><br>
+  En la línea de comandos, si quisiéramos cambiar el nombre de un archivo, podemos usar el comando
+  <strong>mv</strong> o "mover elemento". Nos permite cambiarle el nombre a los archivos.Como puedes imaginar, el
+  comando mv también nos permite mover archivos de un directorio a otro.<br>
+  <h3><strong>Eliminando archivos y directorios</strong></h3><br>
+  En PowerShell, el comando para eliminar archivos y directorios es <strong>rm</strong>, o "eliminar". Ten cuidado
+  al usar rm porque no utiliza la papelera de reciclaje. Una vez que los archivos y directorios se eliminan, se
+  han ido para siempre. El parámetro <strong>-Force</strong>, rm seguirá adelante y eliminará el archivo.<br>
+  Para un directorio, contiene otros archivos. Y no usamos el parámetro <strong>-Recurse</strong>. Vemos un aviso
+  que nos pide que confirmemos si realmente queremos eliminar el directorio y todo su contenido.<br>
+  En el bash utilizamos el parametro <strong>-r</strong> para borrar directorios y su contenido de forma
+  recursiva.
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
