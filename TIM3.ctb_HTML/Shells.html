@@ -110,8 +110,9 @@
   Ten cuidado al usar rm porque no utiliza la papelera de reciclaje. Una vez que los archivos y directorios se
   eliminan, se han ido para siempre. El parámetro <strong>-Force</strong>, rm seguirá adelante y eliminará el
   archivo.<br>
-  Para un directorio, contiene otros archivos. Y no usamos el parámetro <strong>-Recurse</strong>. Vemos un aviso
-  que nos pide que confirmemos si realmente queremos eliminar el directorio y todo su contenido.<br>
+  Para un directorio, contiene otros archivos, no usamos el parámetro <strong>-Recurse</strong>, y vemos un aviso
+  que nos pide que confirmemos si realmente queremos eliminar el directorio y todo su contenido. Si usamos
+  -Recurse no nos preguntará.<br>
   En el bash utilizamos el parametro <strong>-r</strong> para borrar directorios y su contenido de forma
   recursiva.<br>
   <h3><strong>Muestra el contenido del archivo</strong></h3><br>
@@ -151,6 +152,13 @@
   puedes usar la coincidencia de patrones para seleccionarlos.<br>
   En bash, podemos buscar palabras dentro de archivos que coincidan con un determinado patrón utilizando el
   comando <strong>grep</strong>. También puedes usar grep para buscar a través de múltiples archivos.<br>
+  • "-r": Busca de manera recursiva.<br>
+  • "-w": Coincide con toda la palabra.<br>
+  • "-n": Busca solo en el número de línea.<br>
+  • "-e": Coincide con el patrón.<br>
+  • "--include" y "--exclude": Incluye y excluye archivos en la búsqueda.<br>
+  • "--include-dir" y "--exclude-dir": Incluye o excluye directorios en la búsqueda.<br>
+  <br>
   <h3><strong>Buscando dentro de directorios</strong></h3><br>
   Voy a ejecutar ls en mis archivos de programas aquí, con -Recurse, <strong>-Filter</strong> y buscar archivos
   ejecutables. El parámetro -Filter filtrará los resultados para los nombres de archivo que coincidan con un
