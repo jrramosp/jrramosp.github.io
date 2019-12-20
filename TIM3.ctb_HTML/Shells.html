@@ -52,8 +52,7 @@
   Muestra información detallada sobre archivos y carpetas en el formato de una larga lista. Vamos a desglosar esta
   salida empezando desde la izquierda.<br>
   • La primera columna aquí son permisos de archivo.<br>
-  • Lo siguiente es el númer
-o de vínculos que tiene un archivo.<br>
+  • Lo siguiente es el número de vínculos que tiene un archivo.<br>
   • A continuación, tenemos el propietario del archivo, luego el grupo al que pertenece el archivo. Los grupos son
   otra manera en la que podemos especificar el acceso.<br>
   • Luego tenemos el tamaño del archivo. La marca de tiempo de la última modificación.<br>
@@ -98,25 +97,26 @@ o de vínculos que tiene un archivo.<br>
   copiarlos en algún lugar. Por lo tanto, para copiar todos los archivos .jpg en la carpeta, puedo usar cp, *.jpg,
   y la ruta a la que quiero copiarlos.<br>
   Para copiar el contenido de un directorio, necesitas usar otro parámetro de comando, <strong>-Recurse</strong>.
-  Necesitamos usar el parámetro -Recurse con cp para copiar los contenidos del directorio junto con el directorio
-  en sí. Cuando usamos cp <strong>-verbose</strong>, se generará una línea para cada archivo del directorio que se
-  esté copiando.<br>
-  El indicador para la copia recursiva es -r, y -v para verbose en bash.<br>
+  Necesitamos usar el parámetro -Recurse con cp para <em>copiar los contenidos del directorio junto con el
+  directorio en sí</em>. Cuando usamos cp <strong>-verbose</strong>, se generará una línea para cada archivo del
+  directorio que se esté copiando.<br>
+  El indicador para la copia recursiva es <strong>-r</strong>, y <strong>-v</strong> para verbose en bash.<br>
   <h3><strong>Mover y renombrar archivos, directorios</strong></h3><br>
   En la línea de comandos, si quisiéramos cambiar el nombre de un archivo, podemos usar el comando
-  <strong>mv</strong> o "mover elemento". Nos permite cambiarle el nombre a los archivos.Como puedes imaginar, el
-  comando mv también nos permite mover archivos de un directorio a otro.<br>
+  <strong>mv</strong> o "mover elemento". Nos permite <em>cambiarle el nombre</em> a los archivos. Como puedes
+  imaginar, el comando mv también nos permite <em>mover archivos</em> de un directorio a otro.<br>
   <h3><strong>Eliminando archivos y directorios</strong></h3><br>
-  En PowerShell, el comando para eliminar archivos y directorios es <strong>rm</strong>, o "eliminar". Ten cuidado
-  al usar rm porque no utiliza la papelera de reciclaje. Una vez que los archivos y directorios se eliminan, se
-  han ido para siempre. El parámetro <strong>-Force</strong>, rm seguirá adelante y eliminará el archivo.<br>
+  En PowerShell, el comando para <em>eliminar archivos</em> y directorios es <strong>rm</strong>, o "eliminar".
+  Ten cuidado al usar rm porque no utiliza la papelera de reciclaje. Una vez que los archivos y directorios se
+  eliminan, se han ido para siempre. El parámetro <strong>-Force</strong>, rm seguirá adelante y eliminará el
+  archivo.<br>
   Para un directorio, contiene otros archivos. Y no usamos el parámetro <strong>-Recurse</strong>. Vemos un aviso
   que nos pide que confirmemos si realmente queremos eliminar el directorio y todo su contenido.<br>
   En el bash utilizamos el parametro <strong>-r</strong> para borrar directorios y su contenido de forma
   recursiva.<br>
   <h3><strong>Muestra el contenido del archivo</strong></h3><br>
-  Para ver el contenido de un archivo en PowerShell, simplemente usas el comando <strong>cat</strong>, que
-  significa concatenar. Supongamos que queremos ver rápidamente cuáles son las primeras líneas del archivo de
+  Para <em>ver el contenido de un archivo</em> en PowerShell, simplemente usas el comando <strong>cat</strong>,
+  que significa concatenar. Supongamos que queremos ver rápidamente cuáles son las primeras líneas del archivo de
   texto. Para hacer esto, podemos volver a cat y agregar el parámetro <strong>-Head</strong>. Con el parametro
   <strong>-Tail</strong> podemos ver las ultimas líneas del archivo.<br>
   Si queremos ver el contenido del archivo de a una página, podemos usar el comando <strong>more</strong>. La
@@ -143,8 +143,7 @@ o de vínculos que tiene un archivo.<br>
   Get-Help? Bueno, hay un parámetro de comando que puedes usar para obtener ayuda con comandos de command.exe:
   "<strong>/?</strong>".<br>
   <h3><strong>Buscando dentro de archivos</strong></h3><br>
-  En PowerShell, vamos a utilizar el comando <strong>Select-String</
-strong> para buscar palabras, otras strings de
+  En PowerShell, vamos a utilizar el comando <strong>Select-String</strong> para buscar palabras, otras strings de
   caracteres y archivos. Puedes pensar en las strings como una forma en que la computadora representa el texto. El
   comando Select-String te permite buscar texto que coincida con un patrón que proporciones. Podría ser una
   palabra, parte de una palabra, una frase o patrones más complicados que se describen con un lenguaje de
@@ -159,14 +158,14 @@ strong> para buscar palabras, otras strings de
   <h3><strong>Entrada, salida y la tubería</strong></h3><br>
   Cada proceso de Windows y cada comando de PowerShell pueden tomar una entrada y pueden producir una salida. Para
   hacer esto, usamos algo conocido como flujos de E/S o flujos de entrada/salida. Cada proceso en Windows tiene
-  tres flujos diferentes: entrada estándar (stin), salida estándar (stout) y error estándar (sterr).<br>
+  tres flujos diferentes: <em>entrada estándar (stin), salida estándar (stout) y error estándar (sterr).</em><br>
   El símbolo (<strong>&gt;</strong>) es algo que llamamos un operador de redireccionamiento que nos permite
-  cambiar adónde queremos que vaya nuestra salida estándar. En lugar de enviar la salida estándar a la pantalla,
-  podemos enviarla a un archivo. Si el archivo existe, lo sobrescribirá por nosotros. De lo contrario, creará un
-  nuevo archivo. Si no queremos sobrescribir un archivo existente, hay otro operador operador de
+  <em>cambiar adónde queremos que vaya nuestra salida estándar</em>. En lugar de enviar la salida estándar a la
+  pantalla, podemos enviarla a un archivo. Si el archivo existe, lo sobrescribirá por nosotros. De lo contrario,
+  creará un nuevo archivo. Si no queremos sobrescribir un archivo existente, hay otro operador operador de
   redireccionamiento que podemos usar para agregar información: <strong>&gt;&gt;</strong>.<br>
-  Pero ¿y si quisiéramos enviar la salida de un comando a la entrada de otro comando? Para esto, vamos a utilizar
-  otro operador, la barra vertical (<strong>|</strong>).<br>
+  Pero ¿y si quisiéramos <em>enviar la salida de un comando a la entrada de otro comando</em>? Para esto, vamos a
+  utilizar otro operador, la barra vertical (<strong>|</strong>).<br>
   Resulta que podemos redirigir la salida de los mensajes de error en un flujo de salida diferente llamada error
   estándar. El operador de redireccionamiento se puede utilizar para redirigir cualquiera de los flujos de salida,
   pero tenemos que decir qué flujo redirigir. Por lo tanto, vamos a escribir, rm secure_file
@@ -177,8 +176,8 @@ strong> para buscar palabras, otras strings de
   redireccionando el error estándar a <strong>$null</strong>. Prueba Get-Help about_redirection en PowerShell para
   ver más detalles.<br>
   Un operador de redireccionamiento del que hablamos en la lección de Windows, pero del que no mostramos un
-  ejemplo, era el operador de redireccionamiento de entrada estándar. El operador de redireccionamiento de entrada
-  estándar se marca con un signo (<strong>&lt;</strong>).
+  ejemplo, era el <em>operador de redireccionamiento de entrada estándar.</em> El operador de redireccionamiento
+  de entrada estándar se marca con un signo (<strong>&lt;</strong>).
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
