@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sistemas Operativos</title>
+  <title>Shells</title>
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
@@ -52,7 +52,8 @@
   Muestra información detallada sobre archivos y carpetas en el formato de una larga lista. Vamos a desglosar esta
   salida empezando desde la izquierda.<br>
   • La primera columna aquí son permisos de archivo.<br>
-  • Lo siguiente es el número de vínculos que tiene un archivo.<br>
+  • Lo siguiente es el númer
+o de vínculos que tiene un archivo.<br>
   • A continuación, tenemos el propietario del archivo, luego el grupo al que pertenece el archivo. Los grupos son
   otra manera en la que podemos especificar el acceso.<br>
   • Luego tenemos el tamaño del archivo. La marca de tiempo de la última modificación.<br>
@@ -96,7 +97,6 @@
   para seleccionar archivos según un determinado patrón. Supongamos que quieres tomar todos los archivos .jpg y
   copiarlos en algún lugar. Por lo tanto, para copiar todos los archivos .jpg en la carpeta, puedo usar cp, *.jpg,
   y la ruta a la que quiero copiarlos.<br>
-
   Para copiar el contenido de un directorio, necesitas usar otro parámetro de comando, <strong>-Recurse</strong>.
   Necesitamos usar el parámetro -Recurse con cp para copiar los contenidos del directorio junto con el directorio
   en sí. Cuando usamos cp <strong>-verbose</strong>, se generará una línea para cada archivo del directorio que se
@@ -113,7 +113,72 @@
   Para un directorio, contiene otros archivos. Y no usamos el parámetro <strong>-Recurse</strong>. Vemos un aviso
   que nos pide que confirmemos si realmente queremos eliminar el directorio y todo su contenido.<br>
   En el bash utilizamos el parametro <strong>-r</strong> para borrar directorios y su contenido de forma
-  recursiva.
+  recursiva.<br>
+  <h3><strong>Muestra el contenido del archivo</strong></h3><br>
+  Para ver el contenido de un archivo en PowerShell, simplemente usas el comando <strong>cat</strong>, que
+  significa concatenar. Supongamos que queremos ver rápidamente cuáles son las primeras líneas del archivo de
+  texto. Para hacer esto, podemos volver a cat y agregar el parámetro <strong>-Head</strong>. Con el parametro
+  <strong>-Tail</strong> podemos ver las ultimas líneas del archivo.<br>
+  Si queremos ver el contenido del archivo de a una página, podemos usar el comando <strong>more</strong>. La
+  tecla Intro avanza el archivo una línea. El espacio avanza el archivo una página.<br>
+  <strong>Less</strong> hace algo similar a lo que hace more en Windows, pero tiene más funcionalidad. g: te lleva
+  al principio de un archivo. G mayúscula: te lleva al final de un archivo de texto. Una barra y luego una
+  búsqueda de palabra (/word_search): te permite buscar una palabra o frase. q: esto te permite salir de less y
+  volver a tu shell.<br>
+  Al igual que con cat en Windows y el parámetro -Head, podemos hacer lo mismo en Linux con un comando llamado
+  <strong>head</strong>. ¿Y si quisieras ver las últimas líneas de un archivo? Puedes usar un comando llamado
+  <strong>tail</strong>.<br>
+  <h3><strong>Modificando archivos de texto</strong></h3><br>
+  <strong>Nano</strong> es un editor de texto extremadamente ligero pero útil. En la parte inferior de la
+  pantalla, notarás algunas opciones como ^G y ^K. El signo de intercalación (^) significa usar Ctrl-G o Ctrl-K.
+  Algunas que podrían ser útiles son Ctrl-G, que permite abrir una página de ayuda, y Ctrl-X, que se usa cuando
+  deseas guardar tu trabajo o salir de Nano. <a href=
+  "https://www.nano-editor.org/">https://www.nano-editor.org/</a><br>
+  <h3><strong>Windows PowerShell</strong></h3><br>
+  Hay otro comando de PowerShell que podemos usar para mirar uno de los alias que estuvimos usando, ls, o "listar
+  directorio". Para ver cuál comando de PowerShell se ejecuta realmente, podemos usar el comando de PowerShell,
+  <strong>Get-Alias</strong>.<br>
+  Otro método que mencionamos, pero del que todavía no hablamos, es el grupo de comandos <strong>cmd.exe</strong>.
+  Los comandos cmd.exe son comandos de los viejos días de MS-DOS de Windows. ¿Recuerdas el comando de PowerShell
+  Get-Help? Bueno, hay un parámetro de comando que puedes usar para obtener ayuda con comandos de command.exe:
+  "<strong>/?</strong>".<br>
+  <h3><strong>Buscando dentro de archivos</strong></h3><br>
+  En PowerShell, vamos a utilizar el comando <strong>Select-String</
+strong> para buscar palabras, otras strings de
+  caracteres y archivos. Puedes pensar en las strings como una forma en que la computadora representa el texto. El
+  comando Select-String te permite buscar texto que coincida con un patrón que proporciones. Podría ser una
+  palabra, parte de una palabra, una frase o patrones más complicados que se describen con un lenguaje de
+  coincidencia de patrones llamado expresiones regulares. Si deseas buscar en varios archivos en un directorio,
+  puedes usar la coincidencia de patrones para seleccionarlos.<br>
+  En bash, podemos buscar palabras dentro de archivos que coincidan con un determinado patrón utilizando el
+  comando <strong>grep</strong>. También puedes usar grep para buscar a través de múltiples archivos.<br>
+  <h3><strong>Buscando dentro de directorios</strong></h3><br>
+  Voy a ejecutar ls en mis archivos de programas aquí, con -Recurse, <strong>-Filter</strong> y buscar archivos
+  ejecutables. El parámetro -Filter filtrará los resultados para los nombres de archivo que coincidan con un
+  patrón.<br>
+  <h3><strong>Entrada, salida y la tubería</strong></h3><br>
+  Cada proceso de Windows y cada comando de PowerShell pueden tomar una entrada y pueden producir una salida. Para
+  hacer esto, usamos algo conocido como flujos de E/S o flujos de entrada/salida. Cada proceso en Windows tiene
+  tres flujos diferentes: entrada estándar (stin), salida estándar (stout) y error estándar (sterr).<br>
+  El símbolo (<strong>&gt;</strong>) es algo que llamamos un operador de redireccionamiento que nos permite
+  cambiar adónde queremos que vaya nuestra salida estándar. En lugar de enviar la salida estándar a la pantalla,
+  podemos enviarla a un archivo. Si el archivo existe, lo sobrescribirá por nosotros. De lo contrario, creará un
+  nuevo archivo. Si no queremos sobrescribir un archivo existente, hay otro operador operador de
+  redireccionamiento que podemos usar para agregar información: <strong>&gt;&gt;</strong>.<br>
+  Pero ¿y si quisiéramos enviar la salida de un comando a la entrada de otro comando? Para esto, vamos a utilizar
+  otro operador, la barra vertical (<strong>|</strong>).<br>
+  Resulta que podemos redirigir la salida de los mensajes de error en un flujo de salida diferente llamada error
+  estándar. El operador de redireccionamiento se puede utilizar para redirigir cualquiera de los flujos de salida,
+  pero tenemos que decir qué flujo redirigir. Por lo tanto, vamos a escribir, rm secure_file
+  <strong>2&gt;</strong> errors.txt.Entonces, ¿qué significa el 2? Todos los flujos de salida están numerados. 1
+  es para la salida estándar, que es la salida que normalmente ves, y 2 es para el error estándar o los mensajes
+  de error.<br>
+  Hay un archivo especial en Linux llamado <strong>/dev/null</strong>. En PowerShell, podemos hacerlo
+  redireccionando el error estándar a <strong>$null</strong>. Prueba Get-Help about_redirection en PowerShell para
+  ver más detalles.<br>
+  Un operador de redireccionamiento del que hablamos en la lección de Windows, pero del que no mostramos un
+  ejemplo, era el operador de redireccionamiento de entrada estándar. El operador de redireccionamiento de entrada
+  estándar se marca con un signo (<strong>&lt;</strong>).
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
