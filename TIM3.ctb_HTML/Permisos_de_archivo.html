@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Permisos de archivo</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <h3><strong>Windows: Permisos de archivo</strong></h3><br>
+  En Windows, los permisos de archivos y directorios se asignan mediante <strong>listas de control de
+  acceso</strong>, o <strong>ACL</strong>. Específicamente, vamos a trabajar con <em>listas de control de acceso
+  discrecionales</em>, o <em>DACL</em>. A los archivos y carpetas de Windows también se les pueden asignar
+  <em>listas de control de acceso del sistema, o SACL</em>. Las SACL se usan para indicarle a Windows que debe
+  usar un registro de eventos para que tome nota de cada vez que alguien accede a un archivo o carpeta.<br>
+  En Windows Explorer, abrí mi directorio principal. Si hacemos clic derecho sobre el escritorio y seleccionamos
+  Properties (Propiedades), podemos ver el cuadro de diálogo de propiedades de nuestro directorio Desktop
+  (Escritorio). Y si vamos a la pestaña Security (Seguridad), podemos ver la ventana de permisos aquí. El cuadro
+  superior contiene una lista de usuarios y grupos. Y el cuadro inferior tiene una lista de los permisos asignados
+  a cada grupo de usuarios.<br>
+  • Read (Lectura): el permiso de lectura te permite ver que un archivo existe y te permite leer su contenido.
+  También te permite leer los archivos y directorios contenidos en un directorio.<br>
+  • Read & Execute (Lectura y ejecución): esto te permite leer archivos, y si el archivo es un ejecutable, puedes
+  ejecutar ese archivo.<br>
+  • Read & Execute (Lectura y ejecución) incluye Read (Lectura), entonces, si seleccionas Read & Execute (Lectura
+  y ejecución), Read (Lectura) se seleccionará automáticamente.<br>
+  • List Folder Contents (Mostrar el contenido de la carpeta): es un alias para Read & Execute (Lectura y
+  ejecución) en un directorio. Al marcar uno, se marcará el otro. Esto significa que puedes leer y ejecutar
+  archivos en ese directorio.<br>
+  • Write (Escritura): esto te permite hacer cambios en un archivo. Puede que te resulte sorprendente, pero puedes
+  tener acceso de escritura a un archivo sin tener permiso de lectura para ese mismo archivo. El permiso de
+  escritura también te permite crear subdirectorios y escribir en archivos en el directorio.<br>
+  • Modify (Modificar): el permiso de modificación es un permiso global que incluye lectura, ejecución y
+  escritura.<br>
+  • Full control (Control total): un usuario o grupo con control total puede hacer lo que quiera con el archivo.
+  Incluye todos los permisos de Modify (Modificar) y agrega la capacidad de tomar posesión de un archivo y cambiar
+  sus ACL.<br>
+  Si queremos ver qué ACL están asignadas a un archivo, podemos usar una utilidad diseñada para ver y cambiar las
+  ACL llamada <strong>ICACLs</strong> o ACL de cambio mejorado.<br>
+  <a href=
+  "https://docs.microsoft.com/es-es/windows/win32/secauthz/access-control-lists?redirectedfrom=MSDN">https://docs.microsoft.com/es-es/windows/win32/secauthz/access-control-lists?redirectedfrom=MSDN</a><br>
+
+  <h3><strong>Linux: Permisos de archivo</strong></h3><br>
+  Hay 3 permisos diferentes que puedes tener en Linux.<br>
+  • Read (Lectura): esto le permite a alguien leer el contenido de un archivo o carpeta.<br>
+  • Write (Escritura): esto le permite a alguien escribir información en un archivo o carpeta.<br>
+  • Execute (Ejecutar): esto le permite a alguien ejecutar un programa.<br>
+  Veamos esto con el comando ls. Usaremos los indicadores largos para poder ver los permisos en el archivo. Lo
+  primero que vemos en esta columna es "-rwxrw-r--". Aquí hay 10 bits. El primero es el tipo de archivo. En este
+  ejemplo, el guión significa que el archivo que estamos viendo es solo un archivo normal. A veces es posible que
+  veas una "d", que significa "directorio". Los siguientes nueve bits son nuestros permisos reales, agrupados en
+  tríos o conjuntos de tres.<br>
+  El primer trío se refiere al permiso del propietario del archivo. El segundo trío se refiere al permiso del
+  grupo al que pertenece este archivo. El último trío se refiere al permiso de todos los demás usuarios.<br>
+  La "r" significa "que puede leer", "w" significa "que puede escribir" y "x" es "ejecutable". Al igual que en el
+  sistema binario, si se establece un bit, entonces decimos que está habilitado. Para nuestros permisos, si un bit
+  es un guion, está deshabilitado.<br>
+  <h3><strong>Windows: Modificar permisos</strong></h3><br>
+  Supongamos que queremos darle acceso a otra persona de mi familia para que vea una carpeta con fotos familiares
+  en la computadora. En mi disco local C, tengo una carpeta llamada Vacation Pictures que quiero compartir con
+  otro usuario en mi máquina, Devan. Para ello, voy a hacer clic derecho sobre esta carpeta, luego voy a
+  Properties (Propiedades), luego a la pestaña Security (Seguridad). Ahora puedo ver una opción para editar
+  permisos de archivos. Voy a hacer clic ahí. Desde aquí, puedo ver que puedo agregar un grupo o nombres de
+  usuario a esta ACL. Voy a seguir adelante y hacer clic en Add (Agregar). Aquí, me pidió ingresar el nombre de
+  usuario de la persona que quiero agregar en esta ACL. Voy a ingresar devan y luego hacer clic en Check Names
+  (Comprobar nombres) para verificar si lo escribí bien. Una vez verificado, voy a hacer clic en OK (Aceptar). Una
+  vez que Devan se agrega a la ACL, puedo hacer clic en su nombre de usuario, luego marcar las casillas Allow
+  (Permitir) para los permisos que quiero otorgarle.<br>
+  Tal vez ya adivinaste que Deny (Denegar) no te permite tener un permiso determinado. Pero es especial porque
+  generalmente tiene prioridad sobre los permisos otorgados. Digamos que Devan está en un grupo que tiene acceso a
+  esta carpeta. Si marcamos explícitamente la casilla de denegación para el nombre de usuario Devan, aun cuando el
+  grupo tenga acceso a la carpeta, Devan no lo tendrá.<br>
+  Para modificar un permiso en la CLI, vamos a volver al comando <strong>ICACLs</strong>. En los ejemplos que voy
+  a mostrarte, ejecutaré ICACLs desde PowerShell. El comando ICACLs fue diseñado para el símbolo del sistema antes
+  de PowerShell y sus parámetros usan caracteres especiales que confunden a PowerShell. Al rodear los parámetros
+  ICACLs con comillas simples, le digo a PowerShell que no intente interpretar el parámetro como código. Si
+  ejecutas estos comandos en command.exe, tendrás que eliminar las comillas simples para que funcionen.<br>
+  En PowerShell, el comando sería icacls 'C:\'Vacation Pictures\' /grant, y con comillas simples,
+  'Everyone:(OI)(CI)(R)'. En el símbolo del sistema, el comando sería icacls, con comillas dobles "C\Vacation
+  Pictures" /grant Everyone:(OI)(CI)(R).<br>
+  En el ejemplo de PowerShell, agregamos comillas simples para hacer que PowerShell ignore los paréntesis y porque
+  hay un espacio en la ruta de acceso. En el ejemplo de command.exe, tenemos que usar comillas dobles para la ruta
+  de acceso y ya no necesitamos las comillas simples para ocultar los paréntesis.<br>
+  Queremos darles permiso de lectura a la carpeta Vacation Pictures. Usemos el grupo especial Everyone para
+  otorgar permisos de lectura al directorio. Entonces: icacls 'C:\Vacation Pictures' /grant Everyone:(OI)(CI)(R).
+  Perfecto. El grupo Everyone (Todos) incluye, bueno, a todos, incluso a cuentas de usuarios locales.<br>
+  Guest users (Usuarios invitados): Este es un tipo especial de usuario al que se le permite usar la computadora
+  sin contraseña. Los usuarios invitados están deshabilitados de manera predeterminada. Puedes habilitarlos en
+  situaciones muy específicas.<br>
+  Tal vez solo quiero que las personas que tienen contraseñas en la computadora puedan verlas. En ese caso, quiero
+  usar el grupo Authenticated users (Usuarios autenticados). Ese grupo no incluye usuarios invitados. Primero,
+  vamos a agregar una nueva DACL. icacls 'C:\Vacation Pictures' /grant' Authenticated Users:(OI)(CI)(R). Ahora,
+  eliminemos los permisos para el grupo Everyone. icacls 'C:\Vaction Pictures' /remove Everyone.<br>
+  <h3><strong>Linux: Modificar permisos</strong></h3><br>
+  En Linux, cambiamos los permisos usando el comando <strong>chmod</strong>, o "cambio de modo". Primero, elige el
+  conjunto de permisos que quieres cambiar. El propietario, marcado por una "u", el grupo al que pertenece el
+  archivo, marcado por una "g", o los demás usuarios, marcado por una "o". Para agregar o eliminar permisos, solo
+  usa los símbolos + o - que indican a quién afecta el permiso.<br>
+  Entonces: chmod u+x my_cool_file. Este comando indica que queremos cambiar el permiso de my_cool_file
+  otorgándole acceso ejecutable ("x") al propietario ("u"). Puedes hacer lo mismo si quisieras eliminar un
+  permiso. Entonces: chmod u-x my_cool_file.<br>
+  Y puedes hacer lo mismo para múltiples conjuntos de permisos. Haces: chmod ugo+r my_cool_file. Ahora, esto dice
+  que queremos agregar permisos de lectura para nuestro propietario, para el grupo al que pertenece el archivo y
+  para todos los demás usuarios y grupos. Este formato de uso de rwx y ugo para indicar permisos y usuarios en
+  chmod se conoce como formato simbólico.<br>
+  También podemos cambiar los permisos numéricamente, lo que es mucho más rápido y más simple, y nos permite
+  cambiar todos los permisos a la vez. El equivalente numérico de rwx es 4 para lectura o "r", 2 para escritura o
+  "w" y 1 para ejecución o "x". Para establecer permisos, agregamos estos números a cada conjunto de permisos que
+  queremos afectar. Recuerda, tienes que agregar los permisos juntos. Si sumas 4, 2 y 1, obtienes rwx, que es
+  igual a 7.<br>
+  También puedes modificar el propietario y el grupo de un archivo. El comando <strong>chown</strong> o "modificar
+  propietario" te permite cambiar el propietario de un archivo.<br>
+  Para cambiar el grupo al que el archivo pertenece, puedes usar el comando <strong>chgrp</strong> o "modificar
+  grupo".<br>
+  <h3><strong>Windows: Permisos de archivo</strong></h3><br>
+  Tal vez te diste cuenta de que, cuando estuvimos mirando los permisos en la GUI antes, hay una casilla de
+  verificación en la lista de permisos para <em>permisos especiales</em>. Los permisos que estuvimos mirando y
+  estableciendo hasta aquí se llaman permisos simples. Los permisos simples son, en realidad, conjuntos de
+  permisos especiales o específicos. Por ejemplo, cuando estableces el permiso de lectura en un archivo, en
+  realidad estás estableciendo múltiples permisos especiales. Cuando seleccionamos un permiso básico, como el de
+  lectura, en realidad estamos habilitando los permisos especiales List folder / read data (Mostrar carpeta/leer
+  datos), Read attributes (Leer atributos), Read extended attributes (Leer atributos extendidos), Read permissions
+  (Leer permisos) y Synchronize (Sincronizar), que son solo permisos optimizados. Puedes modificar estos permisos
+  como lo harías con cualquier otro permiso básico.<br>
+  Para ver los permisos especiales de un archivo en la CLI, tan solo usaremos el comando ICACLs como antes.<br>
+  Si ves "creator owner" (propietario creador) es un usuario especial que representa al propietario de cualquier
+  archivo al que se aplique la DACL. En este directorio, y en todos los subdirectorios, quien sea propietario de
+  un archivo o carpeta tiene el control total de ellos.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732880(v=ws.11)?redirectedfrom=MSDN">
+  https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732880(v=ws.11)?redirectedfrom=MSDN</a><br>
+
+  <h3><strong>Linux: SetUID, SetGID, Sticky Bit</strong></h3><br>
+  En Linux, también tenemos permisos especiales. ¿Qué sucede si deseo que un usuario pueda hacer algo que requiera
+  privilegios de root, pero no quiero otorgarle estos privilegios? Bueno, gracias a un bit de permiso especial
+  conocido como setuid, podemos permitir que los archivos se ejecuten con el permiso del propietario del archivo.
+  Vemos que los permisos en este archivo tienen un aspecto un poco extraño. Hay una "s" aquí donde debería estar
+  la "x". La "s" significa "<strong>setuid</strong>". Cuando la "s" se sustituye donde estaría el bit irregular,
+  nos permite ejecutar el archivo con los permisos del propietario del archivo. Para habilitar el bit setuid,
+  puedes hacerlo simbólica o numéricamente. El formato simbólico usa una "s" mientras que el formato numérico usa
+  un 4, que debes anteponer al resto de los permisos.<br>
+  De manera similar a setuid, puedes ejecutar un archivo usando permisos de grupo con <strong>setgid</strong> o
+  "establecer ID de grupo". Esto te permite ejecutar un archivo como miembro del grupo de archivos. Para habilitar
+  el bit setgid, puedes hacer algo similar a setuid. La única diferencia es que el formato numérico utiliza un
+  2.<br>
+  Hay un último bit de permiso especial que deberíamos ver, el <strong>sticky bit</strong>. Este bit marca un
+  archivo o carpeta. Lo hace para que cualquiera pueda escribir en ellos, pero no puedan borrar nada. Solo el
+  propietario de root puede borrar algo. También puedes habilitar el sticky bit mediante un formato numérico o
+  simbólico. El bit simbólico es una "t" y el bit numérico es un 1.<br>
+  <a href=
+  "https://www.linux.com/tutorials/understanding-linux-file-permissions/">https://www.linux.com/tutorials/understanding-linux-file-permissions/</a>
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
