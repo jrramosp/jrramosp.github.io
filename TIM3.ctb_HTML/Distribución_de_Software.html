@@ -124,7 +124,63 @@
   Los administradores de paquetes tienen como función facilitar la instalación y eliminación de paquetes,
   incluidas la instalación de dependencias de paquetes.<br>
   <a href=
-  "https://help.ubuntu.com/lts/serverguide/dpkg.html">https://help.ubuntu.com/lts/serverguide/dpkg.html</a>
+  "https://help.ubuntu.com/lts/serverguide/dpkg.html">https://help.ubuntu.com/lts/serverguide/dpkg.html</a><br>
+  <h3><strong>Windows: Administrador de paquetes</strong></h3><br>
+  Un administrador de paquetes se asegura de que la instalación, eliminación y actualización de software, y la
+  administración de dependencias se realicen de la manera más fácil y automática posible.<br>
+  <strong>Chocolatey</strong> es un administrador de paquetes externo para Windows. Esto significa que no fue
+  escrito por Microsoft. Te permite instalar aplicaciones de Windows desde la línea de comandos. Chocolatey está
+  basado en algunas tecnologías de Windows existentes como PowerShell, y te permite instalar cualquier paquete o
+  software que exista en el repositorio público de Chocolatey.<br>
+  <a href="https://en.wikipedia.org/wiki/NuGet">https://en.wikipedia.org/wiki/NuGet</a><br>
+  <a href="https://chocolatey.org/packages">https://chocolatey.org/packages</a><br>
+  <h3><strong>Linux: Administrados de paquetes Apt</strong></h3><br>
+  El administrador de paquetes <strong>APT</strong> se usa para ampliar la funcionalidad del paquete. Facilita
+  bastante la instalación de paquetes. Instala dependencias de paquetes por nosotros, nos facilita encontrar
+  paquetes que podemos instalar, limpia los paquetes que no necesitamos y mucho más.<br>
+  Los repositorios son servidores que actúan como un depósito de almacenamiento central para paquetes. El archivo
+  fuente del repositorio en Ubuntu es /etc/APT/sources.list.<br>
+  Si trabajas en un entorno Linux, también hay <strong>repositorios especiales llamados PPA</strong> o archivos de
+  paquetes personales. Los PPA están alojados en los servidores Launchpad. Launchpad es un sitio web propiedad de
+  la organización Canonical Limited. Permite a los desarrolladores de software de código abierto desarrollar,
+  mantener y distribuir software.<br>
+  Si deseas obtener las últimas actualizaciones de paquetes, debes actualizar tus repositorios de paquetes con los
+  comandos apt upgrade y apt update. El comando <em>apt update</em> actualiza la lista de paquetes en tus
+  repositorios, para que obtengas el último software disponible. Pero no instalará ni actualizará los paquetes por
+  ti. En su lugar, una vez que tenga una lista actualizada de paquetes, puedes utilizar <em>apt upgrade</em>, que
+  instalará cualquier paquete desactualizado de manera automática.<br>
+  <a href="https://help.launchpad.net/Packaging/PPA">https://help.launchpad.net/Packaging/PPA</a><br>
+  <h3><strong>Windows: Debajo de la capucha</strong></h3><br>
+  Podrías encontrarte con una situación en la que un paquete que instalas modifica un archivo de configuración que
+  no se suponía que debía hacerlo, y luego comienza a causarte problemas. Cuando haces clic en un archivo
+  ejecutable de instalación, lo que sucede a continuación depende de cómo el desarrollador del programa configuró
+  la aplicación para su instalación. Esto se debe a que la mayor parte del software de Windows se distribuye en
+  paquetes de código cerrado, lo que significa que no puedes mirar el código fuente para ver lo que hace el
+  programa.<br>
+  Sin embargo, en este caso, aunque no puedes leer las instrucciones que escribió el desarrollador, puedes usar
+  ciertas herramientas para ver las acciones que está realizando el instalador. Una forma de hacer esto será
+  mediante el programa de monitoreo de procesos provisto por el kit de herramientas internas de Microsoft CIS.
+  Esto te mostrará cualquier actividad realizada por el archivo ejecutable de instalación, al igual que los
+  archivos que escribe y cualquier actividad de proceso que realiza.<br>
+  Los paquetes de instalación que usan el formato .msi tienen un conjunto de reglas y estándares que deben cumplir
+  para que el instalador de Windows pueda entender las instrucciones y realizar la instalación. En realidad son
+  una combinación de bases de datos que contienen instrucciones de instalación en diferentes tablas junto con
+  todos los archivos, objetos, accesos directos, recursos y bibliotecas que el programa necesitará tener
+  agrupados. El instalador de Windows utiliza la información almacenada en las tablas en la base de datos .msi
+  para guiar la forma en que se debe realizar la instalación. Sabrá dónde deben ir los archivos y los datos de la
+  aplicación y cualquier otra cosa que deba ocurrir para instalar con éxito el programa. El instalador de Windows
+  hará un seguimiento de todas las acciones que realiza y creará un conjunto separado de instrucciones para
+  deshacerlas.<br>
+  <strong>Orca</strong> es parte del kit de desarrollo de software o SDK de Windows, pero no necesitas ser un
+  programador para utilizarla. Orca puede ayudarte a editar, o crear paquetes de instalador de Windows.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/sysinternals/downloads/procmon">https://docs.microsoft.com/en-us/sysinternals/downloads/procmon</a><br>
+
+  <a href=
+  "https://docs.microsoft.com/es-es/windows/win32/msi/windows-installer-examples?redirectedfrom=MSDN">https://docs.microsoft.com/es-es/windows/win32/msi/windows-installer-examples?redirectedfrom=MSDN</a><br>
+
+  <a href=
+  "https://docs.microsoft.com/es-es/windows/win32/msi/orca-exe?redirectedfrom=MSDN">https://docs.microsoft.com/es-es/windows/win32/msi/orca-exe?redirectedfrom=MSDN</a>
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
