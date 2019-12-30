@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gestión del Software</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <h3><strong>Windows: Dispositivos y controladores</strong></h3><br>
+  Recuerda que un controlador se utiliza para ayudar a que los dispositivos de hardware interactúen con nuestro
+  sistema operativo. En Windows, Microsoft agrupa todos los dispositivos y controladores de la computadora en una
+  sola consola de gestión de Microsoft llamada <strong>Administrador de dispositivos</strong>. Puedes acceder al
+  Administrador de dispositivos de maneras diferentes. Puede abrir el cuadro de diálogo Ejecutar y escribir
+  devmgmt.msc. O puedes hacer clic derecho en This PC (Este equipo), seleccionar Manage (Administrar), y luego
+  hacer clic en la opción Device Manager (Administrador de dispositivos) en el menú de navegación de la
+  izquierda.<br>
+  Cuando conectas un nuevo dispositivo, como un mouse o teclado en tu computadora, el sistema operativo de Windows
+  sigue unos pasos para intentar que funcione. La mayoría de fabricantes o vendedores de hardware de computadora
+  le asignarán una string especial de caracteres a sus dispositivos que se denomina una ID de hardware. Cuando
+  Windows nota que se conectó un nuevo dispositivo, lo primero que hará es preguntar al dispositivo por su ID de
+  hardware. Una vez que Windows tiene la ID de hardware del nuevo dispositivo, el sistema operativo la utiliza
+  para buscar el controlador correcto para dicho dispositivo. Lo busca en algunos lugares, comenzando con una
+  lista local de controladores reconocidos. Luego pasa a Windows Update o a la tienda de controladores si es
+  necesario ampliar la búsqueda. A veces, el dispositivo vendrá con un disco de instalación que contiene un
+  software de controlador personalizado, y puedes indicarle a Windows que busque allí también. Finalmente, Windows
+  tomará el software del controlador que encontró y lo instalará para que puedas usar tu nuevo dispositivo.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-plug-and-play">https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-plug-and-play</a><br>
+
+  <a href=
+  "https://docs.microsoft.com/en-us/windows-hardware/drivers/install/step-1--the-new-device-is-identified">https://docs.microsoft.com/en-us/windows-hardware/drivers/install/step-1--the-new-device-is-identified</a><br>
+
+  <a href=
+  "https://docs.microsoft.com/en-us/windows-hardware/drivers/install/hardware-ids">https://docs.microsoft.com/en-us/windows-hardware/drivers/install/hardware-ids</a><br>
+
+  <a href=
+  "https://docs.microsoft.com/en-us/windows-hardware/drivers/install/step-2--a-driver-for-the-device-is-selected">https://docs.microsoft.com/en-us/windows-hardware/drivers/install/step-2--a-driver-for-the-device-is-selected</a><br>
+
+  <h3><strong>Linux: Dispositivos y controladores</strong></h3><br>
+  Ubuntu tiene una forma un poco más complicada de mostrarnos la administración de dispositivos. En Linux, todo se
+  considera un archivo, incluso los dispositivos de hardware. Cuando un dispositivo se conecta a tu computadora,
+  se crea un archivo de dispositivo en el directorio /dev. Existen muchos dispositivos en este directorio, pero no
+  todos ellos son en realidad dispositivos físicos.<br>
+  Los dispositivos de caracteres, como un teclado o un mouse, transmiten datos carácter por carácter. Los
+  dispositivos de bloque, como las unidades USB, los discos duros y los CD-ROM, transfieren bloques de datos. Un
+  bloque de datos es solo una unidad de almacenamiento de datos.<br>
+  ¿Recuerdas de una lección anterior que el primer bit que ves en un comando ls-l es el tipo de archivo? Hasta
+  ahora, hemos visto el guión, que significa un archivo regular, y una "d" que representa un directorio. Algunos
+  de ellos tienen "b" para el dispositivo de bloque y "c" para el dispositivo de caracteres.<br>
+  Los dispositivos "sd" son dispositivos de almacenamiento masivo como nuestros discos duros, memorias, etc. Si
+  ves una "a" después de "sd", significa que el dispositivo fue detectado primero por la computadora.<br>
+  Los controladores de dispositivos no se almacenan en el directorio /dev. A veces, son parte del kernel de Linux.
+  Recuerda que el kernel de nuestra computadora maneja la interacción con el hardware. El kernel es un software
+  realmente monolítico que tiene muchas funciones, incluido el soporte para una cantidad de hardware. En la
+  actualidad, una gran cantidad de soporte de hardware está integrado al kernel.<br>
+  Pero si hay dispositivos que no tienen soporte integrado al kernel, lo más probable es que tengan algo llamado
+  módulo kernel. Por lo tanto, si necesitas instalar un módulo kernel para un tipo específico de dispositivo,
+  puedes instalar de la misma manera que hemos estado instalando todo el software en Linux.<br>
+  <a href=
+  "https://es.wikipedia.org/wiki/Archivo_de_dispositivo">https://es.wikipedia.org/wiki/Archivo_de_dispositivo</a><br>
+
+  <a href="https://es.wikipedia.org/wiki/Udev">https://es.wikipedia.org/wiki/Udev</a><br>
+  <h3><strong>Ventana: Actualizaciones del sistema operativo</strong></h3><br>
+  Es importante mantener tu sistema operativo actualizado por muchas razones diferentes. Deseas tener las
+  características más nuevas que ofrece tu sistema operativo y, además, las actualizaciones de seguridad que tu
+  sistema operativo necesita. Cuando el fabricante de tu sistema operativo descubre una brecha de seguridad en él,
+  hace todo lo posible para crear un parche para esta brecha. Un parche de seguridad es un software que está
+  destinado a solucionar una brecha de seguridad. Cuando hay una actualización para tu sistema operativo que tiene
+  parches de seguridad, es imperativo que instales esos parches de inmediato.<br>
+  El servicio del cliente Windows Update se ejecuta en segundo plano para descargar e instalar las actualizaciones
+  y los parches para el sistema operativo. Esta tarea la realiza mediante una verificación con los servidores de
+  Windows Update en Microsoft cada cierto tiempo.<br>
+  Una vez finalizada la descarga, dependiendo de tu configuración de Windows Update, el cliente Windows Update te
+  preguntará si quieres instalar las actualizaciones o seguirá adelante y las instalará automáticamente. Este
+  proceso usualmente requiere reiniciar la computadora, lo que el cliente Update realiza después de solicitar la
+  autorización.<br>
+  Windows 10 hace las cosas de manera diferente; en lugar de descargar un montón de actualizaciones independientes
+  entre las que puedes elegir aplicar o no a tu computadora, las actualizaciones son acumulativas. Esto significa
+  que cada mes se publica un paquete de actualizaciones y parches que sustituyen a las del mes anterior. Una
+  desventaja de esto es que en Windows 10, instalar actualizaciones ya no es opcional. Tampoco puedes elegir las
+  actualizaciones que deseas aplicar, ya que todos están empaquetadas en una sola publicación mensual.<br>
+  <a href="https://es.wikipedia.org/wiki/Windows_Update">https://es.wikipedia.org/wiki/Windows_Update</a><br>
+  <a href=
+  "https://configmgr2012.blogspot.com/2010/06/windows-update-explained.html#_Toc210097879">https://configmgr2012.blogspot.com/2010/06/windows-update-explained.html#_Toc210097879</a><br>
+
+  <h3><strong>Linux: Actualizaciones del sistema operativo</strong></h3><br>
+  En Linux, ya aprendiste a actualizar o instalar una versión mejorada del software en tus dispositivos. Cuando
+  usas el comando apt update y apt upgrade, es posible que se instalen actualizaciones de seguridad. Pero cuando
+  se ejecuta apt upgrade, no se actualiza el sistema operativo central.<br>
+  El comando uname nos da la información del sistema. Si usas el indicador -r, o "kernel release", verás la
+  versión del kernel.<br>
+  Para actualizar el kernel y otros paquetes, utilizamos nuestro genial comando apt con la opción full-upgrade.
+  Antes de ejecutar este comando, recuerda actualizar las fuentes de tu aplicación con apt update.<br>
+  <a href=
+  "https://es.wikipedia.org/wiki/N%C3%BAcleo_Linux">https://es.wikipedia.org/wiki/N%C3%BAcleo_Linux</a><br>
+  <a href=
+  "https://www.linux.com/tutorials/linux-101-updating-your-system/">https://www.linux.com/tutorials/linux-101-updating-your-system/</a><br>
+
+  <a href=
+  "https://www.cyberciti.biz/faq/how-do-i-update-ubuntu-linux-softwares/">https://www.cyberciti.biz/faq/how-do-i-update-ubuntu-linux-softwares/</a>
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
