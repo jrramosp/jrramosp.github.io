@@ -129,6 +129,7 @@
   <a href=
   "https://rm-rf.es/gestion-de-particiones-con-parted-en-linux/">https://rm-rf.es/gestion-de-particiones-con-parted-en-linux/</a><br>
 
+  <a href="https://linuxhint.com/parted_linux/">https://linuxhint.com/parted_linux/</a><br>
   <h3><strong>Linux: Montaje y desmontaje de un sistema de archivos</strong></h3><br>
   Para comenzar a interactuar con el disco, necesitamos montar el sistema de archivos en el directorio.<br>
   Detengámonos en la ubicación de nuestra partición con sudo parted -l. Muy bien, puedo ver que la partición a la
@@ -151,7 +152,175 @@
   nuestra unidad USB. Para obtener el UUID de nuestros dispositivos, podemos usar este comando: sudo blkid. Nos
   mostrará el UUID para los ID de dispositivo de bloqueo ID, conocidos también como ID de dispositivo de
   almacenamiento.<br>
-  <a href="https://es.wikipedia.org/wiki/Fstab">https://es.wikipedia.org/wiki/Fstab</a>
+  <a href="https://es.wikipedia.org/wiki/Fstab">https://es.wikipedia.org/wiki/Fstab</a><br>
+  <h3><strong>Windows: Swap</strong></h3><br>
+  La memoria virtual es la forma en que nuestro SO proporciona memoria física disponible en nuestra computadora
+  (como RAM) a las aplicaciones que se ejecutan en ella. Lo hace creando un mapeo de direcciones virtuales a
+  físicas. Esto le simplifica las cosas al programa que necesita acceder a la memoria, ya que no tiene que
+  preocuparse por las porciones de memoria qué otros programas podrían estar usando. Tampoco tiene que rastrear
+  dónde se encuentran, en la RAM, los datos que está usando. La memoria virtual también nos permite que nuestra
+  computadora use más memoria de la que físicamente tenemos instalada. Para ello, dedica un área del disco duro
+  para usar una base de almacenamiento para bloques de datos llamados páginas. Cuando una aplicación no usa una
+  página de datos en particular, esta es expulsada, lo que significa que se copia fuera de la memoria, en el disco
+  duro. Esto se debe a que el acceso a los datos en la memoria RAM es rápido, mucho más rápido que en el disco
+  duro, en el que el espacio es un bien escaso. Debido a esto, el sistema operativo quiere mantener las páginas de
+  datos de acceso más frecuente en la memoria RAM. Luego pone en el disco cosas que no se usaron por un tiempo. De
+  esta manera, si un programa necesita una página a la que no se accede mucho, el sistema operativo todavía puede
+  llegar a ella. Pero tiene que leerla del disco duro, lento en comparación, y volverla a poner en la memoria.<br>
+  Windows usa un programa llamado Administrador de memoria (Memory Manager) para manejar la memoria virtual. Su
+  trabajo es hacerse cargo de ese mapeo de memoria virtual a física para nuestros programas y gestionar la
+  paginación. En Windows, las páginas guardadas en el disco se almacenan en un archivo oculto especial en la
+  partición raíz de un volumen llamado pagefile.sys. Windows crea automáticamente archivos de paginación y usa el
+  Administrador de memoria para copiar páginas de la memoria y leerlas según sea necesario.<br>
+  Windows proporciona una forma de modificar el tamaño, la cantidad y la ubicación de los archivos de paginación a
+  través de un applet del panel de control llamado Propiedades del sistema. Para acceder al applet Propiedades del
+  sistema, abre el Panel de control, ve a la configuración System and Security (Sistema y seguridad), y haz clic
+  en System (Sistema). Cuando estés en el panel System (Sistema), puedes abrir Advanced system settings
+  (Configuración avanzada del sistema) en el menú de la izquierda. Elige la pestaña Advanced (Opciones avanzadas),
+  luego haz clic en el botón Settings... (Configuración...) en la sección Performance (Rendimiento). Por último,
+  haz clic en la pestaña Advanced (Opciones avanzadas) y deberías ver una sección llamada Virtual memory (Memoria
+  virtual) que muestra el tamaño del archivo de paginación. Si haces clic en el botón Change... (Cambiar...),
+  puedes anular los valores predeterminados que proporciona Windows para establecer el tamaño del archivo de
+  paginación y agregar archivos de paginación a otras unidades en la computadora.<br>
+  <a href=
+  "https://en.wikipedia.org/wiki/Paging#Windows_NT">https://en.wikipedia.org/wiki/Paging#Windows_NT</a><br>
+  <a href=
+  "https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size">https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size</a><br>
+
+  <h3><strong>Linux: Swap</strong></h3><br>
+  En Linux, el área exclusiva del disco duro que se usa para la memoria virtual se conoce como espacio de
+  intercambio.<br>
+  Entonces: sudo mkswap /dev, y nuestra nueva partición de intercambio está en /dev/sdb2. Por último, hay que
+  ejecutar un comando más para habilitar el intercambio en el dispositivo, swapon. Entonces: sudo swapon dev/sdb2.
+  Si queremos montar automáticamente el espacio de intercambio cada vez que el equipo se inicia, agregamos una
+  entrada de intercambio al archivo /etc fstab como hicimos antes.<br>
+  <a href=
+  "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc#id4394007">
+  https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc#id4394007</a><br>
+
+  <h3><strong>Windows: Archivos</strong></h3><br>
+  Cuando hablamos de datos, nos referimos al contenido real del archivo, como un documento de texto que guardamos
+  en nuestros discos duros. El metadato del archivo incluye todo lo demás, como el propietario del archivo, los
+  permisos, el tamaño del archivo, su ubicación en el disco duro, etc.<br>
+  NTFS usa algo llamado tabla maestra de archivos, o MFT, para mantener todo en orden. Cada archivo en un volumen
+  tiene, al menos, una entrada en la MFT, incluida la propia MFT. Por lo general, hay una correspondencia uno a
+  uno entre los archivos y los registros MFT. Pero si un archivo tiene muchos atributos, podría haber más de un
+  registro para representarlo.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/windows/win32/fileio/master-file-table">https://docs.microsoft.com/en-us/windows/win32/fileio/master-file-table</a><br>
+
+  Cuando creas archivos en un sistema de archivos NTFS, las entradas se agregan a la MFT. Cuando los archivos se
+  borran, sus entradas en la MFT se marcan como "libres" para que se puedan volver a usar. Una parte importante de
+  la entrada de un archivo en la MFT es un identificador llamado "número de registro del archivo". Es el índice de
+  la entrada de archivos en la MFT.<br>
+  Un acceso directo es solo otro archivo y otra entrada en la MFT. Pero tiene una referencia a algún destino para
+  que, cuando lo abras, te pueda llevar allí. Además de crear accesos directos como formas de acceder a otros
+  archivos, NTFS proporciona otras dos formas mediante vínculos físicos y simbólicos.<br>
+  Los vínculos simbólicos son como accesos directos, pero al nivel del sistema de archivos. Cuando creas un
+  vínculo simbólico, creas una entrada en la MFT que apunta al nombre de otra entrada o de otro archivo. Esto
+  podría parecer simplemente otra forma de crear un acceso directo, pero los vínculos simbólicos tienen una
+  diferencia clave. El sistema operativo los trata como sustitutos del archivo al que están vinculados en casi
+  todas las formas significativas. Puedes crear vínculos simbólicos con el programa mklink desde el símbolo del
+  sistema.<br>
+  <a href=
+  "https://docs.microsoft.com/es-es/windows/win32/fileio/creating-symbolic-links?redirectedfrom=MSDN">https://docs.microsoft.com/es-es/windows/win32/fileio/creating-symbolic-links?redirectedfrom=MSDN</a><br>
+
+  Hay otro tipo de vínculo que vale la pena mencionar, llamado vínculo físico. Cuando creas un vínculo físico en
+  NTFS, se agrega una entrada a la MFT que apunta al número de registro del archivo vinculado, no al nombre del
+  archivo. Esto significa que el nombre de archivo del objetivo puede cambiar y el vínculo físico todavía seguirá
+  apuntando a él. Puedes crear vínculos físicos de forma similar a los vínculos simbólicos, pero con la opción /H
+  .<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions">https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions</a><br>
+
+  <h3><strong>Linux: Archivos</strong></h3><br>
+  En Linux, los metadatos y los archivos se organizan en una estructura llamada inodo. Los inodos son similares a
+  los registros MFT del NFTS de Windows. Almacenamos inodos en una tabla de inodos y nos ayudan a gestionar los
+  archivos en nuestro sistema de archivos. El inodo en sí no almacena la fecha del archivo ni su nombre, pero
+  almacena todo lo demás sobre un archivo.<br>
+  A los accesos directos en Linux los llamamos softlinks o symlinks. Los softlinks nos permiten enlazar a otro
+  archivo mediante un nombre de archivo.<br>
+  El otro tipo de enlace que encontramos en Linux son los hardlinks. De manera similar a Windows, los hardlinks no
+  apuntan a un archivo. En Linux, enlazan a otro inodo almacenado en una tabla de inodos en el sistema de
+  archivos. Básicamente, cuando estás creando un hardlink, estás apuntando a una ubicación física en el disco o,
+  más específicamente, en el sistema de archivos.<br>
+  Para crear un softlink, podemos ejecutar el comando ln con el indicador -s para "softlink".<br>
+  Para crear un hardlink, podemos ejecutar el comando ln sin la -s, para especificar un hardlink.<br>
+  Los hardlinks son geniales si necesitas guardar el mismo archivo en diferentes lugares, pero no quieres ocupar
+  nada de espacio adicional en el volumen. Esto es porque todos los hardlinks apuntan al mismo espacio en el
+  volumen. Podrías usar softlinks para hacer lo mismo. Pero ¿y si moviste un archivo, deshiciste el softlink y
+  olvidaste todos los demás lugares donde lo usaste? Todos los demás softlinks también quedarían deshechos y
+  limpiar todo puede llevarte cierto tiempo.<br>
+  <h3><strong>Windows: Uso del disco</strong></h3><br>
+  Para comprobar el uso del disco, puedes abrir la utilidad de Administración de equipos (Computer Management).
+  Luego, ve a la consola Disk Management (Administración de discos). Desde allí, haz clic derecho en la partición
+  que te interesa y seleccione Properties (Propiedades). Esto abrirá la pestaña General, donde puedes ver el
+  espacio utilizado y el espacio libre en el disco.<br>
+  Además de utilizar esta interfaz gráfica de usuario para comprobar el uso del disco, Windows proporciona una
+  utilidad de línea de comandos llamada Disk Usage (DU) como parte de su oferta de herramientas internas del
+  sistema. Esa utilidad DU puede imprimir el uso de un disco dado y decirte cuántos archivos tiene.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/sysinternals/downloads/du">https://docs.microsoft.com/en-us/sysinternals/downloads/du</a><br>
+
+  En la misma pestaña de la consola de administración de discos, tal vez notes un botón que dice Disk Cleanup
+  (Limpieza del disco). Si presionas este botón, Windows ejecutará un programa llamado CleanManager.exe que hará
+  un poco de limpieza en tu disco duro para tratar de liberar algo de espacio. Esta limpieza incluye cosas como
+  eliminar archivos temporales, comprimir archivos viejos y raramente usados, limpiar registros y vaciar la
+  papelera de reciclaje.<br>
+  La idea subyacente a la desfragmentación del disco es tomar todos los archivos almacenados en un disco dado y
+  reorganizarlos en ubicaciones vecinas. Tener los archivos ordenados de esta manera facilitará la rotación de los
+  discos duros que usan un brazo de accionamiento para escribir y leer desde un disco giratorio. El cabezal del
+  brazo de accionamiento se desplazará menos para leer los datos que necesita.<br>
+  Para este tipo de unidades SSD, el sistema operativo puede utilizar un proceso llamado Trim para recuperar
+  partes no utilizadas del disco de estado sólido.<br>
+  Para iniciar una desfragmentación manual, abre el Desfragmentador de discos incluido en el SO.<br>
+  <h3><strong>Linux: Uso del disco</strong></h3><br>
+  En la última lección, aprendimos a ver la utilización del disco en tu computadora con Windows. En Linux, lo
+  hacemos con el comando du -h. El comando du o "uso del disco" nos muestra el uso del disco de un directorio
+  específico. Si no especificas un directorio, irá de manera predeterminada al disco actual.<br>
+  Otro comando que puedes usar si quieres saber cuánto espacio libre tienes en tu máquina es el comando df, o
+  "disco libre".<br>
+  <a href=
+  "https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/">https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/</a><br>
+
+  <h3><strong>Windows: Reparación del sistema de archivos</strong></h3><br>
+  Cuando leemos o escribimos algo en una unidad, en realidad primero ponemos eso en un búfer o memoria caché. Un
+  búfer de datos es una región de la RAM que se usa para almacenar datos temporalmente mientras se los está
+  desplazando. Entonces, cuando copias algo de tu SO a tu unidad USB, primero se copia en un búfer de datos porque
+  la RAM trabaja más rápido que los discos duros. Si no desmontas correctamente un sistema de archivos y no le das
+  tiempo suficiente a tu búfer para que termine de mover los datos, corres el riesgo de corrupción de datos.<br>
+  El sistema de archivos NTFS tiene algunas características avanzadas integradas que pueden ayudar a minimizar el
+  peligro de corrupción además de intentar una recuperación cuando el sistema de archivos se daña. Una de estas
+  características, a través de un proceso llamado registro en diario, registra los cambios realizados en los
+  metadatos de un archivo en un archivo llamado "registro NTFS". Al registrar estos cambios, NTFS crea un
+  historial de las medidas tomadas. Esto significa que puede mirar el registro para ver cuál debería ser el estado
+  actual del sistema. Si un bloqueo o un error provocan la corrupción, el sistema de archivos puede iniciar el
+  proceso de recuperación que usará ese registro para asegurarse de que el sistema está en un estado
+  coherente.<br>
+  Además del registro en diario, NTFS y Windows implementan algo llamado recuperación automática. Como puedes
+  suponer por el nombre, el mecanismo de recuperación automática hace modificaciones en problemas menores y
+  corrupciones en el disco automáticamente, en segundo plano. Hace esto mientras Windows se está ejecutando, por
+  lo que no es necesario reiniciar. Si deseas comprobar el estado del proceso de recuperación automática en tu
+  computadora, puedes abrir un símbolo de sistema como administrador y usar la herramienta fsutil, así. Fsutil
+  repair query C.<br>
+  Por último, cuando las cosas se ponen muy mal y hay una corrupción seria o catastrófica del disco, como sectores
+  defectuosos, fallas de disco y más, puedes recurrir a la utilidad chkdsk de NTFS. Gracias a las características
+  de recuperación incorporadas en NTFS no siempre es necesario ejecutar chkdsk. Pero está disponible en caso de
+  emergencia. Para ejecutar chkdsk manualmente, puedes abrir un símbolo de sistema como administrador y escribir
+  chkdsk en la línea de comandos. De forma predeterminada, chkdsk se ejecutará en modo de solo lectura. Te daré un
+  informe sobre la salud del disco, pero no hará modificaciones o reparaciones en él. Puedes indicarle a chkdsk
+  que repare cualquier problema que encuentre con el indicador /F. También puedes especificar la unidad que
+  quieres verificar.<br>
+  Si el sistema operativo detecta que algunos datos se corrompieron o que el disco tiene un sector con fallas,
+  configurará un bit en un archivo de metadatos en el volumen que indica que hay corrupción. Cuando el sistema se
+  inicie, la utilidad chkdsk comprobará este bit. Si está configurado, se ejecutará y tratará de reparar la
+  corrupción reconstruyendo los bits dañados del sistema de archivos desde el registro NTFS.<br>
+  <h3><strong>Linux: Reparación del sistema de archivos</strong></h3><br>
+  Para tratar de reparar un sistema de archivos manualmente en Linux, también puedes utilizar el comando fsck o
+  "verificar sistema de archivos". Sólo asegúrate de que el sistema de archivos no esté montado. Algo más para
+  destacar es que, en algunas versiones de Linux, fsck en realidad se ejecuta en tu computadora cuando la inicias
+  para comprobar si hay problemas e intenta reparar automáticamente el sistema de archivos.<br>
+  <a href="https://es.wikipedia.org/wiki/Fsck">https://es.wikipedia.org/wiki/Fsck</a>
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
