@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Procesos</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <h3><strong>Programas contra procesos revisados</strong></h3><br>
+  Los procesos son programas que se ejecutan. Podemos tener muchos procesos en ejecución para el mismo programa.
+  Cuando los procesos se ejecutan, ocupan recursos de hardware, como CPU y RAM. A veces, un proceso toma más
+  recursos de los que se supone. A veces, los procesos no responden y congelan nuestro sistema, lo que hace que
+  toda nuestra computadora deje de responder.<br>
+  Cuando abres una aplicación, como un procesador de textos, estás iniciando un proceso. A esos procesos se les
+  asocia algo llamado ID de proceso que permite identificarlos con exclusividad de otros procesos.<br>
+  Además de los procesos visibles que iniciamos, como nuestro reproductor de música o el procesador de textos,
+  también hay procesos no tan visibles en ejecución. Se los conoce como procesos en segundo plano, a veces
+  llamados "procesos daemon".<br>
+  <h3><strong>Windows: Creación y terminación de procesos</strong></h3><br>
+  La forma en que se crean y detienen los procesos difiere según el sistema operativo que utilices.<br>
+  Cuando Windows arranca o se inicia, el primer modo de usuario no kernel que se inicia es el subsistema del
+  administrador de sesiones, o smss.exe. El proceso smss.exe se encarga de configurar algunas cosas para que el SO
+  funcione. A continuación, inicia el proceso de acceso, denominado winlogon.exe, junto con el subsistema de
+  tiempo de ejecución cliente/servidor, llamado csrss.exe, que maneja la ejecución de la GUI de Windows y la
+  consola de línea de comandos.<br>
+  En Windows, cada nuevo proceso que se crea necesita un proceso principal para indicarle al sistema operativo que
+  se debe crear un nuevo proceso. El proceso secundario hereda algunas cosas de aquel, como variables y
+  configuraciones, a lo que podemos referirnos colectivamente como un entorno.<br>
+  A diferencia de Linux, los procesos de Windows pueden operar independientemente de sus antecesores.<br>
+  Hacer clic en la X es solo una forma de detener la ejecución de un proceso en Windows, pero como es de esperar,
+  hay otras formas de detener procesos. Puedes usar un comando del símbolo del sistema invocando la utilidad
+  taskkill. "taskkill" puede encontrar y detener un proceso de varias maneras. Una de las formas más comunes es
+  usar un número de identificación conocido como ID de proceso, o PID, para indicarle a taskkill qué proceso
+  deseas detener.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill</a><br>
+
+  <h3><strong>Linux: Creación y terminación de procesos</strong></h3><br>
+  En Linux, los procesos tienen una relación principal/secundario. Esto significa que cada proceso que inicias
+  viene de otro proceso.<br>
+  Cuando enciendes tu computadora, el kernel crea un proceso llamado init, que tiene PID igual a 1. Init pone en
+  marcha otros procesos que necesitamos para que nuestra computadora funcione.<br>
+  Cuando tus procesos completan su tarea, en general, finalizarán automáticamente. Una vez que un proceso
+  finaliza, devolverá todos los recursos que estaba usando al kernel, para que puedan ser utilizados para otro
+  proceso.
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
