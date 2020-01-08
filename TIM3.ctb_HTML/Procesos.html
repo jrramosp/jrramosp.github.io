@@ -44,7 +44,91 @@
   marcha otros procesos que necesitamos para que nuestra computadora funcione.<br>
   Cuando tus procesos completan su tarea, en general, finalizarán automáticamente. Una vez que un proceso
   finaliza, devolverá todos los recursos que estaba usando al kernel, para que puedan ser utilizados para otro
-  proceso.
+  proceso.<br>
+  <h3><strong>Windows: Información del proceso de lectura</strong></h3><br>
+  En el sistema operativo Windows, el administrador de tareas, o taskmgr.exe, es un método para obtener
+  información de procesos. Puedes abrirlo con la combinación de teclas Ctrl-Mayús.-Esc o localizarlo con el menú
+  Inicio. Si haces clic en la pestaña Processes (Procesos), deberías ver una lista de los procesos que está
+  ejecutando el usuario actual junto con algunos de los procesos a nivel de sistema que el usuario puede ver. La
+  información sobre cada proceso se divide en columnas en el administrador de tareas. El administrador de tareas
+  te indica la aplicación o imagen que el proceso está ejecutando junto con el usuario que lo inició y los
+  recursos de CPU o memoria que está utilizando. Para terminar un proceso, puedes seleccionar cualquiera de las
+  filas del proceso y hacer clic en el botón End Task (Finalizar proceso), en la esquina inferior derecha.<br>
+  Mientras estés en el Administrador de tareas, puedes hacer clic en la opción de menú Details (Detalles) y aquí,
+  puedes ver mucha información que el Administrador de tareas muestra, incluido el PID. También puedes ver esta
+  información desde el símbolo del sistema y desde PowerShell. Desde el símbolo del sistema, puedes usar la
+  utilidad llamada TaskList para mostrar todos los procesos en ejecución. Desde un indicador de PowerShell, puedes
+  usar un cmdlet llamado Get-Process para hacer lo mismo.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1">
+  https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1</a><br>
+
+  <h3><strong>Linux: Información del proceso de lectura</strong></h3><br>
+  Usaremos el comando ps. Sigamos adelante, ejecutémoslo con el indicador -x y veamos qué ocurre. Esto te muestra
+  una instantánea de los procesos actualmente en ejecución en tu sistema.<br>
+  P-I-D o PID es el ID del proceso. Recuerda que los procesos obtienen un ID exclusivo cuando se inician. TTY,
+  este es el terminal asociado al proceso. STAT, este es el estado del proceso. Si ves una R aquí significa que el
+  proceso está en ejecución o esperando para ejecutarse. Otro estado común que verás es T, para "detenido", lo que
+  significa que un proceso fue suspendido. Otro que podrías ver es una S, para "sueño interrumpible", es decir, la
+  tarea está esperando que se complete un evento antes de reanudarse. TIME: este es el tiempo total de CPU que
+  duró el proceso. Y por último, COMMAND: este es el nombre del comando que estamos ejecutando.<br>
+  Ejecuta este comando, ps -ef. El indicador "e" se utiliza para obtener todos los procesos, incluso los
+  ejecutados por otros usuarios. El indicador -f significa "full" y te muestra todos los detalles sobre un
+  proceso.<br>
+  UID es el ID de usuario de la persona que inició el proceso. PID es el ID de proceso y PPID es el ID del proceso
+  principal que analizamos en la lección anterior, cuando iniciamos el proceso. C es el número de procesos
+  secundarios que tiene este proceso. STIME es la hora de inicio del proceso. TTY es el terminal asociado al
+  proceso. TIME es el tiempo total de CPU que duró el proceso, y CMD o "command" es el nombre del comando que
+  estamos ejecutando.<br>
+  Para ver los archivos que corresponden a los procesos podemos mirar en el directorio /proc. Esto nos dice mucha
+  más información sobre estados de proceso que lo que vimos en PS. Si bien es interesante mirar el directorio
+  /proc, no es muy práctico cuando necesitamos solucionar problemas con los procesos.<br>
+  <a href="http://man7.org/linux/man-pages/man1/ps.1.html">http://man7.org/linux/man-pages/man1/ps.1.html</a>
+  ‮<br>
+  <h3><strong>Linux: Señales</strong></h3><br>
+  En Linux, hay muchas señales que podemos enviar a los procesos. Estas señales están marcadas con nombres que
+  comienzan con sig. Puedes usar sigint para interrumpir el proceso y la acción predeterminada de esta señal es
+  finalizar el proceso que está interrumpiendo. Puedes enviar una señal sigint a través de la combinación de
+  teclas Ctrl + C.<br>
+  <h3><strong>Windows: Señales</strong></h3><br>
+  Para indicarle a un proceso que se anule a nivel del sistema, usamos algo llamado señal. Una señal es una forma
+  de decirle un proceso que algo acaba de ocurrir. Una de las señales más comunes con las que te encontrarás se
+  llama SIGINT, que significa "interrupción de la señal". Puedes enviar esta señal a un proceso en ejecución con
+  la combinación de teclas Ctrl + C.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019">https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019</a><br>
+
+  <h3><strong>Windows: Gestionando procesos</strong></h3><br>
+  El Explorador de procesos es una utilidad que Microsoft creó para permitir que especialistas en soporte de TI,
+  administradores de sistemas y otros usuarios miren los procesos en ejecución. Una vez descargado e iniciado el
+  Explorador de procesos, aparecerá una vista de los procesos actualmente activos en el panel de la ventana
+  superior. También verás una lista de los archivos que un proceso seleccionado utiliza en el panel de la ventana
+  inferior. Esto puede ser muy útil si necesitas averiguar qué procesos usan un determinado archivo o si deseas
+  obtener información sobre qué está haciendo exactamente el proceso y cómo funciona. Puedes buscar un proceso
+  fácilmente en el Explorador de procesos, ya sea presionando Control F o haciendo clic en el botón con los
+  binoculares.<br>
+  Si haces clic derecho en el proceso notepad.exe, aparecerá una lista de las diferentes opciones que puedes usar
+  para administrar el proceso. Presta atención a las que dicen Kill Process (Terminar proceso), Kill Process Tree
+  (Terminar árbol de procesos), Restart (Reiniciar) y Suspend (Suspender). Kill Process (Terminar proceso).<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer">https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer</a><br>
+
+  <h3><strong>Linux: Gestionando procesos</strong></h3><br>
+  El comando kill sin ningún indicador envía una señal de finalización o SIGTERM. Esto terminará el proceso, pero
+  le dará algo de tiempo para liberar los recursos que estaba usando. Entonces, para finalizar un proceso,
+  usaremos el comando kill junto con el PID del proceso que queremos finalizar.<br>
+  La otra señal que podrías ver aparecer de vez en cuando es la señal SIGKILL. La señal hace todo lo posible para
+  asegurarse de que tu proceso finalice por completo, y lo terminará sin darle tiempo para que limpie. Para enviar
+  una señal SIGKILL, puedes agregarle al comando kill el indicador -KILL para SIGKILL. Pero es importante señalar
+  que kill -KILL se usa como último recurso para terminar un proceso. Como no hace ninguna limpieza, podrías
+  terminar haciéndoles a tus archivos más mal que bien.<br>
+  Supongamos que tenías un proceso en ejecución que no querías finalizar, quizás solo ponerlo en pausa. Puedes
+  hacerlo enviando la señal SIGTSTP, que significa "detención de terminal", la que pondrá tu proceso en estado
+  suspendido. Para enviar esto, puedes usar el comando kill con el indicador -TSTP.<br>
+  También puedes enviar la señal SIGTSTP usando la combinación de teclado Control + Z. Para reanudar la ejecución
+  del proceso, puedes utilizar SIGCONT, que significa "continuar la señal".<br>
+  SIGTERM, SIGKILL, y SIGSTP son algunas de las señales más comunes que verás cuando trabajes con procesos en
+  Linux.
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
