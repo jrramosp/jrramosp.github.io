@@ -31,9 +31,9 @@
   A diferencia de Linux, los procesos de Windows pueden operar independientemente de sus antecesores.<br>
   Hacer clic en la X es solo una forma de detener la ejecución de un proceso en Windows, pero como es de esperar,
   hay otras formas de detener procesos. Puedes usar un comando del símbolo del sistema invocando la utilidad
-  taskkill. "taskkill" puede encontrar y detener un proceso de varias maneras. Una de las formas más comunes es
-  usar un número de identificación conocido como ID de proceso, o PID, para indicarle a taskkill qué proceso
-  deseas detener.<br>
+  <strong>taskkill</strong>. "taskkill" puede encontrar y detener un proceso de varias maneras. Una de las formas
+  más comunes es usar un número de identificación conocido como ID de proceso, o PID, para indicarle a taskkill
+  qué proceso deseas detener. taskkill /PID número<br>
   <a href=
   "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill</a><br>
 
@@ -46,35 +46,36 @@
   finaliza, devolverá todos los recursos que estaba usando al kernel, para que puedan ser utilizados para otro
   proceso.<br>
   <h3><strong>Windows: Información del proceso de lectura</strong></h3><br>
-  En el sistema operativo Windows, el administrador de tareas, o taskmgr.exe, es un método para obtener
-  información de procesos. Puedes abrirlo con la combinación de teclas Ctrl-Mayús.-Esc o localizarlo con el menú
-  Inicio. Si haces clic en la pestaña Processes (Procesos), deberías ver una lista de los procesos que está
-  ejecutando el usuario actual junto con algunos de los procesos a nivel de sistema que el usuario puede ver. La
-  información sobre cada proceso se divide en columnas en el administrador de tareas. El administrador de tareas
-  te indica la aplicación o imagen que el proceso está ejecutando junto con el usuario que lo inició y los
-  recursos de CPU o memoria que está utilizando. Para terminar un proceso, puedes seleccionar cualquiera de las
-  filas del proceso y hacer clic en el botón End Task (Finalizar proceso), en la esquina inferior derecha.<br>
+  En el sistema operativo Windows, el <strong>administrador de tareas</strong>, o taskmgr.exe, es un método para
+  obtener información de procesos. Puedes abrirlo con la combinación de teclas <strong>Ctrl-Mayús.-Esc</strong> o
+  localizarlo con el menú Inicio. Si haces clic en la pestaña Processes (Procesos), deberías ver una lista de los
+  procesos que está ejecutando el usuario actual junto con algunos de los procesos a nivel de sistema que el
+  usuario puede ver. La información sobre cada proceso se divide en columnas en el administrador de tareas. El
+  administrador de tareas te indica la aplicación o imagen que el proceso está ejecutando junto con el usuario que
+  lo inició y los recursos de CPU o memoria que está utilizando. Para terminar un proceso, puedes seleccionar
+  cualquiera de las filas del proceso y hacer clic en el botón End Task (Finalizar proceso), en la esquina
+  inferior derecha.<br>
   Mientras estés en el Administrador de tareas, puedes hacer clic en la opción de menú Details (Detalles) y aquí,
   puedes ver mucha información que el Administrador de tareas muestra, incluido el PID. También puedes ver esta
   información desde el símbolo del sistema y desde PowerShell. Desde el símbolo del sistema, puedes usar la
-  utilidad llamada TaskList para mostrar todos los procesos en ejecución. Desde un indicador de PowerShell, puedes
-  usar un cmdlet llamado Get-Process para hacer lo mismo.<br>
+  utilidad llamada <strong>TaskList</strong> para mostrar todos los procesos en ejecución. Desde un indicador de
+  PowerShell, puedes usar un cmdlet llamado <strong>Get-Process</strong> para hacer lo mismo.<br>
   <a href=
   "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1">
   https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1</a><br>
 
   <h3><strong>Linux: Información del proceso de lectura</strong></h3><br>
-  Usaremos el comando ps. Sigamos adelante, ejecutémoslo con el indicador -x y veamos qué ocurre. Esto te muestra
-  una instantánea de los procesos actualmente en ejecución en tu sistema.<br>
+  Usaremos el comando ps.Ejecutémoslo con el indicador -x y veamos qué ocurre, <strong>ps -x</strong>. Esto te
+  muestra una instantánea de los procesos actualmente en ejecución en tu sistema.<br>
   P-I-D o PID es el ID del proceso. Recuerda que los procesos obtienen un ID exclusivo cuando se inician. TTY,
   este es el terminal asociado al proceso. STAT, este es el estado del proceso. Si ves una R aquí significa que el
   proceso está en ejecución o esperando para ejecutarse. Otro estado común que verás es T, para "detenido", lo que
   significa que un proceso fue suspendido. Otro que podrías ver es una S, para "sueño interrumpible", es decir, la
   tarea está esperando que se complete un evento antes de reanudarse. TIME: este es el tiempo total de CPU que
   duró el proceso. Y por último, COMMAND: este es el nombre del comando que estamos ejecutando.<br>
-  Ejecuta este comando, ps -ef. El indicador "e" se utiliza para obtener todos los procesos, incluso los
-  ejecutados por otros usuarios. El indicador -f significa "full" y te muestra todos los detalles sobre un
-  proceso.<br>
+  Ejecuta este comando, <strong>ps -ef</strong>. El indicador "e" se utiliza para obtener todos los procesos,
+  incluso los ejecutados por otros usuarios. El indicador -f significa "full" y te muestra todos los detalles
+  sobre un proceso.<br>
   UID es el ID de usuario de la persona que inició el proceso. PID es el ID de proceso y PPID es el ID del proceso
   principal que analizamos en la lección anterior, cuando iniciamos el proceso. C es el número de procesos
   secundarios que tiene este proceso. STIME es la hora de inicio del proceso. TTY es el terminal asociado al
@@ -99,14 +100,14 @@
   "https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019">https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019</a><br>
 
   <h3><strong>Windows: Gestionando procesos</strong></h3><br>
-  El Explorador de procesos es una utilidad que Microsoft creó para permitir que especialistas en soporte de TI,
-  administradores de sistemas y otros usuarios miren los procesos en ejecución. Una vez descargado e iniciado el
-  Explorador de procesos, aparecerá una vista de los procesos actualmente activos en el panel de la ventana
-  superior. También verás una lista de los archivos que un proceso seleccionado utiliza en el panel de la ventana
-  inferior. Esto puede ser muy útil si necesitas averiguar qué procesos usan un determinado archivo o si deseas
-  obtener información sobre qué está haciendo exactamente el proceso y cómo funciona. Puedes buscar un proceso
-  fácilmente en el Explorador de procesos, ya sea presionando Control F o haciendo clic en el botón con los
-  binoculares.<br>
+  El <strong>Explorador de procesos</strong> es una utilidad que Microsoft creó para permitir que especialistas en
+  soporte de TI, administradores de sistemas y otros usuarios miren los procesos en ejecución. Una vez descargado
+  e iniciado el Explorador de procesos, aparecerá una vista de los procesos actualmente activos en el panel de la
+  ventana superior. También verás una lista de los archivos que un proceso seleccionado utiliza en el panel de la
+  ventana inferior. Esto puede ser muy útil si necesitas averiguar qué procesos usan un determinado archivo o si
+  deseas obtener información sobre qué está haciendo exactamente el proceso y cómo funciona. Puedes buscar un
+  proceso fácilmente en el Explorador de procesos, ya sea presionando Control F o haciendo clic en el botón con
+  los binoculares.<br>
   Si haces clic derecho en el proceso notepad.exe, aparecerá una lista de las diferentes opciones que puedes usar
   para administrar el proceso. Presta atención a las que dicen Kill Process (Terminar proceso), Kill Process Tree
   (Terminar árbol de procesos), Restart (Reiniciar) y Suspend (Suspender). Kill Process (Terminar proceso).<br>
@@ -114,21 +115,52 @@
   "https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer">https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer</a><br>
 
   <h3><strong>Linux: Gestionando procesos</strong></h3><br>
-  El comando kill sin ningún indicador envía una señal de finalización o SIGTERM. Esto terminará el proceso, pero
-  le dará algo de tiempo para liberar los recursos que estaba usando. Entonces, para finalizar un proceso,
-  usaremos el comando kill junto con el PID del proceso que queremos finalizar.<br>
+  El comando <strong>kill</strong> sin ningún indicador envía una señal de finalización o SIGTERM. Esto terminará
+  el proceso, pero le dará algo de tiempo para liberar los recursos que estaba usando. Entonces, para finalizar un
+  proceso, usaremos el comando kill junto con el PID del proceso que queremos finalizar.<br>
   La otra señal que podrías ver aparecer de vez en cuando es la señal SIGKILL. La señal hace todo lo posible para
   asegurarse de que tu proceso finalice por completo, y lo terminará sin darle tiempo para que limpie. Para enviar
   una señal SIGKILL, puedes agregarle al comando kill el indicador -KILL para SIGKILL. Pero es importante señalar
-  que kill -KILL se usa como último recurso para terminar un proceso. Como no hace ninguna limpieza, podrías
-  terminar haciéndoles a tus archivos más mal que bien.<br>
+  que <strong>kill -KILL</strong> se usa como último recurso para terminar un proceso. Como no hace ninguna
+  limpieza, podrías terminar haciéndoles a tus archivos más mal que bien.<br>
   Supongamos que tenías un proceso en ejecución que no querías finalizar, quizás solo ponerlo en pausa. Puedes
   hacerlo enviando la señal SIGTSTP, que significa "detención de terminal", la que pondrá tu proceso en estado
   suspendido. Para enviar esto, puedes usar el comando kill con el indicador -TSTP.<br>
   También puedes enviar la señal SIGTSTP usando la combinación de teclado Control + Z. Para reanudar la ejecución
   del proceso, puedes utilizar SIGCONT, que significa "continuar la señal".<br>
   SIGTERM, SIGKILL, y SIGSTP son algunas de las señales más comunes que verás cuando trabajes con procesos en
-  Linux.
+  Linux.<br>
+  <h3><strong>Windows: Monitoreo de recursos</strong></h3><br>
+  En Windows, la forma más común de ver rápidamente lo que hacen los recursos del sistema es mediante la
+  herramienta <strong>Monitor de recursos</strong>. También notarás que el Monitor de recursos muestra información
+  del proceso junto con datos sobre los recursos que el proceso está consumiendo. Puedes obtener esta información
+  de rendimiento en una presentación un poco menos detallada del Explorador de procesos. Selecciona el proceso que
+  te interesa, haz clic derecho y elige Properties (Propiedades).<br>
+  Sabemos que si ejecutamos <strong>Get-Process</strong> sin opciones ni indicadores, obtenemos información de
+  proceso para cada proceso en ejecución en el sistema.<br>
+  Supongamos que solo querías mostrar los tres procesos principales que más usan la CPU<br>
+  Get-Process | Sort CPU -descending | Select -first 3 -Property ID, ProcessName,CPU<br>
+  Primero, invocamos al cmdlet Get-Process para obtener toda esa información de procesos del sistema operativo.
+  Luego, usamos la barra vertical para conectar la salida de ese comando con el comando Sort. Ordenamos la salida
+  de Get-Process por valores descendientes de la columna CPU para poner los números más grandes primero. Luego,
+  canalizamos esa información al comando Select. Con Select, seleccionamos las primeras tres filas de la salida de
+  Sort y solo tomamos el ID de propiedad, el nombre y la cantidad de CPU para ver.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1#outputs">
+  https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1#outputs</a><br>
+
+  <h3><strong>Linux: Monitoreo de recursos</strong></h3><br>
+  Un comando útil para averiguar cómo se ve la utilización de tu sistema en tiempo real es el comando
+  <strong>top</strong>. "top" nos muestra los procesos principales que utilizan la mayoría de los recursos en
+  nuestra máquina. También obtenemos una instantánea rápida de las tareas totales en ejecución o inactivas, uso de
+  CPU, uso de memoria y mucho más.<br>
+  Otra herramienta útil para la utilización de recursos es el comando <strong>uptime</strong>. Este comando
+  muestra información sobre la hora actual, cuánto tiempo estuvo en funcionamiento tu sistema, cuántos usuarios
+  accedieron y cuál es el promedio de carga de tu máquina. Esto muestra la carga promedio de CPU en intervalos de
+  1, 5 y 15 minutos.<br>
+  Otro comando que puedes usar para administrar procesos es el comando <strong>lsof</strong>. Lista los archivos
+  abiertos y qué procesos los están usando.<br>
+  <a href="https://en.wikipedia.org/wiki/Load_(computing)">https://en.wikipedia.org/wiki/Load_(computing)</a>
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
