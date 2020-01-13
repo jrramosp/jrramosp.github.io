@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acceso remoto</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <h3><strong>Conexión remota y SSH</strong></h3><br>
+  SSH o Secure Shell es un protocolo implementado por otros programas para acceder, de forma segura, a una
+  computadora desde otra. Para usar SSH, necesitas tener un cliente SSH instalado en la computadora desde la que
+  te estás conectando, junto con un servidor SSH en la computadora a la que estás tratando de conectarte. Ten en
+  cuenta que cuando decimos servidor SSH, no queremos decir otra máquina física que entregue datos. Un servidor
+  SSH es solo software. En la máquina remota, el servidor SSH se ejecuta como un proceso en segundo plano.
+  Comprueba constantemente si un cliente está tratando de conectarse a ella, entonces autenticará su
+  solicitud.<br>
+  El programa más popular para usar SSH en Linux es el programa OpenSSH. Windows usa el popular programa de código
+  abierto PuTTY.<br>
+  Para acceder a una máquina remota tenemos que tener una cuenta en esa computadora. También necesitamos el nombre
+  de host o la dirección IP de esa computadora. Bien, ahora que estamos conectados a través de SSH, cualquiera de
+  los comandos de texto que escribamos se envían de forma segura al servidor SSH. Desde aquí, incluso puedes
+  iniciar una aplicación que te permita ver una GUI en lugar de trabajar directamente en la shell.<br>
+  Podemos conectar SSH usando contraseñas, como viste antes. Esta forma de autenticar un equipo remoto es bastante
+  común, pero no es muy segura.<br>
+  La alternativa es usar una clave de autenticación SSH. Las claves SSH vienen en un juego de dos claves llamadas
+  claves privadas y públicas. Puedes pensar en ellas como llaves físicas reales para una caja fuerte especial.
+  Puedes bloquear algo con una clave pública, pero solo puedes desbloquearlo con una clave privada y viceversa.
+  Esto asegura que lo que sea que haya en la caja fuerte, esté disponible solo para quienes tengan ambas claves,
+  la pública y la privada.<br>
+  Otra forma en la que puedes conectarte de forma segura a una máquina remota es a través de una VPN. Una VPN es
+  una red privada virtual. Te permite conectarte a una red privada, como la red de tu trabajo, a través de
+  Internet. Piensa en ello como un SSH más sofisticado, con mucha más configuración. Te permite acceder a
+  recursos, como servidores de archivos compartidos y dispositivos de red, como si te conectaras a la red de tu
+  trabajo.<br>
+  <h3><strong>Conexiones remotas en Windows</strong></h3><br>
+  PuTTy es un software gratuito de código abierto que puedes usar para hacer conexiones remotas a través de varios
+  protocolos de red, incluido SSH.<br>
+  Después de descargar y de instalar PuTTY, puedes iniciarlo a través de la GUI. Aparecerá una ventana en la que
+  verás las opciones básicas para conectarte. Tome nota del nombre del host, el puerto y las opciones de tipo de
+  conexión. El puerto predeterminado es el 22, ya que es el puerto predeterminado que usa el protocolo SSH, y el
+  tipo de conexión se establece como SSH. Todo lo que necesitas hacer es escribir el nombre del host o la
+  dirección IP de la computadora a la que quieres conectarte.<br>
+  También puedes usarlo en la línea de comandos. Abre una ventana de PowerShell y escribe el nombre de la
+  aplicación, así. Luego, agrega la opción -ssh para indicar que quieres conectarte a través de SSH. También
+  podrías indicar el usuario y la dirección en la forma de usuario@direcciónIP, especificando el puerto al
+  final.<br>
+  PuTTy también viene con una herramienta llamada plink o enlace PuTTy, que se integra en la línea de comandos una
+  vez que se instala PuTTy. También puedes usar plink para hacer conexiones SSH remotas.<br>
+  SSH puede ser muy útil, en especial si quieres conectarte desde una computadora que ejecuta Windows a un sistema
+  operativo basado en Linux que se ejecuta de forma remota.<br>
+  <a href=
+  "https://en.wikipedia.org/wiki/Comparison_of_SSH_clients">https://en.wikipedia.org/wiki/Comparison_of_SSH_clients</a><br>
+
+  <a href=
+  "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a><br>
+
+  Microsoft proporciona otra manera de conectarse a otras computadoras con Windows llamada Protocolo de escritorio
+  remoto, o RDP. También hay clientes de RDP para Linux en OS 10, como RealVNC, y Microsoft RDP en Mac. RDP
+  proporciona a los usuarios una interfaz gráfica de usuario a computadoras remotas siempre que la computadora
+  remota tenga habilitadas las conexiones entrantes RDP.<br>
+  Un programa cliente llamado cliente de Microsoft Terminal Services, o MSTSC.exe, se usa para crear conexiones
+  RDP a computadoras remotas. Para habilitar conexiones remotas en tu computadora, abre el menú Inicio, haz clic
+  derecho en This PC (Este equipo), luego selecciona Properties (Propiedades). Desde ahí, selecciona Remote
+  settings (Configuración remota). Y luego elige una opción desde la sección Remote desktop (Escritorio remoto)
+  del panel.<br>
+  Puedes iniciar el cliente RDP de varias maneras. Puede escribir mstsc en el cuadro de ejecución o buscar
+  conexiones de escritorio remoto en el menú Inicio. Una vez iniciado el cliente, te pedirá el nombre o la
+  dirección IP de la computadora a la que quieres conectarte. El cliente Windows RDP también puede iniciarse desde
+  la línea de comandos o puedes especificar más parámetros, como /admin, si quieres conectarte a la computadora
+  remota con las credenciales administrativas.<br>
+  <h3><strong>Transferencia de archivos de conexión remota</strong></h3><br>
+  SCP, o copia segura, es un comando que puedes usar en Linux para copiar archivos entre computadoras en una red.
+  Utiliza SSH para transferir los datos. En este comando, ejecutamos el comando scp con la ruta del archivo que
+  queremos transferir a la cuenta de usuario, nombre de host y ruta desde donde queremos copiar el archivo.<br>
+  <h3><strong>Transferencia de archivos de conexión remota en Windows</strong></h3><br>
+  El paquete PuTTY viene con una herramienta llamada cliente de copia segura de PuTTy, o pscp.exe. Puedes usarla
+  para copiar archivos de manera muy similar al comando scp de Linux.<br>
+  Usar PuTTY o scp para transferir archivos puede llevar un poco de tiempo, en especial si necesitas transferir
+  archivos a varias máquinas. Como alternativa, Windows concibió un mecanismo incorporado para compartir archivos
+  mediante el concepto de carpetas compartidas.<br>
+  Tan solo haz clic derecho en la carpeta que quieres compartir, luego pasa el mouse sobre la opción Share with
+  (Compartir con), luego selecciona Specific People (Personas específicas). Desde aquí, puedes agregar los
+  usuarios individuales o los grupos con los que quieres compartir la carpeta.<br>
+  Después de compartir la carpeta, puedes acceder a ella desde otras computadoras. Comienza abriendo This PC (Este
+  equipo), luego ve a la pestaña Computer (Equipo). Desde aquí, puedes mapear la carpeta directamente a tu
+  computadora con la opción Map network drive (Conectar a unidad de red).<br>
+  Por último, en otra computadora, puedes ir directamente a la carpeta desde el cuadro Ejecutar escribiendo un
+  barra invertida, el nombre de la computadora, otra barra invertida, el nombre de la carpeta asignada como
+  carpeta compartida.<br>
+  Quizás te interese saber que también puedes compartir carpetas desde la línea de comandos, usando el comando net
+  share. "net share" te permite hacer lo mismo que el flujo de trabajo de intercambio de la GUI, y deberás
+  especificar qué tipo de permisos te gustaría otorgar a qué usuarios.<br>
+  El comando net share también puede usarse para listar las actuales carpetas compartidas en tu computadora. Para
+  ello, debes ejecutarlo sin ningún argumento.<br>
+  <a href=
+  "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh750728(v=ws.11)?redirectedfrom=MSDN">
+  https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh750728(v=ws.11)?redirectedfrom=MSDN</a>
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
