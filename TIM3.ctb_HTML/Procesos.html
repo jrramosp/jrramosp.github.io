@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
+  <a name="h3-1" id="h3-1"></a>
   <h3><strong>Programas contra procesos revisados</strong></h3><br>
   Los procesos son programas que se ejecutan. Podemos tener muchos procesos en ejecución para el mismo programa.
   Cuando los procesos se ejecutan, ocupan recursos de hardware, como CPU y RAM. A veces, un proceso toma más
@@ -18,6 +19,7 @@
   Además de los procesos visibles que iniciamos, como nuestro reproductor de música o el procesador de textos,
   también hay procesos no tan visibles en ejecución. Se los conoce como procesos en segundo plano, a veces
   llamados "procesos daemon".<br>
+  <a name="h3-2" id="h3-2"></a>
   <h3><strong>Windows: Creación y terminación de procesos</strong></h3><br>
   La forma en que se crean y detienen los procesos difiere según el sistema operativo que utilices.<br>
   Cuando Windows arranca o se inicia, el primer modo de usuario no kernel que se inicia es el subsistema del
@@ -37,6 +39,7 @@
   <a href=
   "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill</a><br>
 
+  <a name="h3-3" id="h3-3"></a>
   <h3><strong>Linux: Creación y terminación de procesos</strong></h3><br>
   En Linux, los procesos tienen una relación principal/secundario. Esto significa que cada proceso que inicias
   viene de otro proceso.<br>
@@ -45,6 +48,7 @@
   Cuando tus procesos completan su tarea, en general, finalizarán automáticamente. Una vez que un proceso
   finaliza, devolverá todos los recursos que estaba usando al kernel, para que puedan ser utilizados para otro
   proceso.<br>
+  <a name="h3-4" id="h3-4"></a>
   <h3><strong>Windows: Información del proceso de lectura</strong></h3><br>
   En el sistema operativo Windows, el <strong>administrador de tareas</strong>, o taskmgr.exe, es un método para
   obtener información de procesos. Puedes abrirlo con la combinación de teclas <strong>Ctrl-Mayús.-Esc</strong> o
@@ -64,6 +68,7 @@
   "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1">
   https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1</a><br>
 
+  <a name="h3-5" id="h3-5"></a>
   <h3><strong>Linux: Información del proceso de lectura</strong></h3><br>
   Usaremos el comando ps.Ejecutémoslo con el indicador -x y veamos qué ocurre, <strong>ps -x</strong>. Esto te
   muestra una instantánea de los procesos actualmente en ejecución en tu sistema.<br>
@@ -86,11 +91,13 @@
   /proc, no es muy práctico cuando necesitamos solucionar problemas con los procesos.<br>
   <a href="http://man7.org/linux/man-pages/man1/ps.1.html">http://man7.org/linux/man-pages/man1/ps.1.html</a>
   ‮<br>
+  <a name="h3-6" id="h3-6"></a>
   <h3><strong>Linux: Señales</strong></h3><br>
   En Linux, hay muchas señales que podemos enviar a los procesos. Estas señales están marcadas con nombres que
   comienzan con sig. Puedes usar sigint para interrumpir el proceso y la acción predeterminada de esta señal es
   finalizar el proceso que está interrumpiendo. Puedes enviar una señal sigint a través de la combinación de
   teclas Ctrl + C.<br>
+  <a name="h3-7" id="h3-7"></a>
   <h3><strong>Windows: Señales</strong></h3><br>
   Para indicarle a un proceso que se anule a nivel del sistema, usamos algo llamado señal. Una señal es una forma
   de decirle un proceso que algo acaba de ocurrir. Una de las señales más comunes con las que te encontrarás se
@@ -99,6 +106,7 @@
   <a href=
   "https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019">https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/signal?view=vs-2019</a><br>
 
+  <a name="h3-8" id="h3-8"></a>
   <h3><strong>Windows: Gestionando procesos</strong></h3><br>
   El <strong>Explorador de procesos</strong> es una utilidad que Microsoft creó para permitir que especialistas en
   soporte de TI, administradores de sistemas y otros usuarios miren los procesos en ejecución. Una vez descargado
@@ -114,6 +122,7 @@
   <a href=
   "https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer">https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer</a><br>
 
+  <a name="h3-9" id="h3-9"></a>
   <h3><strong>Linux: Gestionando procesos</strong></h3><br>
   El comando <strong>kill</strong> sin ningún indicador envía una señal de finalización o SIGTERM. Esto terminará
   el proceso, pero le dará algo de tiempo para liberar los recursos que estaba usando. Entonces, para finalizar un
@@ -130,10 +139,11 @@
   del proceso, puedes utilizar SIGCONT, que significa "continuar la señal".<br>
   SIGTERM, SIGKILL, y SIGSTP son algunas de las señales más comunes que verás cuando trabajes con procesos en
   Linux.<br>
+  <a name="h3-10" id="h3-10"></a>
   <h3><strong>Windows: Monitoreo de recursos</strong></h3><br>
   En Windows, la forma más común de ver rápidamente lo que hacen los recursos del sistema es mediante la
   herramienta <strong>Monitor de recursos</strong>. También notarás que el Monitor de recursos muestra información
-  del proceso junto con datos sobre los recursos que el proceso está consumiendo. Puedes obtener esta información
+  del proceso junto con datos sobre los recursos que e l proceso está consumiendo. Puedes obtener esta información
   de rendimiento en una presentación un poco menos detallada del Explorador de procesos. Selecciona el proceso que
   te interesa, haz clic derecho y elige Properties (Propiedades).<br>
   Sabemos que si ejecutamos <strong>Get-Process</strong> sin opciones ni indicadores, obtenemos información de
@@ -149,6 +159,7 @@
   "https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1#outputs">
   https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-5.1#outputs</a><br>
 
+  <a name="h3-11" id="h3-11"></a>
   <h3><strong>Linux: Monitoreo de recursos</strong></h3><br>
   Un comando útil para averiguar cómo se ve la utilización de tu sistema en tiempo real es el comando
   <strong>top</strong>. "top" nos muestra los procesos principales que utilizan la mayoría de los recursos en

@@ -18,6 +18,7 @@
   <a href=
   "https://support.microsoft.com/en-us/help/154997/description-of-the-fat32-file-system">https://support.microsoft.com/en-us/help/154997/description-of-the-fat32-file-system</a><br>
 
+  <a name="h3-1" id="h3-1"></a>
   <h3><strong>Anatomía del disco</strong></h3><br>
   Un disco de almacenamiento se puede dividir en algo llamado particiones. Una partición es sólo una parte del
   disco que puedes administrar. Cuando creas múltiples particiones, te da la ilusión de estar dividiendo
@@ -41,6 +42,7 @@
   solo tiene un tipo de partición. Puedes hacer tantas particiones como quieras en un disco. En una lección
   anterior, conocimos un nuevo estándar de BIOS, llamado UEFI, que se convirtió en el BIOS predeterminado para
   sistemas más nuevos. Para poder iniciar con UEFI, tu disco tiene que usar la tabla de particiones GUID.<br>
+  <a name="h3-2" id="h3-2"></a>
   <h3><strong>Windows: partición de disco y formateo de un sistema de archivos</strong></h3><br>
   Windows realmente viene con una gran herramienta nativa, la utilidad de Administración de discos. La iniciaremos
   haciendo clic derecho en This PC (Este equipo), luego seleccionamos la opción Manage (Administrar), y luego
@@ -88,7 +90,12 @@
   <a href=
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc766465(v=ws.10)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc766465(v=ws.10)?redirectedfrom=MSDN</a><br>
-  <a href="https://www.top-password.com/blog/format-hard-drive-using-powershell/">https://www.top-password.com/blog/format-hard-drive-using-powershell/</a>
+
+
+  <a href=
+  "https://www.top-password.com/blog/format-hard-drive-using-powershell/">https://www.top-password.com/blog/format-hard-drive-using-powershell/</a><br>
+
+  <a name="h3-3" id="h3-3"></a>
   <h3><strong>Linux: Partición de disco y formateo de un sistema de archivos</strong></h3><br>
   En Linux, hay algunas herramientas de línea de comandos de particionado diferentes que podemos usar. Una que
   soporta tanto el particionamiento MBR como el GPT es la herramienta parted. Antes de hacerlo, ejecutemos un
@@ -130,6 +137,7 @@
   "https://rm-rf.es/gestion-de-particiones-con-parted-en-linux/">https://rm-rf.es/gestion-de-particiones-con-parted-en-linux/</a><br>
 
   <a href="https://linuxhint.com/parted_linux/">https://linuxhint.com/parted_linux/</a><br>
+  <a name="h3-4" id="h3-4"></a>
   <h3><strong>Linux: Montaje y desmontaje de un sistema de archivos</strong></h3><br>
   Para comenzar a interactuar con el disco, necesitamos montar el sistema de archivos en el directorio.<br>
   Detengámonos en la ubicación de nuestra partición con sudo parted -l. Muy bien, puedo ver que la partición a la
@@ -153,6 +161,7 @@
   mostrará el UUID para los ID de dispositivo de bloqueo ID, conocidos también como ID de dispositivo de
   almacenamiento.<br>
   <a href="https://es.wikipedia.org/wiki/Fstab">https://es.wikipedia.org/wiki/Fstab</a><br>
+  <a name="h3-5" id="h3-5"></a>
   <h3><strong>Windows: Swap</strong></h3><br>
   La memoria virtual es la forma en que nuestro SO proporciona memoria física disponible en nuestra computadora
   (como RAM) a las aplicaciones que se ejecutan en ella. Lo hace creando un mapeo de direcciones virtuales a
@@ -187,17 +196,19 @@
   <a href=
   "https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size">https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size</a><br>
 
+  <a name="h3-6" id="h3-6"></a>
   <h3><strong>Linux: Swap</strong></h3><br>
   En Linux, el área exclusiva del disco duro que se usa para la memoria virtual se conoce como espacio de
   intercambio.<br>
-  Entonces: sudo mkswap /dev, y nuestra nueva partición de intercambio está en /dev/sdb2. Por último, hay que
-  ejecutar un comando más para habilitar el intercambio en el dispositivo, swapon. Entonces: sudo swapon dev/sdb2.
-  Si queremos montar automáticamente el espacio de intercambio cada vez que el equipo se inicia, agregamos una
-  entrada de intercambio al archivo /etc fstab como hicimos antes.<br>
+  Entonces: <strong>sudo mkswap /dev</strong>, y nuestra nueva partición de intercambio está en /dev/sdb2. Por
+  último, hay que ejecutar un comando más para habilitar el intercambio en el dispositivo, swapon. Entonces:
+  <strong>sudo swapon dev/sdb2</strong>. Si queremos montar automáticamente el espacio de intercambio cada vez que
+  el equipo se inicia, agregamos una entrada de intercambio al archivo /etc fstab como hicimos antes.<br>
   <a href=
   "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc#id4394007">
   https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc#id4394007</a><br>
 
+  <a name="h3-7" id="h3-7"></a>
   <h3><strong>Windows: Archivos</strong></h3><br>
   Cuando hablamos de datos, nos referimos al contenido real del archivo, como un documento de texto que guardamos
   en nuestros discos duros. El metadato del archivo incluye todo lo demás, como el propietario del archivo, los
@@ -233,6 +244,7 @@
   <a href=
   "https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions">https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions</a><br>
 
+  <a name="h3-8" id="h3-8"></a>
   <h3><strong>Linux: Archivos</strong></h3><br>
   En Linux, los metadatos y los archivos se organizan en una estructura llamada inodo. Los inodos son similares a
   los registros MFT del NFTS de Windows. Almacenamos inodos en una tabla de inodos y nos ayudan a gestionar los
@@ -244,13 +256,14 @@
   apuntan a un archivo. En Linux, enlazan a otro inodo almacenado en una tabla de inodos en el sistema de
   archivos. Básicamente, cuando estás creando un hardlink, estás apuntando a una ubicación física en el disco o,
   más específicamente, en el sistema de archivos.<br>
-  Para crear un softlink, podemos ejecutar el comando ln con el indicador -s para "softlink".<br>
+  Para crear un softlink, podemos ejecutar el comando <strong>ln</strong> con el indicador -s para "softlink".<br>
   Para crear un hardlink, podemos ejecutar el comando ln sin la -s, para especificar un hardlink.<br>
   Los hardlinks son geniales si necesitas guardar el mismo archivo en diferentes lugares, pero no quieres ocupar
   nada de espacio adicional en el volumen. Esto es porque todos los hardlinks apuntan al mismo espacio en el
   volumen. Podrías usar softlinks para hacer lo mismo. Pero ¿y si moviste un archivo, deshiciste el softlink y
   olvidaste todos los demás lugares donde lo usaste? Todos los demás softlinks también quedarían deshechos y
   limpiar todo puede llevarte cierto tiempo.<br>
+  <a name="h3-9" id="h3-9"></a>
   <h3><strong>Windows: Uso del disco</strong></h3><br>
   Para comprobar el uso del disco, puedes abrir la utilidad de Administración de equipos (Computer Management).
   Luego, ve a la consola Disk Management (Administración de discos). Desde allí, haz clic derecho en la partición
@@ -274,15 +287,17 @@
   Para este tipo de unidades SSD, el sistema operativo puede utilizar un proceso llamado Trim para recuperar
   partes no utilizadas del disco de estado sólido.<br>
   Para iniciar una desfragmentación manual, abre el Desfragmentador de discos incluido en el SO.<br>
+  <a name="h3-10" id="h3-10"></a>
   <h3><strong>Linux: Uso del disco</strong></h3><br>
   En la última lección, aprendimos a ver la utilización del disco en tu computadora con Windows. En Linux, lo
-  hacemos con el comando du -h. El comando du o "uso del disco" nos muestra el uso del disco de un directorio
-  específico. Si no especificas un directorio, irá de manera predeterminada al disco actual.<br>
-  Otro comando que puedes usar si quieres saber cuánto espacio libre tienes en tu máquina es el comando df, o
-  "disco libre".<br>
+  hacemos con el comando <strong>du -h</strong>. El comando du o "uso del disco" nos muestra el uso del disco de
+  un directorio específico. Si no especificas un directorio, irá de manera predeterminada al disco actual.<br>
+  Otro comando que puedes usar si quieres saber cuánto espacio libre tienes en tu máquina es el comando
+  <strong>df</strong>, o "disco libre".<br>
   <a href=
   "https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/">https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/</a><br>
 
+  <a name="h3-11" id="h3-11"></a>
   <h3><strong>Windows: Reparación del sistema de archivos</strong></h3><br>
   Cuando leemos o escribimos algo en una unidad, en realidad primero ponemos eso en un búfer o memoria caché. Un
   búfer de datos es una región de la RAM que se usa para almacenar datos temporalmente mientras se los está
@@ -315,6 +330,7 @@
   configurará un bit en un archivo de metadatos en el volumen que indica que hay corrupción. Cuando el sistema se
   inicie, la utilidad chkdsk comprobará este bit. Si está configurado, se ejecutará y tratará de reparar la
   corrupción reconstruyendo los bits dañados del sistema de archivos desde el registro NTFS.<br>
+  <a name="h3-12" id="h3-12"></a>
   <h3><strong>Linux: Reparación del sistema de archivos</strong></h3><br>
   Para tratar de reparar un sistema de archivos manualmente en Linux, también puedes utilizar el comando fsck o
   "verificar sistema de archivos". Sólo asegúrate de que el sistema de archivos no esté montado. Algo más para

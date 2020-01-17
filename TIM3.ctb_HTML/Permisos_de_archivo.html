@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
+  <a name="h3-1" id="h3-1"></a>
   <h3><strong>Windows: Permisos de archivo</strong></h3><br>
   En Windows, los permisos de archivos y directorios se asignan mediante <strong>listas de control de
   acceso</strong>, o <strong>ACL</strong>. Específicamente, vamos a trabajar con <em>listas de control de acceso
@@ -41,6 +42,7 @@
   <a href=
   "https://docs.microsoft.com/es-es/windows/win32/secauthz/access-control-lists?redirectedfrom=MSDN">https://docs.microsoft.com/es-es/windows/win32/secauthz/access-control-lists?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-2" id="h3-2"></a>
   <h3><strong>Linux: Permisos de archivo</strong></h3><br>
   Hay 3 permisos diferentes que puedes tener en Linux.<br>
   • Read (Lectura): esto le permite a alguien leer el contenido de un archivo o carpeta.<br>
@@ -49,6 +51,7 @@
   Veamos esto con el comando ls. Usaremos los indicadores largos para poder ver los permisos en el archivo. Lo
   primero que vemos en esta columna es "-rwxrw-r--". Aquí hay 10 bits. El primero es el tipo de archivo. En este
   ejemplo, el guión significa que el archivo que estamos viendo es solo un archivo normal. A veces es posible que
+
   veas una "d", que significa "directorio". Los siguientes nueve bits son nuestros permisos reales, agrupados en
   tríos o conjuntos de tres.<br>
   El primer trío se refiere al permiso del propietario del archivo. El segundo trío se refiere al permiso del
@@ -56,6 +59,7 @@
   La "r" significa "que puede leer", "w" significa "que puede escribir" y "x" es "ejecutable". Al igual que en el
   sistema binario, si se establece un bit, entonces decimos que está habilitado. Para nuestros permisos, si un bit
   es un guion, está deshabilitado.<br>
+  <a name="h3-3" id="h3-3"></a>
   <h3><strong>Windows: Modificar permisos</strong></h3><br>
   Supongamos que queremos darle acceso a otra persona de mi familia para que vea una carpeta con fotos familiares
   en la computadora. En mi disco local C, tengo una carpeta llamada Vacation Pictures que quiero compartir con
@@ -83,8 +87,9 @@
   hay un espacio en la ruta de acceso. En el ejemplo de command.exe, tenemos que usar comillas dobles para la ruta
   de acceso y ya no necesitamos las comillas simples para ocultar los paréntesis.<br>
   Queremos darles permiso de lectura a la carpeta Vacation Pictures. Usemos el grupo especial Everyone para
-  otorgar permisos de lectura al directorio. Entonces: icacls 'C:\Vacation Pictures' /grant Everyone:(OI)(CI)(R).
-  Perfecto. El grupo Everyone (Todos) incluye, bueno, a todos, incluso a cuentas de usuarios locales.<br>
+  otorgar permisos de lectura al directorio. Entonces: <strong>icacls 'C:\Vacation Pictures' /grant
+  Everyone:(OI)(CI)(R)</strong>. Perfecto. El grupo Everyone (Todos) incluye, bueno, a todos, incluso a cuentas de
+  usuarios locales.<br>
   Guest users (Usuarios invitados): Este es un tipo especial de usuario al que se le permite usar la computadora
   sin contraseña. Los usuarios invitados están deshabilitados de manera predeterminada. Puedes habilitarlos en
   situaciones muy específicas.<br>
@@ -92,6 +97,7 @@
   usar el grupo Authenticated users (Usuarios autenticados). Ese grupo no incluye usuarios invitados. Primero,
   vamos a agregar una nueva DACL. icacls 'C:\Vacation Pictures' /grant' Authenticated Users:(OI)(CI)(R). Ahora,
   eliminemos los permisos para el grupo Everyone. icacls 'C:\Vaction Pictures' /remove Everyone.<br>
+  <a name="h3-4" id="h3-4"></a>
   <h3><strong>Linux: Modificar permisos</strong></h3><br>
   En Linux, cambiamos los permisos usando el comando <strong>chmod</strong>, o "cambio de modo". Primero, elige el
   conjunto de permisos que quieres cambiar. El propietario, marcado por una "u", el grupo al que pertenece el
@@ -113,6 +119,7 @@
   propietario" te permite cambiar el propietario de un archivo.<br>
   Para cambiar el grupo al que el archivo pertenece, puedes usar el comando <strong>chgrp</strong> o "modificar
   grupo".<br>
+  <a name="h3-5" id="h3-5"></a>
   <h3><strong>Windows: Permisos de archivo</strong></h3><br>
   Tal vez te diste cuenta de que, cuando estuvimos mirando los permisos en la GUI antes, hay una casilla de
   verificación en la lista de permisos para <em>permisos especiales</em>. Los permisos que estuvimos mirando y
@@ -131,6 +138,7 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732880(v=ws.11)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732880(v=ws.11)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-6" id="h3-6"></a>
   <h3><strong>Linux: SetUID, SetGID, Sticky Bit</strong></h3><br>
   En Linux, también tenemos permisos especiales. ¿Qué sucede si deseo que un usuario pueda hacer algo que requiera
   privilegios de root, pero no quiero otorgarle estos privilegios? Bueno, gracias a un bit de permiso especial
@@ -149,8 +157,10 @@
   propietario de root puede borrar algo. También puedes habilitar el sticky bit mediante un formato numérico o
   simbólico. El bit simbólico es una "t" y el bit numérico es un 1.<br>
   <a href=
-  "https://www.linux.com/tutorials/understanding-linux-file-permissions/">https://www.linux.com/tutorials/understanding-linux-file-permissions/</a>
-  <a href="https://es.wikipedia.org/wiki/Permisos_de_acceso_a_archivos">https://es.wikipedia.org/wiki/Permisos_de_acceso_a_archivos</a>
+  "https://www.linux.com/tutorials/understanding-linux-file-permissions/">https://www.linux.com/tutorials/understanding-linux-file-permissions/</a><br>
+
+  <a href=
+  "https://es.wikipedia.org/wiki/Permisos_de_acceso_a_archivos">https://es.wikipedia.org/wiki/Permisos_de_acceso_a_archivos</a>
   <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>
