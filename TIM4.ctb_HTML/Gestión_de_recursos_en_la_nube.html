@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gestión de recursos en la nube</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <h3><strong>Conceptos de la nube</strong></h3><br>
+  Cuando usas software como servicio, o SaaS, el software ya está preconfigurado y el usuario no está tan
+  involucrado en la configuración de la nube. El proveedor de la nube gestiona todo lo relacionado con el servicio
+  para ti, lo que incluye decidir si las máquinas virtuales están alojadas, asegurarse de tener capacidad
+  suficiente para satisfacer tus necesidades, crear copias de seguridad frecuentes y confiables, y mucho más.<br>
+  Cuando usas infraestructura como servicio, o IaaS, por otra parte, estás alojando tus propios servicios en la
+  nube. Debes decidir cómo quieres que sea la infraestructura dependiendo de lo que quieras ejecutar en ella.<br>
+  Cuando configuras recursos en la nube, debes tener en cuenta las regiones. Una región es una ubicación
+  geográfica que contiene varios centros de datos. A cada uno de estos centros de datos se lo llama "zona", y cada
+  zona es independiente de las demás. Si una de ellas falla por alguna razón, las demás siguen disponibles y los
+  servicios pueden migrarse sin afectar visiblemente a los usuarios.<br>
+  Los grandes proveedores de la nube suelen ofrecer sus servicios en muchas regiones diferentes en todo el mundo,
+  y la región que elijas dependerá principalmente de dónde se encuentren tus usuarios. Los proveedores de nube más
+  pequeños pueden ofrecer menos regiones, pero tal vez sean los únicos que ofrecen disponibilidad en tu ciudad o
+  tu país.<br>
+  La nube pública es lo que llamamos servicios en la nube provistos por un tercero. El nombre se refiere al hecho
+  de que los proveedores de la nube ofrecen servicios al público.<br>
+  Cuando tu empresa posee los servicios y el resto de tu infraestructura, ya sea en el sitio o en un centro de
+  datos remoto, a eso lo llamamos "nube privada".<br>
+  Y la nube híbrida es una mezcla de nube pública y privada. Algunas cargas de trabajo se ejecutan en servidores
+  de propiedad de tu empresa, mientras que otras se ejecutan en servidores externos.<br>
+  <h3><strong>Configuraciones típicas de infraestructura de nube</strong></h3><br>
+  Supongamos que tienes un servidor web que proporciona un sitio web a clientes. En una configuración típica para
+  este tipo de servicio ejecutándose en una nube, una cantidad de máquinas virtuales estará entregando este mismo
+  sitio web. Un equilibrador de carga asegura que cada VM reciba un cantidad equilibrada de consultas. Este tipo
+  de servicios por lo general se configuran para poner en funcionamiento más máquinas virtuales cuando hay muchas
+  consultas y para apagar algunas de las VM cuando el número de consultas disminuye.<br>
+  Esta capacidad se denomina ajuste de escala automático. Permite que el servicio aumente o reduzca la capacidad
+  según sea necesario, mientras que el propietario del servicio solo paga por el costo de las máquinas en uso en
+  un momento dado. Como algunas máquinas se apagarán cuando la demanda sea menor, luego los discos locales también
+  desaparecerán y se los deberá considerar efímeros o de corta duración. Si necesitas persistencia de datos,
+  tienes que crear recursos de almacenamiento separados para conservar esos datos y conectar ese almacenamiento a
+  las VM. Por lo general, las VM que operan sitios web o servicios web están conectadas a una base de datos, que
+  también se ejecuta en la nube. Esta base de datos también es atendida por múltiples máquinas detrás de un
+  equilibrador de carga.<br>
+  Para asegurarse de que el servicio se ejecuta sin problemas, puedes configurar supervisión y alertas. Cuando
+  haces esto, puedes detectar y corregir cualquier problema con tu servicio antes de que tus usuarios lo noten. La
+  mayoría de los proveedores de la nube incluyen soluciones de supervisión y alerta como parte de sus
+  servicios.<br>
+  <h3><strong>Cuándo y cómo elegir la nube</strong></h3><br>
+  Usar infraestructura en la nube no requiere una gran inversión inicial. Entonces, es una buena opción si no
+  estás seguro de por cuánto tiempo la necesitas. Si estás configurando infraestructura temporal o probando algo
+  que podría no ser duradero, un servicio en la nube puede ser tu mejor opción. Optar por usar infraestructura en
+  la nube también tiene sentido cuando tu demanda varía mucho a lo largo del año. Si operas un sitio web que
+  recibe mucho tráfico durante una temporada, pero mucho menos durante el resto del año, no querrías invertir
+  mucho en infraestructura solo para que esté inactiva la mayor parte del tiempo. Otra razón para elegir la nube
+  es la ubicación geográfica. Si tus usuarios, los empleados de tu empresa, o los usuarios externos de tus
+  servicios se distribuyen por todo el mundo, tener todo tu servicio en forma local no logrará satisfacer sus
+  necesidades. Deberás usar un proveedor que tenga centros de datos en la ubicación que deseas atender o cerca de
+  ella.<br>
+  La mayoría de los proveedores de la nube ofrecen pruebas gratuitas, por lo que es una buena idea probarlos para
+  ver si satisfacen tus necesidades, para comprobar qué tan bien la infraestructura de tu empresa se integra con
+  la de los proveedores de la nube.<br>
+  Al implementar un servicio en la nube, normalmente crearás una serie de máquinas virtuales que serán los
+  servidores encargados de hospedar tu servicio. Habitualmente, comenzarías creando una sola máquina que ejecutará
+  el servicio, creando la configuración asociada con la máquina, verificando que funcione y convirtiéndola en una
+  plantilla que se pueda usar para la creación de tantas máquinas como sea necesario.<br>
+  Para hacer esto, harás uso de ambos Autoescala y Balanceo de carga. Autoescala significa poder crear
+  automáticamente nuevas instancias cuando la carga aumenta y reducirlas automáticamente cuando la carga
+  disminuye. Para que esto sea posible, debes asegurarte de que tus instancias se puedan configurar completamente
+  de forma automática y que no se guarden datos en ellas mismas (los datos se pueden almacenar en una base de
+  datos o en unidades separadas).<br>
+  El equilibrio de carga significa distribuir la carga entre muchos servidores. Existen diferentes enfoques para
+  realizar el equilibrio de carga, pero el concepto principal es que existe un servicio de equilibrio de carga que
+  enrutará el tráfico a los servidores de manera que cada uno pueda servir a una parte de los usuarios, sin que
+  los usuarios se den cuenta de que se están conectando a diferentes máquinas En otras palabras, los usuarios
+  accederán a una sola dirección (por ejemplo, <a href="http://www.example.com"></a><a href=
+  "http://www.example.com">http://www.example.com</a>) que puede ser atendida por diferentes servidores, en
+  diferentes partes del mundo, sin que los usuarios tengan que preocuparse por eso.<br>
+  Una vez que hayas configurado tu servicio para escalar automáticamente y equilibrar la carga, también querrás
+  configurar Vigilancia y Alertas para ello. Vigilancia significa verificar que el servicio funciona
+  correctamente, que responde a las consultas como se espera y que no genera errores inusuales. Alertas significa
+  enviar alertas cuando las cosas no suceden como se espera.<br>
+  Para un servicio simple, puedes utilizar la vigilancia que ya está incorporada por el proveedor de la nube, lo
+  que te permitirá verificar que tu instancia está en buen estado, pero probablemente no vaya a entrar en mucho
+  detalle en cuanto a si el contenido se está realizando correctamente. Si tu servicio es más complejo, es posible
+  que desees invertir más tiempo para hacer posible el monitoreo de parámetros adicionales de tu servicio.<br>
+  <a href=
+  "https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/">https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/</a><br>
+
+  <a href="https://aws.amazon.com/getting-started/">https://aws.amazon.com/getting-started/</a><br>
+  <a href="https://cloud.google.com/docs/overview/">https://cloud.google.com/docs/overview/</a>
+  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
