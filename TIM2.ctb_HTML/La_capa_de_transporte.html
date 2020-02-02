@@ -18,7 +18,7 @@
   de una forma que entiendan.</em><br>
   <br>
   <a name="h3-1" id="h3-1"></a>
-  <h3><strong>La capa de transporte</strong></h3><br>
+  <h3><strong>La capa de transporte</strong></h3>
   La capa de transporte es responsable de muchas de las funciones, importantes para la disponibilidad de una red
   de computadoras. Estas incluyen multiplexing y demultiplexing, para manejar el tráfico, estableciendo conexiones
   de larga duración y asegurando la integridad de los datos a través del chequeo de errores y la verificación de
@@ -37,7 +37,7 @@
   conocido como <strong>dirección de socket</strong> o numero de socket.<br>
   <br>
   <a name="h3-2" id="h3-2"></a>
-  <h3><strong>Disección de un segmento TCP</strong></h3><br>
+  <h3><strong>Disección de un segmento TCP</strong></h3>
   Así como una trama de Ethernet encapsula un datagrama IP, un datagrama IP encapsula un segmento TCP. Un segmento
   TCP se compone de un encabezado TCP y una sección de datos. Esta sección de datos, como puedes suponer, es solo
   otra área de carga útil donde la capa de aplicación coloca sus datos.<br>
@@ -73,7 +73,7 @@
   sección de carga útil de datos comience en la ubicación esperada.<br>
   <br>
   <a name="h3-3" id="h3-3"></a>
-  <h3><strong>Banderas de control TCP y el apretón de manos de tres vías</strong></h3><br>
+  <h3><strong>Banderas de control TCP y el apretón de manos de tres vías</strong></h3>
   La forma en que TCP establece una conexión, es a través del uso de diferentes campos de control TCP.<br>
   • El primer campo se conoce como la señal <strong>URG</strong>, iniciales para <strong>Urgente</strong>. Un
   valor de uno aquí indica que el segmento es considerado urgente y que el apuntador urgente tiene mas datos.<br>
@@ -118,7 +118,7 @@
   conexión. pero esto no es algo que usted vera frecuentemente.<br>
   <br>
   <a name="h3-4" id="h3-4"></a>
-  <h3><strong>Estados de socket TCP</strong></h3><br>
+  <h3><strong>Estados de socket TCP</strong></h3>
   Un <strong>socket</strong> es la creación de instancias de un terminal en una conexión TCP potencial. Una
   <strong>creación de instancias</strong> es la implementación real de algo definido en otro lugar. Los sockets
   TCP requieren programas reales para poder crear sus instancias. Puedes enviar tráfico al puerto que quieras,
@@ -144,7 +144,7 @@
   hacerlo exactamente de la misma manera para que las comunicaciones sean exitosas.<br>
   <br>
   <a name="h3-5" id="h3-5"></a>
-  <h3><strong>Protocolos orientados a la conexión y sin conexión</strong></h3><br>
+  <h3><strong>Protocolos orientados a la conexión y sin conexión</strong></h3>
   Un protocolo <strong>orientado a la conexión</strong> es uno que <em>establece una conexión y se asegura de que
   todos los datos se hayan transmitido correctamente.</em> Una conexión en la capa de transporte implica el
   reconocimiento de cada segmento de datos enviado. Así, ambos extremos de la conexión siempre saben qué bits de
@@ -169,7 +169,7 @@
   entregados.<br>
   <br>
   <a name="h3-6" id="h3-6"></a>
-  <h3><strong>Sistema de puertos contra puertos efímeros</strong></h3><br>
+  <h3><strong>Sistema de puertos contra puertos efímeros</strong></h3>
   Los protocolos de la capa de transporte utilizan un concepto de puertos y multiplexación / demultiplexación para
   entregar datos a servicios individuales que escuchan en nodos de red. Estos puertos están representados por un
   solo número de 16 bits, lo que significa que pueden representar los números 0-65535.<br>
@@ -202,7 +202,7 @@
 
   <br>
   <a name="h3-7" id="h3-7"></a>
-  <h3><strong>Cortafuegos</strong></h3><br>
+  <h3><strong>Cortafuegos</strong></h3>
   Un <strong>firewall</strong> es <em>un dispositivo que bloquea el tráfico que cumple ciertos criterios.</em> Los
   firewalls pueden funcionar en muchas capas diferentes de la red. Hay firewalls que pueden inspeccionar el
   tráfico de la capa de aplicación, y firewalls cuya tarea principal es bloquear rangos de direcciones IP. La

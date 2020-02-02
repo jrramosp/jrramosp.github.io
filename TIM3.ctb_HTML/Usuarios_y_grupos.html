@@ -17,7 +17,7 @@
   Los usuarios se agrupan de acuerdo a los niveles de acceso y permisos para realizar determinadas tareas. Estas
   tareas dependen de lo que el administrador de la computadora considere apropiado.<br>
   <a name="h3-1" id="h3-1"></a>
-  <h3><strong>Windows: Ver información de usuarios y grupos</strong></h3><br>
+  <h3><strong>Windows: Ver información de usuarios y grupos</strong></h3>
   Para ver información de usuarios y grupos en Windows, vamos a utilizar la herramienta <strong>Administración de
   equipos</strong>. Si buscamos Computer management (Administración de equipos) en nuestra búsqueda de
   aplicaciones y la abrimos. veremos una ventana que nos brinda mucha información.<br>
@@ -41,13 +41,13 @@
   los poderes administrativos cuando los necesites. Esto es gracias a la ayuda de UAC, o control de acceso de
   usuarios. Esta es una función de Windows que impide cambios no autorizados en un sistema.<br>
   <a name="h3-2" id="h3-2"></a>
-  <h3><strong>Windows: Ver información de usuarios y grupos mediante CLI</strong></h3><br>
+  <h3><strong>Windows: Ver información de usuarios y grupos mediante CLI</strong></h3>
   Puedes utilizar la CLI para ver rápidamente la lista de usuarios en la computadora usando el comando
   <strong>Get-LocalUser</strong>.<br>
   ¿Qué ocurre con los grupos? <strong>Get-LocalGroup</strong> listará los grupos en la máquina local.<br>
   Veamos quién está en este grupo con <strong>Get-LocalGroupMember</strong>.<br>
   <a name="h3-3" id="h3-3"></a>
-  <h3><strong>Linux: Usuarios, superusuario y más allá</strong></h3><br>
+  <h3><strong>Linux: Usuarios, superusuario y más allá</strong></h3>
   Hay usuarios estándar, y también hay administradores en Linux. También hay un usuario especial llamado usuario
   <strong>root</strong>. El usuario root es el primer usuario que se crea automáticamente cuando instalamos un SO
   Linux. Este usuario tiene todos los privilegios en el SO, es el superusuario Técnicamente, solo hay un
@@ -73,7 +73,7 @@
   contraseña de ID de grupo. El tercer campo aquí es el ID de usuario, o UID. De manera similar a los ID de grupo,
   los ID de usuario son la forma en que nuestro sistema identifica a un usuario, no por el nombre de usuario.<br>
   <a name="h3-4" id="h3-4"></a>
-  <h3><strong>Windows: Contraseñas</strong></h3><br>
+  <h3><strong>Windows: Contraseñas</strong></h3>
   Para cambiar una contraseña para un usuario, el comando es <strong>net user</strong>, luego el nombre de usuario
   y la contraseña. La mejor manera de usar este comando es poner un asterisco en lugar de escribir tu contraseña
   en la línea de comandos. Si usas un asterisco, net hará una pausa y te pedirá que ingreses tu contraseña como
@@ -85,12 +85,12 @@
   "https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc875839(v=technet.10)?redirectedfrom=MSDN">https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc875839(v=technet.10)?redirectedfrom=MSDN</a><br>
 
   <a name="h3-5" id="h3-5"></a>
-  <h3><strong>Linux: Contraseñas</strong></h3><br>
+  <h3><strong>Linux: Contraseñas</strong></h3>
   Para cambiar tu contraseña en Linux, todo lo que debes hacer es ejecutar el comando <strong>passwd</strong>.<br>
   Si estás administrando una computadora y quieres forzar a un usuario estándar a que cambie su contraseña, como
   hicimos en Windows, puedes usar <strong>-e</strong> o "marca de expiración", con passwd.<br>
   <a name="h3-6" id="h3-6"></a>
-  <h3><strong>Windows: Agregar y eliminar usuarios</strong></h3><br>
+  <h3><strong>Windows: Agregar y eliminar usuarios</strong></h3>
   En Local Users and Groups (Usuarios y grupos locales), vamos a hacer clic derecho y seleccionar New User...
   (Usuario nuevo...). Desde aquí, nos pide que configuremos un nombre de usuario, un nombre completo y una
   contraseña. Recuerda que para usar buenas prácticas de configuración de contraseñas, establecemos una contraseña
@@ -111,7 +111,7 @@
   Vamos a eliminar la cuenta de Andrea. <strong>net user andrea /del</strong>. Esto borrará la cuenta de Andrea. Y
   con <strong>Remove-LocalUser cesar</strong>, podemos eliminar la cuenta de César.<br>
   <a name="h3-7" id="h3-7"></a>
-  <h3><strong>Linux: Agregar y eliminar usuarios</strong></h3><br>
+  <h3><strong>Linux: Agregar y eliminar usuarios</strong></h3>
   Para agregar un nuevo usuario en Linux, puedes usar el comando <strong>useradd</strong>.<br>
   Puedes combinar esto con el comando passwd para hacer que el usuario cambie su contraseña y acceda.<br>
   Para eliminar al usuario, puedes usar sudo <strong>userdel</strong> juan.

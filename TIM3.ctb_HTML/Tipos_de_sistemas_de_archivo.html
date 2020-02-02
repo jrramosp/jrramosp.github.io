@@ -19,7 +19,7 @@
   "https://support.microsoft.com/en-us/help/154997/description-of-the-fat32-file-system">https://support.microsoft.com/en-us/help/154997/description-of-the-fat32-file-system</a><br>
 
   <a name="h3-1" id="h3-1"></a>
-  <h3><strong>Anatomía del disco</strong></h3><br>
+  <h3><strong>Anatomía del disco</strong></h3>
   Un disco de almacenamiento se puede dividir en algo llamado particiones. Una partición es sólo una parte del
   disco que puedes administrar. Cuando creas múltiples particiones, te da la ilusión de estar dividiendo
   físicamente un disco en discos separados.<br>
@@ -43,7 +43,7 @@
   anterior, conocimos un nuevo estándar de BIOS, llamado UEFI, que se convirtió en el BIOS predeterminado para
   sistemas más nuevos. Para poder iniciar con UEFI, tu disco tiene que usar la tabla de particiones GUID.<br>
   <a name="h3-2" id="h3-2"></a>
-  <h3><strong>Windows: partición de disco y formateo de un sistema de archivos</strong></h3><br>
+  <h3><strong>Windows: partición de disco y formateo de un sistema de archivos</strong></h3>
   Windows realmente viene con una gran herramienta nativa, la utilidad de Administración de discos. La iniciaremos
   haciendo clic derecho en This PC (Este equipo), luego seleccionamos la opción Manage (Administrar), y luego
   hacemos clic en la consola Disk Management (Administración de discos) debajo del grupo de almacenamiento.<br>
@@ -96,7 +96,7 @@
   "https://www.top-password.com/blog/format-hard-drive-using-powershell/">https://www.top-password.com/blog/format-hard-drive-using-powershell/</a><br>
 
   <a name="h3-3" id="h3-3"></a>
-  <h3><strong>Linux: Partición de disco y formateo de un sistema de archivos</strong></h3><br>
+  <h3><strong>Linux: Partición de disco y formateo de un sistema de archivos</strong></h3>
   En Linux, hay algunas herramientas de línea de comandos de particionado diferentes que podemos usar. Una que
   soporta tanto el particionamiento MBR como el GPT es la herramienta parted. Antes de hacerlo, ejecutemos un
   comando para mostrar qué discos están conectados al ordenador usando el modo de línea de comandos. Podemos hacer
@@ -138,7 +138,7 @@
 
   <a href="https://linuxhint.com/parted_linux/">https://linuxhint.com/parted_linux/</a><br>
   <a name="h3-4" id="h3-4"></a>
-  <h3><strong>Linux: Montaje y desmontaje de un sistema de archivos</strong></h3><br>
+  <h3><strong>Linux: Montaje y desmontaje de un sistema de archivos</strong></h3>
   Para comenzar a interactuar con el disco, necesitamos montar el sistema de archivos en el directorio.<br>
   Detengámonos en la ubicación de nuestra partición con sudo parted -l. Muy bien, puedo ver que la partición a la
   que queremos acceder es /dev/sdb1. Ya creé un directorio bajo el directorio raíz llamado my_usb. Vamos a
@@ -162,7 +162,7 @@
   almacenamiento.<br>
   <a href="https://es.wikipedia.org/wiki/Fstab">https://es.wikipedia.org/wiki/Fstab</a><br>
   <a name="h3-5" id="h3-5"></a>
-  <h3><strong>Windows: Swap</strong></h3><br>
+  <h3><strong>Windows: Swap</strong></h3>
   La memoria virtual es la forma en que nuestro SO proporciona memoria física disponible en nuestra computadora
   (como RAM) a las aplicaciones que se ejecutan en ella. Lo hace creando un mapeo de direcciones virtuales a
   físicas. Esto le simplifica las cosas al programa que necesita acceder a la memoria, ya que no tiene que
@@ -197,7 +197,7 @@
   "https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size">https://docs.microsoft.com/en-us/windows/client-management/determine-appropriate-page-file-size</a><br>
 
   <a name="h3-6" id="h3-6"></a>
-  <h3><strong>Linux: Swap</strong></h3><br>
+  <h3><strong>Linux: Swap</strong></h3>
   En Linux, el área exclusiva del disco duro que se usa para la memoria virtual se conoce como espacio de
   intercambio.<br>
   Entonces: <strong>sudo mkswap /dev</strong>, y nuestra nueva partición de intercambio está en /dev/sdb2. Por
@@ -209,7 +209,7 @@
   https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc#id4394007</a><br>
 
   <a name="h3-7" id="h3-7"></a>
-  <h3><strong>Windows: Archivos</strong></h3><br>
+  <h3><strong>Windows: Archivos</strong></h3>
   Cuando hablamos de datos, nos referimos al contenido real del archivo, como un documento de texto que guardamos
   en nuestros discos duros. El metadato del archivo incluye todo lo demás, como el propietario del archivo, los
   permisos, el tamaño del archivo, su ubicación en el disco duro, etc.<br>
@@ -245,7 +245,7 @@
   "https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions">https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions</a><br>
 
   <a name="h3-8" id="h3-8"></a>
-  <h3><strong>Linux: Archivos</strong></h3><br>
+  <h3><strong>Linux: Archivos</strong></h3>
   En Linux, los metadatos y los archivos se organizan en una estructura llamada inodo. Los inodos son similares a
   los registros MFT del NFTS de Windows. Almacenamos inodos en una tabla de inodos y nos ayudan a gestionar los
   archivos en nuestro sistema de archivos. El inodo en sí no almacena la fecha del archivo ni su nombre, pero
@@ -264,7 +264,7 @@
   olvidaste todos los demás lugares donde lo usaste? Todos los demás softlinks también quedarían deshechos y
   limpiar todo puede llevarte cierto tiempo.<br>
   <a name="h3-9" id="h3-9"></a>
-  <h3><strong>Windows: Uso del disco</strong></h3><br>
+  <h3><strong>Windows: Uso del disco</strong></h3>
   Para comprobar el uso del disco, puedes abrir la utilidad de Administración de equipos (Computer Management).
   Luego, ve a la consola Disk Management (Administración de discos). Desde allí, haz clic derecho en la partición
   que te interesa y seleccione Properties (Propiedades). Esto abrirá la pestaña General, donde puedes ver el
@@ -288,7 +288,7 @@
   partes no utilizadas del disco de estado sólido.<br>
   Para iniciar una desfragmentación manual, abre el Desfragmentador de discos incluido en el SO.<br>
   <a name="h3-10" id="h3-10"></a>
-  <h3><strong>Linux: Uso del disco</strong></h3><br>
+  <h3><strong>Linux: Uso del disco</strong></h3>
   En la última lección, aprendimos a ver la utilización del disco en tu computadora con Windows. En Linux, lo
   hacemos con el comando <strong>du -h</strong>. El comando du o "uso del disco" nos muestra el uso del disco de
   un directorio específico. Si no especificas un directorio, irá de manera predeterminada al disco actual.<br>
@@ -298,7 +298,7 @@
   "https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/">https://www.howtogeek.com/115229/htg-explains-why-linux-doesnt-need-defragmenting/</a><br>
 
   <a name="h3-11" id="h3-11"></a>
-  <h3><strong>Windows: Reparación del sistema de archivos</strong></h3><br>
+  <h3><strong>Windows: Reparación del sistema de archivos</strong></h3>
   Cuando leemos o escribimos algo en una unidad, en realidad primero ponemos eso en un búfer o memoria caché. Un
   búfer de datos es una región de la RAM que se usa para almacenar datos temporalmente mientras se los está
   desplazando. Entonces, cuando copias algo de tu SO a tu unidad USB, primero se copia en un búfer de datos porque
@@ -331,7 +331,7 @@
   inicie, la utilidad chkdsk comprobará este bit. Si está configurado, se ejecutará y tratará de reparar la
   corrupción reconstruyendo los bits dañados del sistema de archivos desde el registro NTFS.<br>
   <a name="h3-12" id="h3-12"></a>
-  <h3><strong>Linux: Reparación del sistema de archivos</strong></h3><br>
+  <h3><strong>Linux: Reparación del sistema de archivos</strong></h3>
   Para tratar de reparar un sistema de archivos manualmente en Linux, también puedes utilizar el comando fsck o
   "verificar sistema de archivos". Sólo asegúrate de que el sistema de archivos no esté montado. Algo más para
   destacar es que, en algunas versiones de Linux, fsck en realidad se ejecuta en tu computadora cuando la inicias

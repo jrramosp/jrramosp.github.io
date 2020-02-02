@@ -12,23 +12,23 @@
   energía o un evento similar que hace que la máquina se reinicie, no se necesitará un administrador del sistema
   para reiniciar manualmente el servicio. Si deseas decidir cuándo comienza el servicio en lugar de que comience
   al inicio, debes cambiar la configuración del software para que se inicie cuando lo desees.<br>
-  <h3><strong>Linux</strong></h3><br>
+  <h3><strong>Linux</strong></h3>
   service x start<br>
   service x stop<br>
   service x restart<br>
   <a href="https://es.wikipedia.org/wiki/Systemd">https://es.wikipedia.org/wiki/Systemd</a><br>
-  <h3><strong>Windows Powershell</strong></h3><br>
+  <h3><strong>Windows Powershell</strong></h3>
   Get-service x<br>
   Start-service x<br>
   Stop-service x<br>
-  <h3><strong>Configurar servicios en Linux</strong></h3><br>
+  <h3><strong>Configurar servicios en Linux</strong></h3>
   En Linux, los archivos de configuración para los servicios instalados están ubicados en el directorio /etc.<br>
   Para que nuestro servicio pueda releer la configuración, necesitamos decirle que se recargue. Recargarse
   significa que el servicio vuelva a leer el archivo de configuración sin tener que detenerse y volver a
   iniciarse. De esa manera, no se interrumpen las conexiones continuas, pero las nuevas conexiones usarán una
   nueva configuración. Hagamos esto para nuestro servicio ftp. Escribo sudo service vsftpd reload.<br>
-  <h3><strong>Configurar servicios de red</strong></h3><br>
-  <h3><strong>Configurar DNS con Dnsmasq</strong></h3><br>
+  <h3><strong>Configurar servicios de red</strong></h3>
+  <h3><strong>Configurar DNS con Dnsmasq</strong></h3>
   En configuraciones más pequeñas, puede ser mejor tener una solución centralizada que maneje todos los servicios.
   Vamos a conocer a dnsmasq, un programa que ofrece servicios de DNS, DHCP, TFTP y PXE en un paquete simple.<br>
   Proporciona un caché para consultas DNS. Esto significa que puedes hacerle solicitudes de DNS y que recordará la

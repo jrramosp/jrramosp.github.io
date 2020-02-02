@@ -12,7 +12,7 @@
   <h2><strong>La capa de red</strong></h2><br>
   <br>
   <a name="h3-1" id="h3-1"></a>
-  <h3><strong>Direcciones IP</strong></h3><br>
+  <h3><strong>Direcciones IP</strong></h3>
   Las direcciones IP (Internet Protocol) tienen <em>números de 32 bits compuestos por 4 octetos y cada octeto se describe normalmente
   en números decimales</em>. Ocho bits de datos, o un solo octeto, pueden representar todos los números decimales
   del 0 al 255. Este formato se conoce como <strong>notación decimal con puntos</strong>.<br>
@@ -29,7 +29,7 @@
   clientes. Sin embargo, existen ciertas situaciones en las que esto no es del todo cierto.<br>
   <br>
   <a name="h3-2" id="h3-2"></a>
-  <h3><strong>Datagramas de IP y encapsulación</strong></h3><br>
+  <h3><strong>Datagramas de IP y encapsulación</strong></h3>
   En virtud del protocolo IP, a un paquete se lo conoce, por lo general, como un datagrama IP. Las dos secciones
   principales de un datagrama IP son el encabezado y la carga útil.<br>
   <img src="images/2-2.png" alt="images/2-2.png"><br>
@@ -87,7 +87,7 @@
   <img src="images/2-3.png" alt="images/2-3.png"><br>
   <br>
   <a name="h3-3" id="h3-3"></a>
-  <h3><strong>Clases de direcciones IP</strong></h3><br>
+  <h3><strong>Clases de direcciones IP</strong></h3>
   Las direcciones IP se pueden dividir en dos secciones, <strong>la ID de red y la ID de host</strong>. Hay tres
   tipos principales de clases de dirección. Clase A, clase B, y clase C.<br>
   • Las direcciones de <strong>clase A</strong> son aquellas en los que se utiliza <em>el primer octeto para la ID
@@ -120,7 +120,7 @@
   "enrutamiento entre dominios sin clases".<br>
   <br>
   <a name="h3-4" id="h3-4"></a>
-  <h3><strong>Protocolo de resolución de direcciones(ARP)</strong></h3><br>
+  <h3><strong>Protocolo de resolución de direcciones(ARP)</strong></h3>
   Ahora entiendes cómo se utilizan ambas direcciones MAC en el enlace de datos y cómo se utilizan las direcciones
   IP en la capa de red.<br>
   <strong>ARP</strong> es <em>un protocolo utilizado para descubrir la dirección de hardware de un nodo con una
@@ -142,7 +142,7 @@
   se tengan en cuenta.<br>
   <br>
   <a name="h3-5" id="h3-5"></a>
-  <h3><strong>Subnetting</strong></h3><br>
+  <h3><strong>Subnetting</strong></h3>
   La <strong>subdivisión de redes</strong> es <em>el proceso de tomar una red grande y dividirla en redes
   individuales más pequeñas llamadas subredes</em>. Las clases de direcciones nos dan una manera de dividir el
   espacio global total de IP en redes discretas. Un router de puerta de enlace sirve específicamente como la ruta
@@ -153,7 +153,7 @@
   sirven como puntos de entrada y salida para cada subred.<br>
   <br>
   <a name="h3-6" id="h3-6"></a>
-  <h3><strong>Máscaras de subred</strong></h3><br>
+  <h3><strong>Máscaras de subred</strong></h3>
   Hasta ahora, aprendimos acerca de las ID de red, que se utilizan para identificar redes, y las ID de host, que
   se utilizan para identificar hosts individuales. Si queremos dividir un poco más las cosas, y así es, tendremos
   que introducir un tercer concepto, la ID de subred. Algunos bits que normalmente comprenderían la ID de host se
@@ -208,7 +208,7 @@
   máscara de subred utilizado.<br>
   <br>
   <a name="h3-7" id="h3-7"></a>
-  <h3><strong>Matemáticas Binarias Básicas</strong></h3><br>
+  <h3><strong>Matemáticas Binarias Básicas</strong></h3>
   Debido a restricciones de funcionamiento de las puertas lógicas dentro de un procesador, es mucho más fácil para
   las computadoras pensar las cosas solo en términos de 0 y 1. Esto también se conoce como sistema binario o de
   base 2. La suma binaria es incluso más simple que en cualquier otra base, ya que solo tienes cuatro situaciones
@@ -229,7 +229,7 @@
   para determinar si la dirección está en la misma red o en otra diferente.<br>
   <br>
   <a name="h3-8" id="h3-8"></a>
-  <h3><strong>CIDR (Classless Inter-Domain Routing)</strong></h3><br>
+  <h3><strong>CIDR (Classless Inter-Domain Routing)</strong></h3>
   Las clases de direcciones fueron el primer intento de dividir el espacio IP global de Internet. La división en
   subredes se introdujo cuando fue evidente que las clases de direcciones en sí mismas no eran tan eficientes para
   mantener todo organizado. Con las subredes tradicionales y las clases de dirección, la ID de la red siempre es
@@ -267,7 +267,7 @@
   <h2><strong>Enrutamiento</strong></h2><br>
   <br>
   <a name="h3-9" id="h3-9"></a>
-  <h3><strong>Conceptos básicos de enrutamiento</strong></h3><br>
+  <h3><strong>Conceptos básicos de enrutamiento</strong></h3>
   Un <em>router es un dispositivo de red que reenvía el tráfico según la dirección de destino de ese tráfico</em>.
   Un router es un dispositivo que tiene, al menos, dos interfaces de red, ya que tiene que estar conectado a dos
   redes para hacer su trabajo.<br>
@@ -292,7 +292,7 @@
   paquete por ese camino.<br>
   <br>
   <a name="h3-10" id="h3-10"></a>
-  <h3><strong>Tablas de enrutamiento</strong></h3><br>
+  <h3><strong>Tablas de enrutamiento</strong></h3>
   La tabla de enrutamiento más básica tendrá cuatro columnas.<br>
   • <strong>Red de destino</strong>: esta columna contendrá una fila para cada red que el router conoce, esto es
   exactamente la definición de la red remota, una ID de red y la máscara de red. Podrán almacenarse en una columna
@@ -315,7 +315,7 @@
   que coincida con la red de destino.<br>
   <br>
   <a name="h3-11" id="h3-11"></a>
-  <h3><strong>Protocolos de puerta de enlace interior</strong></h3><br>
+  <h3><strong>Protocolos de puerta de enlace interior</strong></h3>
   Para conocer el mundo que los rodea, los routers usan lo que se conoce como <em>protocolos de enrutamiento</em>.
   Son protocolos especiales que los routers usan para comunicarse entre sí con el objeto de compartir cualquier
   información que puedan tener.<br>
@@ -362,7 +362,7 @@
 
   <br>
   <a name="h3-12" id="h3-12"></a>
-  <h3><strong>Protocolos de puerta de enlace exterior</strong></h3><br>
+  <h3><strong>Protocolos de puerta de enlace exterior</strong></h3>
   Los protocolos de puerta de enlace exterior se usan para <em>comunicar datos entre routers que representan el
   perímetro de un sistema autónomo</em>. Como los routers que comparten datos usando protocolos de puerta de
   enlace interior están todos bajo el control de la misma organización, los routers usan protocolos de puerta de
