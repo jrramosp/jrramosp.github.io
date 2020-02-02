@@ -15,7 +15,7 @@
   "https://www.gnu.org/software/bash/manual/bash.html">https://www.gnu.org/software/bash/manual/bash.html</a><br>
   <br>
   <a name="h3-1" id="h3-1"></a>
-  <h3><strong>Windows: Listar directorios en CLI</strong></h3>
+  <h3>Windows: Listar directorios en CLI</h3>
   Para acceder a la CLI de PowerShell, simplemente busca PowerShell en tu lista de aplicaciones. Vamos a utilizar
   el comando <strong>ls</strong> o "listar directorios" y darle la ruta de acceso que queremos mirar. La ruta no
   es realmente parte del comando, pero es un parámetro de comando. La carpeta raíz de la unidad C: es lo que
@@ -36,7 +36,7 @@
   para el comando <strong>ls -Force</strong>. El parámetro -Force mostrará archivos ocultos y del sistema que
   normalmente no se listan solo con ls.<br>
   <a name="h3-2" id="h3-2"></a>
-  <h3><strong>Linux: Listar directorios</strong></h3>
+  <h3>Linux: Listar directorios</h3>
   En Linux, el directorio principal del que todos los demás derivan se llama directorio raíz.<br>
   • /bin: este directorio almacena nuestros binarios o programas esenciales.<br>
   • /etc: esta carpeta almacena algunos importantes y hermosos archivos de configuración del sistema.<br>
@@ -63,7 +63,7 @@
   Esto nos muestra todos los archivos en el directorio, incluidos los archivos ocultos. Puedes ocultar un archivo
   o directorio colocando un punto delante.<br>
   <a name="h3-3" id="h3-3"></a>
-  <h3><strong>Cambiando directorios en la CLI y bash</strong></h3>
+  <h3>Cambiando directorios en la CLI y bash</h3>
   Tu símbolo de sistema te muestra en qué directorio estás actualmente, pero también hay un comando que te dirá
   dónde estás. <strong>pwd</strong>, o "imprimir directorio de trabajo", te indica en qué directorio te encuentras
   actualmente.<br>
@@ -79,7 +79,7 @@
   usar la tecla de tabulación para completar automáticamente los nombres de archivos y directorios.<br>
   Los comandos que usamos antes en PowerShell son exactamente los mismos aquí en bash.<br>
   <a name="h3-4" id="h3-4"></a>
-  <h3><strong>Crear directorios en la CLI y en bash</strong></h3>
+  <h3>Crear directorios en la CLI y en bash</h3>
   El comando para crear un nuevo directorio se llama <strong>mkdir</strong> o "crear directorio". ¿Y si
   quisiéramos usar espacios en el nombre de nuestra carpeta? Podemos rodear el nombre con comillas, como:
   <em>mkdir 'my cool folder'</em>, o podemos marcar el espacio con un escape usando el acento grave: <em>mkdir my`
@@ -88,7 +88,7 @@
   invertida. Al igual que en Windows, también puedes usar comillas para abarcar un nombre de archivo completo,
   <em>mkdir my\ cool\ folder</em><br>
   <a name="h3-5" id="h3-5"></a>
-  <h3><strong>Historial de comandos</strong></h3>
+  <h3>Historial de comandos</h3>
   Podemos desplazarnos a través de estos comandos con las teclas arriba o abajo de nuestro teclado. Puedes buscar
   a través la lista de comandos utilizados anteriormente con el atajo <strong>Ctrl-R</strong> de history. Desde
   aquí puedes empezar a escribir fragmentos del comando que quieres buscar y te mostrará coincidencias.<br>
@@ -96,7 +96,7 @@
   escribir el símbolo <strong>#</strong> seguido por alguna parte de tu antiguo comando, y luego usar tab
   completion para ir pasando los elementos del historial.<br>
   <a name="h3-6" id="h3-6"></a>
-  <h3><strong>Copiando archivos y directorios</strong></h3>
+  <h3>Copiando archivos y directorios</h3>
   En PowerShell, el comando utilizado para copiar algo es "<strong>cp</strong>". También necesitamos agregar un
   archivo que queramos copiar y la ruta de donde queramos copiarlo también. Un comodín es un carácter que se usa
   para seleccionar archivos según un determinado patrón. Supongamos que quieres tomar todos los archivos .jpg y
@@ -108,12 +108,12 @@
   directorio que se esté copiando.<br>
   El indicador para la copia recursiva es <strong>-r</strong>, y <strong>-v</strong> para verbose en bash.<br>
   <a name="h3-7" id="h3-7"></a>
-  <h3><strong>Mover y renombrar archivos, directorios</strong></h3>
+  <h3>Mover y renombrar archivos, directorios</h3>
   En la línea de comandos, si quisiéramos cambiar el nombre de un archivo, podemos usar el comando
   <strong>mv</strong> o "mover elemento". Nos permite <em>cambiarle el nombre</em> a los archivos. Como puedes
   imaginar, el comando mv también nos permite <em>mover archivos</em> de un directorio a otro.<br>
   <a name="h3-8" id="h3-8"></a>
-  <h3><strong>Eliminando archivos y directorios</strong></h3>
+  <h3>Eliminando archivos y directorios</h3>
   En PowerShell, el comando para <em>eliminar archivos</em> y directorios es <strong>rm</strong>, o "eliminar".
   Ten cuidado al usar rm porque no utiliza la papelera de reciclaje. Una vez que los archivos y directorios se
   eliminan, se han ido para siempre. El parámetro <strong>-Force</strong>, rm seguirá adelante y eliminará el
@@ -124,7 +124,7 @@
   En el bash utilizamos el parametro <strong>-r</strong> para borrar directorios y su contenido de forma
   recursiva.<br>
   <a name="h3-9" id="h3-9"></a>
-  <h3><strong>Muestra el contenido del archivo</strong></h3>
+  <h3>Muestra el contenido del archivo</h3>
   Para <em>ver el contenido de un archivo</em> en PowerShell, simplemente usas el comando <strong>cat</strong>,
   que significa concatenar. Supongamos que queremos ver rápidamente cuáles son las primeras líneas del archivo de
   texto. Para hacer esto, podemos volver a cat y agregar el parámetro <strong>-Head</strong>. Con el parametro
@@ -139,14 +139,14 @@
   <strong>head</strong>. ¿Y si quisieras ver las últimas líneas de un archivo? Puedes usar un comando llamado
   <strong>tail</strong>.<br>
   <a name="h3-10" id="h3-10"></a>
-  <h3><strong>Modificando archivos de texto</strong></h3>
+  <h3>Modificando archivos de texto</h3>
   <strong>Nano</strong> es un editor de texto extremadamente ligero pero útil. En la parte inferior de la
   pantalla, notarás algunas opciones como ^G y ^K. El signo de intercalación (^) significa usar Ctrl-G o Ctrl-K.
   Algunas que podrían ser útiles son Ctrl-G, que permite abrir una página de ayuda, y Ctrl-X, que se usa cuando
   deseas guardar tu trabajo o salir de Nano. <a href=
   "https://www.nano-editor.org/">https://www.nano-editor.org/</a><br>
   <a name="h3-11" id="h3-11"></a>
-  <h3><strong>Windows PowerShell</strong></h3>
+  <h3>Windows PowerShell</h3>
   Hay otro comando de PowerShell que podemos usar para mirar uno de los alias que estuvimos usando, ls, o "listar
   directorio". Para ver cuál comando de PowerShell se ejecuta realmente, podemos usar el comando de PowerShell,
   <strong>Get-Alias</strong>.<br>
@@ -155,7 +155,7 @@
   Get-Help? Bueno, hay un parámetro de comando que puedes usar para obtener ayuda con comandos de command.exe:
   "<strong>/?</strong>".<br>
   <a name="h3-12" id="h3-12"></a>
-  <h3><strong>Buscando dentro de archivos</strong></h3>
+  <h3>Buscando dentro de archivos</h3>
   En PowerShell, vamos a utilizar el comando <strong>Select-String</strong> o <strong>sls</strong> para buscar
   palabras, otras strings de caracteres y archivos. Puedes pensar en las strings como una forma en que la
   computadora representa el texto. El comando Select-String te permite buscar texto que coincida con un patrón que
@@ -172,12 +172,12 @@
   • "--include-dir" y "--exclude-dir": Incluye o excluye directorios en la búsqueda.<br>
   <br>
   <a name="h3-13" id="h3-13"></a>
-  <h3><strong>Buscando dentro de directorios</strong></h3>
+  <h3>Buscando dentro de directorios</h3>
   Voy a ejecutar ls en mis archivos de programas aquí, con -Recurse, <strong>-Filter</strong> y buscar archivos
   ejecutables. El parámetro -Filter filtrará los resultados para los nombres de archivo que coincidan con un
   patrón.<br>
   <a name="h3-14" id="h3-14"></a>
-  <h3><strong>Entrada, salida y la tubería</strong></h3>
+  <h3>Entrada, salida y la tubería</h3>
   Cada proceso de Windows y cada comando de PowerShell pueden tomar una entrada y pueden producir una salida. Para
   hacer esto, usamos algo conocido como flujos de E/S o flujos de entrada/salida. Cada proceso en Windows tiene
   tres flujos diferentes: <em>entrada estándar (stin), salida estándar (stout) y error estándar (sterr).</em><br>
