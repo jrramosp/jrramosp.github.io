@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
+  <a name="h3-1" id="h3-1"></a>
   <h3>¿Qué es LDAP?</h3>
   Antes de pasar a los servicios de directorio, hablemos del protocolo subyacente que se usa en los servicios de
   directorio, llamado LDAP o Protocolo ligero de acceso a directorios. LDAP se usa para acceder a información en
@@ -17,6 +18,7 @@
   <a href=
   "https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format">https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format</a><br>
 
+  <a name="h3-2" id="h3-2"></a>
   <h3>¿Qué es la autenticación LDAP?</h3>
   Al usar LDAP, hay diferentes niveles de autenticación que se pueden usar para restringir el acceso a ciertos
   directorios. Ya hablamos de las diferentes operaciones que puedes realizar con LDAP, como agregar, eliminar o
@@ -33,11 +35,13 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780469(v=ws.10)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780469(v=ws.10)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-3" id="h3-3"></a>
   <h3>Active Directory</h3>
   <a href=
   "https://docs.microsoft.com/es-es/archive/blogs/ashwinexchange/understanding-active-directory-for-beginners-part-1">
   https://docs.microsoft.com/es-es/archive/blogs/ashwinexchange/understanding-active-directory-for-beginners-part-1</a><br>
 
+  <a name="h3-4" id="h3-4"></a>
   <h3>¿Qué es Active Directory?</h3>
   Active Directory se ha usado para administrar centralmente redes de computadoras desde que se lo presentó con
   Windows Server 2000. Active Directory trabaja de modo similar a OpenLDAP. Sabe comunicarse usando el protocolo
@@ -80,6 +84,7 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961936(v=technet.10)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961936(v=technet.10)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-5" id="h3-5"></a>
   <h3>Gestionar Active Directory</h3>
   Cuando se configura un dominio de Active Directory por primera vez, contiene una cuenta de usuario
   predeterminada, el administrador, y varios grupos de usuarios predeterminados.<br>
@@ -109,6 +114,7 @@
   acceso para hacer cambios en AD, entonces la delegación es para ti. Así como puedes establecer las DACL de NTFS
   para otorgar permiso a las cuentas en el sistema de archivos, puedes configurar ACL en objetos de Active
   Directory.<br>
+  <a name="h3-6" id="h3-6"></a>
   <h3>Gestionar usuarios y grupos de Active Directory</h3>
   Full name (Nombre completo) es el nombre real de una persona, ¿pero qué es User SamAccountName logon: (Inicio de
   sesión SamAccountName de usuario:)? Es una manera muy larga de decir nombre de usuario. El Administrador de
@@ -143,6 +149,7 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780957(v=ws.10)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780957(v=ws.10)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-7" id="h3-7"></a>
   <h3>Gestión de contraseñas de usuario de Active Directory</h3>
   Una vez que un usuario cambia su contraseña en Active Directory, ese cambio se implementa en todas las máquinas
   a las que se les permite acceder. Con ciertas excepciones, AD no almacena la contraseña del usuario. En su
@@ -167,6 +174,7 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962100(v=technet.10)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962100(v=technet.10)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-8" id="h3-8"></a>
   <h3>Unirse a un dominio de Active Directory</h3>
   Unir una computadora a Active Directory significa dos cosas: que AD conoce la computadora y aprovisionó una
   cuenta de computadora para ella, y que esa computadora conoce el dominio de Active Directory y se autentica con
@@ -187,6 +195,7 @@
   <a href=
   "https://docs.microsoft.com/es-es/windows-server/identity/ad-ds/active-directory-functional-levels">https://docs.microsoft.com/es-es/windows-server/identity/ad-ds/active-directory-functional-levels</a><br>
 
+  <a name="h3-9" id="h3-9"></a>
   <h3>¿Qué es la política de grupo?</h3>
   Los servicios de directorio son bases de datos que se usan para almacenar información sobre objetos. Los objetos
   representan cosas en tu red a las que deseas poder hacer referencia o administrar. Uno de estos tipos de objetos
@@ -226,6 +235,7 @@
   Windows utilizan para almacenar datos de configuración. El GPO se aplica mediante cambios en el registro. El
   sistema operativo Windows y las aplicaciones de Windows leen la configuración del registro para determinar cuál
   debe ser su comportamiento.<br>
+  <a name="h3-10" id="h3-10"></a>
   <h3>Creación y edición de políticas de grupo</h3>
   La herramienta más importante que usaremos para crear y ver objetos de directivas de grupo se llama Consola de
   administración de directivas de grupo, o GPMC. Puedes encontrarla en el menú de herramientas del Administrador
@@ -286,6 +296,7 @@
   Tu organización podría estar usando la Administración avanzada de directivas de grupo, o AGPM, que es un
   conjunto de herramientas complementarias de Microsoft que te brindan ciertas habilidades de control de
   aprovisionamiento adicionales en GPMC.<br>
+  <a name="h3-11" id="h3-11"></a>
   <h3>Herencia y precedencia de póliza de grupo</h3>
   Los administradores de sistemas son responsables de proteger la seguridad de la infraestructura de TI. Por lo
   tanto, se recomienda crear un GPO muy restrictivo que use directivas de seguridad conservadoras muy seguras y
@@ -303,7 +314,6 @@
   secundarias, en este orden. Si más de una directiva intenta establecer la misma directiva o preferencias,
   entonces prevalece la directiva más específica.<br>
   En realidad, puedes vincular varios GPO al mismo contenedor. ¿Cómo decide AD en qué orden aplicar los GPO si hay
-
   más de uno en un contenedor? Cada contenedor tiene un orden de vínculos para los GPO vinculados a él. El orden
   de vínculos de cada política determina qué GPO tiene precedencia. El número más alto es el GPO de menor
   clasificación, por lo que su configuración se aplica primero. El orden de vínculo con el número más alto en el
@@ -328,6 +338,7 @@
   combinado de la aplicación de todos los GPO. La columna Winning GPO (GPO prevalente) te indica qué GPO
   últimamente tuvo prioridad para cada directiva y preferencia. Si no soy un administrador local en el equipo, no
   podré ejecutar el informe.<br>
+  <a name="h3-12" id="h3-12"></a>
   <h3>Solución de problemas de la política de grupo</h3>
   Uno de los problemas más comunes que puedes encontrar es cuando un usuario no puede acceder a su computadora ni
   autenticarse en el dominio de Active Directory. Si una computadora de dominio no puede localizar un controlador
@@ -425,7 +436,8 @@
   tal vez debas solucionar problemas de replicación de Active Directory.<br>
   <a href=
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/bb727055(v=technet.10)?redirectedfrom=MSDN">
-  https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/bb727055(v=technet.10)?redirectedfrom=MSDN</a><br>
+  https://docs.micr
+osoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/bb727055(v=technet.10)?redirectedfrom=MSDN</a><br>
 
   Si está tratando de averiguar por qué un GPO en particular no se aplica a una computadora, lo primero que debes
   hacer es ejecutar el conjunto resultante de directivas, o RSOP. Puedes usar la consola de administración de
@@ -446,6 +458,7 @@
   "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770562(v=ws.11)?redirectedfrom=MSDN">
   https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770562(v=ws.11)?redirectedfrom=MSDN</a><br>
 
+  <a name="h3-13" id="h3-13"></a>
   <h3>¿Qué es OpenLDAP?</h3>
   Otro popular servicio de directorio que se usa en la actualidad es el servicio gratuito de código abierto
   OpenLDAP, que significa protocolo ligero de acceso a directorios y funciona de manera muy similar a Active
@@ -466,6 +479,7 @@
   <a href=
   "https://www.openldap.org/doc/admin24/slapdconf2.html">https://www.openldap.org/doc/admin24/slapdconf2.html</a><br>
 
+  <a name="h3-14" id="h3-14"></a>
   <h3>Gestionar OpenLDAP</h3>
   Es fácil administrar OpenLDAP a través de un navegador web y una herramienta como phpLDAPadmin, pero también
   puedes usar las herramientas de línea de comandos para lograr el mismo resultado.<br>
