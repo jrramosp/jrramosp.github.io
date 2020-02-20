@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-  <h3>Infraestructura de clave pública</h3><br>
+  <h3>Infraestructura de clave pública</h3>
   <strong>PKI</strong> es un sistema que define la creación, el almacenamiento y la distribución de certificados
   digitales. Un certificado digital es un archivo que prueba que una entidad posee una determinada clave pública.
   Un certificado contiene información sobre la clave pública, la entidad a la que pertenece y una firma digital de
@@ -102,7 +102,7 @@
   estos participantes del evento de firma inicial de claves establezca confianza con un nuevo miembro, la red de
   confianza se amplía para incluir a este nuevo miembro y los demás individuos también confían. Esto permite que
   diferentes redes de confianza sean unidas por individuos y permite que la red de confianza crezca.<br>
-  <h3>Criptografía en acción</h3><br>
+  <h3>Criptografía en acción</h3>
   <strong>HTTPS</strong> es la versión segura de HTTP, el Protocolo de transferencia de hipertexto. HTTPS también
   se puede llamar HTTP sobre SSL/TLS, ya que básicamente encapsula el tráfico HTTP en un canal seguro encriptado,
   y para ello usa SSL o TLS. Tal vez escuches que SSL y TLS se usan indistintamente, pero SSL 3.0, la última
@@ -175,7 +175,7 @@
   <a href=
   "http://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html">http://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html</a><br>
 
-  <h3>Asegurar el tráfico de red</h3><br>
+  <h3>Asegurar el tráfico de red</h3>
   ¿Y si queremos brindarle acceso remoto a recursos internos demasiado sensibles para exponerlos directamente a
   Internet? Usamos una solución VPN, o red privada virtual. Una VPN es un mecanismo que te permite conectar de
   forma remota un host o una red a una red privada interna y transmitir datos a través de un canal público como
@@ -233,11 +233,11 @@
   encriptación de hasta 256 bits a través de la librería OpenSSL. También se ejecuta en el espacio de usuario, lo
   que limita la seriedad del potencial de vulnerabilidades que pueden estar presentes.<br>
   <a href="https://openvpn.net/community/">https://openvpn.net/community/</a><br>
-  <h3>Hardware criptográfico</h3><br>
+  <h3>Hardware criptográfico</h3>
   Otra aplicación interesante de los conceptos de criptografía es el <strong>módulo de plataforma
   confiable</strong>, o <strong>TPM</strong>. Es un dispositivo de hardware, normalmente integrado en el hardware
   de una computadora, que es un procesador criptográfico especializado. TPM ofrece generación segura de claves,
-  generación de números aleatorios, certificación&nbsp;remota y vinculación y sellado de datos. Un TPM tiene una
+  generación de números aleatorios, certificación remota y vinculación y sellado de datos. Un TPM tiene una
   clave RSA secreta única, grabada en el hardware en el momento de la fabricación, que le permite realizar cosas
   como la autenticación de hardware. Esto puede detectar cambios de hardware no autorizados en un sistema.<br>
   La <strong>certificación remota</strong> es la idea de un sistema que autentica su propia configuración de
@@ -260,7 +260,7 @@
   manipulación a menudo incorporado en el microprocesador o integrado en la placa base de un dispositivo móvil.
   Suministra almacenamiento seguro de claves criptográficas y proporciona un entorno seguro para las
   aplicaciones.<br>
-  Una evolución respecto de los elementos seguros es el <strong>entorno&nbsp;de ejecución confiable</strong>, o
+  Una evolución respecto de los elementos seguros es el <strong>entorno de ejecución confiable</strong>, o
   <strong>TEE</strong>, que lleva el concepto un poco más lejos. Ofrece un entorno de ejecución aislado avanzado
   que se ejecuta junto con el SO principal. Esto proporciona aislamiento de las aplicaciones respecto del SO
   principal y otras aplicaciones instaladas allí. También aísla los procesos seguros entre sí cuando se ejecutan
@@ -282,7 +282,7 @@
   desbloqueado en el momento del arranque. Dado que el volumen está encriptado, el BIOS no puede acceder a los
   datos en este volumen a efectos de inicio. Es por esto que las configuraciones FDE tendrán una pequeña partición
   de inicio sin encriptar que contiene elementos como el kernel, el cargador de arranque y un netRD. En el momento
-  del arranque, estos elementos se cargan y al usuario se le&nbsp;solicita que ingrese una frase de contraseña
+  del arranque, estos elementos se cargan y al usuario se le solicita que ingrese una frase de contraseña
   para desbloquear el disco y continuar el proceso. FDE también puede incorporar el TPM, usando las claves de
   cifrado TPM para proteger el disco. Y tiene integridad de plataforma para impedir el desbloqueo del disco si se
   modifica la configuración del sistema. Esto protege contra ataques como la manipulación de hardware y el robo o
@@ -292,7 +292,7 @@
   adversario puede descubrir a través de la observación directa y el análisis de mensajes encriptados a lo largo
   del tiempo. A algo que no es verdaderamente aleatorio se lo conoce como pseudoaleatorio. Es por esta razón que
   los sistemas operativos mantienen lo que se conoce como un grupo de entropía. Esto es esencialmente una fuente
-  de datos aleatorios que permiten iniciar&nbsp;generadores de números aleatorios. También hay generadores de
+  de datos aleatorios que permiten iniciar generadores de números aleatorios. También hay generadores de
   números aleatorios y pseudoaleatorios especializados que se pueden incorporar en un dispositivo o servidor de
   seguridad para asegurarse de que se seleccionen números verdaderamente aleatorios al generar claves
   criptográficas.
