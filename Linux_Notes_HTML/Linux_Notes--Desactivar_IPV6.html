@@ -28,6 +28,7 @@
 <li><a href="Linux_Notes--Convertir_rpm_en_deb.html">Convertir rpm en deb</a></li>
 <li><a href="Linux_Notes--Desactivar_Alt+click.html">Desactivar Alt+click</a></li>
 <li><a href="Linux_Notes--Desactivar_IPV6.html">Desactivar IPV6</a></li>
+<li><a href="Linux_Notes--Discos_duros_desde_la_terminal.html">Discos duros desde la terminal</a></li>
 <li><a href="Linux_Notes--Dominio_de_red.html">Dominio de red</a></li>
 <li><a href="Linux_Notes--Drivers_Nvidia_y_CUDA.html">Drivers Nvidia y CUDA</a></li>
 <li><a href="Linux_Notes--Editar_Sounfonts.html">Editar Sounfonts</a></li>
@@ -35,14 +36,15 @@
 <li><a href="Linux_Notes--Hacer_un_check_disk.html">Hacer un check disk</a></li>
 <li><a href="Linux_Notes--Iconos_en_escritorio.html">Iconos en escritorio</a></li>
 <li><a href="Linux_Notes--Instalar_desde_cero.html">Instalar desde cero</a></li>
-<li><a href="Linux_Notes--Instalar_IE.html">Instalar IE</a></li>
 <li><a href="Linux_Notes--Instalar_Java.html">Instalar Java</a></li>
 <li><a href="Linux_Notes--JACK.html">JACK</a></li>
 <li><a href="Linux_Notes--libEGL.so.1_is_not_a_symbolic_link.html">libEGL.so.1 is not a symbolic link</a></li>
 <li><a href="Linux_Notes--Liberar_memoria.html">Liberar memoria</a></li>
 <li><a href="Linux_Notes--lm-sensors.html">lm-sensors</a></li>
+<li><a href="Linux_Notes--manpages_en_castellano.html">manpages en castellano</a></li>
 <li><a href="Linux_Notes--Matar_procesos_zombies.html">Matar procesos zombies</a></li>
 <li><a href="Linux_Notes--Maximizar_ventanas.html">Maximizar ventanas</a></li>
+<li><a href="Linux_Notes--Memoria_y_dispositivos.html">Memoria y dispositivos</a></li>
 <li><a href="Linux_Notes--Menus_borrados.html">Menus borrados</a></li>
 <li><a href="Linux_Notes--Mint_Theme.html">Mint Theme</a></li>
 <li><a href="Linux_Notes--No_detectar_cascos.html">No detectar cascos</a></li>
@@ -53,13 +55,15 @@
 <li><a href="Linux_Notes--Preferencias_Nautilus.html">Preferencias Nautilus</a></li>
 <li><a href="Linux_Notes--Radios_Linux.html">Radios Linux</a></li>
 <li><a href="Linux_Notes--Realizar_TRIM_al_SSD.html">Realizar TRIM al SSD</a></li>
+<li><a href="Linux_Notes--Reproducir_DVD.html">Reproducir DVD</a></li>
 <li><a href="Linux_Notes--Resume_en_initramfs.html">Resume en initramfs</a></li>
 <li><a href="Linux_Notes--Samba.html">Samba</a></li>
 <li><a href="Linux_Notes--Seleccionar_ficheros_con_pulsar_tecla.html">Seleccionar ficheros con pulsar tecla</a></li>
 <li><a href="Linux_Notes--Servicios_en_arranque.html">Servicios en arranque</a></li>
+<li><a href="Linux_Notes--Software_privativo.html">Software privativo</a></li>
 <li><a href="Linux_Notes--Touchpad_Lubuntu.html">Touchpad Lubuntu</a></li>
 <li><a href="Linux_Notes--Transmission_magnet_links.html">Transmission magnet links</a></li>
 <li><a href="Linux_Notes--Version_ubuntu.html">Version ubuntu</a></li>
 </ol></div>
-<div class="page"><h1><b><u>Desactivar IPV6</u></b></h1><a name="h1-1"></a><h1>Desactivar IPV6</h1><br />Created domingo 18 junio 2017<br /><br />El primer paso es simple y consiste en teclear el siguiente comando en consola:<br />cat /proc/sys/net/ipv6/conf/all/disable_ipv6<br /><br />(se puede editar dicho fichero 'disable_ipv6' y sustituir 0 por 1)<br /><br />Si la respuesta q nos entrege es un 0 (cero) entonces significa q tenemos activa la IPV6 y deben proceder al siguiente paso de este tutorial, caso contrario, significa q su IPV6 ya esta desactivada, y el problema con su navegación debe ser otro.<br />Suponiendo q la respuesta de la terminal fue 0 (cero), entonces, necesitamos editar la configuración de la red, para esto tecleamos en la consola:<br /><br />En Ubuntu:<br />sudo gedit /etc/sysctl.conf<br />En Kubuntu:<br />sudo kate /etc/sysctl.conf<br /><br />Y en el editor q se abre al final del archivo agregamos las siguientes lineas<br /><br />#disable ipv6<br />net.ipv6.conf.all.disable_ipv6 = 1<br />net.ipv6.conf.default.disable_ipv6 = 1<br />net.ipv6.conf.lo.disable_ipv6 = 1<br /><br />Con eso echo, grabamos el archivo y reiniciamos la maquina, para confirmar q el proceso fue exitoso, una vez reiniciada la maquina usen nuevamente el primer comando y vean q la respuesta no sea 0 (cero)<br /><br />3. Issue now this command to reload your configuration:<br /><br />sudo sysctl -p<br /></div></div>
+<div class="page"><h1><b><u>Desactivar IPV6</u></b></h1><a name="h1-1"></a><h1>Desactivar IPV6</h1><br />Created domingo 18 junio 2017<br /><br />El primer paso es simple y consiste en teclear el siguiente comando en consola:<br />cat /proc/sys/net/ipv6/conf/all/disable_ipv6<br /><br />(se puede editar dicho fichero 'disable_ipv6' y sustituir 0 por 1)<br /><br />Si la respuesta q nos entrege es un 0 (cero) entonces significa q tenemos activa la IPV6 y deben proceder al siguiente paso de este tutorial, caso contrario, significa q su IPV6 ya esta desactivada, y el problema con su navegación debe ser otro.<br />Suponiendo q la respuesta de la terminal fue 0 (cero), entonces, necesitamos editar la configuración de la red, para esto tecleamos en la consola:<br /><br />En Ubuntu:<br />sudo gedit /etc/sysctl.conf<br />En Kubuntu:<br />sudo kate /etc/sysctl.conf<br /><br />Y en el editor q se abre al final del archivo agregamos las siguientes lineas<br /><br />#disable ipv6<br />net.ipv6.conf.all.disable_ipv6 = 1<br />net.ipv6.conf.default.disable_ipv6 = 1<br />net.ipv6.conf.lo.disable_ipv6 = 1<br /><br />Con eso echo, grabamos el archivo y reiniciamos la maquina, para confirmar q el proceso fue exitoso, una vez reiniciada la maquina usen nuevamente el primer comando y vean q la respuesta no sea 0 (cero)<br /><br />3. Issue now this command to reload your configuration:<br /><br />sudo sysctl -p<br /><br />En el GRUB<br />Lo primero que hay que hacer es editar el archivo GRUB.  Este archivo es /etc/default/grub. Tenemos que abrir este archivo con  nuestro editor de texto. Una vez lo tengamos abierto veremos dos líneas:<br />GRUB_CMDLINE_LINUX_DEFAULT=»»<br />GRUB_CMDLINE_LINUX=»»<br />Hay que mencionar que la primera línea podría ser distinta. Podría venir como: GRUB_CMDLINE_LINUX_DEFAULT=»quiet splash»<br />Para llevar a cabo nuestro objetivo, para deshabilitar IPv6 a través de GRUB, habría que editar las dos líneas de esta forma:<br />GRUB_CMDLINE_LINUX_DEFAULT=»ipv6.disable=1 quiet splash»<br />GRUB_CMDLINE_LINUX=»ipv6.disable=1″<br />Con esto logramos que IPv6 esté deshabilitado. Simplemente guardamos los cambios y cerramos.<br />Y luego updategrub</div></div>
 </body></html>

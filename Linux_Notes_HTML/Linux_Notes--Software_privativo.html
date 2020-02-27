@@ -1,7 +1,7 @@
 <!doctype html><html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Resume en initramfs</title>
+  <title>Software privativo</title>
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -65,5 +65,5 @@
 <li><a href="Linux_Notes--Transmission_magnet_links.html">Transmission magnet links</a></li>
 <li><a href="Linux_Notes--Version_ubuntu.html">Version ubuntu</a></li>
 </ol></div>
-<div class="page"><h1><b><u>Resume en initramfs</u></b></h1><a name="h3-1"></a><a href="http://forums.debian.net/viewtopic.php?t=133253#p645249">Re: how to set the RESUME variable</a><br />   <img src="images/73-1.png" alt="images/73-1.png" />by <a href="http://forums.debian.net/memberlist.php?mode=viewprofile&u=200508&sid=ce36eba942b5ca63f188ef3e85e970ee">orythem27</a> » 2017-05-26 13:42 <br />Look into /etc/initramfs-tools/initramfs.conf and /etc/initramfs-tools/conf.d/*<br /><br />In my case it is set in /etc/initramfs-tools/conf.d/resume.<br /><br />You might try finding the correct settings as stated in the above post by @debiman, correct the variable in the initramfs-tools config file, then regenerate initramfs by<br />Code: <a href="http://forums.debian.net/viewtopic.php?t=133253#">Select all</a># update-initramfs -u -k all</div></div>
+<div class="page"><h1><b><u>Software privativo</u></b></h1>Para ver el software privativo en el sistema:<br /><code>dpkg-query -W -f='${Section}\t${Package}\n' | grep ^non-free &amp;&amp; dpkg-query -W -f='${Section}\t${Package}\n' | grep ^contrib &amp;&amp; dpkg-query -W -f='${Section}\t${Package}\n' | grep ^partner</code></div></div>
 </body></html>
