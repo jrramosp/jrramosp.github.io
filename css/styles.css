@@ -171,6 +171,9 @@ div.main pre {
     overflow: auto !important;
     width: 75%;
 }
+strong{
+    background-color: greenyellow;
+}
 em{
     background-color: yellow;
 }
