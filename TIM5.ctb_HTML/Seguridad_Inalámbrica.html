@@ -9,45 +9,46 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <h3>Cifrado WEP y por qué no deberías usarlo</h3>
-    El primer protocolo de seguridad para redes Wi-Fi que se presentó fue WEP, o privacidad equivalente al cableado.
-    Fue parte del estándar original 802.11 que se presentó en 1997. WEP estaba destinado a proporcionar privacidad a la
-    par con la de la red cableada, lo que significaría que la información transmitida a través de la red debía estar
-    protegida de la intercepción externa. Esta fue una consideración importante al diseñar la especificación
-    inalámbrica. A diferencia de las redes cableadas, los paquetes podían ser interceptados por cualquier persona con
-    proximidad física al punto de acceso o la estación cliente. Sin alguna forma de encriptación que protegiera los
-    paquetes, alguien en las inmediaciones que quisiera escuchar podría leer el tráfico inalámbrico. WEP demostró ser
-    muy malo para brindar confidencialidad o seguridad en conexiones inalámbricas. Se lo descartó rápidamente en 2004 a
-    favor de sistemas más seguros.<br>
+    <h3>Cifrado WEP y por qué no deberías usarlo</h3><br>
+    El primer protocolo de seguridad para redes Wi-Fi que se presentó fue <strong>WEP</strong>, o <strong>privacidad
+    equivalente al cableado</strong>. Fue parte del estándar original 802.11 que se presentó en 1997. WEP estaba
+    destinado a proporcionar privacidad a la par con la de la red cableada, lo que significaría que la información
+    transmitida a través de la red debía estar protegida de la intercepción externa. Esta fue una consideración
+    importante al diseñar la especificación inalámbrica. A diferencia de las redes cableadas, los paquetes podían ser
+    interceptados por cualquier persona con proximidad física al punto de acceso o la estación cliente. Sin alguna
+    forma de encriptación que protegiera los paquetes, alguien en las inmediaciones que quisiera escuchar podría leer
+    el tráfico inalámbrico. WEP demostró ser muy malo para brindar confidencialidad o seguridad en conexiones
+    inalámbricas. Se lo descartó rápidamente en 2004 a favor de sistemas más seguros.<br>
     Quiero que quede claro que ya nadie debería usar WEP.<br>
-    WEP aplica el cifrado de flujo simétrico RC4 para encriptación. Usaba una clave compartida de 40 bits o 104 bits de
-    la que se obtenía la clave de encriptación para paquetes individuales. La clave de encriptación real para cada
-    paquete se calculaba tomando la clave compartida provista por el usuario y uniéndola a un vector de inicialización,
-    o IV, de 24 bits. Es un bit de datos aleatorizado para evitar reutilizar la misma clave de encriptación entre
-    paquetes. Como estos bits de datos están concatenados o unidos, un esquema de clave compartida de 40 bits usa una
-    clave de 64 bits para encriptación y el esquema de 104 bits usa una clave de 128 bits. Originalmente, la
-    encriptación WEP se limitaba a solo 64 bits debido a restricciones impuestas por los EE. UU. a las exportaciones de
-    tecnologías de encriptación. Ahora bien, cuando esas leyes se modificaron, la encriptación de 128 bits estuvo
-    disponible para su uso. Se introdujo la clave compartida que era de 10 caracteres hexadecimales para WEP de 40
-    bits, o de 26 caracteres hexadecimales para WEP de 104 bits. Cada carácter hexadecimal era de 4 bits. La clave
-    también podía especificarse suministrando 5 o 13 caracteres ASCII, y cada carácter ASCII representaba 8 bits. Pero
-    esto, en realidad, reduce el espacio de teclas disponible sólo a caracteres ASCII válidos en lugar de todos los
-    posibles valores hexadecimales. Como este es un componente de la clave real, la clave compartida debe tener
-    exactamente la cantidad de caracteres apropiada para el esquema de encriptación.<br>
+    WEP aplica el cifrado de flujo simétrico <strong>RC4</strong> para encriptación. Usaba una clave compartida de 40
+    bits o 104 bits de la que se obtenía la clave de encriptación para paquetes individuales. La clave de encriptación
+    real para cada paquete se calculaba tomando la clave compartida provista por el usuario y uniéndola a un vector de
+    inicialización, o IV, de 24 bits. Es un bit de datos aleatorizado para evitar reutilizar la misma clave de
+    encriptación entre paquetes. Como estos bits de datos están concatenados o unidos, un esquema de clave compartida
+    de 40 bits <strong>usa una clave de 64 bits</strong> para encriptación y el esquema de 104 bits usa <strong>una
+    clave de 128 bits</strong>. Originalmente, la encriptación WEP se limitaba a solo 64 bits debido a restricciones
+    impuestas por los EE. UU. a las exportaciones de tecnologías de encriptación. Ahora bien, cuando esas leyes se
+    modificaron, la encriptación de 128 bits estuvo disponible para su uso. Se introdujo la clave compartida que era de
+    10 caracteres hexadecimales para WEP de 40 bits, o de 26 caracteres hexadecimales para WEP de 104 bits. Cada
+    carácter hexadecimal era de 4 bits. La clave también podía especificarse suministrando 5 o 13 caracteres ASCII, y
+    cada carácter ASCII representaba 8 bits. Pero esto, en realidad, reduce el espacio de teclas disponible sólo a
+    caracteres ASCII válidos en lugar de todos los posibles valores hexadecimales. Como este es un componente de la
+    clave real, la clave compartida debe tener exactamente la cantidad de caracteres apropiada para el esquema de
+    encriptación.<br>
     La autenticación WEP originalmente admitía dos modos diferentes, la autenticación por sistema abierto y la
     autenticación de clave compartida.<br>
-    El modo de sistema abierto no requería que los clientes suministraran credenciales. En su lugar, se les permitía
-    autenticar y asociarse con el punto de acceso. Pero el punto de acceso comenzaría a comunicarse con el cliente
-    encriptando tramas de datos con la clave WEP precompartida. Si el cliente no tenía la clave o tenía una clave
-    incorrecta, no sería capaz de desencriptar las tramas procedentes del punto de acceso, o AP. Tampoco podría
-    comunicarse con el AP.<br>
-    La autenticación de clave compartida funcionaba haciendo que los clientes se autenticaran a través de un proceso de
-    desafío-respuesta de cuatro pasos. Básicamente, el AP le pedía al cliente que demostrara tener la clave correcta.
-    Así es como funciona. El cliente envía una solicitud de autenticación al AP. El AP responde con un desafío de texto
-    sin encriptar, algo de datos aleatorios que se supone que el cliente debe encriptar por medio de la clave WEP
-    compartida. El cliente responde al AP con el texto cifrado resultante de encriptar este texto de desafío. El AP
-    verifica esto desencriptando la respuesta y verificándola contra el texto del desafío de texto sin formato. Si
-    coinciden, se envía una respuesta positiva.<br>
+    El modo de <strong>autenticación por sistema abierto</strong> no requería que los clientes suministraran
+    credenciales. En su lugar, se les permitía autenticar y asociarse con el punto de acceso. Pero el punto de acceso
+    comenzaría a comunicarse con el cliente encriptando tramas de datos con la clave WEP precompartida. Si el cliente
+    no tenía la clave o tenía una clave incorrecta, no sería capaz de desencriptar las tramas procedentes del punto de
+    acceso, o AP. Tampoco podría comunicarse con el AP.<br>
+    La <strong>autenticación de clave compartida</strong> funcionaba haciendo que los clientes se autenticaran a través
+    de un proceso de desafío-respuesta de cuatro pasos. Básicamente, el AP le pedía al cliente que demostrara tener la
+    clave correcta. Así es como funciona. El cliente envía una solicitud de autenticación al AP. El AP responde con un
+    desafío de texto sin encriptar, algo de datos aleatorios que se supone que el cliente debe encriptar por medio de
+    la clave WEP compartida. El cliente responde al AP con el texto cifrado resultante de encriptar este texto de
+    desafío. El AP verifica esto desencriptando la respuesta y verificándola contra el texto del desafío de texto sin
+    formato. Si coinciden, se envía una respuesta positiva.<br>
     ¿Hay algo que te parezca potencialmente inseguro en el esquema? Estamos transmitiendo tanto el texto sin formato
     como el texto cifrado de una manera que expone ambos mensajes a los potenciales espías. Esto abre la posibilidad de
     recuperación de la clave de cifrado por parte del atacante. Un concepto general en seguridad y encriptación es no
@@ -72,62 +73,64 @@
     que el atacante reconstruya esta secuencia de claves por medio de los paquetes encriptados que usan los IV débiles.
     También puedes ver las herramientas de código abierto que demuestran este ataque en acción, como Aircrack-ng o
     AirSnort; ellas pueden recuperar una clave WEP en cuestión de minutos.<br>
-    <h3>¡Vamos a deshacernos de WEP! WPA / WPA2</h3>
-    El reemplazo para WEP de Wi-Fi Alliance fue WPA, o acceso protegido a Wi-Fi. Se presentó en 2003 como una medida
-    temporal mientras la alianza finalizaba su especificación para lo que se convertiría en WPA2, presentado en 2004.
-    WPA se diseñó como un reemplazo a corto plazo que sería compatible con hardware anterior habilitado para WEP
-    mediante una simple actualización de firmware. Esto facilitó que los usuarios lo adoptaran porque no requería la
-    compra de nuevo hardware de Wi-Fi.<br>
-    Para abordar las deficiencias de la seguridad WEP, se introdujo un nuevo protocolo de seguridad llamado TKIP, o
-    Protocolo de integridad de clave temporal. TKIP implementó tres nuevas características que lo hicieron más seguro
-    que WEP. Primero, se usó un método de obtención de claves más seguro para incorporar de forma segura el IV en la
-    clave de encriptación por paquete. Segundo, se implementó un contador de secuencias para impedir ataques de
-    repetición mediante el rechazo de paquetes defectuosos. En tercer lugar, se introdujo una comprobación de
-    integridad de mensajes (MIC) de 64 bits para impedir la falsificación, manipulación o corrupción de paquetes.<br>
+    <h3>¡Vamos a deshacernos de WEP! WPA / WPA2</h3><br>
+    El reemplazo para WEP de Wi-Fi Alliance fue <strong>WPA</strong>, o <strong>acceso protegido a Wi-Fi</strong>. Se
+    presentó en 2003 como una medida temporal mientras la alianza finalizaba su especificación para lo que se
+    convertiría en WPA2, presentado en 2004. WPA se diseñó como un reemplazo a corto plazo que sería compatible con
+    hardware anterior habilitado para WEP mediante una simple actualización de firmware. Esto facilitó que los usuarios
+    lo adoptaran porque no requería la compra de nuevo hardware de Wi-Fi.<br>
+    Para abordar las deficiencias de la seguridad WEP, se introdujo un nuevo protocolo de seguridad llamado
+    <strong>TKIP</strong>, o <strong>Protocolo de integridad de clave temporal</strong>. TKIP implementó tres nuevas
+    características que lo hicieron más seguro que WEP. Primero, se usó un método de obtención de claves más seguro
+    para incorporar de forma segura el IV en la clave de encriptación por paquete. Segundo, se implementó un contador
+    de secuencias para impedir ataques de repetición mediante el rechazo de paquetes defectuosos. En tercer lugar, se
+    introdujo una comprobación de integridad de mensajes (MIC) de 64 bits para impedir la falsificación, manipulación o
+    corrupción de paquetes.<br>
     TKIP todavía usa el cifrado RC4 como algoritmo de encriptación subyacente. Pero abordó las debilidades de
     generación de clave de WEP por medio de una función de combinación de claves para generar claves de encriptación
-    únicas por paquete. También usa claves de 256 bits de longitud. Esta función de combinación de claves incorpora la
-    frase de contraseña Wi-Fi de larga duración con el IV. Esto es diferente en comparación con la concatenación
-    simplista de la clave compartida y el IV.<br>
+    únicas por paquete. También usa <strong>claves de 256 bits</strong> de longitud. Esta función de combinación de
+    claves incorpora la frase de contraseña Wi-Fi de larga duración con el IV. Esto es diferente en comparación con la
+    concatenación simplista de la clave compartida y el IV.<br>
     En WPA, la clave pre compartida es la contraseña de Wi-Fi que compartes con las personas cuando llegan y desean
     utilizar tu red inalámbrica. Esto no se usa directamente para encriptar el tráfico. Se usa como factor para obtener
     la clave de encriptación. La frase de contraseña se alimenta en PBKDF2, o Función de derivación de claves basada en
-    contraseña-2, junto con la SSID de las redes Wi-Fi como sal. Esto se pasa por la función HMAC-SHA1 4,096 veces para
-    generar una clave de encriptación única. La sal de SSID se incorpora para ayudar a defender contra los ataques de
-    tabla de arco iris. Las 4,096 rondas de HMAC-SHA1 aumentan la potencia de cómputo requerida para un ataque de
-    fuerza bruta.<br>
+    contraseña-2, junto con la SSID de las redes Wi-Fi como salt. Esto se pasa por la función HMAC-SHA1 4,096 veces
+    para generar una clave de encriptación única. La salt de SSID se incorpora para ayudar a defender contra los
+    ataques de tabla de arco iris. Las 4,096 rondas de HMAC-SHA1 aumentan la potencia de cómputo requerida para un
+    ataque de fuerza bruta.<br>
     Debo señalar que la clave precompartida se puede ingresar usando dos métodos diferentes. Se puede ingresar un valor
     hexadecimal de 64 caracteres, o el valor de 64 caracteres se usa como clave, que es de 64 caracteres hexadecimales
     por cuatro bits, lo que resulta en 256 bits. La otra opción es usar la función PBKDF2, pero solo si se ingresan
     caracteres ASCII como frase de contraseña. Si ese es el caso, la frase de contraseña puede tener entre ocho y 63
     caracteres.<br>
-    WPA2 mejora aún más la seguridad de WPA implementando CCMP, o Protocolo CBC-MAC con modo contador. WPA2 es la mejor
-    seguridad para redes inalámbricas disponible actualmente, por lo que es realmente importante que un especialista en
-    soporte de TI la conozca. Se basa en el cifrado AES que, finalmente, se aleja del cifrado RC4 inseguro. El proceso
-    de obtención de claves no se modificó de WPA y los requisitos de clave precompartida son los mismos. El contador
-    con CBC-MAC es un modo particular de operación para cifrados de bloque. Permite la encriptación autenticada, lo que
-    significa que los datos se mantienen en estricta confidencialidad y se autentican. Esto se logra mediante un
-    mecanismo de "autenticación, luego encriptación". El resumen CBC-MAC se calcula primero. Luego, el código de
-    autenticación resultante se encripta junto con el mensaje utilizando un cifrado de bloque. Estamos usando AES en
-    este caso, operando en modo contador. Esto convierte un cifrado de bloque en un cifrado de flujo mediante el uso de
-    un valor de inicialización aleatorio junto con un contador incremental para crear un flujo de clave con el cual
-    encriptar datos.<br>
-    Ahora, veamos el proceso del protocolo de enlace de cuatro vías que autentica a los clientes en la red. Este
-    proceso también genera la clave de encriptación temporal que se usará para encriptar los datos de este cliente.
-    Este proceso se llama protocolo de enlace de cuatro vías, ya que se compone de cuatro intercambios de datos entre
-    el cliente y el AP. Está diseñado para permitir que un AP confirme que el cliente tiene la clave maestra por pares
-    (PMK) correcta, o una clave precompartida en una configuración WPA-PSK, sin revelar la PMK. La PMK es una clave de
-    larga duración y puede que no cambie durante mucho tiempo. Entonces, se obtiene una clave de encriptación a partir
-    de la PMK que se usa para la verdadera encriptación y desencriptación del tráfico entre un cliente y un AP. Esta
-    clave se denomina clave transitoria por pares, o PTK. La PTK se genera usando la PMK, el nonce del AP, el nonce del
-    cliente, la dirección MAC del AP y la dirección MAC del cliente. Todos ellos están concatenados y se los pasa por
-    una función. Los nonces del AP y del cliente son solo bits aleatorios de datos que cada parte genera y luego
-    intercambia. Las direcciones MAC de cada parte ya serían conocidas a través de los encabezados de paquetes, y ambas
-    partes ya deberían tener la PMK correcta. Con esta información, se puede generar la PTK. Esto es diferente para
-    cada cliente a fin de permitir la confidencialidad entre clientes. La PTK está compuesta por cinco claves
-    individuales, cada una con su propio objetivo. Se usan dos claves para encriptar y confirmar los paquetes EAPoL, y
-    el protocolo de encapsulación transporta estos mensajes. Se usan dos claves para enviar y recibir códigos de
-    integridad de mensajes. Y por último, hay una clave temporal, que en realidad se usa para encriptar los datos.<br>
+    <strong>WPA2</strong> mejora aún más la seguridad de WPA implementando <strong>CCMP</strong>, o <strong>Protocolo
+    CBC-MAC</strong> con modo contador. WPA2 es la mejor seguridad para redes inalámbricas disponible actualmente. Se
+    basa en el cifrado <strong>AES</strong> que, finalmente, se aleja del cifrado RC4 inseguro. El proceso de obtención
+    de claves no se modificó de WPA y los requisitos de clave precompartida son los mismos. El contador con CBC-MAC es
+    un modo particular de operación para cifrados de bloque. Permite la encriptación autenticada, lo que significa que
+    los datos se mantienen en estricta confidencialidad y se autentican. Esto se logra mediante un mecanismo de
+    "autenticación, luego encriptación". El resumen CBC-MAC se calcula primero. Luego, el código de autenticación
+    resultante se encripta junto con el mensaje utilizando un cifrado de bloque. Estamos usando AES en este caso,
+    operando en modo contador. Esto convierte un cifrado de bloque en un cifrado de flujo mediante el uso de un valor
+    de inicialización aleatorio junto con un contador incremental para crear un flujo de clave con el cual encriptar
+    datos.<br>
+    Ahora, veamos el proceso del <strong>protocolo de enlace de cuatro vías</strong> que autentica a los clientes en la
+    red. Este proceso también genera la clave de encriptación temporal que se usará para encriptar los datos de este
+    cliente. Este proceso se llama protocolo de enlace de cuatro vías, ya que se compone de cuatro intercambios de
+    datos entre el cliente y el AP. Está diseñado para permitir que un AP confirme que el cliente tiene la clave
+    maestra por pares (PMK) correcta, o una clave precompartida en una configuración WPA-PSK, sin revelar la PMK. La
+    PMK es una clave de larga duración y puede que no cambie durante mucho tiempo. Entonces, se obtiene una clave de
+    encriptación a partir de la PMK que se usa para la verdadera encriptación y desencriptación del tráfico entre un
+    cliente y un AP. Esta clave se denomina clave transitoria por pares, o PTK. La PTK se genera usando la PMK, el
+    nonce del AP, el nonce del cliente, la dirección MAC del AP y la dirección MAC del cliente. Todos ellos están
+    concatenados y se los pasa por una función. Los nonces del AP y del cliente son solo bits aleatorios de datos que
+    cada parte genera y luego intercambia. Las direcciones MAC de cada parte ya serían conocidas a través de los
+    encabezados de paquetes, y ambas partes ya deberían tener la PMK correcta. Con esta información, se puede generar
+    la PTK. Esto es diferente para cada cliente a fin de permitir la confidencialidad entre clientes. La PTK está
+    compuesta por cinco claves individuales, cada una con su propio objetivo. Se usan dos claves para encriptar y
+    confirmar los paquetes EAPoL, y el protocolo de encapsulación transporta estos mensajes. Se usan dos claves para
+    enviar y recibir códigos de integridad de mensajes. Y por último, hay una clave temporal, que en realidad se usa
+    para encriptar los datos.<br>
     El AP también transmitirá la GTK, o clave transitoria de grupos. Se encripta mediante la clave EAPoL contenida en
     la PTK, que se utiliza para encriptar el tráfico de multidifusión o difusión. Dado que este tipo de tráfico debe
     ser legible para todos los clientes conectados a un AP, esta GTK se comparte entre todos ellos. Se actualiza y
@@ -135,20 +138,21 @@
     Los cuatro mensajes intercambiados en orden son: el AP, que envía un nonce al cliente; el cliente luego envía su
     nonce a la AP; el AP envía el GTK y el cliente responde con un ACK que confirma la negociación exitosa.<br>
     <img src="images/10-1.png" alt="images/10-1.png"><br>
-    Los estándares WPA y WPA2 también introducen una autenticación 802.1x en las redes Wi-Fi. Por lo general, se llama
-    WPA2-Enterprise. Las configuraciones que no son 802.1x se llaman WPA2-Personal o WPA2-PSK, ya que utilizan una
-    clave precompartida para autenticar clientes. No volveremos a hablar de 802.1x aquí, ya que funciona de manera
-    similar a 802.1x en redes de cable, lo que ya vimos. Lo único diferente es que el AP actúa como autenticador en
-    este caso. El RADIUS de backend sigue siendo el servidor de autenticación y la PMK se genera usando componentes del
-    método EAP elegido.<br>
-    Si bien no es directamente una función de seguridad, WPS, o configuración protegida por Wi-Fi, es una
-    característica conveniente diseñada para facilitar que los clientes se unan a una red protegida por WPA-PSK. Puedes
-    encontrar WPS en una pequeña instalación de TI que use routers SOHO comerciales. Puede ser útil en estos entornos
-    más pequeños para facilitar que los clientes inalámbricos se unan a las redes inalámbricas de forma segura. Pero su
-    habilitación acarrea implicaciones de seguridad de las que debes estar al tanto. Wi-Fi Alliance presentó WPS en
-    2006. Ofrece varios métodos diferentes que permiten a nuestro cliente inalámbrico unirse, de forma segura, a una
-    red inalámbrica sin tener que ingresar directamente la clave precompartida. Esto facilita el uso de frases de
-    contraseña muy largas y seguras sin que sean innecesariamente complicadas.<br>
+    Los estándares WPA y WPA2 también introducen una <strong>autenticación 802.1x</strong> en las redes Wi-Fi. Por lo
+    general, se llama <strong>WPA2-Enterprise</strong>. Las configuraciones que no son 802.1x se llaman WPA2-Personal o
+    WPA2-PSK, ya que utilizan una clave precompartida para autenticar clientes. No volveremos a hablar de 802.1x aquí,
+    ya que funciona de manera similar a 802.1x en redes de cable, lo que ya vimos. Lo único diferente es que el AP
+    actúa como autenticador en este caso. El RADIUS de backend sigue siendo el servidor de autenticación y la PMK se
+    genera usando componentes del método EAP elegido.<br>
+    Si bien no es directamente una función de seguridad, <strong>WPS</strong>, o <strong>configuración protegida por
+    Wi-Fi</strong>, es una característica conveniente diseñada para facilitar que los clientes se unan a una red
+    protegida por WPA-PSK. Puedes encontrar WPS en una pequeña instalación de TI que use routers SOHO comerciales.
+    Puede ser útil en estos entornos más pequeños para facilitar que los clientes inalámbricos se unan a las redes
+    inalámbricas de forma segura. Pero su habilitación acarrea implicaciones de seguridad de las que debes estar al
+    tanto. Wi-Fi Alliance presentó WPS en 2006. Ofrece varios métodos diferentes que permiten a nuestro cliente
+    inalámbrico unirse, de forma segura, a una red inalámbrica sin tener que ingresar directamente la clave
+    precompartida. Esto facilita el uso de frases de contraseña muy largas y seguras sin que sean innecesariamente
+    complicadas.<br>
     ¿Te imaginas tener que hacer que tus amigos y familiares, con menor inclinación tecnológica, ingresen una frase de
     contraseña de 63 caracteres para usar tu Wi-Fi cuando te visitan? Probablemente eso no funcionaría tan bien. WPS
     simplifica esto al permitir el intercambio seguro del SSID y la clave precompartida. Esto se hace después de
@@ -201,11 +205,11 @@
     de los elementos de sesión únicos. Estos conjuntos precalculados se conocen como tablas de arco iris y esto se ha
     hecho exactamente así. Hay tablas de arco iris disponibles para descargar para los principales 1000 SSID más vistos
     y 1 millón de contraseñas.<br>
-    <h3>Endurecimiento inalámbrico</h3>
+    <h3>Endurecimiento inalámbrico</h3><br>
     Ahora que vimos las opciones de seguridad disponibles para proteger redes inalámbricas, ¿cuál crees que sería la
-    opción más segura? En un mundo ideal, todos estaríamos usando 802.1X con EAP-TLS para proteger nuestras redes
-    inalámbricas. Ofrece lo que podría llamarse la mejor seguridad disponible, siempre que se suponga un manejo
-    adecuado y seguro de los aspectos en relación con la PKI. Pero, esta opción también requiere un montón de
+    opción más segura? En un mundo ideal, todos estaríamos usando <strong>802.1X con EAP-TLS</strong> para proteger
+    nuestras redes inalámbricas. Ofrece lo que podría llamarse la mejor seguridad disponible, siempre que se suponga un
+    manejo adecuado y seguro de los aspectos en relación con la PKI. Pero, esta opción también requiere un montón de
     complejidad y gastos generales adicionales. Esto es porque requiere el uso de un servidor RADIUS y un backend de
     autenticación adicional como mínimo. Si se implementa EAP-TLS, entonces también se necesitarán todos los
     componentes de la infraestructura de clave pública. Esto incorpora aún más complejidad y gastos de gestión. No solo
@@ -213,12 +217,13 @@
     implementar un sistema para firmar los certificados de cliente. También tienes que distribuirlos a cada cliente que
     se autentique en la red. Esto suele ser más costoso de lo que muchas empresas están dispuestas a asumir debido a la
     compensación inherente de seguridad frente a conveniencia.<br>
-    Si 802.1X es demasiado complicado para una empresa, la siguiente mejor alternativa sería WPA2 con el modo AES/CCMP.
-    Pero para protegerse contra ataques de fuerza bruta o de tabla de arco iris, deberíamos tomar algunas medidas para
-    elevar el nivel computacional. Una frase de contraseña larga y compleja que no se encuentre en un diccionario
-    aumentaría la cantidad de tiempo y recursos que un atacante necesitaría para descifrarla. Cambiar el SSID a algo
-    poco común y único también reduciría la probabilidad de ataques de tabla de arco iris. Requeriría que un atacante
-    hiciera los cálculos por sí mismo, lo que aumenta el tiempo y los recursos necesarios para realizar un ataque.<br>
+    Si 802.1X es demasiado complicado para una empresa, la siguiente mejor alternativa sería <strong>WPA2 con el modo
+    AES/CCMP</strong>. Pero para protegerse contra ataques de fuerza bruta o de tabla de arco iris, deberíamos tomar
+    algunas medidas para elevar el nivel computacional. <em>Una frase de contraseña larga y compleja</em> que no se
+    encuentre en un diccionario aumentaría la cantidad de tiempo y recursos que un atacante necesitaría para
+    descifrarla. <em>Cambiar el SSID a algo poco común y único</em> también reduciría la probabilidad de ataques de
+    tabla de arco iris. Requeriría que un atacante hiciera los cálculos por sí mismo, lo que aumenta el tiempo y los
+    recursos necesarios para realizar un ataque.<br>
     Al usar una contraseña de Wi-Fi larga y compleja, tal vez te veas tentado a usar WPS para que los clientes se unan
     a la red. Pero antes ya vimos que esto podría no ser una buena idea desde una perspectiva de seguridad. En la
     práctica, no verás WPS habilitado en un entorno empresarial porque es una tecnología orientada al consumidor. Si tu

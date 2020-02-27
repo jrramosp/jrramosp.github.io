@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Clave pública o cifrado asimétrico</title>
-  <meta name="generator" content="CherryTree">
+  <meta name="generator" content="Bluefish 2.2.10" >
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
@@ -35,11 +35,11 @@
   clave pública de Daryll y enviarle un mensaje encriptado que diga que es de Suzanne.<br>
   Los tres conceptos que nos otorga un criptosistema asimétrico son: <strong>confidencialidad</strong>,
   <strong>autenticidad</strong> y <strong>no repudio</strong>.<br>
-  • La confidencialidad se otorga a través del mecanismo de encriptación/desencriptación, ya que nuestros datos
+  • La <strong>confidencialidad</strong> se otorga a través del mecanismo de encriptación/desencriptación, ya que nuestros datos
   encriptados se mantienen en secreto y confidencialidad ante terceros no autorizados.<br>
-  • La autenticidad es otorgada por el mecanismo de firma digital, ya que se puede autenticar o verificar que el
+  • La <strong>autenticidad</strong> es otorgada por el mecanismo de firma digital, ya que se puede autenticar o verificar que el
   mensaje no fue manipulado.<br>
-  • No repudio significa que el autor del mensaje no puede poner en duda su origen. En otras palabras, esto nos
+  • <strong>No repudio</strong> significa que el autor del mensaje no puede poner en duda su origen. En otras palabras, esto nos
   permite asegurar que el mensaje vino de la persona que dice ser su autor.<br>
   La encriptación asimétrica permite una comunicación segura a través de un canal no confiable, pero con la
   encriptación simétrica necesitamos alguna forma de comunicar de manera segura el secreto compartido o la clave a
@@ -73,7 +73,7 @@
   se denominan <strong>CMAC</strong>, o <strong>códigos de autenticación de mensajes basados en cifrado</strong>.
   El proceso es similar a HMAC, pero en lugar de usar una función de hash para elaborar un resumen, se usa un
   cifrado simétrico con claves compartidas para encriptar el mensaje y la salida resultante se usa como MAC.<br>
-  CBC-MAC es un mecanismo para crear MAC por medio de cifrados de bloque. Esto funciona tomando un mensaje y
+  <strong>CBC-MAC</strong> es un mecanismo para crear MAC por medio de cifrados de bloque. Esto funciona tomando un mensaje y
   encriptándolo mediante un cifrado de bloque que funciona en modo CBC. El modo CBC es un modo de operación para
   cifrados de bloque que incorpora un texto de cifrado de bloque pre encriptado en el texto sin formato del bloque
   siguiente. Así, genera una cadena de bloques encriptados que requieren la totalidad de la cadena sin modificar

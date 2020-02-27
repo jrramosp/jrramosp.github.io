@@ -9,46 +9,46 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <h3>Mejores prácticas de endurecimiento de la red</h3>
+    <h3>Mejores prácticas de endurecimiento de la red</h3><br>
     El fortalecimiento de la red es el proceso de proteger una red reduciendo sus vulnerabilidades potenciales a través
     de cambios de configuración, y tomando medidas específicas.<br>
     Hay un principio de seguridad general que puede aplicarse a la mayoría de las áreas de seguridad, es el concepto de
-    deshabilitar servicios adicionales innecesarios o restringir el acceso a ellos. Dado que cualquier servicio
-    habilitado y accesible puede ser atacado, este principio debería aplicarse también a la seguridad de la red. Las
-    redes serían mucho más seguras si deshabilitas el acceso a servicios de red que no son necesarios y si haces
-    cumplir las restricciones de acceso.<br>
-    La denegación implícita es un concepto de seguridad de red en el que cualquier cosa que no esté explícitamente
-    permitida debe ser denegada. Esto es diferente de bloquear todo el tráfico, ya que una configuración implícita
-    denegada todavía dejará pasar el tráfico que definiste como permitido. Puedes hacer esto a través de
+    <em>deshabilitar servicios adicionales innecesarios o restringir el acceso a ellos</em>. Dado que cualquier
+    servicio habilitado y accesible puede ser atacado, este principio debería aplicarse también a la seguridad de la
+    red. Las redes serían mucho más seguras si deshabilitas el acceso a servicios de red que no son necesarios y si
+    haces cumplir las restricciones de acceso.<br>
+    La <strong>denegación implícita</strong> es un concepto de seguridad de red en el que cualquier cosa que no esté
+    explícitamente permitida debe ser denegada. Esto es diferente de bloquear todo el tráfico, ya que una configuración
+    implícita denegada todavía dejará pasar el tráfico que definiste como permitido. Puedes hacer esto a través de
     configuraciones de ACL. Esto generalmente se puede configurar en un firewall, lo que facilita la creación de reglas
     de firewall seguras. En lugar de requerirte que bloquees específicamente todo el tráfico que no deseas, puedes
     crear reglas para el tráfico que necesitas que siga su curso. Puedes pensar en esto como una lista blanca en
     contraposición con una lista negra.<br>
-    Otro componente muy importante de la seguridad de la red es la supervisión y el análisis del tráfico en tu red. Hay
-    un par de motivos por los que supervisar tu red es tan importante. El primero es que te permite establecer una
-    referencia de cómo se ve tu tráfico de red típico. Esto es clave porque para saber cómo se ve un tráfico inusual o
-    un tráfico de ataque potencial, necesitas saber cómo es el tráfico normal. Puedes hacerlo a través de la
+    Otro componente muy importante de la seguridad de la red es la <em>supervisión y el análisis del tráfico</em> en tu
+    red. Hay un par de motivos por los que supervisar tu red es tan importante. El primero es que te permite establecer
+    una referencia de cómo se ve tu tráfico de red típico. Esto es clave porque para saber cómo se ve un tráfico
+    inusual o un tráfico de ataque potencial, necesitas saber cómo es el tráfico normal. Puedes hacerlo a través de la
     supervisión del tráfico de red y del análisis de registros.<br>
-    Analizar registros es la práctica de recopilar registros de diferentes redes y, a veces, dispositivos cliente, en
-    tu red, y luego, realizar un análisis automatizado sobre ellos. Esto pondrá de relieve las posibles intrusiones,
-    signos de infecciones de malware o un comportamiento típico. Deberás analizar cosas como registros de firewall,
-    registros del servidor de autenticación y registros de aplicaciones. El análisis de los registros implicaría la
-    búsqueda de mensajes específicos de registro de interés como los registros de firewall.<br>
+    <strong>Analizar registros</strong> es la práctica de recopilar registros de diferentes redes y, a veces,
+    dispositivos cliente, en tu red, y luego, realizar un análisis automatizado sobre ellos. Esto pondrá de relieve las
+    posibles intrusiones, signos de infecciones de malware o un comportamiento típico. Deberás analizar cosas como
+    registros de firewall, registros del servidor de autenticación y registros de aplicaciones. El análisis de los
+    registros implicaría la búsqueda de mensajes específicos de registro de interés como los registros de firewall.<br>
     Los sistemas de análisis de registros se configuran por medio de reglas definidas por el usuario para que coincidan
     con entradas de registro interesantes o típicas. Estas, luego, pueden ser puestas de manifiesto a través de un
     sistema de alerta para que los ingenieros de seguridad investiguen. Parte de este proceso de alerta también
     implicaría categorizar la alerta tomando como base la regla coincidente. También deberías asignar una prioridad
     para facilitar esta investigación y para permitir una mejor búsqueda o filtrado. Las alertas pueden tomar la forma
     de envío de un correo electrónico o un SMS con información, y un vínculo al evento que fue detectado.<br>
-    La normalización de los datos registrados es un paso importante, ya que los registros de diferentes dispositivos y
-    sistemas pueden no tener un formato común. Tal vez debas convertir componentes de registro en un formato común para
-    facilitar el análisis a los analistas y a los sistemas de detección basados en reglas, lo que también facilita el
-    análisis de correlación. El análisis de correlación es el proceso de tomar datos de registro de diferentes sistemas
-    y hacer coincidir los eventos a través de los sistemas.<br>
+    La <strong>normalización de los datos registrados</strong> es un paso importante, ya que los registros de
+    diferentes dispositivos y sistemas pueden no tener un formato común. Tal vez debas convertir componentes de
+    registro en un formato común para facilitar el análisis a los analistas y a los sistemas de detección basados en
+    reglas, lo que también facilita el análisis de correlación. El análisis de correlación es el proceso de tomar datos
+    de registro de diferentes sistemas y hacer coincidir los eventos a través de los sistemas.<br>
     Este tipo de análisis de registros también es muy importante al investigar y recrear los eventos que ocurrieron una
-    vez que se detectó un riesgo. A esto generalmente se lo llama análisis posterior a una falla, ya que se está
-    investigando qué ocurrió con el riesgo una vez que se detectó la violación a la seguridad. El registro y el
-    análisis detallados de los registros permitirán la reconstrucción detallada de los hechos que dieron lugar al
+    vez que se detectó un riesgo. A esto generalmente se lo llama <strong>análisis posterior a una falla</strong>, ya
+    que se está investigando qué ocurrió con el riesgo una vez que se detectó la violación a la seguridad. El registro
+    y el análisis detallados de los registros permitirán la reconstrucción detallada de los hechos que dieron lugar al
     riesgo. Con suerte, esto permitirá que el equipo de seguridad haga las modificaciones correspondientes a los
     sistemas de seguridad para impedir futuros ataques. También podría ayudar a determinar el alcance y la severidad
     del riesgo.<br>
@@ -56,24 +56,24 @@
     muy flexible y extensible. Splunk puede capturar datos de registros de una amplia variedad de sistemas y en muchos
     formatos distintos. También se puede configurar para generar alertas y da cuenta de una potente visualización de la
     actividad basada en datos registrados.<br>
-    Las protecciones contra saturación brindan protección contra ataques de denegación de servicio, o DoS. Recuerda la
-    tríada CIA que vimos anteriormente. La disponibilidad es un principio importante de seguridad y las protecciones
-    contra saturación están diseñadas precisamente para ayudar a garantizarla. Esto funciona identificando tipos de
-    ataque de saturación comunes como saturaciones SYN o UDP. Luego, activa las alertas cuando se alcanza un umbral
-    configurable de tráfico. Hay otro umbral, llamado umbral de activación. Cuando se alcanza este umbral, se activa
-    una acción preconfigurada. Normalmente, esto bloqueará el tráfico de ataque identificado por un período de tiempo
-    específico. Esta suele ser una función que viene en routers o firewalls de calidad empresarial, aunque es un
-    concepto de seguridad general.<br>
-    Una herramienta común de protección contra saturaciones de código abierto es "fail-to-ban". Busca señales de un
-    ataque a un sistema y bloquea otros intentos de una dirección de ataque sospechosa. Fail-to-ban es una herramienta
-    popular para organizaciones de menor escala. Esta protección contra saturación también puede describirse como una
-    forma de sistema de prevención de intrusiones.<br>
-    La separación o segmentación de red es un buen principio de seguridad para que un especialista en soporte de TI
-    implemente. Permite una gestión más flexible de la red y proporciona algunos beneficios de seguridad. Este es el
-    concepto de usar VLAN para crear redes virtuales para diferentes clases o tipos de dispositivos. Piensa en esto
-    como crear redes virtuales específicas para que las utilicen tus empleados, pero también tener redes separadas para
-    que se conecten tus impresoras. En realidad, ese es uno de los beneficios de la separación de red, ya que podemos
-    controlar y monitorear el flujo de tráfico entre redes más fácilmente.<br>
+    Las <strong>protecciones contra saturación</strong> brindan protección contra ataques de denegación de servicio, o
+    DoS. Recuerda la tríada CIA que vimos anteriormente. La disponibilidad es un principio importante de seguridad y
+    las protecciones contra saturación están diseñadas precisamente para ayudar a garantizarla. Esto funciona
+    identificando tipos de ataque de saturación comunes como saturaciones SYN o UDP. Luego, activa las alertas cuando
+    se alcanza un umbral configurable de tráfico. Hay otro umbral, llamado umbral de activación. Cuando se alcanza este
+    umbral, se activa una acción preconfigurada. Normalmente, esto bloqueará el tráfico de ataque identificado por un
+    período de tiempo específico. Esta suele ser una función que viene en routers o firewalls de calidad empresarial,
+    aunque es un concepto de seguridad general.<br>
+    Una herramienta común de protección contra saturaciones de código abierto es "<strong>fail-to-ban</strong>". Busca
+    señales de un ataque a un sistema y bloquea otros intentos de una dirección de ataque sospechosa. Fail-to-ban es
+    una herramienta popular para organizaciones de menor escala. Esta protección contra saturación también puede
+    describirse como una forma de sistema de prevención de intrusiones.<br>
+    La <strong>separación o segmentación de red</strong> es un buen principio de seguridad para que un especialista en
+    soporte de TI implemente. Permite una gestión más flexible de la red y proporciona algunos beneficios de seguridad.
+    Este es el concepto de usar VLAN para crear redes virtuales para diferentes clases o tipos de dispositivos. Piensa
+    en esto como crear redes virtuales específicas para que las utilicen tus empleados, pero también tener redes
+    separadas para que se conecten tus impresoras. En realidad, ese es uno de los beneficios de la separación de red,
+    ya que podemos controlar y monitorear el flujo de tráfico entre redes más fácilmente.<br>
     <a href=
     "https://www.cisco.com/c/en/us/td/docs/security/security_management/cisco_security_manager/security_manager/4-1/user/guide/CSMUserGuide_wrapper/fwaccess.html">
     https://www.cisco.com/c/en/us/td/docs/security/security_management/cisco_security_manager/security_manager/4-1/user/guide/CSMUserGuide_wrapper/fwaccess.html</a><br>
@@ -92,42 +92,42 @@
     <a href=
     "https://technet.microsoft.com/en-us/library/cc754274(v=ws.11).aspx">https://technet.microsoft.com/en-us/library/cc754274(v=ws.11).aspx</a><br>
 
-    <h3>Endurecimiento de hardware de red</h3>
+    <h3>Endurecimiento de hardware de red</h3><br>
     DHCP es un objetivo de los atacantes por la importante naturaleza del servicio que presta. Si un atacante logra
     implementar un servidor DHCP no autorizado en tu red, podría entregar concesiones DHCP con la información que
     desee. Esto incluye configurar una dirección de puerta de enlace o servidor DNS que, en realidad, sea una máquina
     bajo su control. Esto les da acceso a tu tráfico y abre la puerta para futuros ataques. A este tipo de ataque lo
-    llamamos ataque de servidor DHCP no autorizado.<br>
+    llamamos <strong>ataque de servidor DHCP no autorizado</strong>.<br>
     Para protegerse contra este ataque de servidor DHCP no autorizado, los conmutadores empresariales ofrecen una
-    función llamada snooping de DHCP. Un conmutador que tiene snooping de DHCP supervisará el tráfico DHCP que se envía
-    a través de él. También rastreará las asignaciones de IP y las mapeará a los hosts conectados a los puertos del
-    conmutador. Básicamente, esto crea un mapa de direcciones IP asignadas a puertos de conmutadores físicos. Esta
-    información también se puede utilizar para protegerse contra la suplantación de IP y los ataques de envenenamiento
-    ARP. El snooping de DHCP también te hace designar una IP de servidor DHCP de confianza, si opera como un ayudante
-    de DHCP y reenvía solicitudes DHCP al servidor, o puedes habilitar la confianza de snooping de DHCP en el puerto de
-    enlace ascendente, de dónde vendrían ahora las respuestas legítimas de DHCP. Ahora, cualquier respuesta DHCP
-    proveniente de una dirección IP no confiable o de un puerto de conmutador de enlace descendente se detectaría como
-    no confiable y sería descartada por el conmutador.<br>
+    función llamada <strong>snooping de DHCP</strong>. Un conmutador que tiene snooping de DHCP supervisará el tráfico
+    DHCP que se envía a través de él. También rastreará las asignaciones de IP y las mapeará a los hosts conectados a
+    los puertos del conmutador. Básicamente, esto crea un mapa de direcciones IP asignadas a puertos de conmutadores
+    físicos. Esta información también se puede utilizar para protegerse contra <em>la suplantación de IP y los ataques
+    de envenenamiento ARP</em>. El snooping de DHCP también te hace designar una IP de servidor DHCP de confianza, si
+    opera como un ayudante de DHCP y reenvía solicitudes DHCP al servidor, o puedes habilitar la confianza de snooping
+    de DHCP en el puerto de enlace ascendente, de dónde vendrían ahora las respuestas legítimas de DHCP. Ahora,
+    cualquier respuesta DHCP proveniente de una dirección IP no confiable o de un puerto de conmutador de enlace
+    descendente se detectaría como no confiable y sería descartada por el conmutador.<br>
     Debido a su naturaleza sin autenticación, ARP posibilita una capa para un ataque de intermediario. Permite que un
     atacante falsifique una respuesta ARP anunciando su dirección MAC como la dirección física que coincide con la
-    dirección IP de la víctima. Este tipo de respuesta ARP se llama respuesta ARP no solicitada, ya que, efectivamente,
-    implica responder a una consulta que nadie hizo. Cuando esto sucede, todos los clientes en el segmento de la red
-    local almacenarán en caché esta entrada ARP. Debido a la entrada de ARP falsificada, envían a la máquina del
-    atacante tramas destinadas a la dirección IP de la víctima. El atacante podría habilitar el reenvío de IP, lo que
-    le permitiría supervisar de forma transparente el tráfico destinado a la víctima.<br>
-    La inspección de ARP dinámicas, o DAI, es otra función incluida en los conmutadores empresariales que impide este
-    tipo de ataque. Requiere el uso del snooping de DHCP para establecer una vinculación de confianza de direcciones IP
-    a los puertos del conmutador. DAI detectará estos falsos paquetes ARP no solicitados y los descartará. Lo hace
-    porque tiene una tabla de snooping de DHCP que tiene las asignaciones de direcciones IP autoritativas por puerto.
-    DAI también impone una gran limitación de paquetes ARP por puerto para evitar el escaneo ARP. Es probable que un
-    atacante escanee ARP antes de intentar el ataque ARP.<br>
-    Para impedir ataques de suplantación de IP, se puede habilitar la protección de fuente de IP, o IPSG, en
-    conmutadores empresariales junto con el snooping de DHCP. Funciona usando la tabla de snooping de DHCP para crear
-    dinámicamente las ACL para cada centralita. Esto descarta los paquetes que no coinciden con la dirección IP del
-    puerto tomando como base la tabla de snooping de DHCP.<br>
+    dirección IP de la víctima. Este tipo de respuesta ARP se llama <strong>respuesta ARP no solicitada</strong>, ya
+    que, efectivamente, implica responder a una consulta que nadie hizo. Cuando esto sucede, todos los clientes en el
+    segmento de la red local almacenarán en caché esta entrada ARP. Debido a la entrada de ARP falsificada, envían a la
+    máquina del atacante tramas destinadas a la dirección IP de la víctima. El atacante podría habilitar el reenvío de
+    IP, lo que le permitiría supervisar de forma transparente el tráfico destinado a la víctima.<br>
+    La <strong>inspección de ARP dinámicas</strong>, o <strong>DAI</strong>, es otra función incluida en los
+    conmutadores empresariales que impide este tipo de ataque. Requiere el uso del snooping de DHCP para establecer una
+    vinculación de confianza de direcciones IP a los puertos del conmutador. DAI detectará estos falsos paquetes ARP no
+    solicitados y los descartará. Lo hace porque tiene una tabla de snooping de DHCP que tiene las asignaciones de
+    direcciones IP autoritativas por puerto. DAI también impone una gran limitación de paquetes ARP por puerto para
+    evitar el escaneo ARP. Es probable que un atacante escanee ARP antes de intentar el ataque ARP.<br>
+    Para impedir ataques de suplantación de IP, se puede habilitar la <strong>protección de fuente de IP</strong>, o
+    <strong>IPSG</strong>, en conmutadores empresariales junto con el snooping de DHCP. Funciona usando la tabla de
+    snooping de DHCP para crear dinámicamente las ACL para cada centralita. Esto descarta los paquetes que no coinciden
+    con la dirección IP del puerto tomando como base la tabla de snooping de DHCP.<br>
     802.1X es el estándar IEEE para encapsular tráfico EAP, o Protocolo de autenticación extensible, sobre redes 802.
-    Esto también se llama EAP sobre LAN o EAPoL. Fue diseñado originalmente para Ethernet, pero se le agregó
-    compatibilidad para otros tipos de redes como Wi-Fi y de fibra óptica.<br>
+    Esto también se llama <strong>EAP sobre LAN</strong> o <strong>EAPoL</strong>. Fue diseñado originalmente para
+    Ethernet, pero se le agregó compatibilidad para otros tipos de redes como Wi-Fi y de fibra óptica.<br>
     Cuando un cliente quiere autenticarse en una red usando 802.1X, hay tres partes involucradas. El dispositivo
     cliente es lo que llamamos el suplicante. A veces también se usa para referirse al software que se ejecuta en la
     máquina cliente que maneja el proceso de autenticación para el usuario. La utilidad de código abierto de Linux
@@ -137,10 +137,10 @@
     inalámbricas. Es importante señalar que si bien es el suplicante quien se comunica con el autenticador, en
     realidad, no es el autenticador el que toma la decisión de autenticación. El autenticador actúa como un
     intermediario y reenvía la solicitud de autenticación al servidor de autenticación. Ahí es donde se produce la
-    verificación y autenticación de credenciales. El servidor de autenticación suele ser un servidor RADIUS. EAP-TLS es
-    un tipo de autenticación admitido por EAP que usa TLS para proporcionar autenticación mutua tanto del cliente como
-    del servidor de autenticación. Esto se considera una de las configuraciones más confiables para la seguridad
-    inalámbrica.<br>
+    verificación y autenticación de credenciales. El servidor de autenticación suele ser un servidor RADIUS.
+    <strong>EAP-TLS</strong> es un tipo de autenticación admitido por EAP que usa TLS para proporcionar autenticación
+    mutua tanto del cliente como del servidor de autenticación. Esto se considera una de las configuraciones más
+    confiables para la seguridad inalámbrica.<br>
     Cuando se implementa TLS para el tráfico HTTPS, especifica el certificado de un cliente como un factor de
     autenticación opcional. De manera similar, la mayoría de las implementaciones de EAP-TLS requieren certificados del
     lado del cliente. La autenticación puede ser basada en certificado, lo que requiere que un cliente presente un
@@ -154,33 +154,35 @@
     plataformas de clientes mediante TPM. Esto evitaría el robo de los certificados de las máquinas cliente. Cuando
     combinas esto con FDE, incluso el robo de una computadora impediría poner en riesgo la red.<br>
     <a href="https://es.wikipedia.org/wiki/IEEE_802.1X">https://es.wikipedia.org/wiki/IEEE_802.1X</a><br>
-    <h3>Endurecimiento de software de red</h3>
+    <h3>Endurecimiento de software de red</h3><br>
     Como mencionamos antes, los firewalls son críticos para proteger una red. Se pueden implementar como dispositivos
     de infraestructura de red especializados que regulan el flujo de tráfico para toda una red. También pueden estar
     basados en host, como el software que se ejecuta en un sistema cliente y proporciona protección para ese único
     host. Generalmente se recomienda implementar ambas soluciones.<br>
-    Un firewall de seguridad basado en host brinda protección a dispositivos móviles como una laptop que podría usarse
-    en un entorno que no sea de confianza y sea potencialmente malicioso como un hotspot Wi-Fi en un aeropuerto. Los
-    firewalls basados en host también son útiles para impedir que otros hosts sean puestos en riesgo por un dispositivo
-    corrupto en la red interna. Eso es algo que un firewall basado en red tal vez no pueda ayudarte a defender. Es casi
-    seguro que te encontrarás con firewalls basados en host, ya que todos los principales sistemas operativos los
-    incorporan en la actualidad.<br>
-    También se recomiendan las redes VPN para proporcionar acceso seguro a recursos internos para usuarios móviles o de
-    roaming. Las VPN se usan comúnmente para brindar acceso remoto seguro y vincular dos redes de forma segura.<br>
-    Los proxies pueden ser realmente útiles para proteger los dispositivos cliente y su tráfico. También proporcionan
-    acceso remoto seguro sin necesidad de una VPN. Se puede configurar un proxy web estándar para dispositivos cliente.
-    Esto permite hacer pasar el tráfico web a través de un servidor proxy que controlamos para muchos propósitos. Esta
-    configuración puede usarse para registrar solicitudes web de dispositivos cliente. Los dispositivos pueden usarse
-    para registros, análisis de tráfico y también para investigación forense. El servidor proxy puede configurarse para
-    bloquear contenido que pueda ser malicioso, peligroso o que simplemente vaya contra la política de la empresa.<br>
-    Se puede configurar un proxy inverso para permitir acceso remoto seguro a servicios web sin necesidad de una VPN.
-    Al configurar un proxy inverso en el perímetro de tu red, la solicitudes de conexión a servicios dentro de la red
-    que vienen desde afuera son interceptadas por el proxy inverso. Luego, se las envía al servicio interno con el
-    proxy inverso haciendo de relé. Esto une las comunicaciones entre el cliente remoto fuera de la red y el servicio
-    interno. Esta configuración de proxy se puede proteger aún más mediante el uso de certificados TLS de cliente junto
-    con la autenticación por nombre de usuario y contraseña. También se pueden configurar ACL específicas en el proxy
-    inverso para restringir aún más el acceso. Muchas de las soluciones populares de proxy admiten una configuración de
-    proxy inversa, como HAProxy, Nginx e incluso Apache Web Server.<br>
+    Un <strong>firewall de seguridad basado en host</strong> brinda protección a dispositivos móviles como una laptop
+    que podría usarse en un entorno que no sea de confianza y sea potencialmente malicioso como un hotspot Wi-Fi en un
+    aeropuerto. Los firewalls basados en host también son útiles para impedir que otros hosts sean puestos en riesgo
+    por un dispositivo corrupto en la red interna. Eso es algo que un firewall basado en red tal vez no pueda ayudarte
+    a defender. Es casi seguro que te encontrarás con firewalls basados en host, ya que todos los principales sistemas
+    operativos los incorporan en la actualidad.<br>
+    También se recomiendan las <strong>redes VPN</strong> para proporcionar acceso seguro a recursos internos para
+    usuarios móviles o de roaming. Las VPN se usan comúnmente para brindar acceso remoto seguro y vincular dos redes de
+    forma segura.<br>
+    Los <strong>proxies</strong> pueden ser realmente útiles para proteger los dispositivos cliente y su tráfico.
+    También proporcionan acceso remoto seguro sin necesidad de una VPN. Se puede configurar un proxy web estándar para
+    dispositivos cliente. Esto permite hacer pasar el tráfico web a través de un servidor proxy que controlamos para
+    muchos propósitos. Esta configuración puede usarse para registrar solicitudes web de dispositivos cliente. Los
+    dispositivos pueden usarse para registros, análisis de tráfico y también para investigación forense. El servidor
+    proxy puede configurarse para bloquear contenido que pueda ser malicioso, peligroso o que simplemente vaya contra
+    la política de la empresa.<br>
+    Se puede configurar un <strong>proxy inverso</strong> para permitir acceso remoto seguro a servicios web sin
+    necesidad de una VPN. Al configurar un proxy inverso en el perímetro de tu red, la solicitudes de conexión a
+    servicios dentro de la red que vienen desde afuera son interceptadas por el proxy inverso. Luego, se las envía al
+    servicio interno con el proxy inverso haciendo de relé. Esto une las comunicaciones entre el cliente remoto fuera
+    de la red y el servicio interno. Esta configuración de proxy se puede proteger aún más mediante el uso de
+    certificados TLS de cliente junto con la autenticación por nombre de usuario y contraseña. También se pueden
+    configurar ACL específicas en el proxy inverso para restringir aún más el acceso. Muchas de las soluciones
+    populares de proxy admiten una configuración de proxy inversa, como HAProxy, Nginx e incluso Apache Web Server.<br>
     <a href=
     "http://www.haproxy.org/#docs,%20http://cbonte.github.io/haproxy-dconv/1.8/intro.html#3.3.1">http://www.haproxy.org/#docs,%20http://cbonte.github.io/haproxy-dconv/1.8/intro.html#3.3.1</a><br>
 
