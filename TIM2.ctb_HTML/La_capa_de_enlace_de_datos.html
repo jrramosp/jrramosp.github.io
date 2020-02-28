@@ -9,8 +9,7 @@
 </head>
 <body>
   <a name="h2-1" id="h2-1"></a>
-  <h2><strong>La capa de enlace de datos</strong></h2><br>
-  <br>
+  <h2>La capa de enlace de datos</h2>
   <a name="h3-1" id="h3-1"></a>
   <h3>Direcciones Ethernet y MAC</h3>
   El <em>protocolo que más se usa para enviar datos a través de enlaces individuales</em> se conoce como
@@ -18,8 +17,7 @@
   los niveles más altos de la pila envíe y reciba datos. Básicamente, uno de los propósitos principales de esta
   capa es abstraer la necesidad de que otras capas se hagan cargo de la capa física y del hardware en uso. Al
   transferir esta responsabilidad a la capa de enlace de datos, las capas de Internet, transporte y aplicación
-  pueden funcionar de la misma manera sin importar cómo se conecte el dispositivo en el que se ejecutan.<br>
-  <br>
+  pueden funcionar de la misma manera sin importar cómo se conecte el dispositivo en el que se ejecutan.
   Ethernet es una tecnología bastante antigua. Nació en 1980 y su primera estandarización bien acabada vio la luz
   en 1983. Entonces, las redes de computadoras eran totalmente diferentes a las de hoy. Una de las diferencias
   notables en la topología LAN era que el conmutador o concentrador conmutable no se había inventado aún. Esto
@@ -37,8 +35,7 @@
   computadoras detectan esta colisión y dejan de hacerlo. Luego, cada dispositivo involucrado en la colisión
   espera durante un intervalo aleatorio de tiempo antes de intentar enviar datos de nuevo. Este intervalo
   aleatorio ayuda a prevenir que todas las computadoras involucradas en la colisión vuelvan a colisionar la
-  próxima vez que intenten transmitir algo.<br>
-  <br>
+  próxima vez que intenten transmitir algo.
   Cuando un segmento de red es un dominio de colisión, todos los dispositivos ubicados en ese segmento reciben
   todas las comunicaciones de todo el segmento, lo que implica que necesitamos una manera de identificar a qué
   nodo estaba destinada la transmisión. Aquí es donde entra en juego algo conocido como <strong>dirección de
@@ -57,7 +54,6 @@
   envía tengan una dirección para la máquina que envió la transmisión y otra dirección para la que debía recibir
   esa transmisión. De esta manera, incluso en un segmento de red que actúa como un dominio de colisión simple,
   cada nodo en esa red sabe cuándo el tráfico está destinado para sí.<br>
-  <br>
   <a name="h3-2" id="h3-2"></a>
   <h3>Unicast, Multicast y Broadcast</h3>
   Hasta aquí, hablamos de las formas que existen para que un dispositivo transmita datos a otro dispositivo. Esto
@@ -66,21 +62,18 @@
   especial en la dirección MAC de destino. Si el bit menos significativo en el primer octeto de una dirección de
   destino tiene un valor igual a cero, eso significa que la trama de Ethernet está dirigida solo a la dirección de
   destino. Esto implica que se la enviará a todos los dispositivos en el dominio de colisión, pero solo será
-  recibida y procesada por el destino previsto.<br>
-  <br>
+  recibida y procesada por el destino previsto.
   Si el bit menos significativo en el primer octeto de una dirección de destino tiene un valor igual a uno, eso
   quiere decir que estás tratando con una trama de <strong>multidifusión</strong> (multicast). Una trama de
   multidifusión está configurada de manera similar para todos los dispositivos en la señal de la red local. La
   diferencia es que será aceptada o descartada por cada dispositivo dependiendo de ciertos criterios, al margen de
   su propia dirección MAC de hardware. Las interfaces de red se pueden configurar para que acepten listas de
-  direcciones de multidifusión configuradas para este tipo de comunicación.<br>
-  <br>
+  direcciones de multidifusión configuradas para este tipo de comunicación.
   El tercer tipo de transmisión de Ethernet se conoce como <strong>difusión</strong> (broadcast). Se envía una
   difusión por Ethernet. a cada uno de los dispositivos en una LAN. Esto se logra mediante el uso de un destino
   especial conocido como dirección de difusión. La dirección de difusión de Ethernet está formada solo por efes
   (F). Las difusiones de Ethernet se usan de modo que los dispositivos puedan tener más información unos de
   otros.<br>
-  <br>
   <a name="h3-3" id="h3-3"></a>
   <h3>Disección de un marco Ethernet</h3>
   Un <strong>paquete de datos</strong> (data packet) es un término amplio que describe <em>cualquier conjunto

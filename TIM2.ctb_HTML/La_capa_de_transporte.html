@@ -9,14 +9,13 @@
 </head>
 <body>
   <a name="h2-1" id="h2-1"></a>
-  <h2><strong>Introducción a las capas de transporte y aplicación</strong></h2><br>
+  <h2>Introducción a las capas de transporte y aplicación</h2>
   Las tres primeras capas de nuestro modelo de red nos han ayudado a describir cómo los nodos individuales en una
   red se pueden comunicar con otros nodos en su propia red o en una red remota. Conectamos computadoras en red no
   solo para que puedan enviarse datos entre ellas, sino porque queremos que los programas que se ejecutan en esas
   computadoras puedan enviarse datos entre sí. En síntesis, <em>la capa de transporte permite que el tráfico se
   dirija a aplicaciones de red específicas. Y la capa de aplicación permite que estas aplicaciones se comuniquen
-  de una forma que entiendan.</em><br>
-  <br>
+  de una forma que entiendan.</em>
   <a name="h3-1" id="h3-1"></a>
   <h3>La capa de transporte</h3>
   La capa de transporte es responsable de muchas de las funciones, importantes para la disponibilidad de una red
@@ -34,8 +33,7 @@
   específicos las solicitudes entrantes.<br>
   Los puerto <em>son normalmente denotado con los dos puntos después de la dirección IP.</em> Así que la IP y
   puerto en este escenario pudieran ser descritos como 10.1.1.100:80 Cuando son escritos en esta forma, es
-  conocido como <strong>dirección de socket</strong> o numero de socket.<br>
-  <br>
+  conocido como <strong>dirección de socket</strong> o numero de socket.
   <a name="h3-2" id="h3-2"></a>
   <h3>Disección de un segmento TCP</h3>
   Así como una trama de Ethernet encapsula un datagrama IP, un datagrama IP encapsula un segmento TCP. Un segmento
@@ -70,8 +68,7 @@
   se ha adoptado y que probablemente nunca encuentres en redes modernas.<br>
   • A continuación, tenemos el campo de <strong>opciones</strong>.<br>
   • Por último, tenemos un <strong>relleno</strong> que es solo una secuencia de ceros para asegurarnos de que la
-  sección de carga útil de datos comience en la ubicación esperada.<br>
-  <br>
+  sección de carga útil de datos comience en la ubicación esperada.
   <a name="h3-3" id="h3-3"></a>
   <h3>Banderas de control TCP y el apretón de manos de tres vías</h3>
   La forma en que TCP establece una conexión, es a través del uso de diferentes campos de control TCP.<br>
@@ -115,8 +112,7 @@
   computador esta listo también para cerrar la conexión, lo cual sera el caso casi siempre. Enviara una señal FIN.
   Esto es de nuevo contestado con una señal ACK.<br>
   Hipotéticamente, una conexión TCP puede mantenerse abierta en modo simplex con solamente una parte cerrando la
-  conexión. pero esto no es algo que usted vera frecuentemente.<br>
-  <br>
+  conexión. pero esto no es algo que usted vera frecuentemente.
   <a name="h3-4" id="h3-4"></a>
   <h3>Estados de socket TCP</h3>
   Un <strong>socket</strong> es la creación de instancias de un terminal en una conexión TCP potencial. Una
@@ -141,8 +137,7 @@
   Hay otros estados de socket TCP. Además, los estados de socket y sus nombres pueden variar de un sistema
   operativo a otro. Eso es porque existen fuera del alcance de la definición misma de TCP. TCP, como protocolo, es
   universal en su modo de uso, ya que todos los dispositivos que se comunican en el protocolo TCP tiene que
-  hacerlo exactamente de la misma manera para que las comunicaciones sean exitosas.<br>
-  <br>
+  hacerlo exactamente de la misma manera para que las comunicaciones sean exitosas.
   <a name="h3-5" id="h3-5"></a>
   <h3>Protocolos orientados a la conexión y sin conexión</h3>
   Un protocolo <strong>orientado a la conexión</strong> es uno que <em>establece una conexión y se asegura de que
@@ -166,8 +161,7 @@
   acuse de recibo. Con UDP, apenas estableces un puerto de destino y envías el paquete. Esto es útil para mensajes
   que no son importantísimos. Esto se debe a que ahorrarás más ancho de banda disponible para transferir datos
   reales en lugar de la sobrecarga que resulta de establecer conexiones y reconocer segmentos de datos
-  entregados.<br>
-  <br>
+  entregados.
   <a name="h3-6" id="h3-6"></a>
   <h3>Sistema de puertos contra puertos efímeros</h3>
   Los protocolos de la capa de transporte utilizan un concepto de puertos y multiplexación / demultiplexación para
@@ -198,9 +192,7 @@
   puertos 49152 a 65535. Pero es importante saber que este rango exacto puede variar según la plataforma en la que
   estés trabajando. A veces, se utilizan partes del rango de puertos registrados, pero ningún sistema operativo
   moderno utilizará un puerto del sistema para la comunicación de salida. <a href=
-  "https://es.wikipedia.org/wiki/Anexo:N%C3%BAmeros_de_puertos_de_red">https://es.wikipedia.org/wiki/Anexo:N%C3%BAmeros_de_puertos_de_red</a><br>
-
-  <br>
+  "https://es.wikipedia.org/wiki/Anexo:N%C3%BAmeros_de_puertos_de_red">https://es.wikipedia.org/wiki/Anexo:N%C3%BAmeros_de_puertos_de_red</a>
   <a name="h3-7" id="h3-7"></a>
   <h3>Cortafuegos</h3>
   Un <strong>firewall</strong> es <em>un dispositivo que bloquea el tráfico que cumple ciertos criterios.</em> Los

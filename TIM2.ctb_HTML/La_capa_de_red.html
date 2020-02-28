@@ -9,8 +9,7 @@
 </head>
 <body>
   <a name="h2-1" id="h2-1"></a>
-  <h2><strong>La capa de red</strong></h2><br>
-  <br>
+  <h2>La capa de red</h2>
   <a name="h3-1" id="h3-1"></a>
   <h3>Direcciones IP</h3>
   Las direcciones IP (Internet Protocol) tienen <em>números de 32 bits compuestos por 4 octetos y cada octeto se describe normalmente
@@ -26,8 +25,7 @@
   <strong>IP dinámica</strong>. Lo contrario de esto se conoce como una dirección <strong>IP estática</strong>, la
   que debe configurarse en un nodo de manera manual. En la mayoría de los casos, las direcciones IP estáticas
   están reservadas para servidores y dispositivos de red, mientras que las IP dinámicas están reservadas para los
-  clientes. Sin embargo, existen ciertas situaciones en las que esto no es del todo cierto.<br>
-  <br>
+  clientes. Sin embargo, existen ciertas situaciones en las que esto no es del todo cierto.
   <a name="h3-2" id="h3-2"></a>
   <h3>Datagramas de IP y encapsulación</h3>
   En virtud del protocolo IP, a un paquete se lo conoce, por lo general, como un datagrama IP. Las dos secciones
@@ -77,15 +75,13 @@
   especiales para datagramas usados principalmente con fines de prueba.<br>
   • Suele ir seguido de un <strong>campo de relleno</strong>. Dado que el campo Opciones de IP es opcional y de
   longitud variable, el campo de relleno es solo una serie de ceros utilizados para asegurarse de que el
-  encabezado tenga el tamaño total indicado.<br>
-  <br>
+  encabezado tenga el tamaño total indicado.
   Quizás recuerdes que en nuestro desglose de una trama de Ethernet mencionamos una sección que describimos como
   la sección de carga útil de datos. Un datagrama IP es exactamente esto, y este proceso se conoce como
   <strong>encapsulación</strong>. Todo el contenido de un datagrama IP se encapsula como la carga útil de una
   trama Ethernet. Tal vez hayas notado que nuestro datagrama IP también tiene una sección de carga útil. El
   contenido de esta carga útil es la totalidad de un paquete TCP o UDP.<br>
-  <img src="images/2-3.png" alt="images/2-3.png"><br>
-  <br>
+  <img src="images/2-3.png" alt="images/2-3.png">
   <a name="h3-3" id="h3-3"></a>
   <h3>Clases de direcciones IP</h3>
   Las direcciones IP se pueden dividir en dos secciones, <strong>la ID de red y la ID de host</strong>. Hay tres
@@ -117,8 +113,7 @@
   solo se utilizan con fines de prueba.<br>
   <img src="images/2-4.png" alt="images/2-4.png"><br>
   Este sistema de clases fue reemplazado en su mayoría por un sistema conocido como <strong>CIDR</strong> o
-  "enrutamiento entre dominios sin clases".<br>
-  <br>
+  "enrutamiento entre dominios sin clases".
   <a name="h3-4" id="h3-4"></a>
   <h3>Protocolo de resolución de direcciones(ARP)</h3>
   Ahora entiendes cómo se utilizan ambas direcciones MAC en el enlace de datos y cómo se utilizan las direcciones
@@ -139,8 +134,7 @@
   está lista para la entrega. También es probable que almacene esta dirección IP en su tabla ARP local para que no
   tenga que enviar una transmisión ARP la próxima vez que necesite comunicarse con esta IP. Las entradas de la
   tabla ARP generalmente caducan después de un corto período de tiempo para garantizar que los cambios en la red
-  se tengan en cuenta.<br>
-  <br>
+  se tengan en cuenta.
   <a name="h3-5" id="h3-5"></a>
   <h3>Subnetting</h3>
   La <strong>subdivisión de redes</strong> es <em>el proceso de tomar una red grande y dividirla en redes
@@ -150,8 +144,7 @@
   que quizás solo pueden comunicarse con otros routers principales. Todo esto tiene sentido hasta que recuerdas
   que una sola red de clase A contiene 16,777,216 IP individuales. Con las subredes, puedes dividir una gran red
   en muchas más pequeñas. Todas estas subredes individuales tendrán sus propios routers de puerta de enlace que
-  sirven como puntos de entrada y salida para cada subred.<br>
-  <br>
+  sirven como puntos de entrada y salida para cada subred.
   <a name="h3-6" id="h3-6"></a>
   <h3>Máscaras de subred</h3>
   Hasta ahora, aprendimos acerca de las ID de red, que se utilizan para identificar redes, y las ID de host, que
@@ -205,8 +198,7 @@
   200.3.25.62 y su dirección de broadcast es la 200.3.25.63, sería la primera subred valida o asignable a
   maquinas.<br>
   Y así sucesivamente; de cada subred a la siguiente, el último byte aumenta en 32. Dependiendo del tipo de
-  máscara de subred utilizado.<br>
-  <br>
+  máscara de subred utilizado.
   <a name="h3-7" id="h3-7"></a>
   <h3>Matemáticas Binarias Básicas</h3>
   Debido a restricciones de funcionamiento de las puertas lógicas dentro de un procesador, es mucho más fácil para
@@ -226,8 +218,7 @@
   porque será todo lo que sobre. Una vez que coloques una encima de la otra y apliques un operador AND binario en
   cada columna, notarás que el resultado es la porción de ID de red y de ID de subred de nuestra dirección IP. La
   computadora que acaba de realizar esta operación ahora puede comparar los resultados con su propia ID de red
-  para determinar si la dirección está en la misma red o en otra diferente.<br>
-  <br>
+  para determinar si la dirección está en la misma red o en otra diferente.
   <a name="h3-8" id="h3-8"></a>
   <h3>CIDR (Classless Inter-Domain Routing)</h3>
   Las clases de direcciones fueron el primer intento de dividir el espacio IP global de Internet. La división en
@@ -264,8 +255,7 @@
 
   <br>
   <a name="h2-2" id="h2-2"></a>
-  <h2><strong>Enrutamiento</strong></h2><br>
-  <br>
+  <h2><strong>Enrutamiento</strong></h2>
   <a name="h3-9" id="h3-9"></a>
   <h3>Conceptos básicos de enrutamiento</h3>
   Un <em>router es un dispositivo de red que reenvía el tráfico según la dirección de destino de ese tráfico</em>.
@@ -289,8 +279,7 @@
   Con el fin de proteger contra las interrupciones, los routers centrales de Internet están típicamente conectados
   en una malla, lo que implica que puede haber muchos caminos diferentes para que un paquete tome. Los routers
   inspeccionan la IP de destino, miran la tabla de enrutamiento para determinar el camino más rápido y reenvían el
-  paquete por ese camino.<br>
-  <br>
+  paquete por ese camino.
   <a name="h3-10" id="h3-10"></a>
   <h3>Tablas de enrutamiento</h3>
   La tabla de enrutamiento más básica tendrá cuatro columnas.<br>
@@ -312,8 +301,7 @@
   información actualizada de routers vecinos, sabrá si conoce actualmente el mejor camino o si hay un nuevo mejor
   camino disponible.<br>
   • <strong>Interfaz</strong>: el router también tiene que saber a cuál de sus interfaces debe reenviar el tráfico
-  que coincida con la red de destino.<br>
-  <br>
+  que coincida con la red de destino.
   <a name="h3-11" id="h3-11"></a>
   <h3>Protocolos de puerta de enlace interior</h3>
   Para conocer el mundo que los rodea, los routers usan lo que se conoce como <em>protocolos de enrutamiento</em>.

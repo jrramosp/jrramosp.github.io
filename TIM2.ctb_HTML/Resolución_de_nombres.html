@@ -9,8 +9,7 @@
 </head>
 <body>
   <a name="h2-1" id="h2-1"></a>
-  <h2><strong>Resolución de nombres</strong></h2><br>
-  <br>
+  <h2>Resolución de nombres</h2>
   <a name="h3-1" id="h3-1"></a>
   <h3>¿Por qué necesitamos DNS?</h3>
   DNS, o <strong>sistema de nombres de dominio</strong>. DNS es <em>un servicio de red global y altamente
@@ -26,8 +25,7 @@
   experiencia al acceder a tu sitio web. Así que en lugar de mantener todos tus servidores web en un solo lugar,
   podrías distribuirlos por centros de datos en todo el mundo. Debido a su estructura global, DNS permite a las
   organizaciones decidir, si estás en la región, resolver el nombre de dominio a esta IP. Si estás en esta otra
-  región, resolver este dominio a esta otra IP.<br>
-  <br>
+  región, resolver este dominio a esta otra IP.
   <a name="h3-2" id="h3-2"></a>
   <h3>Los muchos pasos de la resolución de nombres</h3>
   En su forma más básica, DNS es <em>un sistema que convierte nombres de dominio en direcciones IP</em>. Este
@@ -59,8 +57,7 @@
   un servidor de nombres almacene una entrada en la memoria caché antes de que deba descartarla y volver a
   realizar una resolución completa. Podrías encontrar nombres de dominios con TTL muy largos, lo que significa que
   puede llevar la duración completa de un TTL para que Internet en su totalidad conozca un cambio en el registro
-  de DNS.<br>
-  <br>
+  de DNS.
   Ahora, veamos <em>que sucede cuando tu servidor recursivo local necesita realizar una resolución recursiva
   completa</em>:<br>
   El primer paso es siempre <strong>contactar con un servidor llamado raíz</strong>; hay 13 servidores raíz de
@@ -99,8 +96,7 @@
   nombres locales almacenen las búsquedas de DNS en caché. Es para no tener que hacer una búsqueda de ruta
   completa para cada conexión TCP. De hecho, tu computadora local, desde tu teléfono a un equipo de escritorio,
   generalmente también tendrá su propia memoria caché DNS temporal. De esa manera, tampoco tiene que molestar a su
-  servidor de nombres local para cada conexión TCP.<br>
-  <br>
+  servidor de nombres local para cada conexión TCP.
   <a name="h3-3" id="h3-3"></a>
   <h3>DNS y UDP</h3>
   DNS es un gran ejemplo de <em>un servicio de capa de aplicación que usa UDP para la capa de transporte en lugar
