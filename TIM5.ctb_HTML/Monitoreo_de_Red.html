@@ -3,17 +3,15 @@
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Monitoreo de Red</title>
     <meta name="generator" content="CherryTree">
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
-    <h2>Monitoreo de Red</h2>
-    <h3>Olfateando la red</h3>
-    Para supervisar qué tipo de tráfico hay en tu red, necesitas un mecanismo para capturar paquetes del tráfico de red
-    para análisis y registro potencial. La <strong>detección (sniffing) o captura de paquetes</strong> es un proceso de
-    intercepción de paquetes de red en su totalidad para su análisis.<br>
+    <h2>Monitoreo de Red</h2><a name="h3-1" id="h3-1"></a>
+    <h3>Olfateando la red</h3>Para supervisar qué tipo de tráfico hay en tu red, necesitas un mecanismo para capturar
+    paquetes del tráfico de red para análisis y registro potencial. La <strong>detección (sniffing) o captura de
+    paquetes</strong> es un proceso de intercepción de paquetes de red en su totalidad para su análisis.<br>
     De manera predeterminada, las interfaces de red y la pila de software de red en un SO se van a comportar como una
     interfaz bien educada. Solo aceptarán y procesarán paquetes enviados con una dirección de interfaz específica,
     usualmente identificada por una dirección MAC. Si se encuentra un paquete con una dirección de destino diferente,
@@ -58,12 +56,13 @@
     utilidades inalámbricas de captura y supervisión de código abierto, como Aircrack-ng y Kismet. Es importante
     señalar que si una red inalámbrica está encriptada, aun así puedes capturar paquetes, pero no podrás decodificar
     las cargas útiles de tráfico sin conocer la contraseña de la red inalámbrica.<br>
-    <h3>Wireshark y tcpdump</h3>
-    <strong>Tcpdump</strong> es una utilidad ligera y súper popular, basada en línea de comandos, que puedes usar para
-    capturar y analizar paquetes. Tcpdump usa la biblioteca de código abierto libpcap. Es una biblioteca de captura de
-    paquetes muy popular que se usa en muchas herramientas de captura y análisis de paquetes. Tcpdump también admite
-    escribir las capturas de paquetes en un archivo para su análisis posterior, para compartirlas o para recrear el
-    tráfico. También admite la lectura de las capturas de paquetes desde de un archivo.<br>
+    <a name="h3-2" id="h3-2"></a>
+    <h3>Wireshark y tcpdump</h3><strong>Tcpdump</strong> es una utilidad ligera y súper popular, basada en línea de
+    comandos, que puedes usar para capturar y analizar paquetes. Tcpdump usa la biblioteca de código abierto libpcap.
+    Es una biblioteca de captura de paquetes muy popular que se usa en muchas herramientas de captura y análisis de
+    paquetes. Tcpdump también admite escribir las capturas de paquetes en un archivo para su análisis posterior, para
+    compartirlas o para recrear el tráfico. También admite la lectura de las capturas de paquetes desde de un
+    archivo.<br>
     El modo de funcionamiento predeterminado de tcpdump es proporcionar un breve análisis de paquetes. Convierte
     información clave a partir de la capa 3 en formatos legibles por humanos. Luego, imprime la información sobre cada
     paquete a la salida estándar, o directamente en tu terminal. Hace cosas como convertir las direcciones IP de origen
@@ -123,10 +122,10 @@
     análisis del tráfico se realiza mediante capturas y análisis de paquetes. El tráfico en una red es, básicamente, un
     flujo de paquetes. Poder capturar esos paquetes y lograr inspeccionarlos es importante para entender qué tipo de
     tráfico, del que fluye por nuestras redes, nos gustaría proteger.<br>
-    <h3>Sistemas de prevención / detección de intrusos</h3>
-    Los <em>sistemas de prevención y detección de intrusiones</em> <strong>IDS o IPS</strong> supervisan y analizan el
-    tráfico de red. ¿Qué es exactamente lo que hacen los sistemas IDS e IPS? Buscan comportamientos o características
-    que indiquen tráfico malicioso.<br>
+    <a name="h3-3" id="h3-3"></a>
+    <h3>Sistemas de prevención / detección de intrusos</h3>Los <em>sistemas de prevención y detección de
+    intrusiones</em> <strong>IDS o IPS</strong> supervisan y analizan el tráfico de red. ¿Qué es exactamente lo que
+    hacen los sistemas IDS e IPS? Buscan comportamientos o características que indiquen tráfico malicioso.<br>
     La diferencia entre un sistema IDS y un IPS es que IDS es solo un sistema de detección. No tomará medidas para
     bloquear o impedir un ataque cuando se lo detecte, solo registrará una alerta. Pero un sistema IPS puede ajustar
     las reglas del firewall sobre la marcha para bloquear o descartar el tráfico malicioso cuando lo detecte.<br>

@@ -1,131 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Clave pública o cifrado asimétrico</title>
-  <meta name="generator" content="Bluefish 2.2.10" >
-  <link rel="stylesheet" href="..\css\styles.css" type="text/css">
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Clave pública o cifrado asimétrico</title>
+    <meta name="generator" content="CherryTree">
+    <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
-  <h2>Clave pública o cifrado asimétrico</h2>
-  <h3>Criptografía asimétrica</h3>
-  Bueno, imaginemos que aquí hay dos personas que querrían comunicarse de manera segura. Los llamaremos Suzanne y
-  Daryll. Ya que están usando encriptación asimétrica en este ejemplo, lo primero que deben hacer es generar una
-  clave privada, luego, con esta clave privada, se obtiene una clave pública. La resistencia del sistema de
-  encriptación asimétrica proviene de la dificultad computacional de averiguar la clave privada correspondiente
-  dada una clave pública. Una vez que Suzanne y Daryll generaron pares de claves públicas y privadas, intercambian
-  las claves públicas. A partir de los nombres, podrías haber adivinado que la clave pública es pública y puede
-  compartirse con cualquiera, mientras que la clave privada debe mantenerse en secreto.<br>
-  Cuando Suzanne quiere enviar un mensaje encriptado a Daryll, ella usa la clave pública de Daryll para encriptar
-  el mensaje y luego enviar el texto cifrado. Daryll puede usar su clave privada para desencriptar el mensaje y
-  leerlo. Debido a la relación entre claves privadas y públicas, solo la clave privada de Daryll puede
-  desencriptar los mensajes encriptados mediante la clave pública de Daryll. Lo mismo ocurre con los pares de
-  claves de Suzanne. Cuando Daryll esté listo para responder al mensaje de Suzanne, usará la clave pública de
-  Suzanne para codificar su mensaje y Suzanne usará su clave privada para desencriptarlo.<br>
-  Acabamos de describir las operaciones de encriptación y desencriptación mediante un criptosistema asimétrico,
-  pero hay otra función muy útil que el sistema puede realizar, las firmas de claves públicas. Volvamos con
-  nuestros amigos Suzanne y Daryll. Supongamos que Suzanne quiere enviarle un mensaje a Daryll y quiere asegurarse
-  de que Daryll sepa que el mensaje vino de ella y de nadie más, y que el mensaje no fue modificado ni manipulado.
-  Ella podría hacer esto redactando el mensaje y combinándolo con su clave privada para generar una firma digital.
-  A continuación, envía este mensaje junto con la firma digital asociada a Daryll. Estamos suponiendo que Suzanne
-  y Daryll ya intercambiaron claves públicas previamente en este caso. Daryll ahora puede verificar el origen y la
-  autenticidad del mensaje combinando el mensaje, la firma digital y la clave pública de Suzanne. Si el mensaje
-  fue firmado con la clave privada de Suzanne y no con la de alguien más, y si el mensaje no se modificó en
-  absoluto, entonces la firma digital debería validarse. Sin verificación de mensaje, cualquiera podría usar la
-  clave pública de Daryll y enviarle un mensaje encriptado que diga que es de Suzanne.<br>
-  Los tres conceptos que nos otorga un criptosistema asimétrico son: confidencialidad,
-  autenticidad y no repudio.<br>
-  • La <strong>confidencialidad</strong> se otorga a través del mecanismo de encriptación/desencriptación, ya que nuestros datos
-  encriptados se mantienen en secreto y confidencialidad ante terceros no autorizados.<br>
-  • La <strong>autenticidad</strong> es otorgada por el mecanismo de firma digital, ya que se puede autenticar o verificar que el
-  mensaje no fue manipulado.<br>
-  • <strong>No repudio</strong> significa que el autor del mensaje no puede poner en duda su origen. En otras palabras, esto nos
-  permite asegurar que el mensaje vino de la persona que dice ser su autor.<br>
-  La encriptación asimétrica permite una comunicación segura a través de un canal no confiable, pero con la
-  encriptación simétrica necesitamos alguna forma de comunicar de manera segura el secreto compartido o la clave a
-  la otra parte.<br>
-  Si bien la encriptación asimétrica funciona realmente bien en entornos no confiables, también es más costosa y
-  compleja desde el punto de vista computacional. Por otra parte, los algoritmos de encriptación simétrica son más
-  rápidos y más eficientes, y encriptan grandes cantidades de datos. De hecho, lo que muchos esquemas de
-  comunicaciones seguras hacen es aprovechar las ventajas relativas de ambos tipos de encriptación y usan ambas,
-  para diferentes propósitos.<br>
-  Se elige un algoritmo de encriptación asimétrica como un mecanismo de intercambio de clave o cifrado. Lo que
-  esto significa, es que la clave de cifrado simétrica o el secreto compartido se transmiten de forma segura a la
-  otra parte mediante la encriptación asimétrica para mantener el secreto compartido seguro en tránsito. Una vez
-  recibido el secreto compartido, los datos pueden enviarse con rapidez, eficiencia y seguridad por medio de un
-  cifrado de encriptación asimétrica.<br>
-  Un último tema a mencionar está de algún modo relacionado con la encriptación asimétrica y son los
-  <strong>MAC</strong>, o <em>códigos de autenticación de mensajes</em>. No deben confundirse con el
-  control de acceso a los medios o las direcciones MAC. Un MAC es un trozo de información que permite la
-  autenticación de un mensaje recibido, lo que garantiza que el mensaje proviene del presunto remitente y no de un
-  tercero que se hace pasar por él. También garantiza que el mensaje no fue modificado de ninguna manera, con el
-  fin de brindar integridad de los datos. Esto suena muy similar a las firmas digitales que usan criptografía de
-  clave pública, ¿no? Aunque es muy similar, difiere ligeramente en que la clave secreta que se usa para generar
-  el MAC es la misma que se usa para verificarlo.<br>
-  Esto describe un tipo popular y seguro de MAC llamado <strong>HMAC</strong>, o <em>código de autenticación
-  de mensajes en clave-hash</em>. HMAC utiliza una función criptográfica de hash junto con una clave secreta
-  para generar un MAC. Se puede usar cualquier función criptográfica de hash como SHA-1 o MD5, y la resistencia o
-  seguridad del MAC depende de la seguridad subyacente de la función criptográfica de hash empleada. El MAC se
-  envía junto con el mensaje que se debe verificar. El receptor verifica el MAC realizando la misma operación
-  sobre el mensaje recibido, luego compara el MAC computado con el que se recibió con el mensaje. Si los MAC son
-  iguales, entonces el mensaje se autentica.<br>
-  También hay MAC basados en cifrados de encriptación simétrica, ya sean en bloque o de flujo, como DES o AES, que
-  se denominan <strong>CMAC</strong>, o <em>códigos de autenticación de mensajes basados en cifrado</em>.
-  El proceso es similar a HMAC, pero en lugar de usar una función de hash para elaborar un resumen, se usa un
-  cifrado simétrico con claves compartidas para encriptar el mensaje y la salida resultante se usa como MAC.<br>
-  <strong>CBC-MAC</strong> es un mecanismo para crear MAC por medio de cifrados de bloque. Esto funciona tomando un mensaje y
-  encriptándolo mediante un cifrado de bloque que funciona en modo CBC. El modo CBC es un modo de operación para
-  cifrados de bloque que incorpora un texto de cifrado de bloque pre encriptado en el texto sin formato del bloque
-  siguiente. Así, genera una cadena de bloques encriptados que requieren la totalidad de la cadena sin modificar
-  para su desencriptación. Esta cadena de bloques interdependientemente cifrados implica que cualquier
-  modificación al texto sin formato dará lugar a una salida final diferente al final de la cadena, lo que
-  garantiza la integridad del mensaje.<br>
-  <h3>Algoritmos de cifrado asimétrico</h3>
-  Uno de los primeros sistemas prácticos de criptografía asimétrica que se desarrolló es <strong>RSA</strong>,
-  cuyo nombre contiene las iniciales de sus tres inventores. Ron Rivest, Adi Shamir y Leonard Adleman. Este
-  sistema criptográfico se patentó en 1983 y fue lanzado al dominio público por RSA Security en el año 2000. El
-  sistema RSA especifica mecanismos de generación y distribución de claves junto con la operación de encriptación
-  y desencriptación que usa estas claves. Pero es importante saber que el proceso de generación de claves depende
-  de elegir dos números primos exclusivos, aleatorios y generalmente muy grandes.<br>
-  <strong>DSA</strong>, o <em>algoritmo de firma digital</em>, es otro ejemplo de un sistema de
-  encriptación asimétrica, aunque se utiliza para firmar y verificar datos. Fue patentado en 1991 y forma parte
-  del Estándar federal de procesamiento de información del Gobierno de los Estados Unidos. De manera similar a
-  RSA, la especificación abarca el proceso de generación de claves junto con la firma y verificación de los datos
-  mediante los pares de claves. Es importante señalar que la seguridad de este sistema depende de la elección de
-  un valor inicial aleatorio que se incorpora en el proceso de firma. Si este valor se filtró o si se puede
-  inferir si el número primo no es realmente aleatorio, entonces es posible que un atacante recupere la clave
-  privada.<br>
-  Otro algoritmo de intercambio de claves popular es <strong>DH</strong>, o Diffie-Hellman, que lleva el nombre de
-  sus inventores. Veamos cómo funciona el algoritmo de intercambio de claves DH. Supongamos que tenemos dos
-  personas que desean comunicarse a través de un canal no seguro. Los llamaremos Suzanne y Daryll. Primero,
-  Suzanne y Daryll acuerdan en el número inicial, que será un entero muy grande y aleatorio. Este número debe ser
-  diferente para cada sesión y no necesita ser secreto. A continuación, cada persona elige otro número grande
-  aleatorio, pero este se mantiene en secreto. Luego, combinan su número compartido con su respectivo número
-  secreto y se envían la combinación resultante uno al otro. Luego, cada persona combina su número secreto con el
-  valor combinado que recibieron en el paso anterior. El resultado es un nuevo valor que es el mismo en ambos
-  lados, sin tener que revelar suficiente información para que cualquier potencial espía descubra el secreto
-  compartido. Este algoritmo fue diseñado únicamente para el intercambio de claves, aunque ha habido esfuerzos
-  para adaptarlo a fines de encriptación. Incluso se lo usó como parte de un sistema PKI o de infraestructura de
-  clave pública.<br>
-  La <em>criptografía de curva elíptica</em>, o <strong>ECC</strong>, es un sistema de encriptación de
-  clave pública que usa la estructura algebraica de curvas elípticas sobre campos finitos para generar claves
-  seguras. Bueno, los sistemas tradicionales de clave pública usan la factorización de números primos grandes,
-  mientras que ECC hace uso de curvas elípticas. Y la curva elíptica se compone de un conjunto de coordenadas que
-  se ajustan a una ecuación, algo similar a y² = x³ + ax + b. Las curvas elípticas tienen un par de propiedades
-  interesantes y únicas. Una es la simetría horizontal, lo que significa que cualquier punto de la curva se puede
-  reflejar a lo largo del eje x y aun así se forma la misma curva. Además de esto, cualquier línea no vertical
-  intersecará la curva en tres lugares como máximo. Es esta última propiedad que permite que las curvas elípticas
-  se utilicen en el cifrado. La ventaja de los sistemas de encriptación basados en curvas elípticas es que son
-  capaces de lograr seguridad similar a los sistemas tradicionales de clave pública, con tamaños de clave más
-  pequeños. Así, por ejemplo, una clave de curva elíptica de 256 bits sería comparable a una clave RSA de 3,072
-  bits. Esto es realmente ventajoso, ya que reduce la cantidad de datos que se deben almacenar y transmitir cuando
-  se trata de claves.<br>
-  Tanto Diffie-Hellman como DSA tienen variantes de curva elíptica, conocidas como ECDH y ECDSA, respectivamente.
-  El Equipo de Apoyo de Emergencia Nuclear de los EE.UU (US NEST) recomienda el uso de encriptación EC, y la
-  Agencia de Seguridad Nacional de EE. UU. (NSA) permite proteger datos ultrasecretos con claves EC de 384 bits.
-  Pero la NSA ha expresado su preocupación porque la encriptación EC sea potencialmente vulnerable a los ataques
-  de computación cuántica, a medida que la tecnología de computación cuántica siga evolucionando y madurando.
-  <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+    <h2>Clave pública o cifrado asimétrico</h2><a name="h3-1" id="h3-1"></a>
+    <h3>Criptografía asimétrica</h3>Bueno, imaginemos que aquí hay dos personas que querrían comunicarse de manera
+    segura. Los llamaremos Suzanne y Daryll. Ya que están usando encriptación asimétrica en este ejemplo, lo primero
+    que deben hacer es generar una clave privada, luego, con esta clave privada, se obtiene una clave pública. La
+    resistencia del sistema de encriptación asimétrica proviene de la dificultad computacional de averiguar la clave
+    privada correspondiente dada una clave pública. Una vez que Suzanne y Daryll generaron pares de claves públicas y
+    privadas, intercambian las claves públicas. A partir de los nombres, podrías haber adivinado que la clave pública
+    es pública y puede compartirse con cualquiera, mientras que la clave privada debe mantenerse en secreto.<br>
+    Cuando Suzanne quiere enviar un mensaje encriptado a Daryll, ella usa la clave pública de Daryll para encriptar el
+    mensaje y luego enviar el texto cifrado. Daryll puede usar su clave privada para desencriptar el mensaje y leerlo.
+    Debido a la relación entre claves privadas y públicas, solo la clave privada de Daryll puede desencriptar los
+    mensajes encriptados mediante la clave pública de Daryll. Lo mismo ocurre con los pares de claves de Suzanne.
+    Cuando Daryll esté listo para responder al mensaje de Suzanne, usará la clave pública de Suzanne para codificar su
+    mensaje y Suzanne usará su clave privada para desencriptarlo.<br>
+    Acabamos de describir las operaciones de encriptación y desencriptación mediante un criptosistema asimétrico, pero
+    hay otra función muy útil que el sistema puede realizar, las firmas de claves públicas. Volvamos con nuestros
+    amigos Suzanne y Daryll. Supongamos que Suzanne quiere enviarle un mensaje a Daryll y quiere asegurarse de que
+    Daryll sepa que el mensaje vino de ella y de nadie más, y que el mensaje no fue modificado ni manipulado. Ella
+    podría hacer esto redactando el mensaje y combinándolo con su clave privada para generar una firma digital. A
+    continuación, envía este mensaje junto con la firma digital asociada a Daryll. Estamos suponiendo que Suzanne y
+    Daryll ya intercambiaron claves públicas previamente en este caso. Daryll ahora puede verificar el origen y la
+    autenticidad del mensaje combinando el mensaje, la firma digital y la clave pública de Suzanne. Si el mensaje fue
+    firmado con la clave privada de Suzanne y no con la de alguien más, y si el mensaje no se modificó en absoluto,
+    entonces la firma digital debería validarse. Sin verificación de mensaje, cualquiera podría usar la clave pública
+    de Daryll y enviarle un mensaje encriptado que diga que es de Suzanne.<br>
+    Los tres conceptos que nos otorga un criptosistema asimétrico son: confidencialidad, autenticidad y no repudio.<br>
+    • La <strong>confidencialidad</strong> se otorga a través del mecanismo de encriptación/desencriptación, ya que
+    nuestros datos encriptados se mantienen en secreto y confidencialidad ante terceros no autorizados.<br>
+    • La <strong>autenticidad</strong> es otorgada por el mecanismo de firma digital, ya que se puede autenticar o
+    verificar que el mensaje no fue manipulado.<br>
+    • <strong>No repudio</strong> significa que el autor del mensaje no puede poner en duda su origen. En otras
+    palabras, esto nos permite asegurar que el mensaje vino de la persona que dice ser su autor.<br>
+    La encriptación asimétrica permite una comunicación segura a través de un canal no confiable, pero con la
+    encriptación simétrica necesitamos alguna forma de comunicar de manera segura el secreto compartido o la clave a la
+    otra parte.<br>
+    Si bien la encriptación asimétrica funciona realmente bien en entornos no confiables, también es más costosa y
+    compleja desde el punto de vista computacional. Por otra parte, los algoritmos de encriptación simétrica son más
+    rápidos y más eficientes, y encriptan grandes cantidades de datos. De hecho, lo que muchos esquemas de
+    comunicaciones seguras hacen es aprovechar las ventajas relativas de ambos tipos de encriptación y usan ambas, para
+    diferentes propósitos.<br>
+    Se elige un algoritmo de encriptación asimétrica como un mecanismo de intercambio de clave o cifrado. Lo que esto
+    significa, es que la clave de cifrado simétrica o el secreto compartido se transmiten de forma segura a la otra
+    parte mediante la encriptación asimétrica para mantener el secreto compartido seguro en tránsito. Una vez recibido
+    el secreto compartido, los datos pueden enviarse con rapidez, eficiencia y seguridad por medio de un cifrado de
+    encriptación asimétrica.<br>
+    Un último tema a mencionar está de algún modo relacionado con la encriptación asimétrica y son los
+    <strong>MAC</strong>, o <em>códigos de autenticación de mensajes</em>. No deben confundirse con el control de
+    acceso a los medios o las direcciones MAC. Un MAC es un trozo de información que permite la autenticación de un
+    mensaje recibido, lo que garantiza que el mensaje proviene del presunto remitente y no de un tercero que se hace
+    pasar por él. También garantiza que el mensaje no fue modificado de ninguna manera, con el fin de brindar
+    integridad de los datos. Esto suena muy similar a las firmas digitales que usan criptografía de clave pública, ¿no?
+    Aunque es muy similar, difiere ligeramente en que la clave secreta que se usa para generar el MAC es la misma que
+    se usa para verificarlo.<br>
+    Esto describe un tipo popular y seguro de MAC llamado <strong>HMAC</strong>, o <em>código de autenticación de
+    mensajes en clave-hash</em>. HMAC utiliza una función criptográfica de hash junto con una clave secreta para
+    generar un MAC. Se puede usar cualquier función criptográfica de hash como SHA-1 o MD5, y la resistencia o
+    seguridad del MAC depende de la seguridad subyacente de la función criptográfica de hash empleada. El MAC se envía
+    junto con el mensaje que se debe verificar. El receptor verifica el MAC realizando la misma operación sobre el
+    mensaje recibido, luego compara el MAC computado con el que se recibió con el mensaje. Si los MAC son iguales,
+    entonces el mensaje se autentica.<br>
+    También hay MAC basados en cifrados de encriptación simétrica, ya sean en bloque o de flujo, como DES o AES, que se
+    denominan <strong>CMAC</strong>, o <em>códigos de autenticación de mensajes basados en cifrado</em>. El proceso es
+    similar a HMAC, pero en lugar de usar una función de hash para elaborar un resumen, se usa un cifrado simétrico con
+    claves compartidas para encriptar el mensaje y la salida resultante se usa como MAC.<br>
+    <strong>CBC-MAC</strong> es un mecanismo para crear MAC por medio de cifrados de bloque. Esto funciona tomando un
+    mensaje y encriptándolo mediante un cifrado de bloque que funciona en modo CBC. El modo CBC es un modo de operación
+    para cifrados de bloque que incorpora un texto de cifrado de bloque pre encriptado en el texto sin formato del
+    bloque siguiente. Así, genera una cadena de bloques encriptados que requieren la totalidad de la cadena sin
+    modificar para su desencriptación. Esta cadena de bloques interdependientemente cifrados implica que cualquier
+    modificación al texto sin formato dará lugar a una salida final diferente al final de la cadena, lo que garantiza
+    la integridad del mensaje.<br>
+    <a name="h3-2" id="h3-2"></a>
+    <h3>Algoritmos de cifrado asimétrico</h3>Uno de los primeros sistemas prácticos de criptografía asimétrica que se
+    desarrolló es <strong>RSA</strong>, cuyo nombre contiene las iniciales de sus tres inventores. Ron Rivest, Adi
+    Shamir y Leonard Adleman. Este sistema criptográfico se patentó en 1983 y fue lanzado al dominio público por RSA
+    Security en el año 2000. El sistema RSA especifica mecanismos de generación y distribución de claves junto con la
+    operación de encriptación y desencriptación que usa estas claves. Pero es importante saber que el proceso de
+    generación de claves depende de elegir dos números primos exclusivos, aleatorios y generalmente muy grandes.<br>
+    <strong>DSA</strong>, o <em>algoritmo de firma digital</em>, es otro ejemplo de un sistema de encriptación
+    asimétrica, aunque se utiliza para firmar y verificar datos. Fue patentado en 1991 y forma parte del Estándar
+    federal de procesamiento de información del Gobierno de los Estados Unidos. De manera similar a RSA, la
+    especificación abarca el proceso de generación de claves junto con la firma y verificación de los datos mediante
+    los pares de claves. Es importante señalar que la seguridad de este sistema depende de la elección de un valor
+    inicial aleatorio que se incorpora en el proceso de firma. Si este valor se filtró o si se puede inferir si el
+    número primo no es realmente aleatorio, entonces es posible que un atacante recupere la clave privada.<br>
+    Otro algoritmo de intercambio de claves popular es <strong>DH</strong>, o Diffie-Hellman, que lleva el nombre de
+    sus inventores. Veamos cómo funciona el algoritmo de intercambio de claves DH. Supongamos que tenemos dos personas
+    que desean comunicarse a través de un canal no seguro. Los llamaremos Suzanne y Daryll. Primero, Suzanne y Daryll
+    acuerdan en el número inicial, que será un entero muy grande y aleatorio. Este número debe ser diferente para cada
+    sesión y no necesita ser secreto. A continuación, cada persona elige otro número grande aleatorio, pero este se
+    mantiene en secreto. Luego, combinan su número compartido con su respectivo número secreto y se&nbsp;envían la
+    combinación resultante uno al otro. Luego, cada persona combina su número secreto con el valor combinado que
+    recibieron en el paso anterior. El resultado es un nuevo valor que es el mismo en ambos lados, sin tener que
+    revelar suficiente información para que cualquier potencial espía descubra el secreto compartido. Este algoritmo
+    fue diseñado únicamente para el intercambio de claves, aunque ha habido esfuerzos para adaptarlo a fines de
+    encriptación. Incluso se lo usó como parte de un sistema PKI o de infraestructura de clave pública.<br>
+    La <em>criptografía de curva elíptica</em>, o <strong>ECC</strong>, es un sistema de encriptación de clave pública
+    que usa la estructura algebraica de curvas elípticas sobre campos finitos para generar claves seguras. Bueno, los
+    sistemas tradicionales de clave pública usan la factorización de números primos grandes, mientras que ECC hace uso
+    de curvas elípticas. Y la curva elíptica se compone de un conjunto de coordenadas que se ajustan a una ecuación,
+    algo similar a y² = x³ + ax + b. Las curvas elípticas tienen un par de propiedades interesantes y únicas. Una es la
+    simetría horizontal, lo que significa que cualquier punto de la curva se puede reflejar a lo largo del eje x y aun
+    así se forma la misma curva. Además de esto, cualquier línea no vertical intersecará la curva en tres lugares como
+    máximo. Es esta última propiedad que permite que las curvas elípticas se utilicen en el cifrado. La ventaja de los
+    sistemas de encriptación basados en curvas elípticas es que son capaces de lograr seguridad similar a los sistemas
+    tradicionales de clave pública, con tamaños de clave más pequeños. Así, por ejemplo, una clave de curva elíptica de
+    256 bits sería comparable a una clave RSA de 3,072 bits. Esto es realmente ventajoso, ya que reduce la cantidad de
+    datos que se deben almacenar y transmitir cuando se trata de claves.<br>
+    Tanto Diffie-Hellman como DSA tienen variantes de curva elíptica, conocidas como ECDH y ECDSA, respectivamente. El
+    Equipo de Apoyo de Emergencia Nuclear de los EE.UU (US NEST) recomienda el uso de encriptación EC, y la Agencia de
+    Seguridad Nacional de EE. UU. (NSA) permite proteger datos ultrasecretos con claves EC de 384 bits. Pero la NSA ha
+    expresado su preocupación porque la encriptación EC sea potencialmente vulnerable a los ataques de computación
+    cuántica, a medida que la tecnología de computación cuántica siga evolucionando y madurando.
+    <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
 </body>
 </html>

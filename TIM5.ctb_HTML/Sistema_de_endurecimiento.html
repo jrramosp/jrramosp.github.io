@@ -3,19 +3,17 @@
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Sistema de endurecimiento</title>
     <meta name="generator" content="CherryTree">
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
-    <h2>Sistema de endurecimiento</h2>
-    <h3>Deshabilitar componentes innecesarios</h3>
-    La clase especial de vulnerabilidades que analizamos, llamada vulnerabilidades de día cero, es única, ya que no se
-    las conoce hasta que se las explota en libre circulación. El potencial de estas fallas desconocidas es algo en lo
-    que debes pensar cuando se trata de proteger los sistemas y las redes de tu empresa. Aun cuando sea un riesgo
-    desconocido, todavía se lo puede manejar tomando medidas para restringir y controlar el acceso a los sistemas.
-    Nuestro objetivo final general es reducir el riesgo.<br>
+    <h2>Sistema de endurecimiento</h2><a name="h3-1" id="h3-1"></a>
+    <h3>Deshabilitar componentes innecesarios</h3>La clase especial de vulnerabilidades que analizamos, llamada
+    vulnerabilidades de día cero, es única, ya que no se las conoce hasta que se las explota en libre circulación. El
+    potencial de estas fallas desconocidas es algo en lo que debes pensar cuando se trata de proteger los sistemas y
+    las redes de tu empresa. Aun cuando sea un riesgo desconocido, todavía se lo puede manejar tomando medidas para
+    restringir y controlar el acceso a los sistemas. Nuestro objetivo final general es reducir el riesgo.<br>
     Dos términos importantes que debes conocer cuando hablamos de riesgos de seguridad son los vectores de ataque y las
     superficies de ataque. Un <strong>vector de ataque</strong> es un método o mecanismo por el cual un atacante o
     malware obtiene acceso a una red o sistema. Algunos vectores de ataque son archivos adjuntos de correo electrónico,
@@ -59,12 +57,13 @@
     de acceso se eluden o fallan de alguna manera imprevista? Como especialista en soporte de TI, esto es exactamente
     lo que debes pensar. ¿Cómo podemos mantener este componente seguro si los sistemas de seguridad anteriores
     fallaron?<br>
-    <h3>Firewall basado en host</h3>
-    Los firewalls basados en host son importantes para crear múltiples capas de seguridad. Protegen los hosts
-    individuales de verse en riesgo cuando se los usa en entornos no confiables y potencialmente maliciosos. También
-    protegen a los hosts individuales de pares potencialmente en riesgo dentro de una red de confianza. Nuestro
-    firewall basado en la red tiene el deber de proteger nuestra red interna filtrando el tráfico que entra y sale de
-    ella, mientras que el firewall basado en host, para cada host individual, protege esa máquina.<br>
+    <a name="h3-2" id="h3-2"></a>
+    <h3>Firewall basado en host</h3>Los firewalls basados en host son importantes para crear múltiples capas de
+    seguridad. Protegen los hosts individuales de verse en riesgo cuando se los usa en entornos no confiables y
+    potencialmente maliciosos. También protegen a los hosts individuales de pares potencialmente en riesgo dentro de
+    una red de confianza. Nuestro firewall basado en la red tiene el deber de proteger nuestra red interna filtrando el
+    tráfico que entra y sale de ella, mientras que el firewall basado en host, para cada host individual, protege esa
+    máquina.<br>
     Al igual que nuestro firewall basado en red, queremos comenzar con una regla de denegación implícita. Luego,
     habilitaríamos selectivamente servicios y puertos específicos que se usarán. Esto nos permite comenzar con una
     configuración predeterminada segura y solo entonces permite el tráfico que conocemos y en el que confiamos. Puedes
@@ -99,11 +98,12 @@
     y configuraciones del firewall. Esto es algo que debes recordar y asegurarte de supervisar con el registro. Si las
     herramientas de gestión lo permiten, también debes impedir la desactivación del firewall basado en host. Esto se
     puede hacer con máquinas de Microsoft Windows cuando las administras usando Active Directory, por ejemplo.<br>
-    <h3>Registro y auditoria</h3>
-    Una parte crítica de cualquier arquitectura de seguridad son el registro y las alertas. No serviría de mucho tener
-    todas estas defensas implementadas si no tenemos idea de si funcionan o no. Necesitamos visibilidad en los sistemas
-    de seguridad activos para ver qué tipo de tráfico están observando. También necesitamos tener esa visibilidad en
-    los registros de todos los dispositivos y equipos de infraestructura que administramos.<br>
+    <a name="h3-3" id="h3-3"></a>
+    <h3>Registro y auditoria</h3>Una parte crítica de cualquier arquitectura de seguridad son el registro y las
+    alertas. No serviría de mucho tener todas estas defensas implementadas si no tenemos idea de si funcionan o no.
+    Necesitamos visibilidad en los sistemas de seguridad activos para ver qué tipo de tráfico están observando. También
+    necesitamos tener esa visibilidad en los registros de todos los dispositivos y equipos de infraestructura que
+    administramos.<br>
     Pero con tener registros no es suficiente, también necesitamos formas de salvaguardarlos y de facilitar su análisis
     y revisión. Si hay un equipo de seguridad especializado en tu empresa, estaría realizando este análisis. Pero en
     una empresa más pequeña, esta responsabilidad probablemente recaerá en el equipo de TI. Asegurémonos de que estés
@@ -170,12 +170,13 @@
     deseas o necesitas mantener registros también influirá en los requisitos de almacenamiento para un servidor de
     registro. Algunos ejemplos de servidores de registro y soluciones SIEM son la solución de código abierto rsylog,
     Splunk Enterprise Security, IBM Security Qradar y RSA Security Analytics.<br>
-    <h3>Protección antimalware</h3>
-    Hoy en día, Internet está lleno de bots, virus, gusanos y otros ataques automatizados. Muchos sistemas
-    desprotegidos se verían en riesgo en cuestión de minutos si están conectados directamente a Internet sin ningún
-    tipo de protección o salvaguarda implementada. Y necesitan tener actualizaciones críticas del sistema. Si bien los
-    sistemas operativos modernos han reducido este vector de amenaza al tener firewalls básicos habilitados de manera
-    predeterminada, todavía hay una gran cantidad de tráfico de ataque en Internet.<br>
+    <a name="h3-4" id="h3-4"></a>
+    <h3>Protección antimalware</h3>Hoy en día, Internet está lleno de bots, virus, gusanos y otros ataques
+    automatizados. Muchos sistemas desprotegidos se verían en riesgo en cuestión de minutos si están conectados
+    directamente a Internet sin ningún tipo de protección o salvaguarda implementada. Y necesitan tener actualizaciones
+    críticas del sistema. Si bien los sistemas operativos modernos han reducido este vector de amenaza al tener
+    firewalls básicos habilitados de manera predeterminada, todavía hay una gran cantidad de tráfico de ataque en
+    Internet.<br>
     Las medidas antimalware desempeñan un papel muy importante para mantener este tipo de ataque fuera de tus sistemas
     y te ayudan a proteger a tus usuarios. El software antivirus existe desde hace un buen tiempo, pero algunos
     expertos en seguridad cuestionan el valor que puede proporcionarle a una empresa, en especial desde que la
@@ -237,12 +238,12 @@
     ataque. Un atacante puede poner en riesgo el certificado de firma de código de un proveedor de software en el que
     tu empresa confía y lo usa para firmar el malware que apunta a tu empresa. Eso evitaría las defensas de listas
     blancas de código binario implementadas.<br>
-    <h3>Cifrado de disco</h3>
-    La <em>encriptación completa de disco</em>, o <strong>FDE</strong>, es un factor importante en un modelo de
-    seguridad de defensa en profundidad. Proporciona protección contra ciertas formas físicas de ataque. Como
-    especialista en soporte de TI, es probable que ayudes a implementar una solución FDE si es que no hay una
-    implementada, ayudes a migrar de una solución FDE a otra y solucionar problemas con sistemas FDE, como cuando
-    alguien olvida una contraseña. FDE es clave.<br>
+    <a name="h3-5" id="h3-5"></a>
+    <h3>Cifrado de disco</h3>La <em>encriptación completa de disco</em>, o <strong>FDE</strong>, es un factor
+    importante en un modelo de seguridad de defensa en profundidad. Proporciona protección contra ciertas formas
+    físicas de ataque. Como especialista en soporte de TI, es probable que ayudes a implementar una solución FDE si es
+    que no hay una implementada, ayudes a migrar de una solución FDE a otra y solucionar problemas con sistemas FDE,
+    como cuando alguien olvida una contraseña. FDE es clave.<br>
     Los sistemas que tienen todos sus discos duros encriptados son resistentes al robo de datos. Evitarán que un
     atacante robe información potencialmente confidencial de un disco duro que fue robado o que se perdió. Sin conocer
     la contraseña de encriptación ni tener acceso a la clave de encriptación, los datos en el disco duro no tienen

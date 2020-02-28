@@ -3,13 +3,12 @@
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Autenticación</title>
     <meta name="generator" content="CherryTree">
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
-    <h2>Autenticación</h2>
+    <h2>Autenticación</h2><a name="h3-1" id="h3-1"></a>
     <h3>Mejores prácticas de autenticación</h3>En este módulo, veremos las tres A de la seguridad, a saber:
     <strong>autenticación, autorización y auditoría</strong>.<br>
     La identificación es la idea de describir una entidad de forma única. Por ejemplo, tu dirección de correo
@@ -41,6 +40,7 @@
     como ese usuario. Junto con requerir el uso de contraseñas seguras, también se recomienda una política de rotación
     de contraseñas, ya que protege contra posibles contraseñas en riesgo no detectadas. Pero es importante que el
     período de rotación de contraseña no sea demasiado corto.<br>
+    <a name="h3-2" id="h3-2"></a>
     <h3>Autenticación multifactor</h3>La autenticación multifactor es un sistema en el que los usuarios se autentican
     mediante la presentación de múltiples piezas de información u objetos. Los diversos factores que componen un
     sistema de autenticación multifactor se puede clasificar en tres tipos: <em>algo que sabes, algo que tienes y algo
@@ -145,6 +145,7 @@
     autenticación mucho mejor en comparación con las OTP, ya que el usuario no tiene que transcribir manualmente una
     cadena de números en el cuadro de diálogo de autenticación. Todo lo que tiene que hacer es tocar su clave de
     seguridad.<br>
+    <a name="h3-3" id="h3-3"></a>
     <h3>Certificados</h3>Como aprendimos anteriormente, los certificados son <strong>claves públicas</strong> que están
     firmadas por una autoridad de certificación, o CA, como signo de confianza. Ya vimos los certificados de servidor
     TLS, pero también puede haber certificados de cliente. Estos funcionan de manera muy similar a los certificados de
@@ -168,10 +169,11 @@
     pretenda ser su propietario. Para evitar esto, se verifica la posesión de la clave privada a través de un mecanismo
     de desafío y respuesta. Aquí es donde el servidor solicita un bit aleatorizado de datos que se firmará por medio de
     la clave privada que corresponde a la clave pública presentada para la autenticación.<br>
-    <h3>LDAP</h3>LDAP, o &lt;<strong>Protocolo ligero de acceso a directorios</strong>, es un protocolo de estándar
-    abierto del sector para acceder y hacer mantenimiento de servicios de directorio. Cuando decimos servicios de
-    directorio, nos referimos a algo similar a un directorio telefónico o de correo electrónico. Se lo usa más
-    comúnmente como backend para autenticación de cuentas.<br>
+    <a name="h3-4" id="h3-4"></a>
+    <h3>LDAP</h3>LDAP, o <strong>Protocolo ligero de acceso a directorios</strong>, es un protocolo de estándar abierto
+    del sector para acceder y hacer mantenimiento de servicios de directorio. Cuando decimos servicios de directorio,
+    nos referimos a algo similar a un directorio telefónico o de correo electrónico. Se lo usa más comúnmente como
+    backend para autenticación de cuentas.<br>
     La especificación LDAP describe la estructura de datos del propio directorio y define funciones para interactuar
     con el servicio, como realizar búsquedas y modificar datos. Puedes imaginar un directorio como una base de datos,
     pero con más detalles o atributos que describen a las entidades que se encuentran en la base de datos.<br>
@@ -205,9 +207,10 @@
     operaciones para escribir datos en el directorio, y Unbind, que cierra la conexión al servidor LDAP. Hay muchas
     implementaciones de servidores LDAP, como Active Directory de Microsoft y OpenLDAP para implementaciones de código
     abierto.<br>
-    <h3>RADIUS</h3>RADIUS, o <strong>servicio de usuario de acceso telefónico de autenticación remota</strong>, es un
-    protocolo que proporciona servicios AAA para usuarios en una red. Es un protocolo de uso muy común para administrar
-    el acceso a redes internas, redes Wi-Fi, servicios de correo electrónico y servicios de VPN.<br>
+    <a name="h3-5" id="h3-5"></a>
+    <h3>RADIUS</h3>RADIUS, o servicio de usuario de acceso telefónico de autenticación remota, es un protocolo que
+    proporciona servicios AAA para usuarios en una red. Es un protocolo de uso muy común para administrar el acceso a
+    redes internas, redes Wi-Fi, servicios de correo electrónico y servicios de VPN.<br>
     Diseñado originalmente para transportar información de autenticación para usuarios de acceso telefónico remoto,
     evolucionó para transportar una amplia variedad de protocolos de autenticación estándar como EAP, o Protocolo de
     autenticación extensible.<br>
@@ -219,6 +222,7 @@
     fuentes externas como bases de datos SQL, LDAP, Kerberos o Active Directory. Una vez que el servidor RADIUS evaluó
     la solicitud de autenticación del usuario, responde con uno de tres mensajes: acceso rechazado, desafío de acceso o
     acceso aceptado.<br>
+    <a name="h3-6" id="h3-6"></a>
     <h3>Kerberos</h3>Kerberos es un protocolo de autenticación de red que utiliza tickets para permitir que las
     entidades demuestren su identidad por canales potencialmente inseguros para proporcionar autenticación mutua.
     También usa encriptación simétrica para proteger contra la intercepción de los mensajes del protocolo y de los
@@ -287,6 +291,7 @@
     partir de clientes desconocidos o no confiables. por lo tanto, cosas como BYOD o "Traiga su propio dispositivo" y
     la computación en la nube son incompatibles, o, al menos, muy difícil de implementar de forma segura con la
     autenticación Kerberos.<br>
+    <a name="h3-7" id="h3-7"></a>
     <h3>TACACS+</h3>TACACS+, se pronuncia "TACACS plus", significa "sistema de control de acceso del controlador de
     acceso a terminales - Plus". Es un protocolo AAA desarrollado por Cisco que se lanzó como estándar abierto en 1993.
     Reemplazó el antiguo protocolo TACACS desarrollado en 1984 para MILNET, la red no clasificada para DARPA que más
@@ -299,6 +304,7 @@
     TACACS+ se usa principalmente como sistema de autenticación para dispositivos de infraestructura de red, los que
     tienden a ser objetivos de alto valor para los atacantes. Esto puede ser un argumento a favor de su implementación
     a medida que tu organización crezca.<br>
+    <a name="h3-8" id="h3-8"></a>
     <h3>Inicio de sesión único</h3>El inicio de sesión único, o SSO, es un concepto de autenticación que permite que
     los usuarios se autentiquen una sola vez para obtener acceso a una gran cantidad de servicios y aplicaciones
     diferentes. Como no es necesario volver a autenticarse para cada servicio, los usuarios no necesitan muchos

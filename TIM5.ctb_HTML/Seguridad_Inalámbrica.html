@@ -3,23 +3,21 @@
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Seguridad Inalámbrica</title>
     <meta name="generator" content="CherryTree">
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
-    <h2>Seguridad Inalámbrica</h2>
-    <h3>Cifrado WEP y por qué no deberías usarlo</h3><br>
-    El primer protocolo de seguridad para redes Wi-Fi que se presentó fue <strong>WEP</strong>, o <em>privacidad
-    equivalente al cableado</em>. Fue parte del estándar original 802.11 que se presentó en 1997. WEP estaba
-    destinado a proporcionar privacidad a la par con la de la red cableada, lo que significaría que la información
-    transmitida a través de la red debía estar protegida de la intercepción externa. Esta fue una consideración
-    importante al diseñar la especificación inalámbrica. A diferencia de las redes cableadas, los paquetes podían ser
-    interceptados por cualquier persona con proximidad física al punto de acceso o la estación cliente. Sin alguna
-    forma de encriptación que protegiera los paquetes, alguien en las inmediaciones que quisiera escuchar podría leer
-    el tráfico inalámbrico. WEP demostró ser muy malo para brindar confidencialidad o seguridad en conexiones
-    inalámbricas. Se lo descartó rápidamente en 2004 a favor de sistemas más seguros.<br>
+    <h2>Seguridad Inalámbrica</h2><a name="h3-1" id="h3-1"></a>
+    <h3>Cifrado WEP y por qué no deberías usarlo</h3>El primer protocolo de seguridad para redes Wi-Fi que se presentó
+    fue <strong>WEP</strong>, o <em>privacidad equivalente al cableado</em>. Fue parte del estándar original 802.11 que
+    se presentó en 1997. WEP estaba destinado a proporcionar privacidad a la par con la de la red cableada, lo que
+    significaría que la información transmitida a través de la red debía estar protegida de la intercepción externa.
+    Esta fue una consideración importante al diseñar la especificación inalámbrica. A diferencia de las redes
+    cableadas, los paquetes podían ser interceptados por cualquier persona con proximidad física al punto de acceso o
+    la estación cliente. Sin alguna forma de encriptación que protegiera los paquetes, alguien en las inmediaciones que
+    quisiera escuchar podría leer el tráfico inalámbrico. WEP demostró ser muy malo para brindar confidencialidad o
+    seguridad en conexiones inalámbricas. Se lo descartó rápidamente en 2004 a favor de sistemas más seguros.<br>
     Quiero que quede claro que ya nadie debería usar WEP.<br>
     WEP aplica el cifrado de flujo simétrico <strong>RC4</strong> para encriptación. Usaba una clave compartida de 40
     bits o 104 bits de la que se obtenía la clave de encriptación para paquetes individuales. La clave de encriptación
@@ -74,12 +72,12 @@
     que el atacante reconstruya esta secuencia de claves por medio de los paquetes encriptados que usan los IV débiles.
     También puedes ver las herramientas de código abierto que demuestran este ataque en acción, como Aircrack-ng o
     AirSnort; ellas pueden recuperar una clave WEP en cuestión de minutos.<br>
-    <h3>¡Vamos a deshacernos de WEP! WPA / WPA2</h3><br>
-    El reemplazo para WEP de Wi-Fi Alliance fue <strong>WPA</strong>, o <em>acceso protegido a Wi-Fi</em>. Se
-    presentó en 2003 como una medida temporal mientras la alianza finalizaba su especificación para lo que se
-    convertiría en WPA2, presentado en 2004. WPA se diseñó como un reemplazo a corto plazo que sería compatible con
-    hardware anterior habilitado para WEP mediante una simple actualización de firmware. Esto facilitó que los usuarios
-    lo adoptaran porque no requería la compra de nuevo hardware de Wi-Fi.<br>
+    <a name="h3-2" id="h3-2"></a>
+    <h3>¡Vamos a deshacernos de WEP! WPA / WPA2</h3>El reemplazo para WEP de Wi-Fi Alliance fue <strong>WPA</strong>, o
+    <em>acceso protegido a Wi-Fi</em>. Se presentó en 2003 como una medida temporal mientras la alianza finalizaba su
+    especificación para lo que se convertiría en WPA2, presentado en 2004. WPA se diseñó como un reemplazo a corto
+    plazo que sería compatible con hardware anterior habilitado para WEP mediante una simple actualización de firmware.
+    Esto facilitó que los usuarios lo adoptaran porque no requería la compra de nuevo hardware de Wi-Fi.<br>
     Para abordar las deficiencias de la seguridad WEP, se introdujo un nuevo protocolo de seguridad llamado
     <strong>TKIP</strong>, o <em>Protocolo de integridad de clave temporal</em>. TKIP implementó tres nuevas
     características que lo hicieron más seguro que WEP. Primero, se usó un método de obtención de claves más seguro
@@ -105,11 +103,11 @@
     caracteres ASCII como frase de contraseña. Si ese es el caso, la frase de contraseña puede tener entre ocho y 63
     caracteres.<br>
     <strong>WPA2</strong> mejora aún más la seguridad de WPA implementando <strong>CCMP</strong>, o <em>Protocolo
-    CBC-MAC con modo contador</em>. WPA2 es la mejor seguridad para redes inalámbricas disponible actualmente. Se
-    basa en el cifrado <strong>AES</strong> que, finalmente, se aleja del cifrado RC4 inseguro. El proceso de obtención
-    de claves no se modificó de WPA y los requisitos de clave precompartida son los mismos. El contador con CBC-MAC es
-    un modo particular de operación para cifrados de bloque. Permite la encriptación autenticada, lo que significa que
-    los datos se mantienen en estricta confidencialidad y se autentican. Esto se logra mediante un mecanismo de
+    CBC-MAC con modo contador</em>. WPA2 es la mejor seguridad para redes inalámbricas disponible actualmente. Se basa
+    en el cifrado <strong>AES</strong> que, finalmente, se aleja del cifrado RC4 inseguro. El proceso de obtención de
+    claves no se modificó de WPA y los requisitos de clave precompartida son los mismos. El contador con CBC-MAC es un
+    modo particular de operación para cifrados de bloque. Permite la encriptación autenticada, lo que significa que los
+    datos se mantienen en estricta confidencialidad y se autentican. Esto se logra mediante un mecanismo de
     "autenticación, luego encriptación". El resumen CBC-MAC se calcula primero. Luego, el código de autenticación
     resultante se encripta junto con el mensaje utilizando un cifrado de bloque. Estamos usando AES en este caso,
     operando en modo contador. Esto convierte un cifrado de bloque en un cifrado de flujo mediante el uso de un valor
@@ -146,14 +144,13 @@
     actúa como autenticador en este caso. El RADIUS de backend sigue siendo el servidor de autenticación y la PMK se
     genera usando componentes del método EAP elegido.<br>
     Si bien no es directamente una función de seguridad, <strong>WPS</strong>, o <em>configuración protegida por
-    Wi-Fi</em>, es una característica conveniente diseñada para facilitar que los clientes se unan a una red
-    protegida por WPA-PSK. Puedes encontrar WPS en una pequeña instalación de TI que use routers SOHO comerciales.
-    Puede ser útil en estos entornos más pequeños para facilitar que los clientes inalámbricos se unan a las redes
-    inalámbricas de forma segura. Pero su habilitación acarrea implicaciones de seguridad de las que debes estar al
-    tanto. Wi-Fi Alliance presentó WPS en 2006. Ofrece varios métodos diferentes que permiten a nuestro cliente
-    inalámbrico unirse, de forma segura, a una red inalámbrica sin tener que ingresar directamente la clave
-    precompartida. Esto facilita el uso de frases de contraseña muy largas y seguras sin que sean innecesariamente
-    complicadas.<br>
+    Wi-Fi</em>, es una característica conveniente diseñada para facilitar que los clientes se unan a una red protegida
+    por WPA-PSK. Puedes encontrar WPS en una pequeña instalación de TI que use routers SOHO comerciales. Puede ser útil
+    en estos entornos más pequeños para facilitar que los clientes inalámbricos se unan a las redes inalámbricas de
+    forma segura. Pero su habilitación acarrea implicaciones de seguridad de las que debes estar al tanto. Wi-Fi
+    Alliance presentó WPS en 2006. Ofrece varios métodos diferentes que permiten a nuestro cliente inalámbrico unirse,
+    de forma segura, a una red inalámbrica sin tener que ingresar directamente la clave precompartida. Esto facilita el
+    uso de frases de contraseña muy largas y seguras sin que sean innecesariamente complicadas.<br>
     ¿Te imaginas tener que hacer que tus amigos y familiares, con menor inclinación tecnológica, ingresen una frase de
     contraseña de 63 caracteres para usar tu Wi-Fi cuando te visitan? Probablemente eso no funcionaría tan bien. WPS
     simplifica esto al permitir el intercambio seguro del SSID y la clave precompartida. Esto se hace después de
@@ -206,18 +203,18 @@
     de los elementos de sesión únicos. Estos conjuntos precalculados se conocen como tablas de arco iris y esto se ha
     hecho exactamente así. Hay tablas de arco iris disponibles para descargar para los principales 1000 SSID más vistos
     y 1 millón de contraseñas.<br>
-    <h3>Endurecimiento inalámbrico</h3><br>
-    Ahora que vimos las opciones de seguridad disponibles para proteger redes inalámbricas, ¿cuál crees que sería la
-    opción más segura? En un mundo ideal, todos estaríamos usando <strong>802.1X con EAP-TLS</strong> para proteger
-    nuestras redes inalámbricas. Ofrece lo que podría llamarse la mejor seguridad disponible, siempre que se suponga un
-    manejo adecuado y seguro de los aspectos en relación con la PKI. Pero, esta opción también requiere un montón de
-    complejidad y gastos generales adicionales. Esto es porque requiere el uso de un servidor RADIUS y un backend de
-    autenticación adicional como mínimo. Si se implementa EAP-TLS, entonces también se necesitarán todos los
-    componentes de la infraestructura de clave pública. Esto incorpora aún más complejidad y gastos de gestión. No solo
-    tienes que implementar PKI de forma segura en el backend para administrar certificados, sino que se debe
-    implementar un sistema para firmar los certificados de cliente. También tienes que distribuirlos a cada cliente que
-    se autentique en la red. Esto suele ser más costoso de lo que muchas empresas están dispuestas a asumir debido a la
-    compensación inherente de seguridad frente a conveniencia.<br>
+    <a name="h3-3" id="h3-3"></a>
+    <h3>Endurecimiento inalámbrico</h3>Ahora que vimos las opciones de seguridad disponibles para proteger redes
+    inalámbricas, ¿cuál crees que sería la opción más segura? En un mundo ideal, todos estaríamos usando <strong>802.1X
+    con EAP-TLS</strong> para proteger nuestras redes inalámbricas. Ofrece lo que podría llamarse la mejor seguridad
+    disponible, siempre que se suponga un manejo adecuado y seguro de los aspectos en relación con la PKI. Pero, esta
+    opción también requiere un montón de complejidad y gastos generales adicionales. Esto es porque requiere el uso de
+    un servidor RADIUS y un backend de autenticación adicional como mínimo. Si se implementa EAP-TLS, entonces también
+    se necesitarán todos los componentes de la infraestructura de clave pública. Esto incorpora aún más complejidad y
+    gastos de gestión. No solo tienes que implementar PKI de forma segura en el backend para administrar certificados,
+    sino que se debe implementar un sistema para firmar los certificados de cliente. También tienes que distribuirlos a
+    cada cliente que se autentique en la red. Esto suele ser más costoso de lo que muchas empresas están dispuestas a
+    asumir debido a la compensación inherente de seguridad frente a conveniencia.<br>
     Si 802.1X es demasiado complicado para una empresa, la siguiente mejor alternativa sería <strong>WPA2 con el modo
     AES/CCMP</strong>. Pero para protegerse contra ataques de fuerza bruta o de tabla de arco iris, deberíamos tomar
     algunas medidas para elevar el nivel computacional. <em>Una frase de contraseña larga y compleja</em> que no se
