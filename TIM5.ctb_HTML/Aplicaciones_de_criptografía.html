@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
+  <h2>Aplicaciones de criptografía</h2>
   <h3>Infraestructura de clave pública</h3>
   <strong>PKI</strong> es un sistema que define la creación, el almacenamiento y la distribución de certificados
   digitales. Un certificado digital es un archivo que prueba que una entidad posee una determinada clave pública.
@@ -16,8 +17,8 @@
   certificado, entonces podemos confiar en el uso de la clave pública para comunicarnos con seguridad con la
   entidad que la posee.<br>
   La entidad que es responsable de almacenar, emitir y firmar certificados se conoce como <strong>CA</strong>, o
-  <strong>autoridad de certificación</strong>. Es un componente fundamental del sistema PKI. También hay una
-  <strong>RA</strong>, o <strong>autoridad de registro</strong>, que es responsable de verificar las identidades
+  <em>autoridad de certificación</em>. Es un componente fundamental del sistema PKI. También hay una
+  <strong>RA</strong>, o <em>autoridad de registro</em>, que es responsable de verificar las identidades
   de cualquier entidad que solicite que los certificados sean firmados y almacenados por la CA. En general, este
   rol se agrupa con la CA. Se necesita un repositorio central para almacenar y también indexar claves de forma
   segura, y un sistema de gestión de certificados de algún tipo facilita el almacenamiento y la emisión de
@@ -67,7 +68,7 @@
   de los certificados CA raíz. La mayoría de los navegadores usarán el almacén de certificados raíz provisto por
   el SO.<br>
   El estándar <strong>X.509</strong> es lo que define el formato de los certificados digitales. También define una
-  <strong>lista de revocación de certificados</strong>, o <strong>CRL</strong>, que es un medio para distribuir
+  <em>lista de revocación de certificados</em>, o <strong>CRL</strong>, que es un medio para distribuir
   una lista de certificados que ya no son válidos. El estándar X.509 se publicó por primera vez en 1988 y la
   versión actual del estándar es la número 3. Los campos definidos en un certificado X.509 son:<br>
   • Versión: a qué versión del certificado X.509 estándar se adhiere.<br>
@@ -145,7 +146,7 @@
   transmitidos que se codificaron usando claves derivadas de esta clave privada. Para defenderse contra esto,
   existe un concepto de "secreto hacia adelante". Esta es una propiedad de un sistema criptográfico para que,
   incluso en el evento que la clave privada se ponga en riesgo, las claves de la sesión siguen siendo seguras.<br>
-  <strong>SSH</strong>, o <strong>Secure Shell</strong>, es un protocolo de red segura que usa la encriptación
+  <strong>SSH</strong>, o <em>Secure Shell</em>, es un protocolo de red segura que usa la encriptación
   para permitir el acceso a un servicio de red a través de redes no seguras. Más comúnmente, verás el uso de SSH
   para acceso remoto a los sistemas basados en línea de comando, pero el protocolo es súper flexible y tiene
   disposiciones para permitir que redes y tráfico arbitrario sobre esos puertos se tunelicen a través del canal
@@ -163,7 +164,7 @@
   distribuir esas claves públicas a todos los sistemas ante los que quiera autenticar usando el par de claves. Al
   autenticarse, SSH garantizará que la clave pública presentada coincida con la clave privada, la que nunca debe
   estar fuera de la posesión del usuario.<br>
-  <strong>PGP</strong> significa <strong>Pretty Good Privacy</strong>, es una aplicación de encriptación que
+  <strong>PGP</strong> significa <em>Pretty Good Privacy</em>, es una aplicación de encriptación que
   permite la autenticación de datos junto con la privacidad de terceros, y depende de la encriptación asimétrica
   para lograrlo. Su uso más común es en comunicación por correo electrónico encriptada, pero también está
   disponible como una solución completa de cifrado de disco o para encriptar archivos, carpetas o documentos
@@ -184,7 +185,7 @@
   red privada remota.<br>
   Una VPN también puede ser punto a punto, donde dos puertas de enlace se conectan a través de una VPN uniendo
   básicamente dos redes privadas a través de un túnel encriptado.<br>
-  <strong>IPsec</strong>, o <strong>Protocolo de seguridad de Internet</strong>, es un protocolo VPN que se diseñó
+  <strong>IPsec</strong>, o <em>Protocolo de seguridad de Internet</em>, es un protocolo VPN que se diseñó
   junto con IPv6. Originalmente se requería que fueran estándares compatibles con implementaciones de IPv6, pero
   ese requisito fue descartado a la larga. Su uso con IPv6 es opcional. IPsec funciona encriptando un paquete IP y
   encapsulando el paquete encriptado dentro de un paquete IPsec. Luego, este paquete encriptado se enruta al
@@ -195,8 +196,8 @@
   junto con las capas de transporte y aplicación. Esto evitaría el uso de cualquier cosa que modifique estos
   valores, como NAT o PAT. En el modo túnel, todo el paquete IP, el encabezado, la carga útil, etc., está
   encriptado y encapsulado dentro de un nuevo paquete IP con nuevos encabezados.<br>
-  Si bien no es una solución VPN en sí misma, <strong>L2TP</strong>, o <strong>Protocolo de túnel de capa
-  2</strong>, se usa en general para admitir VPN. Una implementación común de L2TP es en conjunto con IPsec cuando
+  Si bien no es una solución VPN en sí misma, <strong>L2TP</strong>, o <em>Protocolo de túnel de capa
+  2</em>, se usa en general para admitir VPN. Una implementación común de L2TP es en conjunto con IPsec cuando
   se necesitan datos de forma confidencial, ya que L2TP no proporciona encriptación por sí mismo. Es un protocolo
   de tunelización simple que permite encapsular diferentes protocolos o tráfico a través de una red que no puede
   admitir el tipo de tráfico que se está enviando. L2TP también puede segregar y gestionar el tráfico. Los ISP
@@ -234,8 +235,8 @@
   que limita la seriedad del potencial de vulnerabilidades que pueden estar presentes.<br>
   <a href="https://openvpn.net/community/">https://openvpn.net/community/</a><br>
   <h3>Hardware criptográfico</h3>
-  Otra aplicación interesante de los conceptos de criptografía es el <strong>módulo de plataforma
-  confiable</strong>, o <strong>TPM</strong>. Es un dispositivo de hardware, normalmente integrado en el hardware
+  Otra aplicación interesante de los conceptos de criptografía es el <em>módulo de plataforma
+  confiable</em>, o <strong>TPM</strong>. Es un dispositivo de hardware, normalmente integrado en el hardware
   de una computadora, que es un procesador criptográfico especializado. TPM ofrece generación segura de claves,
   generación de números aleatorios, certificación remota y vinculación y sellado de datos. Un TPM tiene una
   clave RSA secreta única, grabada en el hardware en el momento de la fabricación, que le permite realizar cosas
@@ -260,7 +261,7 @@
   manipulación a menudo incorporado en el microprocesador o integrado en la placa base de un dispositivo móvil.
   Suministra almacenamiento seguro de claves criptográficas y proporciona un entorno seguro para las
   aplicaciones.<br>
-  Una evolución respecto de los elementos seguros es el <strong>entorno de ejecución confiable</strong>, o
+  Una evolución respecto de los elementos seguros es el <em>entorno de ejecución confiable</em>, o
   <strong>TEE</strong>, que lleva el concepto un poco más lejos. Ofrece un entorno de ejecución aislado avanzado
   que se ejecuta junto con el SO principal. Esto proporciona aislamiento de las aplicaciones respecto del SO
   principal y otras aplicaciones instaladas allí. También aísla los procesos seguros entre sí cuando se ejecutan
@@ -271,7 +272,7 @@
   seguridad que el módulo debe proporcionar.<br>
   Los TPM se utilizan más comúnmente para garantizar la integridad de la plataforma, impedir cambios no
   autorizados en el sistema, ya sea en software o hardware, y para encriptación completa del disco usando el TPM
-  para proteger todo el contenido del disco. La <strong>encriptación completa de disco,</strong> o
+  para proteger todo el contenido del disco. La <em>encriptación completa de disco,</em> o
   <strong>FDE</strong>, como puede deducirse por su nombre en inglés, es la práctica de encriptar toda la unidad
   en el sistema. No solo los archivos sensibles en el sistema. Esto nos permite proteger todo el contenido del
   disco contra robos o manipulación de datos. Ahora, hay un montón de opciones para implementar FDE, como el

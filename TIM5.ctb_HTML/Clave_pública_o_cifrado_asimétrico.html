@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
+  <h2>Clave pública o cifrado asimétrico</h2>
   <h3>Criptografía asimétrica</h3>
   Bueno, imaginemos que aquí hay dos personas que querrían comunicarse de manera segura. Los llamaremos Suzanne y
   Daryll. Ya que están usando encriptación asimétrica en este ejemplo, lo primero que deben hacer es generar una
@@ -33,8 +34,8 @@
   fue firmado con la clave privada de Suzanne y no con la de alguien más, y si el mensaje no se modificó en
   absoluto, entonces la firma digital debería validarse. Sin verificación de mensaje, cualquiera podría usar la
   clave pública de Daryll y enviarle un mensaje encriptado que diga que es de Suzanne.<br>
-  Los tres conceptos que nos otorga un criptosistema asimétrico son: <strong>confidencialidad</strong>,
-  <strong>autenticidad</strong> y <strong>no repudio</strong>.<br>
+  Los tres conceptos que nos otorga un criptosistema asimétrico son: confidencialidad,
+  autenticidad y no repudio.<br>
   • La <strong>confidencialidad</strong> se otorga a través del mecanismo de encriptación/desencriptación, ya que nuestros datos
   encriptados se mantienen en secreto y confidencialidad ante terceros no autorizados.<br>
   • La <strong>autenticidad</strong> es otorgada por el mecanismo de firma digital, ya que se puede autenticar o verificar que el
@@ -55,22 +56,22 @@
   recibido el secreto compartido, los datos pueden enviarse con rapidez, eficiencia y seguridad por medio de un
   cifrado de encriptación asimétrica.<br>
   Un último tema a mencionar está de algún modo relacionado con la encriptación asimétrica y son los
-  <strong>MAC</strong>, o <strong>códigos de autenticación de mensajes</strong>. No deben confundirse con el
+  <strong>MAC</strong>, o <em>códigos de autenticación de mensajes</em>. No deben confundirse con el
   control de acceso a los medios o las direcciones MAC. Un MAC es un trozo de información que permite la
   autenticación de un mensaje recibido, lo que garantiza que el mensaje proviene del presunto remitente y no de un
   tercero que se hace pasar por él. También garantiza que el mensaje no fue modificado de ninguna manera, con el
   fin de brindar integridad de los datos. Esto suena muy similar a las firmas digitales que usan criptografía de
   clave pública, ¿no? Aunque es muy similar, difiere ligeramente en que la clave secreta que se usa para generar
   el MAC es la misma que se usa para verificarlo.<br>
-  Esto describe un tipo popular y seguro de MAC llamado <strong>HMAC</strong>, o <strong>código de autenticación
-  de mensajes en clave-hash</strong>. HMAC utiliza una función criptográfica de hash junto con una clave secreta
+  Esto describe un tipo popular y seguro de MAC llamado <strong>HMAC</strong>, o <em>código de autenticación
+  de mensajes en clave-hash</em>. HMAC utiliza una función criptográfica de hash junto con una clave secreta
   para generar un MAC. Se puede usar cualquier función criptográfica de hash como SHA-1 o MD5, y la resistencia o
   seguridad del MAC depende de la seguridad subyacente de la función criptográfica de hash empleada. El MAC se
   envía junto con el mensaje que se debe verificar. El receptor verifica el MAC realizando la misma operación
   sobre el mensaje recibido, luego compara el MAC computado con el que se recibió con el mensaje. Si los MAC son
   iguales, entonces el mensaje se autentica.<br>
   También hay MAC basados en cifrados de encriptación simétrica, ya sean en bloque o de flujo, como DES o AES, que
-  se denominan <strong>CMAC</strong>, o <strong>códigos de autenticación de mensajes basados en cifrado</strong>.
+  se denominan <strong>CMAC</strong>, o <em>códigos de autenticación de mensajes basados en cifrado</em>.
   El proceso es similar a HMAC, pero en lugar de usar una función de hash para elaborar un resumen, se usa un
   cifrado simétrico con claves compartidas para encriptar el mensaje y la salida resultante se usa como MAC.<br>
   <strong>CBC-MAC</strong> es un mecanismo para crear MAC por medio de cifrados de bloque. Esto funciona tomando un mensaje y
@@ -87,7 +88,7 @@
   sistema RSA especifica mecanismos de generación y distribución de claves junto con la operación de encriptación
   y desencriptación que usa estas claves. Pero es importante saber que el proceso de generación de claves depende
   de elegir dos números primos exclusivos, aleatorios y generalmente muy grandes.<br>
-  <strong>DSA</strong>, o <strong>algoritmo de firma digital</strong>, es otro ejemplo de un sistema de
+  <strong>DSA</strong>, o <em>algoritmo de firma digital</em>, es otro ejemplo de un sistema de
   encriptación asimétrica, aunque se utiliza para firmar y verificar datos. Fue patentado en 1991 y forma parte
   del Estándar federal de procesamiento de información del Gobierno de los Estados Unidos. De manera similar a
   RSA, la especificación abarca el proceso de generación de claves junto con la firma y verificación de los datos
@@ -107,7 +108,7 @@
   compartido. Este algoritmo fue diseñado únicamente para el intercambio de claves, aunque ha habido esfuerzos
   para adaptarlo a fines de encriptación. Incluso se lo usó como parte de un sistema PKI o de infraestructura de
   clave pública.<br>
-  La <strong>criptografía de curva elíptica</strong>, o <strong>ECC</strong>, es un sistema de encriptación de
+  La <em>criptografía de curva elíptica</em>, o <strong>ECC</strong>, es un sistema de encriptación de
   clave pública que usa la estructura algebraica de curvas elípticas sobre campos finitos para generar claves
   seguras. Bueno, los sistemas tradicionales de clave pública usan la factorización de números primos grandes,
   mientras que ECC hace uso de curvas elípticas. Y la curva elíptica se compone de un conjunto de coordenadas que

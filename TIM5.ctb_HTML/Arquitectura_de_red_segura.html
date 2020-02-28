@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
+    <h2>Arquitectura de red segura</h2>
     <h3>Mejores prácticas de endurecimiento de la red</h3><br>
     El fortalecimiento de la red es el proceso de proteger una red reduciendo sus vulnerabilidades potenciales a través
     de cambios de configuración, y tomando medidas específicas.<br>
@@ -115,13 +116,13 @@
     segmento de la red local almacenarán en caché esta entrada ARP. Debido a la entrada de ARP falsificada, envían a la
     máquina del atacante tramas destinadas a la dirección IP de la víctima. El atacante podría habilitar el reenvío de
     IP, lo que le permitiría supervisar de forma transparente el tráfico destinado a la víctima.<br>
-    La <strong>inspección de ARP dinámicas</strong>, o <strong>DAI</strong>, es otra función incluida en los
+    La <em>inspección de ARP dinámicas</em>, o <strong>DAI</strong>, es otra función incluida en los
     conmutadores empresariales que impide este tipo de ataque. Requiere el uso del snooping de DHCP para establecer una
     vinculación de confianza de direcciones IP a los puertos del conmutador. DAI detectará estos falsos paquetes ARP no
     solicitados y los descartará. Lo hace porque tiene una tabla de snooping de DHCP que tiene las asignaciones de
     direcciones IP autoritativas por puerto. DAI también impone una gran limitación de paquetes ARP por puerto para
     evitar el escaneo ARP. Es probable que un atacante escanee ARP antes de intentar el ataque ARP.<br>
-    Para impedir ataques de suplantación de IP, se puede habilitar la <strong>protección de fuente de IP</strong>, o
+    Para impedir ataques de suplantación de IP, se puede habilitar la <em>protección de fuente de IP</em>, o
     <strong>IPSG</strong>, en conmutadores empresariales junto con el snooping de DHCP. Funciona usando la tabla de
     snooping de DHCP para crear dinámicamente las ACL para cada centralita. Esto descarta los paquetes que no coinciden
     con la dirección IP del puerto tomando como base la tabla de snooping de DHCP.<br>
