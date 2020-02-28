@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="..\css\styles.css" type="text/css">
 </head>
 <body>
+    <h2>Monitoreo de Red</h2>
     <h3>Olfateando la red</h3>
     Para supervisar qué tipo de tráfico hay en tu red, necesitas un mecanismo para capturar paquetes del tráfico de red
     para análisis y registro potencial. La <strong>detección (sniffing) o captura de paquetes</strong> es un proceso de
@@ -123,15 +124,15 @@
     flujo de paquetes. Poder capturar esos paquetes y lograr inspeccionarlos es importante para entender qué tipo de
     tráfico, del que fluye por nuestras redes, nos gustaría proteger.<br>
     <h3>Sistemas de prevención / detección de intrusos</h3>
-    Los <strong>sistemas de prevención y detección de intrusiones IDS o IPS</strong> supervisan y analizan el tráfico
-    de red. ¿Qué es exactamente lo que hacen los sistemas IDS e IPS? Buscan comportamientos o características que
-    indiquen tráfico malicioso.<br>
+    Los <em>sistemas de prevención y detección de intrusiones</em> <strong>IDS o IPS</strong> supervisan y analizan el
+    tráfico de red. ¿Qué es exactamente lo que hacen los sistemas IDS e IPS? Buscan comportamientos o características
+    que indiquen tráfico malicioso.<br>
     La diferencia entre un sistema IDS y un IPS es que IDS es solo un sistema de detección. No tomará medidas para
     bloquear o impedir un ataque cuando se lo detecte, solo registrará una alerta. Pero un sistema IPS puede ajustar
     las reglas del firewall sobre la marcha para bloquear o descartar el tráfico malicioso cuando lo detecte.<br>
-    Los sistemas IDS/IPS pueden ser basados en host o en la red. En el caso de un <strong>sistema de detección de
-    intrusiones de red</strong>, o <strong>NIDS</strong>, el sistema de detección se implementaría en algún lugar de
-    una red donde pueda monitorear el tráfico para un segmento de red o subred.<br>
+    Los sistemas IDS/IPS pueden ser basados en host o en la red. En el caso de un <em>sistema de detección de
+    intrusiones de red</em>, o <strong>NIDS</strong>, el sistema de detección se implementaría en algún lugar de una
+    red donde pueda monitorear el tráfico para un segmento de red o subred.<br>
     Un <strong>sistema de detección de intrusiones basado en host</strong> sería un software implementado en el host
     que supervisa el tráfico solo hacia y desde ese host. También puede supervisar los archivos del sistema para
     detectar cambios no autorizados.<br>
@@ -156,14 +157,14 @@
     <a href="https://www.snort.org/">https://www.snort.org/</a><br>
     <a href="https://suricata-ids.org/">https://suricata-ids.org/</a><br>
     <a href="https://www.zeek.org/">https://www.zeek.org/</a><br>
-    La instalación de un sistema <strong>NIP</strong>, o de <strong>prevención de intrusiones de red</strong>, será
-    diferente de la de un sistema NIDS. Esto se debe a que un sistema de prevención debe poder tomar medidas contra un
-    tráfico malicioso sospechoso. Para que un dispositivo NIPS bloquee o descarte el tráfico de una amenaza detectada,
-    debe estar colocado en línea con el tráfico que se supervisa. Esto significa que el tráfico bajo supervisión debe
-    pasar a través del dispositivo NIPS. Si ese no fuera el caso, el host NIPS no podría tomar medidas en caso de
-    tráfico sospechoso. Piénsalo de esta manera: un dispositivo NIDS es un observador pasivo que solo vigila el tráfico
-    y envía una alerta si ve algo. Esto es diferente de un dispositivo NIPS, que no solo supervisa el tráfico, sino que
-    puede tomar medidas sobre el tráfico bajo su supervisión, por lo general, bloqueando o descartando ese tráfico.<br>
+    La instalación de un sistema <strong>NIP</strong>, o de <em>prevención de intrusiones de red</em>, será diferente
+    de la de un sistema NIDS. Esto se debe a que un sistema de prevención debe poder tomar medidas contra un tráfico
+    malicioso sospechoso. Para que un dispositivo NIPS bloquee o descarte el tráfico de una amenaza detectada, debe
+    estar colocado en línea con el tráfico que se supervisa. Esto significa que el tráfico bajo supervisión debe pasar
+    a través del dispositivo NIPS. Si ese no fuera el caso, el host NIPS no podría tomar medidas en caso de tráfico
+    sospechoso. Piénsalo de esta manera: un dispositivo NIDS es un observador pasivo que solo vigila el tráfico y envía
+    una alerta si ve algo. Esto es diferente de un dispositivo NIPS, que no solo supervisa el tráfico, sino que puede
+    tomar medidas sobre el tráfico bajo su supervisión, por lo general, bloqueando o descartando ese tráfico.<br>
     La detección de amenazas o de tráfico malicioso se maneja, en general, a través de la detección basada en firmas,
     algo similar a cómo el software antivirus detecta malware. Las firmas son características únicas del tráfico
     malicioso conocido. Podrían ser secuencias específicas de paquetes o paquetes con ciertos valores codificados en el

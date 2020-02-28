@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.2.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sistema de endurecimiento</title>
+    <meta name="generator" content="CherryTree">
+    <link rel="stylesheet" href="..\css\styles.css" type="text/css">
+</head>
+<body>
+    <h2>Sistema de endurecimiento</h2>
+    <h3>Deshabilitar componentes innecesarios</h3>
+    La clase especial de vulnerabilidades que analizamos, llamada vulnerabilidades de día cero, es única, ya que no se
+    las conoce hasta que se las explota en libre circulación. El potencial de estas fallas desconocidas es algo en lo
+    que debes pensar cuando se trata de proteger los sistemas y las redes de tu empresa. Aun cuando sea un riesgo
+    desconocido, todavía se lo puede manejar tomando medidas para restringir y controlar el acceso a los sistemas.
+    Nuestro objetivo final general es reducir el riesgo.<br>
+    Dos términos importantes que debes conocer cuando hablamos de riesgos de seguridad son los vectores de ataque y las
+    superficies de ataque. Un <strong>vector de ataque</strong> es un método o mecanismo por el cual un atacante o
+    malware obtiene acceso a una red o sistema. Algunos vectores de ataque son archivos adjuntos de correo electrónico,
+    protocolos o servicios de red, interfaces de red y entradas del usuario. Estos son diferentes enfoques o caminos
+    que un atacante podría usar para poner en riesgo un sistema si es capaz de explotarlo.<br>
+    Una <strong>superficie de ataque</strong> es la suma de todos los diferentes vectores de ataque en un sistema dado.
+    Piensa en esto como la combinación de todas las formas posibles en que un atacante podría interactuar con nuestro
+    sistema, independientemente de las vulnerabilidades conocidas.<br>
+    No es posible conocer todas las vulnerabilidades del sistema. Por lo tanto, asegúrate de pensar en todas las vías
+    en que un actor externo podría interactuar con nuestros sistemas como una potencial superficie de ataque. La
+    enseñanza principal aquí es mantener nuestras superficies de ataque lo más reducidas posible. Esto minimiza las
+    posibilidades de que un atacante descubra una falla desconocida y ponga en riesgo nuestros sistemas.<br>
+    Hay muchos enfoques que puedes aplicar, como especialista en soporte de TI, para reducir las superficies de ataque.
+    Todos ellos se reducen a simplificar sistemas y servicios. Cuanto menos complejo es algo, menos probable será que
+    haya fallas no detectadas. Por lo tanto, asegúrate de deshabilitar cualquier servicio o protocolo adicional. Si no
+    son totalmente necesarios, quítalos de allí. Cada superficie adicional en operaciones representa superficies de
+    ataque adicionales, lo que podría acarrear una vulnerabilidad por descubrir. Esa vulnerabilidad podría ser
+    explotada y dar lugar a un riesgo. Este concepto también se aplica al acceso y las ACL. Solo permite el acceso
+    cuando sea totalmente necesario. Entonces, por ejemplo, probablemente no sea necesario que los empleados puedan
+    acceder a las impresoras directamente desde fuera de la red local. Puedes ajustar las reglas del firewall para
+    evitar ese tipo de acceso.<br>
+    Otra forma de mantener las cosas simples es reducir las implementaciones de software. En lugar de tener cinco
+    soluciones de software diferentes para realizar cinco tareas separadas, reemplázalas con una solución unificada,
+    siempre que sea posible. Esa solución debería requerir un código menos complejo, lo que reduce el número de
+    vulnerabilidades potenciales.<br>
+    También debes asegurarte de deshabilitar los componentes innecesarios o no utilizados del software y los sistemas
+    implementados. Al deshabilitar funciones que no están en uso, estás reduciendo aún más los servicios de tecnología,
+    mucho más. No solo estás reduciendo la cantidad de formas con las que un atacante puede obtener acceso, sino
+    también estás minimizando la cantidad de código que está activo. Es importante adoptar este enfoque en todos los
+    niveles de sistemas y redes que administres. Puede parecer obvio tomar estas medidas en servidores y en
+    infraestructura de red crítica, pero también es importante hacer esto en plataformas de equipos de escritorio y
+    laptops que tus empleados usan. Muchos sistemas operativos para consumidores se envían con un montón de servicios
+    predeterminados y software habilitado de inmediato, lo que probablemente no usarás en una red o un entorno
+    empresarial. Por ejemplo, el acceso Telnet para un conmutador administrado no tiene sentido que esté habilitado en
+    un entorno real. Deberías desactivarlo inmediatamente si lo encuentras en el dispositivo. Cualquier acceso a API
+    específico del proveedor también debe desactivarse si no planeas usar estos servicios o herramientas. Podrían ser
+    inofensivos, en especial si configuras sólidas reglas de firewall y ACL de red. Este servicio podría representar un
+    riesgo bastante bajo, ¿pero por qué correr un riesgo innecesario?<br>
+    Recuerda, el concepto de defensa en profundidad tiene que ver con la mitigación de riesgos y la implementación de
+    capas de seguridad. Ahora, pensemos en el enfoque de seguridad en capas. ¿Qué ocurre si nuestras medidas de control
+    de acceso se eluden o fallan de alguna manera imprevista? Como especialista en soporte de TI, esto es exactamente
+    lo que debes pensar. ¿Cómo podemos mantener este componente seguro si los sistemas de seguridad anteriores
+    fallaron?<br>
+    <h3>Firewall basado en host</h3>
+    Los firewalls basados en host son importantes para crear múltiples capas de seguridad. Protegen los hosts
+    individuales de verse en riesgo cuando se los usa en entornos no confiables y potencialmente maliciosos. También
+    protegen a los hosts individuales de pares potencialmente en riesgo dentro de una red de confianza. Nuestro
+    firewall basado en la red tiene el deber de proteger nuestra red interna filtrando el tráfico que entra y sale de
+    ella, mientras que el firewall basado en host, para cada host individual, protege esa máquina.<br>
+    Al igual que nuestro firewall basado en red, queremos comenzar con una regla de denegación implícita. Luego,
+    habilitaríamos selectivamente servicios y puertos específicos que se usarán. Esto nos permite comenzar con una
+    configuración predeterminada segura y solo entonces permite el tráfico que conocemos y en el que confiamos. Puedes
+    pensar en esto como comenzar con una configuración de firewall perfectamente segura y luego hacer agujeros en ella
+    para el tráfico específico que requerimos. Esto puede parecer muy diferente de la configuración del firewall de tu
+    red, ya que es poco probable que tus empleados necesiten acceso remoto SSH a sus laptops, por ejemplo.<br>
+    Recuerda que para asegurar los sistemas debes minimizar las superficies de ataque o la exposición. Un firewall
+    basado en host desempeña un papel importante en reducir lo que es accesible a un atacante externo. Proporciona
+    flexibilidad y solo permite conexiones a servicios selectivos en un host dado a partir de redes o rangos de IP
+    específicos. Esta capacidad de restringir conexiones desde ciertos orígenes se usa, en general, para implementar un
+    host altamente seguro para la red. Desde allí, se permite el acceso a sistemas o infraestructura que son críticos o
+    sensibles. A estos se los llama hosts o redes de bastión, y están específicamente fortalecidos y minimizados para
+    reducir lo que se permite ejecutar en ellos.<br>
+    Los <strong>hosts de bastión</strong> suelen estar expuestos a Internet, por lo que debes prestar especial atención
+    al fortalecerlos y bloquearlos para reducir las posibilidades de riesgo. Pero también se pueden usar como una
+    puerta de enlace o portal de acceso a servicios más sensibles como servidores de autenticación central o
+    controladores de dominio. Esto te permitiría implementar mecanismos de autenticación y ACL más seguros en los hosts
+    de bastión sin que sea incómodo para toda tu empresa. La supervisión y el registro para estos hosts se pueden
+    priorizar más fácilmente. Por lo general, estos hosts o redes también tendrán una conectividad de red muy limitada.
+    Es solo para la zona segura que deben proteger por diseño, y no mucho más.<br>
+    Las aplicaciones que pueden instalarse y ejecutarse en estos hosts también estarán restringidas a las que son
+    estrictamente necesarias, ya que estas máquinas tienen un propósito específico. Parte de las reglas del firewall
+    base del host probablemente también ofrezcan ACL que permitan el acceso desde la subred VPN. Es una recomendación
+    para mantener separada la red a la que los clientes VPN se conectan, mediante subredes y VLAN. Esto te da más
+    flexibilidad para aplicar seguridad en estos clientes VPN. También te permite construir capas adicionales de
+    defensas; si bien un host VPN debe estar protegido por otros medios, sigue siendo un host que opera en un entorno
+    potencialmente malicioso. Este host está iniciando una conexión remota en tu red interna de confianza. Estos hosts
+    representan otro vector potencial de ataque y riesgo.<br>
+    Tu capacidad para supervisar por separado el tráfico que entra y sale de ellos es muy útil. Algo importante que
+    debes tener en cuenta cuando se trata de firewalls basados en host, en especial para sistemas cliente como laptops.
+    Si los usuarios del sistema tienen derechos de administrador, entonces tienen la capacidad de modificar las reglas
+    y configuraciones del firewall. Esto es algo que debes recordar y asegurarte de supervisar con el registro. Si las
+    herramientas de gestión lo permiten, también debes impedir la desactivación del firewall basado en host. Esto se
+    puede hacer con máquinas de Microsoft Windows cuando las administras usando Active Directory, por ejemplo.<br>
+    <h3>Registro y auditoria</h3>
+    Una parte crítica de cualquier arquitectura de seguridad son el registro y las alertas. No serviría de mucho tener
+    todas estas defensas implementadas si no tenemos idea de si funcionan o no. Necesitamos visibilidad en los sistemas
+    de seguridad activos para ver qué tipo de tráfico están observando. También necesitamos tener esa visibilidad en
+    los registros de todos los dispositivos y equipos de infraestructura que administramos.<br>
+    Pero con tener registros no es suficiente, también necesitamos formas de salvaguardarlos y de facilitar su análisis
+    y revisión. Si hay un equipo de seguridad especializado en tu empresa, estaría realizando este análisis. Pero en
+    una empresa más pequeña, esta responsabilidad probablemente recaerá en el equipo de TI. Asegurémonos de que estés
+    preparado con las habilidades que podrías necesitar para investigar incidentes. Muchas técnicas de investigación
+    también pueden aplicarse a la resolución de problemas.<br>
+    Todos los sistemas y servicios que se ejecutan en hosts crearán registros de algún tipo, con diferentes niveles de
+    detalle. Depende de lo que se está registrando y de los eventos para los que se configuró el registro. En un
+    servidor de autenticación, registraríamos cada intento de autenticación, sea exitoso o no. Un firewall registraría
+    el tráfico que corresponde a reglas con detalles como direcciones de origen y destino, y puertos en uso. Toda esta
+    información registrada nos da detalles sobre el tráfico y la actividad que ocurre en nuestra red y nuestros
+    sistemas. Esto se puede usar para detectar riesgos o intentos de atacar el sistema.<br>
+    Cuando hay una gran cantidad de sistemas ubicados por toda tu red, cada uno con su propio formato de registro,
+    puede ser complicado darle sentido a todos estos datos. Aquí es donde entran en juego los <em>sistemas de gestión
+    de eventos e información de seguridad</em>, o <strong>SIEM</strong>. Puedes imaginar un SIEM como un servidor de
+    registro centralizado. También tiene algunas características adicionales de análisis. Puedes pensar en los SIEM
+    como una forma de registro centralizado a efectos de administración de seguridad. Un sistema SIEM obtiene registros
+    de un montón de otros sistemas. Consolida los registros de todos los diferentes lugares y los coloca en una
+    ubicación centralizada. Esto hace que el manejo de los registros sea mucho más fácil.<br>
+    Como especialista en soporte de TI, una medida importante que tomarás en el análisis de registros es la
+    <strong>normalización</strong>. Este es el proceso de toma de datos de registro en diferentes formatos y llevarlos
+    a un formato estandarizado que sea coherente con una estructura de registro definida. Como especialista en soporte
+    de TI, puedes configurar la normalización para tus fuentes de registro. Por ejemplo, las entradas de registro de
+    nuestro firewall pueden tener una marca de tiempo con el formato año/mes/día, mientras que los registros de
+    nuestras máquinas cliente pueden usar el formato día/mes/año. Para normalizar estos datos, elige un formato de
+    fecha estándar, y luego define cuáles son los campos de tipos de registro que deben convertirse. Cuando se reciben
+    registros de estas máquinas, las entradas de registro se convierten en el estándar que definimos y el servidor de
+    registro las almacena. Esto te permite analizar y comparar datos de registro entre diferentes tipos de registros y
+    sistemas de una manera mucho más fácil.<br>
+    Entonces, ¿qué tipo de información deberías registrar? Bueno, esa es una gran pregunta. Si registras demasiada
+    información, es difícil analizar un dato y encontrar información útil. Además, los requisitos de almacenamiento
+    para registros se vuelven costosos muy rápidamente. Pero si se registra muy poco, entonces los datos no
+    proporcionarán ninguna información útil sobre tus sistemas y tu red. Encontrar ese punto medio puede ser difícil.
+    Variará dependiendo de las características únicas de los sistemas que se están supervisando y el tipo de actividad
+    en la red. No importa qué eventos se registren, todos ellos deben tener información que nos ayude a entender lo que
+    sucedió y a reconstruir los eventos. Hay muchos campos importantes para capturar en las entradas del registro, como
+    la marca de tiempo, el código de error o de evento, el servicio o aplicación que se está registrando, la cuenta de
+    usuario o sistema asociada con el evento, y los dispositivos involucrados en el evento. Las marcas de tiempo son
+    importantísimas para comprender cuándo ocurrió un evento. Campos como las direcciones de origen y destino nos
+    informarán quién habló con quién. Para los registros de aplicaciones, puedes obtener información útil del usuario
+    conectado asociado con el evento y del cliente que utilizaba.<br>
+    Además de la ayuda al análisis que proporciona, un servidor centralizado en vivo también tiene ventajas de
+    seguridad. Al mantener los registros en un sistema especializado, es más fácil proteger el sistema de un ataque.
+    Los atacantes suelen apuntar a los registros después de una violación de seguridad para cubrir sus huellas. Al
+    hacer que los sistemas críticos envíen registros al servidor de registro remoto que está protegido, los detalles de
+    una violación de seguridad deben seguir quedando registrados. Un equipo forense podrá reconstruir los eventos que
+    dieron lugar al riesgo.<br>
+    Una vez que tenemos el registro configurado y los eventos relevantes registrados en un servidor de registro
+    centralizado, ¿qué hacemos con todos los datos? Bueno, el análisis de los detalles del registro depende de lo que
+    se intenta lograr. Por lo general, como especialista de soporte de TI, cuando observas los registros globales,
+    debes prestar atención a los patrones y las conexiones entre el tráfico. Entonces, si estás viendo que un gran
+    porcentaje de hosts de Windows se conectan a direcciones específicas fuera de tu red, podría valer la pena
+    investigar eso. Podría señalar una infección de malware. Una vez que los registros están centralizados y
+    estandarizados, puedes escribir alertas automatizadas basadas en reglas. Tal vez quieras encontrar una regla de
+    alerta para repetidos intentos fallidos de autenticarse en un servidor de autenticación crítico. Muchas soluciones
+    SIEM también ofrecen tableros de manejo para ayudar a los analistas a visualizar estos datos. Tener datos en un
+    formato visual puede potencialmente brindar más información.<br>
+    También puedes escribir algunos de tus propios sistemas de supervisión y alerta. Ahora, no importa si usas una
+    solución SIEM o si escribiste tu propia solución, ambas pueden ser útiles para desglosar cosas como los protocolos
+    comúnmente utilizados en la red, ver rápidamente a los dispositivos que más se comunican en la red, analizar
+    errores reportados a lo largo del tiempo para revelar patrones.<br>
+    Otro componente importante a registrar para tener en cuenta, como especialista en soporte informático, es la
+    retención. Tus necesidades de almacenamiento de registro variarán según la cantidad de sistemas que se estén
+    registrando, la cantidad de registros detallados y la velocidad a la que se crean los registros. Cuánto tiempo
+    deseas o necesitas mantener registros también influirá en los requisitos de almacenamiento para un servidor de
+    registro. Algunos ejemplos de servidores de registro y soluciones SIEM son la solución de código abierto rsylog,
+    Splunk Enterprise Security, IBM Security Qradar y RSA Security Analytics.<br>
+    <h3>Protección antimalware</h3>
+    Hoy en día, Internet está lleno de bots, virus, gusanos y otros ataques automatizados. Muchos sistemas
+    desprotegidos se verían en riesgo en cuestión de minutos si están conectados directamente a Internet sin ningún
+    tipo de protección o salvaguarda implementada. Y necesitan tener actualizaciones críticas del sistema. Si bien los
+    sistemas operativos modernos han reducido este vector de amenaza al tener firewalls básicos habilitados de manera
+    predeterminada, todavía hay una gran cantidad de tráfico de ataque en Internet.<br>
+    Las medidas antimalware desempeñan un papel muy importante para mantener este tipo de ataque fuera de tus sistemas
+    y te ayudan a proteger a tus usuarios. El software antivirus existe desde hace un buen tiempo, pero algunos
+    expertos en seguridad cuestionan el valor que puede proporcionarle a una empresa, en especial desde que la
+    aparición del malware y de ataques más sofisticados en los últimos años. El software antivirus está basado en
+    firmas. Esto significa que tiene una base de datos de firmas que identifican malware conocido, como el hash de
+    archivo único de un binario malicioso o el archivo asociado con una infección. O podrían ser las características de
+    tráfico de la red que el malware usa para comunicarse con un servidor de comando y control. El software antivirus
+    supervisará y analizará cosas como la creación de nuevos archivos o la modificación de archivos en el sistema para
+    observar cualquier comportamiento que coincida con una firma de malware conocido. Si detecta actividad que coincide
+    con la firma, dependiendo del tipo de firma, intentará impedir que el malware dañe el sistema. Pero algunas firmas
+    solo podrían ser capaces de detectar el malware después de que haya ocurrido la infección. En ese caso, puede
+    intentar poner en cuarentena los archivos infectados. Si eso no es posible, simplemente registrará y alertará el
+    evento detectado. A un alto nivel, así es como funcionan todos los productos antivirus.<br>
+    Sin embargo, hay dos problemas con el software antivirus. El primero es que dependen de firmas antivirus
+    distribuidas por el proveedor de software antivirus. El segundo es que dependen de que el proveedor de antivirus
+    detecte nuevo malware y escriba nuevas firmas para amenazas recién detectadas. Hasta que el proveedor pueda
+    escribir nuevas firmas, publicarlas y difundirlas, tu software antivirus no puede protegerte de estas amenazas
+    emergentes.<br>
+    Un antivirus, que está diseñado para proteger sistemas, en realidad representa una superficie de ataque adicional
+    que los atacantes pueden explotar. Bueno, esto se debe a la naturaleza misma de lo que un motor antivirus debe
+    hacer. Necesita códigos binarios arbitrarios y potencialmente maliciosos como entrada y realiza diversas
+    operaciones sobre ellos. Debido a esto, hay una gran cantidad de códigos complejos que podrían tener errores muy
+    serios.<br>
+    Parece que el software antivirus no es ideal y tiene algunos inconvenientes bastante grandes. Entonces, ¿por qué lo
+    seguimos recomendando como pieza central del diseño de seguridad? La respuesta corta es la siguiente. Protege
+    contra los ataques más comunes que hay en Internet. Las cosas realmente obvias que todavía representan una amenaza
+    para tus sistemas aún necesitan una defensa. Un antivirus es una solución fácil para proporcionar esa protección.
+    No importa cuánta educación del usuario inculques en tus empleados. Todavía habrá algunas personas que harán clic
+    en un correo electrónico que tiene un archivo adjunto infectado.<br>
+    Una buena manera de pensar en un antivirus en el ruidoso entorno actual de amenazas externas es como un filtro para
+    el ruido de ataque en Internet. Te permite eliminar el ruido de fondo y enfocarte en las amenazas dirigidas o
+    específicas más importantes. Recuerda, nuestro concepto de defensa en profundidad implica múltiples capas de
+    protección. El software antivirus es solo una parte de nuestras defensas antimalware.<br>
+    Mientras que un antivirus opera en un modelo de lista negra en el que compara contra una lista de cosas malas
+    conocidas y bloquea lo que coincida, hay una clase de software antimalware que hace lo contrario. El software de
+    lista blanca binario funciona a partir de una lista blanca. Es una lista de software conocido, bueno y confiable. y
+    solo se permite la ejecución de las cosas que están en la lista. Todo lo demás está bloqueado. Puede pensar que
+    esto aplica la regla implícita de denegación de ACL a la ejecución del software. De manera predeterminada, todo
+    está bloqueado. Solo las cosas explícitamente permitidas pueden ejecutarse. Debería señalar que, normalmente, esto
+    solo se aplica a archivos ejecutables, no a archivos arbitrarios como documentos PDF o archivos de texto. Esto
+    naturalmente nos defendería de cualquier amenaza desconocida, pero a costa de la comodidad. Piense con qué
+    frecuencia descargas e instalas software nuevo en tu máquina. Ahora imagina si tuvieras que conseguir aprobación
+    antes de que pudieras descargar e instalar cualquier software nuevo.<br>
+    Ahora, imagina que cada actualización del sistema tuviera que estar en la lista blanca antes de poder aplicarse.
+    Obviamente, no confiar en todo no sería muy sostenible. Es por esta razón que el software binario de lista blanca
+    puede confiar en el software mediante un par de mecanismos diferentes. El primero es usar el hash criptográfico
+    único de los binarios que se utilizan para identificar binarios únicos. Esto se usa para agregar ejecutables
+    individuales a la lista blanca.<br>
+    El otro mecanismo de confianza es un certificado de firma de software. La firma de software o la firma de código es
+    la misma idea, pero aplicada al software. Un proveedor de software puede firmar criptográficamente los códigos
+    binarios que distribuye por medio de una clave privada. La firma se puede verificar en el momento de la ejecución
+    usando la clave pública incrustada en el certificado y verificando la cadena de confianza de la clave pública. Si
+    el hash coincide y la clave pública es de confianza, entonces se puede verificar que el software provino de alguien
+    que tiene la clave privada de firma de código del proveedor de software. Los sistemas de lista blanca binarios se
+    pueden configurar para que confíen en los certificados de firma de código de proveedores específicos. Permiten que
+    se ejecuten todas las firmas binarias con ese certificado. Esto es útil para confiar automáticamente en contenido
+    como actualizaciones del sistema junto con el software de uso común que viene de proveedores confiables y de buena
+    reputación. Cada nuevo certificado de firma de código en el que se confía representa un aumento en la superficie de
+    ataque. Un atacante puede poner en riesgo el certificado de firma de código de un proveedor de software en el que
+    tu empresa confía y lo usa para firmar el malware que apunta a tu empresa. Eso evitaría las defensas de listas
+    blancas de código binario implementadas.<br>
+    <h3>Cifrado de disco</h3>
+    La <em>encriptación completa de disco</em>, o <strong>FDE</strong>, es un factor importante en un modelo de
+    seguridad de defensa en profundidad. Proporciona protección contra ciertas formas físicas de ataque. Como
+    especialista en soporte de TI, es probable que ayudes a implementar una solución FDE si es que no hay una
+    implementada, ayudes a migrar de una solución FDE a otra y solucionar problemas con sistemas FDE, como cuando
+    alguien olvida una contraseña. FDE es clave.<br>
+    Los sistemas que tienen todos sus discos duros encriptados son resistentes al robo de datos. Evitarán que un
+    atacante robe información potencialmente confidencial de un disco duro que fue robado o que se perdió. Sin conocer
+    la contraseña de encriptación ni tener acceso a la clave de encriptación, los datos en el disco duro no tienen
+    sentido alguno. Este es un mecanismo de seguridad cuya implementación es más importante en dispositivos móviles
+    como laptops, teléfonos celulares y tablets. Pero también se recomienda para equipos de escritorio y servidores, ya
+    que la encriptación de discos no solo brinda confidencialidad sino también integridad. Esto significa que un
+    atacante con acceso físico a un sistema no puede reemplazar archivos del sistema con archivos maliciosos, ni
+    instalar malware.<br>
+    Tener el disco totalmente encriptado protege contra el robo de datos y la manipulación no autorizada, incluso si un
+    atacante tiene acceso físico al disco. Pero para poder iniciar un sistema si tiene una configuración FDE, se debe
+    poder acceder a ciertos archivos críticos. Deben estar disponibles antes de poder desbloquear el disco principal y
+    de que el proceso de inicio pueda continuar. Debido a esto, todas las configuraciones de FDE tienen una partición
+    sin encriptar en el disco, que contiene estos archivos de arranque críticos. Los ejemplos incluyen cosas como el
+    kernel y el cargador de arranque, que son fundamentales para el sistema operativo. Estos archivos son realmente
+    vulnerables a ser reemplazados por archivos modificados, potencialmente maliciosos, por un atacante con acceso
+    físico. Si bien es posible comprometer una máquina de esta manera, se necesitaría un atacante sofisticado y
+    decidido para hacerlo.<br>
+    También hay protección contra este ataque en la forma del <strong>protocolo de arranque seguro</strong>, que es
+    parte de la especificación UEFI. El arranque seguro usa criptografía de clave pública para proteger estos elementos
+    encriptados pertenecientes al proceso de arranque. Lo hace mediante la firma de código integrado y la verificación
+    de los archivos de arranque. Inicialmente, el arranque seguro se configura con lo que se llama una clave de
+    plataforma, que es la clave pública correspondiente a la clave privada usada para firmar los archivos de inicio.
+    Esta clave de plataforma está escrita en el firmware y se usa en el momento del arranque para verificar la firma de
+    los archivos de arranque. Solo los archivos firmados correctamente y de confianza podrán ejecutarse. De esta
+    manera, un arranque seguro protege contra la manipulación física de la partición de arranque sin encriptar.<br>
+    Existen soluciones de encriptación completa de disco de primera mano de Microsoft y Apple, llamadas Bit Locker y
+    FileVault 2 respectivamente. También hay un montón de soluciones de terceros y de código abierto. En Linux, el
+    paquete dm-crypt es muy popular. También hay soluciones de PGP, TrueCrypt, VeraCrypt y muchos otros.<br>
+    <a href=
+    "https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview">https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview</a><br>
+
+    <a href="https://support.apple.com/en-us/HT204837">https://support.apple.com/en-us/HT204837</a><br>
+    <a href="https://wiki.archlinux.org/index.php/dm-crypt">https://wiki.archlinux.org/index.php/dm-crypt</a><br>
+    Los esquemas de encriptación completa de disco se basan en la clave secreta para las operaciones reales de
+    encriptación y desencriptación. Por lo general, protegen con contraseña el acceso a esta clave. Pero en algunos
+    casos, la clave de encriptación real se usa para obtener una clave de usuario que luego se utiliza para encriptar
+    la clave maestra. Si se debe cambiar la clave de encriptación, se puede intercambiar la clave de usuario sin
+    requerir desencriptación y reencriptación completas de los datos protegidos. Esto sería necesario si se debe
+    cambiar la clave de encriptación maestra. Proteger con contraseña la clave funciona haciendo que el usuario ingrese
+    la frase de contraseña para desbloquear la clave de encriptación. A continuación, se puede utilizar para acceder a
+    los contenidos protegidos en el disco. En muchos casos, esto podría ser lo mismo que la contraseña de la cuenta de
+    usuario para mantener las cosas simples y para reducir el número de contraseñas a memorizar.<br>
+    Cuando implementas una solución de encriptación completa de disco a escala, es muy importante pensar en cómo
+    manejar esos casos en los que alguien olvida la contraseña. Esta es otra compensación de conveniencia cuando se usa
+    FDE. Si la frase de contraseña se olvida, entonces no se pueden recuperar los contenidos del disco. Por esta razón,
+    muchas soluciones de encriptación de discos empresariales tienen una funcionalidad de <strong>depósito de
+    claves</strong>. El depósito de claves permite que la clave de encriptación se almacene de forma segura para su
+    posterior recuperación por una parte autorizada. Si alguien olvida la contraseña para desbloquear su disco
+    encriptado para su laptop, los administradores de sistemas pueden recuperar la clave del depósito o la frase de
+    contraseña de recuperación para desbloquear el disco. Por lo general, es una frase de contraseña separada que puede
+    desbloquear el disco junto con la clave definida por el usuario. Esto permite la recuperación si se olvida una
+    contraseña. La clave de recuperación se usa para desbloquear el disco y arrancar el sistema por completo.<br>
+    Debes comparar la encriptación completa de discos con la <strong>encriptación basada en archivos</strong>. Eso es
+    cuando solo algunos archivos o carpetas están encriptados, y no todo el disco. Esto generalmente se implementa como
+    encriptación del directorio de inicio. Tiene un propósito ligeramente diferente en comparación con FDE. La
+    encriptación del directorio de inicio o basada en archivos solo garantiza la confidencialidad y la integridad de
+    los archivos protegidos por encriptación. Estas configuraciones, por lo general, no encriptan los archivos del
+    sistema porque a menudo hay compromisos entre la seguridad y la usabilidad. Cuando no todo el disco está
+    encriptado, es posible reiniciar remotamente una máquina sin quedar fuera de la sesión. Si reinicias una máquina
+    con encriptación completa de disco, la contraseña de desbloqueo del disco debe ingresarse antes de que la máquina
+    termine de arrancar y que se pueda volver a tener acceso a ella a través de la red. Entonces, si bien la
+    encriptación basada en archivos es un poco más conveniente, tiene menos protección contra los ataques físicos. Un
+    atacante puede modificar o reemplazar los archivos principales del sistema y poner en riesgo la máquina para
+    obtener acceso a los datos encriptados.
+    <p align="center"><img src="images/home.png" height="22" width="22"> <a href="index.html">Índice</a></p>
+</body>
+</html>
