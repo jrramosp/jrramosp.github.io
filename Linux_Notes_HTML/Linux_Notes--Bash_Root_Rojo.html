@@ -1,0 +1,8 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bash Root Rojo</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+</head>
+<body><h1><b><u>Bash Root Rojo</u></b></h1>Entramos como sudo<br /><code>sudo -i</code><br />Y editamos el bash<br /><code>nano .bashrc</code><br />Cambio la linea<br /><code>PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '</code><br />por<br />PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' <strong>Rojo y Negrita</strong><br />PS1='${debian_chroot:+($debian_chroot)}\[\033[41m\]\[\033[01;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' <strong>Fondo Rojo y texto blanco en negrita</strong></body></html>
