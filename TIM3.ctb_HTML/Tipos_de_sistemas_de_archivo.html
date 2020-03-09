@@ -303,15 +303,16 @@
     por el nombre, el mecanismo de recuperación automática hace modificaciones en problemas menores y corrupciones en
     el disco automáticamente, en segundo plano. Hace esto mientras Windows se está ejecutando, por lo que no es
     necesario reiniciar. Si deseas comprobar el estado del proceso de recuperación automática en tu computadora, puedes
-    abrir un símbolo de sistema como administrador y usar la herramienta fsutil, así. <em>Fsutil repair query C</em>.<br>
+    abrir un símbolo de sistema como administrador y usar la herramienta fsutil, así. <em>Fsutil repair query
+    C</em>.<br>
     Por último, cuando las cosas se ponen muy mal y hay una corrupción seria o catastrófica del disco, como sectores
-    defectuosos, fallas de disco y más, puedes recurrir a la utilidad <strong>chkdsk</strong> de NTFS. Gracias a las características de
-    recuperación incorporadas en NTFS no siempre es necesario ejecutar chkdsk. Pero está disponible en caso de
-    emergencia. Para ejecutar chkdsk manualmente, puedes abrir un símbolo de sistema como administrador y escribir
-    chkdsk en la línea de comandos. De forma predeterminada, chkdsk se ejecutará en modo de solo lectura. Te daré un
-    informe sobre la salud del disco, pero no hará modificaciones o reparaciones en él. Puedes indicarle a chkdsk que
-    repare cualquier problema que encuentre con el indicador /F. También puedes especificar la unidad que quieres
-    verificar.<br>
+    defectuosos, fallas de disco y más, puedes recurrir a la utilidad <strong>chkdsk</strong> de NTFS. Gracias a las
+    características de recuperación incorporadas en NTFS no siempre es necesario ejecutar chkdsk. Pero está disponible
+    en caso de emergencia. Para ejecutar chkdsk manualmente, puedes abrir un símbolo de sistema como administrador y
+    escribir chkdsk en la línea de comandos. De forma predeterminada, chkdsk se ejecutará en modo de solo lectura. Te
+    daré un informe sobre la salud del disco, pero no hará modificaciones o reparaciones en él. Puedes indicarle a
+    chkdsk que repare cualquier problema que encuentre con el indicador /F. También puedes especificar la unidad que
+    quieres verificar.<br>
     Si el sistema operativo detecta que algunos datos se corrompieron o que el disco tiene un sector con fallas,
     configurará un bit en un archivo de metadatos en el volumen que indica que hay corrupción. Cuando el sistema se
     inicie, la utilidad chkdsk comprobará este bit. Si está configurado, se ejecutará y tratará de reparar la
