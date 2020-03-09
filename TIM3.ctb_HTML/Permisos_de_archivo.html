@@ -10,10 +10,10 @@
 <body>
   <a name="h3-1" id="h3-1"></a>
   <h3>Windows: Permisos de archivo</h3>
-  En Windows, los permisos de archivos y directorios se asignan mediante <strong>listas de control de
-  acceso</strong>, o <strong>ACL</strong>. Específicamente, vamos a trabajar con <em>listas de control de acceso
-  discrecionales</em>, o <em>DACL</em>. A los archivos y carpetas de Windows también se les pueden asignar
-  <em>listas de control de acceso del sistema, o SACL</em>. Las SACL se usan para indicarle a Windows que debe
+  En Windows, los permisos de archivos y directorios se asignan mediante <em>listas de control de
+  acceso</em>, o <strong>ACL</strong>. Específicamente, vamos a trabajar con <em>listas de control de acceso
+  discrecionales</em>, o <strong>DACL</strong>. A los archivos y carpetas de Windows también se les pueden asignar
+  <em>listas de control de acceso del sistema</em>, o <strong>SACL</strong>. Las SACL se usan para indicarle a Windows que debe
   usar un registro de eventos para que tome nota de cada vez que alguien accede a un archivo o carpeta.<br>
   En Windows Explorer, abrí mi directorio principal. Si hacemos clic derecho sobre el escritorio y seleccionamos
   Properties (Propiedades), podemos ver el cuadro de diálogo de propiedades de nuestro directorio Desktop
@@ -48,7 +48,7 @@
   • Read (Lectura): esto le permite a alguien leer el contenido de un archivo o carpeta.<br>
   • Write (Escritura): esto le permite a alguien escribir información en un archivo o carpeta.<br>
   • Execute (Ejecutar): esto le permite a alguien ejecutar un programa.<br>
-  Veamos esto con el comando ls. Usaremos los indicadores largos para poder ver los permisos en el archivo. Lo
+  Veamos esto con el comando ls -l. Usaremos los indicadores largos para poder ver los permisos en el archivo. Lo
   primero que vemos en esta columna es "-rwxrw-r--". Aquí hay 10 bits. El primero es el tipo de archivo. En este
   ejemplo, el guión significa que el archivo que estamos viendo es solo un archivo normal. A veces es posible que
 
