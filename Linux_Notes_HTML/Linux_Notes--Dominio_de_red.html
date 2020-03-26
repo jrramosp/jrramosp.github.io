@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Dominio de red</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Dominio de red</u></b></h1><a name="h1-1"></a><h1>Dominio de red</h1><br />Created domingo 18 junio 2017<br /><br />¿Cómo cambiar el dominio de red en Ubuntu?<br />Para cambiar el dominio de Ubuntu sólo tenemos que realizar los siguientes pasos:<br /><br />Creamos un archivo de respaldo (por si acaso)<br />$sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_respaldo<br /><br />Ahora modificaremos el archivo para agregar el dominio deseado<br />$sudo gedit /etc/samba/smb.conf<br /><br />Buscamos la línea que diga<br />...<br />workgroup=WORKGROUP<br />...<br /><br />La reemplazamos con el nombre de dominio deseado<br /><br />workgroup=DOMINIO<br /><br />Guardamos el archivo y finalizamos con lo siguiente en la consola<br /><br />$sudo testparm<br />$sudo /etc/init.d/samba restart<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Dominio de red</h1><br />Created domingo 18 junio 2017<br /><br />¿Cómo cambiar el dominio de red en Ubuntu?<br />Para cambiar el dominio de Ubuntu sólo tenemos que realizar los siguientes pasos:<br /><br />Creamos un archivo de respaldo (por si acaso)<br />$sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_respaldo<br /><br />Ahora modificaremos el archivo para agregar el dominio deseado<br />$sudo gedit /etc/samba/smb.conf<br /><br />Buscamos la línea que diga<br />...<br />workgroup=WORKGROUP<br />...<br /><br />La reemplazamos con el nombre de dominio deseado<br /><br />workgroup=DOMINIO<br /><br />Guardamos el archivo y finalizamos con lo siguiente en la consola<br /><br />$sudo testparm<br />$sudo /etc/init.d/samba restart<br /></div></body></html>

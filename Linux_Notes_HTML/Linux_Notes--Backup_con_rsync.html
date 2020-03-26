@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Backup con rsync</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Backup con rsync</u></b></h1><a name="h1-1"></a><h1>Backup con rsync</h1><br />Created jueves 15 febrero 2018<br /><br />rsync is a good way to backup to an external drive.<br /><br />Open a terminal,<br /><br />Enter to add all new files and update current backups-<br />sudo rsync -ax /Path/To/Source /Path/To/Destination<br /><br />Enter to add all new files, update current backups, and delete deleted files-<br />sudo rsync -ax --delete /Path/To/Source /Path/To/Destination<br /><br />Example, I use this command to sync my backup with my current files-<br />sudo rsync -ax -delete /home /media/My_External <br /><br />rsync -huva <a href="file:///origen">/origen</a> /destino<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Backup con rsync</h1><br />Created jueves 15 febrero 2018<br /><br />rsync is a good way to backup to an external drive.<br /><br />Open a terminal,<br /><br />Enter to add all new files and update current backups-<br />sudo rsync -ax /Path/To/Source /Path/To/Destination<br /><br />Enter to add all new files, update current backups, and delete deleted files-<br />sudo rsync -ax --delete /Path/To/Source /Path/To/Destination<br /><br />Example, I use this command to sync my backup with my current files-<br />sudo rsync -ax -delete /home /media/My_External <br /><br />rsync -huva <a href="file:///origen">/origen</a> /destino<br /></div></body></html>

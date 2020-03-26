@@ -34,5 +34,8 @@ function collapseAllSubtrees(element){
 }
 
 window.onload = function(){ 
-	document.body.style.overflowY = 'hidden';
+	var show_page = window.location.hash.substr(1);
+	if (show_page !== '') {
+		changeFrame(show_page);
+	}
 }

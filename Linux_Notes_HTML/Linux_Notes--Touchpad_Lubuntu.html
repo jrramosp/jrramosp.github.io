@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Touchpad Lubuntu</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Touchpad Lubuntu</u></b></h1><a name="h1-1"></a><h1>Touchpad Lubuntu</h1><br />Created domingo 18 junio 2017<br /><br />Activar y desactivar el touchpad en Lubuntu<br /><br />Run the following command in a terminal:<br /><br />xinput list<br /><br />It displays all the input devices connected. Note that they all have an id. Since 12 is the id for my touchpad, running the following command will disable it.<br /><br />xinput set-prop 14 "Device Enabled" 0<br /><br />or<br /><br />synclient TouchpadOff=1<br /><br />or añadir al autostart<br /><br />syndaemon -d -i 3 -t<br /><br />Syndaemon supports the following options (flags):<br /><br />-i &lt;idle-time&gt; How many seconds to wait after the last key press before enabling the touchpad. (default is 2s).<br />-d Start as a daemon, ie in the background.<br />-t Only disable tapping, not mouse movements, in response to keyboard activity.<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Touchpad Lubuntu</h1><br />Created domingo 18 junio 2017<br /><br />Activar y desactivar el touchpad en Lubuntu<br /><br />Run the following command in a terminal:<br /><br />xinput list<br /><br />It displays all the input devices connected. Note that they all have an id. Since 12 is the id for my touchpad, running the following command will disable it.<br /><br />xinput set-prop 14 "Device Enabled" 0<br /><br />or<br /><br />synclient TouchpadOff=1<br /><br />or añadir al autostart<br /><br />syndaemon -d -i 3 -t<br /><br />Syndaemon supports the following options (flags):<br /><br />-i &lt;idle-time&gt; How many seconds to wait after the last key press before enabling the touchpad. (default is 2s).<br />-d Start as a daemon, ie in the background.<br />-t Only disable tapping, not mouse movements, in response to keyboard activity.<br /></div></body></html>

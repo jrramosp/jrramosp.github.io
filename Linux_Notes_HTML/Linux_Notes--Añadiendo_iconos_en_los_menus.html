@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Añadiendo iconos en los menus</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Añadiendo iconos en los menus</u></b></h1><a name="h1-1"></a><h1>Añadiendo iconos en los menus</h1><br />Created domingo 08 octubre 2017<br /><br />However it seems you can set the relevant GtkSettings via the gnome-settings-daemon xsettings plguin: open dconf-editor -&gt; org.gnome.settings-daemon.plugins.xsettings and change the overrides key from:<br /><br />{}<br /><br />to:<br /><br />{'Gtk/ShellShowsAppMenu': &lt;0&gt;, 'Gtk/ButtonImages': &lt;1&gt;, 'Gtk/MenuImages': &lt;1&gt;}<br /><br />usually the change is instantaneous (e.g. in gimp), but some apps need to be restarted (e.g. firefox).<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Añadiendo iconos en los menus</h1><br />Created domingo 08 octubre 2017<br /><br />However it seems you can set the relevant GtkSettings via the gnome-settings-daemon xsettings plguin: open dconf-editor -&gt; org.gnome.settings-daemon.plugins.xsettings and change the overrides key from:<br /><br />{}<br /><br />to:<br /><br />{'Gtk/ShellShowsAppMenu': &lt;0&gt;, 'Gtk/ButtonImages': &lt;1&gt;, 'Gtk/MenuImages': &lt;1&gt;}<br /><br />usually the change is instantaneous (e.g. in gimp), but some apps need to be restarted (e.g. firefox).<br /></div></body></html>

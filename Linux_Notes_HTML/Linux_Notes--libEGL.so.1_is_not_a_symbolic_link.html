@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>libEGL.so.1 is not a symbolic link</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>libEGL.so.1 is not a symbolic link</u></b></h1><a name="h1-1"></a><h1>libEGL.so.1 is not a symbolic link</h1><br />Created domingo 18 junio 2017<br /><br />Para el error que aparece <br /><br />Procesando disparadores para libc-bin (2.23-0ubuntu7) ...<br />/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link<br /><br />Solución<br /><br />sudo mv /usr/lib/nvidia-375/libEGL.so.1 /usr/lib/nvidia-375/libEGL.so.1.org<br />sudo mv /usr/lib32/nvidia-375/libEGL.so.1 /usr/lib32/nvidia-375/libEGL.so.1.org<br />sudo ln -s /usr/lib/nvidia-375/libEGL.so.375.39 /usr/lib/nvidia-375/libEGL.so.1<br />sudo ln -s /usr/lib32/nvidia-375/libEGL.so.375.39 /usr/lib32/nvidia-375/libEGL.so.1<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>libEGL.so.1 is not a symbolic link</h1><br />Created domingo 18 junio 2017<br /><br />Para el error que aparece <br /><br />Procesando disparadores para libc-bin (2.23-0ubuntu7) ...<br />/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link<br /><br />Solución<br /><br />sudo mv /usr/lib/nvidia-375/libEGL.so.1 /usr/lib/nvidia-375/libEGL.so.1.org<br />sudo mv /usr/lib32/nvidia-375/libEGL.so.1 /usr/lib32/nvidia-375/libEGL.so.1.org<br />sudo ln -s /usr/lib/nvidia-375/libEGL.so.375.39 /usr/lib/nvidia-375/libEGL.so.1<br />sudo ln -s /usr/lib32/nvidia-375/libEGL.so.375.39 /usr/lib32/nvidia-375/libEGL.so.1<br /></div></body></html>

@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Conexiones del PC</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Conexiones del PC</u></b></h1>Para saber las IP's de conexiones activas en nuestro ordenador.<br /><br />netstat -putona<br />netstat -tn 2&gt;/dev/null | grep :80 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head<br />whois IP</body></html>
+<body><div class="page">Para saber las IP's de conexiones activas en nuestro ordenador.<br /><br />netstat -putona<br />netstat -tn 2&gt;/dev/null | grep :80 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head<br />whois IP</div></body></html>

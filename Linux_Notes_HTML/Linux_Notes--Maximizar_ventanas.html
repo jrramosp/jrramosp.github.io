@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Maximizar ventanas</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Maximizar ventanas</u></b></h1><a name="h1-1"></a><h1>Maximizar ventanas</h1><br />Created domingo 18 junio 2017<br /><br />Maximizar ventanas con Super &lt;- -&gt; y wmctrl<br /><br />gconftool-2 --type string --set /apps/metacity/global_keybindings/run_command_1 "&lt;Super&gt;Left"<br />gconftool-2 --type string --set /apps/metacity/keybinding_commands/command_1 "wmctrl -r :ACTIVE: -e 0,0,0,`xwininfo -root | grep Width | awk '{ print (($2/2)-6)}'`,`xwininfo -root | grep Height | awk '{ print $2 }'`"<br />gconftool-2 --type string --set /apps/metacity/global_keybindings/run_command_2 "&lt;Super&gt;Right"<br />gconftool-2 --type string --set /apps/metacity/keybinding_commands/command_2 "wmctrl -r :ACTIVE: -e 0,`xwininfo -root | grep Width | awk '{ print (($2/2)+5) ",0," (($2/2)-6) }'`,`xwininfo -root | grep Height | awk '{ print $2 }'`"<br /><br />gconftool-2 --type string --set /apps/metacity/window_keybindings/minimize "&lt;Super&gt;Down"<br />gconftool-2 --type string --set /apps/metacity/window_keybindings/toggle_maximized "&lt;Super&gt;Up"<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Maximizar ventanas</h1><br />Created domingo 18 junio 2017<br /><br />Maximizar ventanas con Super &lt;- -&gt; y wmctrl<br /><br />gconftool-2 --type string --set /apps/metacity/global_keybindings/run_command_1 "&lt;Super&gt;Left"<br />gconftool-2 --type string --set /apps/metacity/keybinding_commands/command_1 "wmctrl -r :ACTIVE: -e 0,0,0,`xwininfo -root | grep Width | awk '{ print (($2/2)-6)}'`,`xwininfo -root | grep Height | awk '{ print $2 }'`"<br />gconftool-2 --type string --set /apps/metacity/global_keybindings/run_command_2 "&lt;Super&gt;Right"<br />gconftool-2 --type string --set /apps/metacity/keybinding_commands/command_2 "wmctrl -r :ACTIVE: -e 0,`xwininfo -root | grep Width | awk '{ print (($2/2)+5) ",0," (($2/2)-6) }'`,`xwininfo -root | grep Height | awk '{ print $2 }'`"<br /><br />gconftool-2 --type string --set /apps/metacity/window_keybindings/minimize "&lt;Super&gt;Down"<br />gconftool-2 --type string --set /apps/metacity/window_keybindings/toggle_maximized "&lt;Super&gt;Up"<br /></div></body></html>

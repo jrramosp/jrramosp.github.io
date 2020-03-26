@@ -3,6 +3,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Plymouth fijo</title>
   <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
 </head>
-<body><h1><b><u>Plymouth fijo</u></b></h1><a name="h1-1"></a><h1>Plymouth fijo</h1><br />Created domingo 18 junio 2017<br /><br />Para que se quede el Plymouht en el arranque, añadir al grub<br /><br />GRUB_GFXPAYLOAD_LINUX="keep"<br /><br />To fix the splash screen create and edit<br /><br />$ sudo nano /etc/initramfs-tools/conf.d/splash<br />And fill it with the following line<br /><br />echo FRAMEBUFFER=y<br />Now run the following command<br /><br />$ sudo update-initramfs -u<br />Reboot again and now the startup and shutdown splash screens should have the resolution specified in GRUB_GFXMODE field of the grub configuration file.<br /></body></html>
+<body><div class="page"><a name="h1-1"></a><h1>Plymouth fijo</h1><br />Created domingo 18 junio 2017<br /><br />Para que se quede el Plymouht en el arranque, añadir al grub<br /><br />GRUB_GFXPAYLOAD_LINUX="keep"<br /><br />To fix the splash screen create and edit<br /><br />$ sudo nano /etc/initramfs-tools/conf.d/splash<br />And fill it with the following line<br /><br />echo FRAMEBUFFER=y<br />Now run the following command<br /><br />$ sudo update-initramfs -u<br />Reboot again and now the startup and shutdown splash screens should have the resolution specified in GRUB_GFXMODE field of the grub configuration file.<br /></div></body></html>

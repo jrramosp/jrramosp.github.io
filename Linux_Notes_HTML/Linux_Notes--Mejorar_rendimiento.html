@@ -1,7 +1,7 @@
 <!doctype html><html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Discos duros desde la terminal</title>
+  <title>Mejorar rendimiento</title>
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="res/styles3.css" type="text/css" />
   
@@ -13,4 +13,4 @@
         }
     </script>
 </head>
-<body><div class="page">Discos duros desde la terminal<br /><br /><code>sudo fdisk -l</code><br /><code>df -h /dev/sd*</code></div></body></html>
+<body><div class="page">Para equipos algo viejitos:<br /><code><span style="color:#000000;">sudo nano /etc/sysctl.conf</span></code><br />Y al final del archivo añadir:<br /><code><span style="color:#000000;">vm.swappiness = 10<br />vm.vfs_cache_pressure = 50<br />vm.watermark_scale_factor = 200<br />vm.dirty_ratio = 3</span></code><br />Y además instalar:<br /><code>sudo apt install preload</code><br />Y después:<br /><code>service preload start</code></div></body></html>
