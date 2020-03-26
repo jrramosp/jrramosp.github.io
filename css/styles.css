@@ -22,7 +22,7 @@ body {
     font-size: 16px;
     font-family: "Open Sans", sans-serif !important;
     padding: 20x;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     line-height:1.5em;
 
@@ -34,7 +34,7 @@ div.main {
 }
 
 div.tree {
-    width: 300px;
+    width: 80%;
     /*background-color: #EEEEEE;
     border-top: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
@@ -62,7 +62,7 @@ div.page {
 
 div.tree {
     font-size: 12px;
-    color: #666666;
+    color: #000;
 }
 
 div.tree a, div.tree a:visited {
@@ -117,6 +117,7 @@ td {
 
 div.main h1 {
     font-weight: bold;
+    color: black;
 }
 
 div.main h2 {
