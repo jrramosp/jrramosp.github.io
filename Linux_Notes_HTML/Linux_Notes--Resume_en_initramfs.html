@@ -4,13 +4,6 @@
   <title>Resume en initramfs</title>
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="res/styles3.css" type="text/css" />
-  
-    <script type="text/javascript">
-        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
-        if (!in_frame()) {
-            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
-            window.location = 'index.html#' + page;
-        }
-    </script>
+  <script></script>
 </head>
-<body><div class="page"><a name="h3-1"></a><a href="http://forums.debian.net/viewtopic.php?t=133253#p645249">Re: how to set the RESUME variable</a><br />   <img src="images/73-1.png" alt="images/73-1.png" />by <a href="http://forums.debian.net/memberlist.php?mode=viewprofile&u=200508&sid=ce36eba942b5ca63f188ef3e85e970ee">orythem27</a> » 2017-05-26 13:42 <br />Look into /etc/initramfs-tools/initramfs.conf and /etc/initramfs-tools/conf.d/*<br /><br />In my case it is set in /etc/initramfs-tools/conf.d/resume.<br /><br />You might try finding the correct settings as stated in the above post by @debiman, correct the variable in the initramfs-tools config file, then regenerate initramfs by<br />Code: <a href="http://forums.debian.net/viewtopic.php?t=133253#">Select all</a># update-initramfs -u -k all</div></body></html>
+<body><div class="page"><h1 class="title">Resume en initramfs</h1><br/><a name="h3-1"></a><a href="http://forums.debian.net/viewtopic.php?t=133253#p645249">Re: how to set the RESUME variable</a><br />   <img src="images/73-1.png" alt="images/73-1.png" />by <a href="http://forums.debian.net/memberlist.php?mode=viewprofile&u=200508&sid=ce36eba942b5ca63f188ef3e85e970ee">orythem27</a> » 2017-05-26 13:42 <br />Look into /etc/initramfs-tools/initramfs.conf and /etc/initramfs-tools/conf.d/*<br /><br />In my case it is set in /etc/initramfs-tools/conf.d/resume.<br /><br />You might try finding the correct settings as stated in the above post by @debiman, correct the variable in the initramfs-tools config file, then regenerate initramfs by<br />Code: <a href="http://forums.debian.net/viewtopic.php?t=133253#">Select all</a># update-initramfs -u -k all<br /><br />The UUID needs to be added to the <code>/etc/initramfs-tools/conf.d/resume</code> file. <br />You can run the following to set that in the RESUME file: (Your UUID might be different.)<br /><code>echo "RESUME=UUID=09e25397-4a2c-4fb0-a605-a7013eecb59c" | sudo tee /etc/initramfs-tools/conf.d/resume<br /></code>Then run the following to update the kernels on the system:<br /><code>sudo update-initramfs -u -k all<br /></code>Reboot the system so the changes can take affect.<br /></div></body></html>
