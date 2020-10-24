@@ -12,4 +12,4 @@ So far they're very rough and somewhat disorganized notes.
 
 _Este proyecto es para publicar apuntes sobre los tutoriales de [MDN](https://developer.mozilla.org/en-US/docs/Web/Tutorials "Mozilla Site") sobre HTML y CSS, mis notas de Linux y un modulo de TI_
 
-_Hasta ahora son unos apuntes muy toscos y algo desorganizados._
+_Hasta ahora son unos apuntes muy toscos y algo desorganizados._😉️
