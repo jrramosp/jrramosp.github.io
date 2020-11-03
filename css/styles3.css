@@ -24,7 +24,8 @@ body {
     /*white-space: pre-wrap;*/
     line-height:1.7em;
     padding: 20x;
-    width: 90%;
+    width: 60%;
+    text-align: justify;
     margin: 0 auto;
 }
 
